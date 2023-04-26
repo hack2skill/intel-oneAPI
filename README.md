@@ -1,8 +1,8 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - Mediage
+#### Problem Statement -  Medical Image Processing
+#### Team Leader Email - krishnamr939@gmail.com
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
