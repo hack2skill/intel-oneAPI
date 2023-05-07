@@ -1,11 +1,12 @@
 # intel-oneAPI
 
+
 #### Team Name - ggbois   
 #### Problem Statement - Object Detection For Autonomous Vehicles
 #### Team Leader Email - zubair.mh@protonmail.com
 
 ## A Brief of the Prototype:
-  This section must include UML Daigrms and prototype description
+ Our basic idea
   
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
