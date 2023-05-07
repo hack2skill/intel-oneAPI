@@ -14,9 +14,10 @@ Autonomous Vehicles implement SLAM(Simulataneous Localization and Mapping) in or
 - oneAPI DPC++/C++ Compiler: Compiling DPC++ code
 - oneAPI DPC++ Library: Writing a parallelized program to seperate tasks for the CPU and the GPU
 - oneAPI Threading Building Blocks: Building a threaded system for localization and mapping of detected points
-
-Intel oneAPI AI Analytics Toolkit
 - Intel Optimization for Tensorflow: Building a model for object detection
+- Technologies used:
+    Languages: SYCL, C++, Python
+    Frameworks: OpenCV, TensorFlow
    
 ## Step-by-Step Code Execution Instructions:
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
