@@ -1,8 +1,8 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - Byte404
+#### Problem Statement - Open Innovation in Education
+#### Team Leader Email - angeloantu@gmail.com
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
