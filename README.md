@@ -67,4 +67,4 @@ Additionally, the tech stack incorporates the SYCL/DCP++ Libraries, which are sp
 - Repeat steps 4 to 7 until satisfactory results are achieved.
   
 ## What I Learned:
-   Write about the biggest learning you had while developing the prototype
+   SYCL (Single-source Heterogeneous Programming for OpenCL) and DPC++ (Data Parallel C++) are powerful libraries that facilitate heterogeneous programming and parallel computing. 
