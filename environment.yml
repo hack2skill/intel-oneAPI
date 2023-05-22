@@ -1,4 +1,4 @@
-name: intel
+name: idp
 channels:
   - intel
   - defaults
@@ -174,4 +174,4 @@ dependencies:
   - zope.interface=5.4.0=py39h3811e60_0
   - zstandard=0.19.0=py39h5eee18b_0
   - zstd=1.5.2=ha4553b6_2
-prefix: /home/ubuntu/src/miniconda3/envs/intel
+prefix: /home/ubuntu/src/miniconda3/envs/idp
