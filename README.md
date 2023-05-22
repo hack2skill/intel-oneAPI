@@ -1,8 +1,8 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - Chhota Bheem
+#### Problem Statement - Object Detection For Autonomous Vehicles
+#### Team Leader Email - rshrjacharya@gmail.com
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
