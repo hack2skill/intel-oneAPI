@@ -7,10 +7,14 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!'
 
-@app.route('/api/example', methods=['GET'])
+@app.route('sortpyq', methods=['GET'])
 def example_endpoint():
-    data = {'message': 'This is an example endpoint'}
-    return jsonify(data)
+    file_path = 'path/to/your/file.txt'  # Replace with the actual path to your text file
+
+    with open(file_path, 'r') as file:
+        contents = file.read()
+
+    return jsonify(contents)
 
 if __name__ == '__main__':
     app.run()
