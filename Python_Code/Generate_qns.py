@@ -15,4 +15,15 @@ with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/referrence.txt', 'r'
     reference_paper = str(file.read())            
     
 
-prompt = f"generate 10 questions that are not in reference paper but similar \nSorted Previous Year Questions:\n{sorted_questions}\n\nNotebook Question List:\n{notebook_questions}\n\nImportant Topics:\n{important_topics}\n\nReference Paper:\n{reference_paper}\n\n"    
+prompt = f"generate 10 questions that are not in reference paper but similar \nSorted Previous Year Questions:\n{sorted_questions}\n\nNotebook Question List:\n{notebook_questions}\n\nImportant Topics:\n{important_topics}\n\nReference Paper:\n{reference_paper}\n\n"
+
+response = openai.Completion.create(
+    engine="davinci",
+    prompt=prompt,
+    max_tokens=1000,  # Adjust the max_tokens value as per your requirement
+    temperature=0.4,  # Adjust the temperature value to control the creativity of the generated questions
+    top_p=1.0,
+    frequency_penalty=0.0,
+    presence_penalty=0.0,
+    n=5  # Adjust the 'n' value to generate more or fewer questions
+)    
