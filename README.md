@@ -31,9 +31,7 @@ from ultralytics import YOLO
 | If you're running on a local machine / VM: | If you're running on a Google Colab notebook: |
 | :--- | :--- |
 | `import cv2` | `from google.colab.patches import cv2_imshow` |
-| `res = model(img)` | `res = model(img)` |
-| `res_plotted = res[0].plot()` | `res_plotted = res[0].plot()` |
-| `cv2.imshow("result", res_plotted)` | `cv2_imshow(res_plotted)` |
+| `cv2.imshow("result", model(img)[0].plot())` | `cv2_imshow(model(img)[0].plot())` |
 
 ## What I Learned:
 Write about the biggest learning you had while developing the prototype
