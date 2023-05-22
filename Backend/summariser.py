@@ -1,41 +1,15 @@
 from fastapi import FastAPI,UploadFile,File
-from fastapi import APIRouter
 from transformers import pipeline
-import shutil
 
-
-app = FastAPI()
-
-# Define a router for the user-related endpoints
-router_users = APIRouter()
-
-@router_users.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-
-@app.post("/get-summary")
 async def summary(file: UploadFile = File(...)):
 
-    try:
-        with open("dat.txt", "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-    finally:
-        file.file.close()
-
-
-
-
-   
+    text = await file.read()
     # Load the summarization pipeline
     summarizer = pipeline("summarization")
 
-   # Read the contents of the text file
-    with open("dat.txt", "r", encoding='utf-8') as file:
-        text = file.read()
+    
+    
 
-   
     # Split the text into smaller chunks
     max_tokens_per_chunk = 1024  # Initial value
     max_words_in_summary = 2000000
@@ -76,10 +50,3 @@ async def summary(file: UploadFile = File(...)):
 
     return{"summary" : combined_summary,"exceptions" : exceptions}
 
-# Mount the routers on the app
-app.include_router(router_users)
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
