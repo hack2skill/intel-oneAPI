@@ -1,0 +1,12 @@
+train: /home/ubuntu/oneAPI/train/images
+val: /home/ubuntu/oneAPI/valid/images
+
+nc: 11
+names: ['biker', 'car', 'pedestrian', 'trafficLight', 'trafficLight-Green', 'trafficLight-GreenLeft', 'trafficLight-Red', 'trafficLight-RedLeft', 'trafficLight-Yellow', 'trafficLight-YellowLeft', 'truck']
+
+roboflow:
+  workspace: roboflow-gw7yv
+  project: self-driving-car
+  version: 3
+  license: MIT
+  url: https://universe.roboflow.com/roboflow-gw7yv/self-driving-car/dataset/3
