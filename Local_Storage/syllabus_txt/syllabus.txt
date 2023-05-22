@@ -1,0 +1,23 @@
+Introduction : Digital System - Binary Numbers - Base conversions - Octal and Hexadecimal numbers
+- compliments - operations of compliments - Signed binary numbers - Binary codes - Binary storage
+and   Registers   -   Binary   Logic.   Boolean   algebra   and   logic   gates:  Axiomatic   definition   of  boolean
+algebra - Basic theorems and properties - Boolean functions - Canonical and standard forms - Logic
+operations- Introduction to Digital Logic gates. Gate level minimisation: Karnaugh map - two, three,
+four and five variable maps - Product of Sums and Sum of Products  simplification - Don't care
+conditions   -   NAND   and   NOR   implementation   -   Exclusive   OR   function   -   Quine   McCluskey
+Technique for simplification.                                                                                                   
+Combinational Logic : Combinational Circuits - Analysis procedure - Design procedure - Binary
+adder-subtractor - Fast adders - Decimal adder - Binary multiplier - Magnitude comparator - Decoders
+- Encoders - Multiplexers and demultiplexers. Synchronous sequential circuits: Sequential circuits -
+Storage elements: Latches and Flip-Flops - Analysis of clocked sequential circuits - State reduction
+and assignment - Design procedure.                                                                                         
+Registers   and   Counters:   Registers   -   Shift   Registers   -   Ripple   counters   -   Synchronous   counters   -
+Counter   with   unused   states   -   Ring   counter   -   Johnson   counter.Asynchronous   Sequential   circuits:
+Analysis procedure - Circuits with Latches – Hazards.                                                            
+Memory and Programmable Logic: Random Access Memory - Memory decoding – Error detection
+and correction - Read Only Memory - Programmable Logic Array - Programmable Array Logic -
+Sequential   programmable   devices.   Digital   Integrated   circuit:   IC   digital   logic   families   -
+Characteristics:  Fan out - Power  dissipation - Propagation delay - Noise Margin. RTL and DTL
+circuits - Transistor Transistor Logic - Emitter coupled Logic - CMOS Logic - CMOS transmission
+gate circuit.                                                                                                                                
+
