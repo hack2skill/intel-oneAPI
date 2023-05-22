@@ -26,4 +26,6 @@ response = openai.Completion.create(
     frequency_penalty=0.0,
     presence_penalty=0.0,
     n=5  # Adjust the 'n' value to generate more or fewer questions
-)    
+)
+
+generated_questions = [choice['text'].strip() for choice in response.choices]    
