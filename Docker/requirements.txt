@@ -1,7 +1,0 @@
-requests
-chardet
-numpy
-tensorflow
-tensorflow-hub
-scikit-learn
-boto3
