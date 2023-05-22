@@ -5,13 +5,13 @@ openai.api_key = "##"
 
 
 # Define your input parameters
-with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/mod2qns.txt', 'r') as file:
+with open('#define path sorted questions here', 'r') as file:
     sorted_questions = str(file.read())
-with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/notes_questions_list.txt', 'r') as file:
+with open('#define path notebook questions here', 'r') as file:
     notebook_questions = str(file.read())    
-with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/imp_topic_list.txt', 'r') as file:
+with open('#define path for important topics here', 'r') as file:
     important_topics = str(file.read())  
-with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/referrence.txt', 'r', encoding='latin-1') as file:
+with open('#define path for reference paper here, 'r', encoding='latin-1') as file:
     reference_paper = str(file.read())            
     
     
