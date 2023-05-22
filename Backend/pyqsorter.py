@@ -1,4 +1,11 @@
 from fastapi import APIRouter
+import os
+import re
+import chardet
+import numpy as np
+import tensorflow as tf
+import tensorflow_hub as hub
+from sklearn.cluster import KMeans
 
 # Create an instance of APIRouter
 router = APIRouter()
