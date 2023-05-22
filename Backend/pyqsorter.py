@@ -78,7 +78,7 @@ def api1_handler():
                 f.write(f" - {question}\n")
             f.write("\n")
 
-    return {"message": "Clustering done"}
+    return {"message": "Previous Year question papers sorted to modules"}
 
 @router.post("/api1")
 def api1_post_handler():
