@@ -25,11 +25,4 @@ Enhanced Concept Comprehension: Tutor AI's personalized and adaptive learning ap
 Achievement of Higher Academic Performance: Through targeted learning and instant feedback, students can achieve better grades and excel academically.
 Discover the future of education with Tutor AI and unlock your full learning potential.
   
-## Tech Stack: 
-   List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
-   
-## Step-by-Step Code Execution Instructions:
-  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
-  
-## What I Learned:
-   Write about the biggest learning you had while developing the prototype
+
