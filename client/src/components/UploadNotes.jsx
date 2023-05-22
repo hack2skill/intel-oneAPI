@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import Lotte from 'lottie-react';
+import animationData from '../assets/95241-uploading.json';
 function UploadNotes() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -50,13 +51,15 @@ function UploadNotes() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen text-center">
+      
       <motion.div
-        className="bg-blue-500 text-white py-6 px-8 rounded-lg shadow-lg"
+        className="bg-blue-500 text-white py-6 px-6 rounded-lg shadow-lg"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
       >
+        <Lotte animationData={animationData} style={{width: 400, height: 300}}/>
         <h1 className="text-3xl font-bold mb-4">Upload Notes</h1>
         {!uploadSuccess ? (
           <>

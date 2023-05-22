@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import Lottie from 'lottie-react';
+import animationData from '../assets/28832-bot.json';
 
 function Home() {
   const buttonVariants = {
@@ -27,7 +28,8 @@ function Home() {
       {/* Left Half */}
       <div className="w-1/2 bg-gray-200 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-6">Choose an option:</h1>
+          <Lottie animationData={animationData} style={{width: 400, height: 300}}/>
+          <h1 className="text-3xl font-bold mb-12">Choose an option:</h1>
           <div className="space-y-4">
             <Link to="/uploadnotes">
             <motion.button
