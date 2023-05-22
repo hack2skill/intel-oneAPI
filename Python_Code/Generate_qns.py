@@ -28,6 +28,7 @@ response = openai.Completion.create(
     n=5  # Adjust the 'n' value to generate more or fewer questions
 )
 
+# Extract the generated questions from the API response
 generated_questions = [choice['text'].strip() for choice in response.choices]
 
 # Print the generated questions
