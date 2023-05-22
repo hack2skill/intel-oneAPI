@@ -52,7 +52,7 @@ def api1_handler():
     questions = extract_questions_from_directory('Local_Storage/pyqs_text')
     #num_clusters = int(input("To how many clusters do you want to cluster the questions: "))
     num_clusters=4
-    syllabus_file = 'Files/syllabus_txt/syllabus.txt'
+    syllabus_file = 'Local_Storage/syllabus.txt'
     print("Extracting syllabus")
     labels = cluster_questions(questions, num_clusters, syllabus_file)
 
@@ -67,7 +67,7 @@ def api1_handler():
 
 
     # Save cluster questions to file
-    with open('Files/generated_files/cluster_questions.txt', 'w') as f:
+    with open('Local_Storage/Generated_Files/cluster_questions.txt', 'w') as f:
         for i in range(num_clusters):
             cluster_questions = np.array(questions)[np.where(labels == i)[0]]
             f.write(f"Module {i+1}:\n")
@@ -75,7 +75,7 @@ def api1_handler():
                 f.write(f" - {question}\n")
             f.write("\n")
 
-    return {"message": "This is API 1"}
+    return {"message": "Clustering done"}
 
 @router.post("/api1")
 def api1_post_handler():
