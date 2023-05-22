@@ -1,15 +1,11 @@
+import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()
-
-@app.get("/")
-def hello_world():
-    return {"message": "Hello, World!"}
-
-@app.get("/users/{user_id}")
-def get_user(user_id: int):
-    return {"user_id": user_id, "name": "John Doe"}
+from api1 import app as app1
+from api2 import app as app2
+# import other APIs as needed
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app1, host="0.0.0.0", port=8001)
+    uvicorn.run(app2, host="0.0.0.0", port=8002)
+    # run other APIs as needed
