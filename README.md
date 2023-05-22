@@ -8,7 +8,7 @@
 Tutor AI
 Tutor AI is an advanced AI-powered tutoring system that aims to revolutionize traditional learning methods. This GitHub repository introduces Tutor AI, a personalized and adaptive learning platform designed to enhance the efficiency and effectiveness of learning in any subject area.
 
-Features
+Features:
 Personalized Learning: Tutor AI adapts to each student's learning pace and style, delivering educational content tailored to their individual needs.
 Focus on Key Topics: The system identifies and emphasizes important topics within a subject area, enabling students to prioritize their learning effectively.
 Instant Feedback: Through regular assessments and testing, Tutor AI provides immediate feedback, allowing students to track their progress and identify areas for improvement.
