@@ -22,6 +22,39 @@ In summary, this prototype stands as the pinnacle of speed and efficiency, utili
 * pytorch torchvision pytorch-cuda=11.7 -c pytorch -c nvidia
 
 ## Step-by-Step Code Execution Instructions:
+```
+!git clone https://github.com/rishiraj/intel-oneAPI.git
+!pip install -q ultralytics
+```
+If you're running on a local machine / VM:
+```
+import cv2
+```
+If you're running on a Google Colab notebook:
+```
+from google.colab.patches import cv2_imshow
+```
+```
+from ultralytics import YOLO
+model = YOLO('rishiraj/intel-oneAPI/runs/detect/train/weights/best.pt')
+```
+If you're using an Intel® CPU, use the following instead for up to 3x CPU speedup:
+```
+model = YOLO('rishiraj/intel-oneAPI/runs/detect/train/weights/best.onnx')
+```
+If you're using any other CPU, use the following instead for up to 3x CPU speedup:
+```
+model = YOLO('rishiraj/intel-oneAPI/runs/detect/train/weights/best.onnx')
+```
+If you're using a GPU, use the following instead for up to 5x GPU speedup:
+```
+model = YOLO('rishiraj/intel-oneAPI/runs/detect/train/weights/best.engine')
+```
+If you're using an Edge TPU, use the following instead for up to 10x TPU speedup:
+```
+model = YOLO('rishiraj/intel-oneAPI/runs/detect/train/weights/best_saved_model/best_full_integer_quant_edgetpu.tflite')
+```
+
 This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
 
 ## What I Learned:
