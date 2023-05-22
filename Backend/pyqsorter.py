@@ -1,20 +1,21 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
+import os
+import re
+import chardet
+import numpy as np
+import tensorflow as tf
+import tensorflow_hub as hub
+from sklearn.cluster import KMeans
 
-app = FastAPI()
+# Create an instance of APIRouter
+router = APIRouter()
 
-@app.get("/")
-def hello_world():
-    file_path = 'Local_Storage/pyqs_text/Logic Design  2016 Nov (2015 Ad) (1).txt'  
+@router.get("/api1")
+def api1_handler():
+    # Add your logic here
+    return {"message": "This is API 1"}
 
-    with open(file_path, 'r') as file:
-        contents = file.read()
-    
-    return {contents}
-
-@app.get("/users/{user_id}")
-def get_user(user_id: int):
-    return {"user_id": user_id, "name": "John Doe"}
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+@router.post("/api1")
+def api1_post_handler():
+    # Add your logic here
+    return {"message": "POST request received on API 1"}
