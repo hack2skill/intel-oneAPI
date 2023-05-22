@@ -22,7 +22,7 @@ function Home() {
   ];
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen w-screen">
       
       {/* Left Half */}
       <div className="w-1/2 bg-gray-200 flex items-center justify-center">
