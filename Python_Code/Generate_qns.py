@@ -28,4 +28,8 @@ response = openai.Completion.create(
     n=5  # Adjust the 'n' value to generate more or fewer questions
 )
 
-generated_questions = [choice['text'].strip() for choice in response.choices]    
+generated_questions = [choice['text'].strip() for choice in response.choices]
+
+# Print the generated questions
+for i, question in enumerate(generated_questions):
+    print(f"Question {i+1}: {question}")    
