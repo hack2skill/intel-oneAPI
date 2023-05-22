@@ -11,6 +11,10 @@ from sklearn.cluster import KMeans
 
 
 
+
+# Create an instance of APIRouter
+router = APIRouter()
+
 def extract_questions_from_file(filepath):
     with open(filepath, 'rb') as f:
         result = chardet.detect(f.read())
@@ -31,7 +35,7 @@ def extract_questions_from_directory(directory):
             questions += extract_questions_from_file(filepath)
     return questions
 
-def cluster_questions(questions, num_clusters, syllabus_file):
+def cluster_questions_1(questions, num_clusters, syllabus_file):
     module_url = "https://tfhub.dev/google/universal-sentence-encoder-large/5"
     
     embed = hub.load(module_url)
@@ -42,8 +46,6 @@ def cluster_questions(questions, num_clusters, syllabus_file):
     y_kmeans = kmeans.predict(embeddings)
  
     return y_kmeans
-# Create an instance of APIRouter
-router = APIRouter()
 
 @router.get("/api1")
 def api1_handler():
@@ -54,7 +56,7 @@ def api1_handler():
     num_clusters=4
     syllabus_file = 'Local_Storage/syllabus.txt'
     print("Extracting syllabus")
-    labels = cluster_questions(questions, num_clusters, syllabus_file)
+    labels = cluster_questions_1(questions, num_clusters, syllabus_file)
 
     print("Clustering questions")
     for i in range(num_clusters):
