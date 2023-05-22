@@ -48,7 +48,7 @@ router = APIRouter()
 @router.get("/api1")
 def api1_handler():
     # Add your logic here
-    print("Extracting question paper text")
+    #print("Extracting question paper text")
     questions = extract_questions_from_directory('Files/pyqs_text')
     num_clusters = int(input("To how many clusters do you want to cluster the questions: "))
     syllabus_file = 'Files/syllabus_txt/syllabus.txt'
