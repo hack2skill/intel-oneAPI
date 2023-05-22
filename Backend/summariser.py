@@ -1,9 +1,16 @@
 from fastapi import FastAPI,UploadFile,File
 from transformers import pipeline
+import shutil
 
 async def summary(file: UploadFile = File(...)):
 
-    text = await file.read()
+   
+    try:
+        with open(file.filename, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+    finally:
+        file.file.close()
+
     # Load the summarization pipeline
     summarizer = pipeline("summarization")
 
