@@ -1,3 +1,4 @@
+#pyqsorter , sorts set of pyqs into modules
 from fastapi import APIRouter
 import os
 import re
@@ -10,6 +11,10 @@ patch_sklearn()
 from sklearn.cluster import KMeans
 
 
+
+
+# Create an instance of APIRouter
+router = APIRouter()
 
 def extract_questions_from_file(filepath):
     with open(filepath, 'rb') as f:
@@ -31,7 +36,7 @@ def extract_questions_from_directory(directory):
             questions += extract_questions_from_file(filepath)
     return questions
 
-def cluster_questions(questions, num_clusters, syllabus_file):
+def cluster_questions_1(questions, num_clusters, syllabus_file):
     module_url = "https://tfhub.dev/google/universal-sentence-encoder-large/5"
     
     embed = hub.load(module_url)
@@ -42,18 +47,17 @@ def cluster_questions(questions, num_clusters, syllabus_file):
     y_kmeans = kmeans.predict(embeddings)
  
     return y_kmeans
-# Create an instance of APIRouter
-router = APIRouter()
 
 @router.get("/api1")
 def api1_handler():
     # Add your logic here
-    print("Extracting question paper text")
-    questions = extract_questions_from_directory('Files/pyqs_text')
-    num_clusters = int(input("To how many clusters do you want to cluster the questions: "))
-    syllabus_file = 'Files/syllabus_txt/syllabus.txt'
+    #print("Extracting question paper text")
+    questions = extract_questions_from_directory('Local_Storage/pyqs_text')
+    #num_clusters = int(input("To how many clusters do you want to cluster the questions: "))
+    num_clusters=4
+    syllabus_file = 'Local_Storage/syllabus.txt'
     print("Extracting syllabus")
-    labels = cluster_questions(questions, num_clusters, syllabus_file)
+    labels = cluster_questions_1(questions, num_clusters, syllabus_file)
 
     print("Clustering questions")
     for i in range(num_clusters):
@@ -66,7 +70,7 @@ def api1_handler():
 
 
     # Save cluster questions to file
-    with open('Files/generated_files/cluster_questions.txt', 'w') as f:
+    with open('Local_Storage/Generated_Files/cluster_questions.txt', 'w') as f:
         for i in range(num_clusters):
             cluster_questions = np.array(questions)[np.where(labels == i)[0]]
             f.write(f"Module {i+1}:\n")
@@ -74,7 +78,7 @@ def api1_handler():
                 f.write(f" - {question}\n")
             f.write("\n")
 
-    return {"message": "This is API 1"}
+    return {"message": "Previous Year question papers sorted to modules"}
 
 @router.post("/api1")
 def api1_post_handler():
