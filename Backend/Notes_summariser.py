@@ -4,7 +4,7 @@ from transformers import pipeline
 summarizer = pipeline("summarization")
 
 # Read the contents of the text file
-with open("Files\\notes_txt\module1.txt", "r", encoding='utf-8') as file:
+with open("Local_Storage\\notes_txt\module1.txt", "r", encoding='utf-8') as file:
     text = file.read()
 
 # Split the text into smaller chunks

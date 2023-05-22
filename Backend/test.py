@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,UploadFile,File
 from fastapi import APIRouter
 
 app = FastAPI()
@@ -20,6 +20,12 @@ router_items = APIRouter()
 @router_items.get("/items")
 def get_items():
     return {"items": ["item1", "item2", "item3"]}
+
+@app.post("/upload")
+async def upload_file(file: UploadFile = File(...)):
+    contents = await file.read()
+    return {"filename": file.filename, "contents": contents}
+
 
 # Mount the routers on the app
 app.include_router(router_users)
