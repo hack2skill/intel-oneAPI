@@ -13,3 +13,6 @@ with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/imp_topic_list.txt',
     important_topics = str(file.read())  
 with open('/Users/chemmi/Desktop/SRM-HACK/GenerateQns/input/referrence.txt', 'r', encoding='latin-1') as file:
     reference_paper = str(file.read())            
+    
+
+prompt = f"generate 10 questions that are not in reference paper but similar \nSorted Previous Year Questions:\n{sorted_questions}\n\nNotebook Question List:\n{notebook_questions}\n\nImportant Topics:\n{important_topics}\n\nReference Paper:\n{reference_paper}\n\n"    
