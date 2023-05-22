@@ -15,8 +15,6 @@ async def summary(file: UploadFile = File(...)):
     summarizer = pipeline("summarization")
 
     
-    
-
     # Split the text into smaller chunks
     max_tokens_per_chunk = 1024  # Initial value
     max_words_in_summary = 2000000

@@ -18,6 +18,8 @@ def read_root():
 @app.post("/get-summary")
 async def summary(file: UploadFile = File(...)):
 
+
+    # saving the file
     try:
         with open("dat.txt", "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
@@ -25,9 +27,6 @@ async def summary(file: UploadFile = File(...)):
         file.file.close()
 
 
-
-
-   
     # Load the summarization pipeline
     summarizer = pipeline("summarization")
 
