@@ -5,7 +5,7 @@ import shutil
 import os
 import asyncio
 
-progress = "NULL" # just for tracking progress
+progress = None # just for tracking progress
 
 def summary(text):
     # Load the summarization pipeline
@@ -72,7 +72,14 @@ async def get_summary(file: UploadFile = File(...)):
     data = await gen_summary(file)
     return data
 
-@router_summariser.get("/summary-gen-progress")
+@router_summariser.get("/summary-gen-progress") # route to track progress of summarization
 def get_summary_progress():
     global progress
-    return {"status" : progress }
+    if progress is None :
+        return {"status" : "No summarisation process in progress" }
+    elif progress == 100 :
+        return {"status" : "Completed" , "value" : progress}
+    elif progress in range(0,101) :
+        return {"status" : progress}
+    else :
+        return {"invalid data detected"}
