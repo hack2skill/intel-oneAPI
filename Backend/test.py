@@ -65,7 +65,7 @@ async def gen_summary(file):
     with open("dat.txt", "r", encoding='utf-8') as file:
         text = file.read()                               # reading file
 
-    loop = asyncio.get_running_loop()
+    loop = asyncio.get_running_loop()                   # making it to run in background
     return await loop.run_in_executor(None, summary, text)
 
 
@@ -73,23 +73,24 @@ async def gen_summary(file):
 app = FastAPI()
 
 
-router_users = APIRouter()
+router_summariser = APIRouter()
+router_test = APIRouter()
 
-@router_users.get("/")
+@router_test.get("/")
 def read_root():
     return {"Hello": "World"}
 
 
-@router_users.post("/get-summary")
+@router_summariser.post("/get-summary")
 async def get_summary(file: UploadFile = File(...)):
     data = await gen_summary(file)
 
-    return{"data" : data}
+    return data
 
 
 
-app.include_router(router_users)
-
+app.include_router(router_summariser)
+app.include_router(router_test)
 
 if __name__ == "__main__":
     import uvicorn
