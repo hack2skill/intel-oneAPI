@@ -69,7 +69,6 @@ async def gen_summary(file):
     return await loop.run_in_executor(None, summary, text)
 
 
-
 router_summariser = APIRouter()
 
 
