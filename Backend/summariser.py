@@ -70,15 +70,7 @@ async def gen_summary(file):
 
 
 
-# app = FastAPI()
-
-
 router_summariser = APIRouter()
-# router_test = APIRouter()
-
-# @router_test.get("/")
-# def read_root():
-#     return {"Hello": "World"}
 
 
 @router_summariser.post("/get-summary")
@@ -89,9 +81,3 @@ async def get_summary(file: UploadFile = File(...)):
 
 
 
-# app.include_router(router_summariser)
-# app.include_router(router_test)
-
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
