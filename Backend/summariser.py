@@ -2,6 +2,7 @@ from fastapi import FastAPI,UploadFile,File
 from fastapi import APIRouter
 from transformers import pipeline
 import shutil
+import os
 
 
 app = FastAPI()
@@ -72,7 +73,9 @@ async def summary(file: UploadFile = File(...)):
     # Print the combined summary
     print("Combined Summary:")
     print(combined_summary)
-
+    print("Deleting the saved file.......")
+    os.remove("dat.txt")
+    print("deleted....")
     return{"summary" : combined_summary,"exceptions" : exceptions}
 
 # Mount the routers on the app
