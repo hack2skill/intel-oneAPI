@@ -89,9 +89,9 @@ async def get_summary(file: UploadFile = File(...)):
 
 
 
-app.include_router(router_summariser)
-app.include_router(router_test)
+# app.include_router(router_summariser)
+# app.include_router(router_test)
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8000)
