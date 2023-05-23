@@ -8,6 +8,11 @@ import UploadNotes from "./components/UploadNotes";
 import Navbar from "./components/Navbar";
 import Landingpage from "./components/Landingpage";
 import Anav from "./components/Anav";
+import About from "./components/About";
+import Team from "./components/Team";
+import Studyplanner from "./components/Studyplanner";
+import Features from "./components/Features";
+
 function App() {
   return (
     <div className="container">
@@ -20,6 +25,12 @@ function App() {
           <Route path="/Navbar" element={<Navbar/>} />
           <Route path="/Anav" element={<Anav/>} />
           <Route path="/landing" element={<Landingpage/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/team" element={<Team/>} />
+          <Route path="/studyplanner" element={<Studyplanner/>} />
+          <Route path="/features" element={<Features/>} />
+          <Route path="/login" element={<Login/>} />
+          
         </Routes>
       </BrowserRouter>
     </div>
