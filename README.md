@@ -27,9 +27,9 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 ## Pending tasks
 
-| Task | Type     | Discription                |Input                | Output Expected              |
-| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
-| `QuestionPaperGenerator` | `API` |  generate atleast 5 question paper , following format of PYQS  |  you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         | 
+| Task | Type     | Discription                |Output Expected              |Input                | Output Expected              |
+| :-------- | :------- |  :------------------------- | :------------------------- |:------------------------- |:------------------------- |
+| `QuestionPaperGenerator` | `API` |  generate atleast 5 question paper , following format of PYQS  |    Heyron         | you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         |                               
 | `NotesSummariser` | `API` |  it should summarise all notes.txt   |     `Local_Storage\notes_txt`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
 
 ## Completed tasks
