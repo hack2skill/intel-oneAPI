@@ -87,3 +87,63 @@ def extract_image_name(questions):
     important_topics = response.choices[0].message.content
     print(important_topics)
     return important_topics
+
+
+@router.get("/api5")
+def api5_handler():
+    print("Giving promt to OPENAI...")
+    file_path = 'Local_Storage/Generated_Files/Summarised_Notes/module1_summarized.txt'
+    extracted_text = extract_text_from_file(file_path)
+    narrate = extract_important_topics(extracted_text)
+
+    print(narrate)
+    # Save topics to topics.txt
+    with open('Files\generated_files\\narration.txt', 'w', encoding='utf-8') as file:
+        file.write(narrate)
+
+    image_name=extract_image_name(narrate)
+    image_list = image_name.splitlines()
+
+    # Create a directory to store the images
+    os.makedirs("images", exist_ok=True)
+    os.chdir("images")
+
+    # Process the paragraphs and search for related images
+    print(image_list)
+    process_paragraphs(image_list)
+
+    # Return to the parent directory
+    os.chdir("..")
+
+    while(True):
+        with open('Files\generated_files\\response.txt', 'r',encoding='utf-8') as file:
+            content = file.read()
+        if len(content)==0:
+            continue
+        else:
+            if content == "understood":
+                break
+            if content[0]==".":
+                narrate = extract_important_topics(content)
+                with open('Files\generated_files\\narration.txt', 'w', encoding='utf-8') as file:
+                    file.write(narrate)
+                print(narrate)
+                with open('Files\generated_files\\response.txt', 'w') as file:
+                    # Truncate the file to remove its contents
+                    file.truncate()
+                shutil.rmtree("images")
+
+
+                image_name=extract_image_name(narrate)
+                image_list = image_name.splitlines()
+
+                # Create a directory to store the images
+                os.makedirs("images", exist_ok=True)
+                os.chdir("images")
+
+                # Process the paragraphs and search for related images
+                print(image_list)
+                process_paragraphs(image_list)
+
+                # Return to the parent directory
+                os.chdir("..")
