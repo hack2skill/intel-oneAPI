@@ -46,7 +46,7 @@ To run the Tutor AI application, follow these steps:
 
 Pyqsorter (takes pyqs text files and syllabus text files from Local Storage and saves output to Generated_files as cluster_question.txt) - `http://localhost:8000/api1`
 
-Notes_Analyser (takes pyqs text files and syllabus text files from Local Storage and saves output to Generated_files as cluster_question.txt) - `http://localhost:8000/api1`
+Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_Ouput) - `http://localhost:8000/api4`
 
 
 
