@@ -54,6 +54,11 @@ Pyqsorter (takes pyqs text files and syllabus text files from Local Storage and 
 
 Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_Ouput) : `http://localhost:8000/api4`
 
+## Pending tasks
+
+| Task | Type     | Discription                |Input                | Output Expected              |
+| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+| `Pyqsorter` | `API` |  generate atleast 5 question paper , following format of PYQS  |  you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         | 
 
 ## Completed tasks
 
