@@ -30,7 +30,8 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 | Task | Type     | Discription                |Assigned to     |Assigned Date-Time|  Expected to complete in        |Input                | Output Expected              |
 | :-------- | :------- |  :------------------------- | :-------------------------| :-------------------------| :------------------------- |:------------------------- |:------------------------- |
 | `QuestionPaperGenerator` | `API` |  generate atleast 5 question paper , following format of PYQS  |    Heyron         |   23/5/2023 12:00PM         |  6 hour         |you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         |                         
-| `NotesSummariser` | `API` |  it should summarise all notes.txt   |  Heyron         | 22/5/2023 10:00PM          |  24hour         |  `Local_Storage\notes_txt`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
+| `NotesToText` | `API` |  it should convert all pdfs in notes_pdf and pyqs_text folder to text   |  Sameer         | 23/5/2023  9:00AM          |  12hour         |  `Local_Storage\notes_txt`,`Local_Storage\pyqs_text`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
+| `NotesSummariser` | `API` |  it should summarise all notes.txt   |  Heyron         | 23/5/2023 9:00AM          |  12 hour         |  `Local_Storage\notes_txt`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
 
 ## Completed tasks
 
