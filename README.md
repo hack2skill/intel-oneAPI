@@ -57,11 +57,7 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 ## Completed tasks
 
-#### Get all items
-
-```http
-  Angelo Antu
-```
+#### Angelo Antu
 
 | Task | Type     | File Location                |Input                | Output              |
 | :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
