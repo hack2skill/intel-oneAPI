@@ -3,39 +3,14 @@ from fastapi import APIRouter
 from transformers import pipeline
 import shutil
 import os
+import asyncio
 
 
-app = FastAPI()
-
-# Define a router for the user-related endpoints
-router_users = APIRouter()
-
-@router_users.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-
-@app.post("/get-summary")
-async def summary(file: UploadFile = File(...)):
-
-
-    # saving the file
-    try:
-        with open("dat.txt", "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-    finally:
-        file.file.close()
-
+def summary(text):
 
     # Load the summarization pipeline
     summarizer = pipeline("summarization")
 
-   # Read the contents of the text file
-    with open("dat.txt", "r", encoding='utf-8') as file:
-        text = file.read()
-
-   
     # Split the text into smaller chunks
     max_tokens_per_chunk = 1024  # Initial value
     max_words_in_summary = 2000000
@@ -70,7 +45,7 @@ async def summary(file: UploadFile = File(...)):
     # Combine the summaries into a single summary
     combined_summary = " ".join(summaries)
 
-    # Print the combined summary
+    # Print and return the combined summary
     print("Combined Summary:")
     print(combined_summary)
     print("Deleting the saved file.......")
@@ -78,10 +53,29 @@ async def summary(file: UploadFile = File(...)):
     print("deleted....")
     return{"summary" : combined_summary,"exceptions" : exceptions}
 
-# Mount the routers on the app
-app.include_router(router_users)
+
+async def gen_summary(file):
+
+    try:
+        with open("dat.txt", "wb") as buffer:      # saving file
+            shutil.copyfileobj(file.file, buffer)
+    finally:
+        file.file.close()
+
+    with open("dat.txt", "r", encoding='utf-8') as file:
+        text = file.read()                               # reading file
+
+    loop = asyncio.get_running_loop()                   # making it to run in background
+    return await loop.run_in_executor(None, summary, text)
 
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+router_summariser = APIRouter()
+
+
+@router_summariser.post("/get-summary")
+async def get_summary(file: UploadFile = File(...)):
+    data = await gen_summary(file)
+
+    return data
+
+
