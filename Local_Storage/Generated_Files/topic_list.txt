@@ -1,0 +1,17 @@
+Topics: Combinational circuits, Sequential circuits, Digital circuits, Adder circuits, Half-adder, Full-adder, AOI logic, X-OR gate, AND gate, Full subtractor, Ripple carry adder, Look-ahead-carry adder, Code converter, Conversion table, Gray code, Decoder, Encoder, Demultiplexer, Comparison.
+
+Imp_Topics: Combinational circuits, Sequential circuits, Digital circuits, Adder circuits, Full-adder, Half-adder, X-OR gate, AND gate, Full subtractor, Ripple carry adder, Look-ahead-carry adder, Code converter, Gray code, Decoder, Encoder.
+
+Questions: 
+
+1. What are the two types of digital circuits?
+2. What are the two types of Digital Electronics?
+3. What is the difference between half-adder and full-adder circuits?
+4. How is a full-adder circuit realized using AOI logic?
+5. What is the purpose of a half-subtractor circuit?
+6. How can the subtraction A - B be done using a circuit?
+7. What is a code conversion table, and what is its purpose?
+8. What is the function of a decoder circuit?
+9. What is the difference between decoding and encoding?
+10. What is the purpose of a demultiplexer circuit?
+11. What is the result of the comparison of A and B in the given figure
