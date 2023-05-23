@@ -1,1 +1,0 @@
-Imp_Topics: Combinational circuits, Sequential circuits, Digital circuits, Adder circuits, Full-adder, Half-adder, X-OR gate, AND gate, Full subtractor, Ripple carry adder, Look-ahead-carry adder, Code converter, Gray code, Decoder, Encoder.
