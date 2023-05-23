@@ -5,6 +5,7 @@ import shutil
 import os
 import asyncio
 
+progress = "NULL" # just for tracking progress
 
 def summary(text):
     # Load the summarization pipeline
@@ -18,6 +19,8 @@ def summary(text):
     chunks = [text[i:i + max_tokens_per_chunk] for i in range(0, len(text), max_tokens_per_chunk)]
     # for the exceptions
     exceptions = "NULL"
+    global progress
+    progress = 0 
     # Generate summaries for each chunk
     summaries = []
     len_chunk=len(chunks)
@@ -31,7 +34,8 @@ def summary(text):
             summaries.append(summary[0]['summary_text']+"\n\n")
             print(summary[0]['summary_text'])
             print("\n \n STATUS:"+str(i+1)+"/"+str(len_chunk))
-            print("\n \n COMPLETED:"+str((i+1)/len_chunk*100)+"%")
+            progress = (i+1)/len_chunk*100
+            print("\n \n COMPLETED:"+str(progress)+"%")
         except Exception as e:
             print(f"An error occurred while summarizing chunk {i}: {str(e)}")
             exceptions = "\n".join(f"An error occurred while summarizing chunk {i}: {str(e)}")
@@ -68,4 +72,7 @@ async def get_summary(file: UploadFile = File(...)):
     data = await gen_summary(file)
     return data
 
-
+@router_summariser.get("/summary-gen-progress")
+def get_summary_progress():
+    global progress
+    return {"status" : progress }
