@@ -6,6 +6,7 @@ python:
 script:
   - echo "Running tests..."
   - pip install requests
+  - pip install urllib3
   - python update_readme.py
 
 # This section is important for badge generation
