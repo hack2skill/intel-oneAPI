@@ -37,9 +37,13 @@ To run the Tutor AI application, follow these steps:
    .\<your_name>_venv\Scripts\activate
 ```
 5. Install the required dependencies by running the following command:
-    pip install -r <person>_requirements.txt  #example angelo_requirements.txt
+```bash
+   pip install -r <person>_requirements.txt  #example angelo_requirements.txt
+```
 6. Once the dependencies are installed, you can start the application by running the following command:
-    uvicorn main:app --reload
+```bash
+   uvicorn main:app --reload
+```
 7. The application will start running locally on your machine.
 8. Access the application by opening a web browser and navigating to 
     `http://localhost:8000`.
