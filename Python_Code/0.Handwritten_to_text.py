@@ -26,7 +26,7 @@ substring_to_remove = "Scanned by CamScanner"
 
 for i in range(1):
     pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
-    output_folder = f'images/Notes_images'
+    output_folder = f'images/Notes_images/module_{i+1}'
     
     # Convert the PDF to images and save them in the output folder
     image_paths, noImg = pdf_to_images(pdf_path, output_folder)

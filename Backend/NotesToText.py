@@ -1,5 +1,7 @@
+import os
 from fastapi import APIRouter
-
+from pdf2image import convert_from_path
+from google.cloud import vision
 
 # Create an instance of APIRouter
 router = APIRouter()
@@ -22,21 +24,17 @@ def pdf_to_images(pdf_path, output_folder):
         
     return image_paths,noImg
 
-
-
-
-substring_to_remove = "Scanned by CamScanner"
-
 @router.get("/NotesToText")
 def NotesToText_handler():
-    for i in range(1):
+    substring_to_remove = "Scanned by CamScanner"
+    for i in range(4):
         print(f"converting module-{i+1}....")
         pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
-        output_folder = f'images/Notes_images'
+        output_folder = f'images/Notes_images/module_{i+1}'
         
         # Convert the PDF to images and save them in the output folder
         image_paths, noImg = pdf_to_images(pdf_path, output_folder)
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'Files\Client_file_vision.json'
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'Files/client_file_vision.json'
         client = vision.ImageAnnotatorClient()
 
         # [START vision_python_migration_text_detection]
@@ -53,13 +51,14 @@ def NotesToText_handler():
                 image_contents += text.replace(substring_to_remove, "")
 
 
-        output_file = f"Local_Storage/notes_txt/module{i+1}.txt"
+        output_file = f"Local_Storage/notes_txt/module_{i+1}.txt"
     #    Write the text content to the output file
         with open(output_file, "w") as file:
             file.write(image_contents)
-            
+            print(f"module-{i+1} completed")
+              
         if response.error.message:
-        raise Exception(
+            raise Exception(
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
