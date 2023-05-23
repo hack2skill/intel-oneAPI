@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
+import icon from '../assets/logof3.svg';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,13 +17,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white pt-3">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto sm:px-4 lg:px-8">
         <div className="flex justify-between h-8">
           <div className="flex-shrink-0 flex items-center">
-            <img src='./logo1.png' alt="IEEE Icon" className="h-9 mt-2"/>
+            <img src={icon} alt="IEEE Icon" className="h-14"/>
           </div>
           <div className="hidden md:block">
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 text-violet-900 font-medium">
               <Link
                 to="/"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
