@@ -6,7 +6,7 @@ python:
 script:
   - echo "Running tests..."
   - pip install -r angelo_requirements.txt
-  - uvicorn main:app --reload
+  - python update_readme.py
 
 # This section is important for badge generation
 before_deploy:
