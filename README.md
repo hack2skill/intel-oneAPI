@@ -50,11 +50,3 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 
 
-Note: Make sure to adjust the necessary configurations and settings according to your requirements before running the application.
-
-Enjoy using Tutor AI and elevate your learning experience!
-
-## Contact
-For any inquiries or feedback, please reach out to the team leader at angeloantu@gmail.com.
-
-Team Byte404 - Open Innovation in Education
