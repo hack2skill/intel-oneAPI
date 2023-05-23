@@ -58,15 +58,15 @@ def api4_handler():
 
 
     # Save topics to topics.txt
-    with open('Files\generated_files\\topic_list.txt', 'w', encoding='utf-8') as file:
+    with open('Local_Storage/generated_files/topic_list.txt', 'w', encoding='utf-8') as file:
         file.write(topic_text)
 
     # Save important topics to imp_topics.txt
-    with open('Files\generated_files\imp_topic_list.txt', 'w', encoding='utf-8') as file:
+    with open('Files/generated_files/imp_topic_list.txt', 'w', encoding='utf-8') as file:
         file.write(imp_topic_text)
 
     # Save questions to questions.txt
-    with open('D:\SRM HACK\SRM-HACK\Files\generated_files\\notes_questions_list.txt', 'w', encoding='utf-8') as file:
+    with open('SRM HACK\SRM-HACK\Files\generated_files\\notes_questions_list.txt', 'w', encoding='utf-8') as file:
         file.write(questions_text)
 
     print("Topics saved to 'topics.txt'.")
