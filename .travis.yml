@@ -13,8 +13,3 @@ script:
 before_deploy:
   - git fetch --unshallow
 
-deploy:
-  provider: script
-  script: echo "Deploying..."
-  on:
-    branch: main
