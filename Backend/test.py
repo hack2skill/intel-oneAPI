@@ -70,15 +70,15 @@ async def gen_summary(file):
 
 
 
-app = FastAPI()
+# app = FastAPI()
 
 
 router_summariser = APIRouter()
-router_test = APIRouter()
+# router_test = APIRouter()
 
-@router_test.get("/")
-def read_root():
-    return {"Hello": "World"}
+# @router_test.get("/")
+# def read_root():
+#     return {"Hello": "World"}
 
 
 @router_summariser.post("/get-summary")
