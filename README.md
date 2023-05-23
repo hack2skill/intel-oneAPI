@@ -57,5 +57,13 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 ## Completed tasks
 
+#### Get all items
 
+```http
+  Angelo Antu
+```
+
+| Task | Type     | File Location                |Input                | Output              |
+| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+| `Pyqsorter` | `API` |  `Backend\pyqsorter.py`  |  `Local_Storage/pyqs_text`,`Local_Storage/syllabus.txt`               |       `Local_Storage/Generated_Files/cluster_questions.txt`         | 
 
