@@ -5,6 +5,7 @@ python:
 # Customize this script to match your requirements
 script:
   - echo "Running tests..."
+  - pip install -r angelo_requirements.txt
   - uvicorn main:app --reload
 
 # This section is important for badge generation
