@@ -27,40 +27,42 @@ def pdf_to_images(pdf_path, output_folder):
 
 substring_to_remove = "Scanned by CamScanner"
 
-for i in range(1):
-    pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
-    output_folder = f'images/Notes_images'
-    
-    # Convert the PDF to images and save them in the output folder
-    image_paths, noImg = pdf_to_images(pdf_path, output_folder)
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'Files\Client_file_vision.json'
-    client = vision.ImageAnnotatorClient()
+@router.get("/NotesToText")
+def NotesToText_handler():
+    for i in range(1):
+        print(f"converting module-{i+1}....")
+        pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
+        output_folder = f'images/Notes_images'
+        
+        # Convert the PDF to images and save them in the output folder
+        image_paths, noImg = pdf_to_images(pdf_path, output_folder)
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'Files\Client_file_vision.json'
+        client = vision.ImageAnnotatorClient()
 
-    # [START vision_python_migration_text_detection]
-    image_contents = " "
+        # [START vision_python_migration_text_detection]
+        image_contents = " "
 
-    for j in range(noImg):
-        image_path = f'images/Notes_images/Module_{i+1}/page_{j+1}.jpeg'   
-        with open(image_path, 'rb') as image_file:
-            content = image_file.read()
-            image = vision.Image(content=content)
-            response = client.text_detection(image=image)
-            texts = response.text_annotations[0]
-            text = str(texts.description)
-            image_contents += text.replace(substring_to_remove, "")
+        for j in range(noImg):
+            image_path = f'images/Notes_images/Module_{i+1}/page_{j+1}.jpeg'   
+            with open(image_path, 'rb') as image_file:
+                content = image_file.read()
+                image = vision.Image(content=content)
+                response = client.text_detection(image=image)
+                texts = response.text_annotations[0]
+                text = str(texts.description)
+                image_contents += text.replace(substring_to_remove, "")
 
 
-    output_file = f"Local_Storage/notes_txt/module{i+1}.txt"
-
-#    Write the text content to the output file
-    with open(output_file, "w") as file:
-        file.write(image_contents)
-
-    if response.error.message:
-     raise Exception(
-        '{}\nFor more info on error messages, check: '
-        'https://cloud.google.com/apis/design/errors'.format(
-            response.error.message))
+        output_file = f"Local_Storage/notes_txt/module{i+1}.txt"
+    #    Write the text content to the output file
+        with open(output_file, "w") as file:
+            file.write(image_contents)
+            
+        if response.error.message:
+        raise Exception(
+            '{}\nFor more info on error messages, check: '
+            'https://cloud.google.com/apis/design/errors'.format(
+                response.error.message))
 
 
 
