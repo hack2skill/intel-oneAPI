@@ -34,6 +34,7 @@ def NotesToText_handler():
         
         # Convert the PDF to images and save them in the output folder
         image_paths, noImg = pdf_to_images(pdf_path, output_folder)
+        print(noImg)
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'Files/client_file_vision.json'
         client = vision.ImageAnnotatorClient()
 
@@ -57,11 +58,11 @@ def NotesToText_handler():
             file.write(image_contents)
             print(f"module-{i+1} completed")
               
-        if response.error.message:
-            raise Exception(
-            '{}\nFor more info on error messages, check: '
-            'https://cloud.google.com/apis/design/errors'.format(
-                response.error.message))
+    if response.error.message:
+        raise Exception(
+        '{}\nFor more info on error messages, check: '
+        'https://cloud.google.com/apis/design/errors'.format(
+            response.error.message))
 
 
 
