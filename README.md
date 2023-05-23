@@ -30,20 +30,25 @@ Discover the future of education with Tutor AI and unlock your full learning pot
 ## How to Run the Application
 To run the Tutor AI application, follow these steps:
 
-1. Ensure that you have Python installed on your system.
-2. Clone this GitHub repository to your local machine.
-3. Navigate to the project directory.
-4. Set up a virtual environment (recommended) and activate it.
-5. Install the required dependencies by running the following command: pip install -r requirements.txt
+
+1. Set up a virtual environment (recommended) and activate it.
+```bash
+   virtualenv <your_name>_venv 
+   .\<your_name>_venv\Scripts\activate
+```
+5. Install the required dependencies by running the following command:
+    pip install -r <person>_requirements.txt  #example angelo_requirements.txt
 6. Once the dependencies are installed, you can start the application by running the following command:
+    uvicorn main:app --reload
 7. The application will start running locally on your machine.
-8. Access the application by opening a web browser and navigating to `http://localhost:8000`.
+8. Access the application by opening a web browser and navigating to 
+    `http://localhost:8000`.
 
-Note: Make sure to adjust the necessary configurations and settings according to your requirements before running the application.
+## API Calls ready
 
-Enjoy using Tutor AI and elevate your learning experience!
+Pyqsorter (takes pyqs text files and syllabus text files from Local Storage and saves output to Generated_files as cluster_question.txt) : `http://localhost:8000/api1`
 
-## Contact
-For any inquiries or feedback, please reach out to the team leader at angeloantu@gmail.com.
+Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_Ouput) : `http://localhost:8000/api4`
 
-Team Byte404 - Open Innovation in Education
+
+
