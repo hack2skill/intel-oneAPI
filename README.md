@@ -32,8 +32,10 @@ To run the Tutor AI application, follow these steps:
 
 
 1. Set up a virtual environment (recommended) and activate it.
+```bash
    virtualenv <your_name>_venv 
    .\<your_name>_venv\Scripts\activate
+```
 5. Install the required dependencies by running the following command:
     pip install -r <person>_requirements.txt  #example angelo_requirements.txt
 6. Once the dependencies are installed, you can start the application by running the following command:
