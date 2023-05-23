@@ -24,7 +24,7 @@ def pdf_to_images(pdf_path, output_folder):
 
 substring_to_remove = "Scanned by CamScanner"
 
-for i in range(4):
+for i in range(1):
     pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
     output_folder = f'images/Notes_images'
     
