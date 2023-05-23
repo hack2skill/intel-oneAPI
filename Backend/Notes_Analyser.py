@@ -58,7 +58,7 @@ def api4_handler():
 
 
     # Save topics to topics.txt
-    with open('Local_Storage/generated_files/topic_list.txt', 'w', encoding='utf-8') as file:
+    with open('Local_Storage/Generated_Files/topic_list.txt', 'w', encoding='utf-8') as file:
         file.write(topic_text)
 
     # Save important topics to imp_topics.txt
