@@ -5,12 +5,11 @@ from bs4 import BeautifulSoup
 import os,shutil
 from urllib.parse import urlparse, urljoin
 
-openai.api_key = "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"
+openai.api_key = "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"
 # Create an instance of APIRouter
 router = APIRouter()
 
 
-openai.api_key = "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"
 
 # Process each paragraph and search for related images
 def process_paragraphs(paragraphs):
@@ -98,7 +97,7 @@ def api5_handler():
 
     print(narrate)
     # Save topics to topics.txt
-    with open('Files\generated_files\\narration.txt', 'w', encoding='utf-8') as file:
+    with open('Local_Storage/Generated_Files/Narrator_Output/m1.txt', 'w', encoding='utf-8') as file:
         file.write(narrate)
 
     image_name=extract_image_name(narrate)
@@ -116,7 +115,7 @@ def api5_handler():
     os.chdir("..")
 
     while(True):
-        with open('Files\generated_files\\response.txt', 'r',encoding='utf-8') as file:
+        with open('Local_Storage/Generated_Files/response.txt', 'r',encoding='utf-8') as file:
             content = file.read()
         if len(content)==0:
             continue
@@ -125,10 +124,10 @@ def api5_handler():
                 break
             if content[0]==".":
                 narrate = extract_important_topics(content)
-                with open('Files\generated_files\\narration.txt', 'w', encoding='utf-8') as file:
+                with open('Local_Storage/Generated_Files/narration.txt', 'w', encoding='utf-8') as file:
                     file.write(narrate)
                 print(narrate)
-                with open('Files\generated_files\\response.txt', 'w') as file:
+                with open('Local_Storage/Generated_Files/response.txt', 'w') as file:
                     # Truncate the file to remove its contents
                     file.truncate()
                 shutil.rmtree("images")
