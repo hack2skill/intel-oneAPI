@@ -1,8 +1,13 @@
 import React from 'react'
+import Navbar from './Navbar'
+import Hero from './Hero'
 
 function Landingpage() {
   return (
-    <div>Landingpage</div>
+    <div>
+      <Navbar/>
+      <Hero/>
+    </div>
   )
 }
 

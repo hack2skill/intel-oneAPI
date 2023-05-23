@@ -19,6 +19,7 @@ function App() {
           <Route path="/uploadnotes" element={<UploadNotes/>} />
           <Route path="/Navbar" element={<Navbar/>} />
           <Route path="/Anav" element={<Anav/>} />
+          <Route path="/landing" element={<Landingpage/>} />
         </Routes>
       </BrowserRouter>
     </div>
