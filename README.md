@@ -63,3 +63,7 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 
 https://img.shields.io/github/commit-activity/m/ANGELOANTU7/intel-hack.svg
+## Commit Statistics
+
+
+```
