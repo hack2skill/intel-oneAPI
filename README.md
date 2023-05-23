@@ -31,7 +31,6 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 | :-------- | :------- |  :------------------------- | :-------------------------| :-------------------------| :------------------------- |:------------------------- |:------------------------- |
 | `QuestionPaperGenerator` | `API` |  generate atleast 5 question paper , following format of PYQS  |    Heyron         |   23/5/2023 12:00PM         |  6 hour         |you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         |                         
 | `NotesToText` | `API` |  it should convert all pdfs in notes_pdf and pyqs_text folder to text   |  Sameer         | 23/5/2023  9:00AM          |  12hour         |  `Local_Storage\notes_txt`,`Local_Storage\pyqs_text`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
-| `NotesSummariser` | `API` |  it should summarise all notes.txt   |  Heyron         | 23/5/2023 9:00AM          |  12 hour         |  `Local_Storage\notes_txt`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
 | `Uploading` | `WEB` |  we should be able to upload notes(module wise),pyqs,and syllabus into respective folder    |  Harshed         | 23/5/2023 3:00PM          |  6 hour         |  files from user            |       `Local_Storage\notes_pdf`,`Local_Storage\syllabus_pdf`,`Local_Storage\pyqs_pdf`         | 
 | `Entering Details` | `WEB` |  after uploading ask how many modules,anything else he want to tell AI while preparing everything    |  Harshed         | 23/5/2023 3:00PM          |  6 hour         |  response from user as text            |       `Local_Storage\User_info` as text file         | 
 
@@ -47,6 +46,7 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 | Task | Type     | File Location                |Input                | Output              |
 | :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+| `NotesSummariser` | `API` |  `Backend\summariser.py`  |  `Local_Storage\notes_txt`               |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
 
 #### Abdulla Sameer
 
@@ -62,10 +62,3 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 
 
-https://img.shields.io/github/commit-activity/m/ANGELOANTU7/intel-hack.svg
-## Commit Statistics
-
-
-
-
-```
