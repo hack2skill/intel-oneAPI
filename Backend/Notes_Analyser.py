@@ -66,7 +66,7 @@ def api4_handler():
         file.write(imp_topic_text)
 
     # Save questions to questions.txt
-    with open('SRM HACK\SRM-HACK\Files\generated_files\\notes_questions_list.txt', 'w', encoding='utf-8') as file:
+    with open('Local_Storage/Generated_Files/notes_questions_list.txt', 'w', encoding='utf-8') as file:
         file.write(questions_text)
 
     print("Topics saved to 'topics.txt'.")
