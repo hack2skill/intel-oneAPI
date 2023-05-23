@@ -62,4 +62,4 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 | Task | Type     | File Location                |Input                | Output              |
 | :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
 | `Pyqsorter` | `API` |  `Backend\pyqsorter.py`  |  `Local_Storage/pyqs_text`,`Local_Storage/syllabus.txt`               |       `Local_Storage/Generated_Files/cluster_questions.txt`         | 
-
+| `Notes_Analyser` | `API` |  `Backend\Notes_Analyser.py`  |  `Local_Storage/Generated_Files/gpt_promt_sum/module2.txt`           |       `Local_Storage/Generated_Files/Notes_Analyser_Ouput_files/topic_list.txt`,`Local_Storage/Generated_Files/Notes_Analyser_Ouput_files/imp_topic_list.txt`,`Local_Storage/Generated_Files/Notes_Analyser_Ouput_files/notes_questions_list.txt`         | 
