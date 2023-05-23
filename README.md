@@ -29,7 +29,7 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 | Task | Type     | Discription                |Input                | Output Expected              |
 | :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
-| `Pyqsorter` | `API` |  generate atleast 5 question paper , following format of PYQS  |  you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         | 
+| `QuestionPaperGenerator` | `API` |  generate atleast 5 question paper , following format of PYQS  |  you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         | 
 
 ## Completed tasks
 
