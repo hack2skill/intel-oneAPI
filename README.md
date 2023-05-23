@@ -57,6 +57,21 @@ Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_
 
 ## Completed tasks
 
+#### Harshed Abdulla
+
+| Task | Type     | File Location                |Input                | Output              |
+| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+
+#### Heyron J Milton
+
+| Task | Type     | File Location                |Input                | Output              |
+| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+
+#### Abdulla Sameer
+
+| Task | Type     | File Location                |Input                | Output              |
+| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+
 #### Angelo Antu
 
 | Task | Type     | File Location                |Input                | Output              |
