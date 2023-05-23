@@ -6,7 +6,7 @@ owner = "ANGELOANTU7"  # Replace with your GitHub username
 repo = "intel-hack"  # Replace with your repository name
 
 headers = {
-    "Authorization": "Bearer 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",  # Replace with your GitHub access token
+    "Authorization": "Bearer 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",  # Replace with your GitHub access token
     "Accept": "application/vnd.github.v3+json"
 }
 

@@ -5,7 +5,6 @@ python:
 # Customize this script to match your requirements
 script:
   - echo "Running tests..."
-  - pip install -r angelo_requirements.txt
   - python update_readme.py
 
 # This section is important for badge generation
