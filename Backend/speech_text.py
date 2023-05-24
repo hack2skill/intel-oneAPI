@@ -13,17 +13,10 @@ speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config)
 
 def speech_to_text(audio_file):
     audio_config = speechsdk.audio.AudioConfig(filename=audio_file)
-    push_stream = speechsdk.audio.PushAudioInputStream()
+    speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
-    with open(audio_file, "rb") as file:
-        data = file.read()
-        push_stream.write(data)
-
-    push_stream.close()
-
-    speech_recognizer.set_input(push_stream)
     result = speech_recognizer.recognize_once()
-
+    
     if result.reason == speechsdk.ResultReason.RecognizedSpeech:
         transcript = result.text
     else:
