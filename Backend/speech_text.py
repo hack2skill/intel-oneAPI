@@ -1,4 +1,4 @@
-#Build by Byte404 intelOne-API Hackath
+#Build by Byte404 intelOne-API Hackathon
 import os
 import azure.cognitiveservices.speech as speechsdk
 from fastapi import UploadFile, APIRouter
