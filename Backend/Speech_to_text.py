@@ -5,7 +5,7 @@ from fastapi import FastAPI, UploadFile
 app = FastAPI()
 
 speech_key = "a80a0c046ff54e0c8e750f8631f06a18"
-service_region = "<Your Azure Speech Region>"
+service_region = "eastus"
 
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config)
