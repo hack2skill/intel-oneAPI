@@ -5,7 +5,7 @@ from fastapi import UploadFile, APIRouter
 # Create an instance of APIRouter
 router = APIRouter()
 
-speech_key = "YOUR_SPEECH_KEY"
+speech_key = "a80a0c046ff54e0c8e750f8631f06a18"
 service_region = "YOUR_SERVICE_REGION"
 
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
