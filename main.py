@@ -4,7 +4,7 @@ from fastapi import FastAPI
 #from Backend.pyqsorter import router as api1_router
 #from Backend.summariser import router_summariser as summariser
 #from Backend.Notes_Analyser import router as api4_router
-from Backend.Speech_to_text import app as api5_router
+from Backend.speech_text import app as api5_router
 
 # import other API routers as needed
 
