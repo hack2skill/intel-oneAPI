@@ -23,7 +23,7 @@ def speech_to_text(audio_file):
 
     return transcript
 
-@router.post("/speech-to-text")
+@router.post("/api5")
 async def convert_speech_to_text(file: UploadFile):
     file_path = f"audio_files/{file.filename}"
     os.makedirs("audio_files", exist_ok=True)
