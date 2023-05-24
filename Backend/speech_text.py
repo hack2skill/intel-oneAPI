@@ -1,3 +1,4 @@
+#Build by Byte404 intelOne-API Hackath
 import os
 import azure.cognitiveservices.speech as speechsdk
 from fastapi import UploadFile, APIRouter
@@ -5,6 +6,7 @@ from fastapi import UploadFile, APIRouter
 # Create an instance of APIRouter
 router = APIRouter()
 
+#student account
 speech_key = "a80a0c046ff54e0c8e750f8631f06a18"
 service_region = "eastus"
 
