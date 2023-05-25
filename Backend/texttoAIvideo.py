@@ -1,12 +1,19 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, FastAPI
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
+app = FastAPI()
 
 @router.get('/api6')
-async def get_text_from_user(request: Request):
-    request_body = await request.json()
-    user_input = request_body.get("input_text", "")
-    file_text = user_input[:200]  # Read the first 200 characters from the user input
-
+async def get_text_from_file():
+    with open('input.txt', 'r') as file:
+        file_text = file.read(200)
     return JSONResponse(content={"blendData": file_text})
+
+@router.post('/api7')
+async def write_text_to_file(text: str):
+    with open('input.txt', 'w') as file:
+        file.write(text)
+    return JSONResponse(content={"message": "Text successfully written to input.txt"})
+
+app.include_router(router)
