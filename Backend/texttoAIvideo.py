@@ -6,7 +6,7 @@ app = FastAPI()
 
 @router.get('/api6')
 async def get_text_from_file():
-    with open('input.txt', 'r') as file:
+    with open('Local_Storage/Generated_Files/narration.txt', 'r') as file:
         file_text = file.read(200)
     return JSONResponse(content={"blendData": file_text})
 

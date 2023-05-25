@@ -88,16 +88,16 @@ def extract_image_name(questions):
     return important_topics
 
 
-@router.get("/api5")
-async def process_message(message: str):
+@router.get("/narrator")
+async def process_message():
     print("Giving promt to OPENAI...")
-    file_path = 'Local_Storage/Generated_Files/Summarised_Notes/module1_summarized.txt'
+    file_path = 'Local_Storage\Generated_Files\gpt_promt_sum\module2.txt'
     extracted_text = extract_text_from_file(file_path)
     narrate = extract_important_topics(extracted_text)
 
     print(narrate)
     # Save topics to topics.txt
-    with open('Local_Storage/Generated_Files/Narrator_Output/m1.txt', 'w', encoding='utf-8') as file:
+    with open('Local_Storage/Generated_Files/narration.txt', 'w', encoding='utf-8') as file:
         file.write(narrate)
 
     image_name=extract_image_name(narrate)
@@ -116,26 +116,35 @@ async def process_message(message: str):
 
 
     
-    narrate = extract_important_topics(message)
-    with open('Local_Storage/Generated_Files/narration.txt', 'w', encoding='utf-8') as file:
-        file.write(narrate)
-    print(narrate)
-    with open('Local_Storage/Generated_Files/response.txt', 'w') as file:
-        # Truncate the file to remove its contents
-        file.truncate()
-    shutil.rmtree("images")
+    while(True):
+        with open('Local_Storage/Generated_Files/response.txt', 'r',encoding='utf-8') as file:
+            content = file.read()
+        if len(content)==0:
+            continue
+        else:
+            if content == "understood":
+                break
+            if content[0]==".":
+                narrate = extract_important_topics(content)
+                with open('Local_Storage/Generated_Files/narration.txt', 'w', encoding='utf-8') as file:
+                    file.write(narrate)
+                print(narrate)
+                with open('Local_Storage/Generated_Files/response.txt', 'w') as file:
+                    # Truncate the file to remove its contents
+                    file.truncate()
+                shutil.rmtree("images")
 
 
-    image_name=extract_image_name(narrate)
-    image_list = image_name.splitlines()
+                image_name=extract_image_name(narrate)
+                image_list = image_name.splitlines()
 
-    # Create a directory to store the images
-    os.makedirs("images", exist_ok=True)
-    os.chdir("images")
+                # Create a directory to store the images
+                os.makedirs("images", exist_ok=True)
+                os.chdir("images")
 
-    # Process the paragraphs and search for related images
-    print(image_list)
-    process_paragraphs(image_list)
+                # Process the paragraphs and search for related images
+                print(image_list)
+                process_paragraphs(image_list)
 
-    # Return to the parent directory
-    os.chdir("..")
+                # Return to the parent directory
+                os.chdir("..")
