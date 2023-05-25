@@ -3,12 +3,11 @@ import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import animationData from '../assets/95241-uploading.json';
 
-function UploadNotes({ moduleNumber }) {
+function Uploadmn1({ moduleNumber }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [fadeOut, setFadeOut] = useState(false); // New state to control fading out
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -36,7 +35,6 @@ function UploadNotes({ moduleNumber }) {
           setShowSuccessMessage(true);
           setTimeout(() => {
             setShowSuccessMessage(false);
-            setFadeOut(true); // Set fadeOut state to true after the success message
           }, 10000); // Set timeout for 10 seconds
         })
         .catch((error) => {
@@ -68,58 +66,56 @@ function UploadNotes({ moduleNumber }) {
 
   return (
     <div className="flex flex-col items-center justify-center text-center">
-      {!fadeOut && ( // Render the component if fadeOut state is false
-        <motion.div
-          className="bg-blue-500 text-white py-6 px-6 rounded-lg shadow-lg"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Lottie animationData={animationData} style={{ width: 400, height: 300 }} />
-          <h1 className="text-3xl font-bold mb-4">Upload Notes - Module {moduleNumber}</h1>
-          {!uploadSuccess ? (
-            <>
-              <input
-                type="file"
-                accept="application/pdf"
-                className="mb-4"
-                onChange={handleFileChange}
-              />
-              <motion.button
-                className={`bg-green-500 text-white py-2 px-6 rounded-lg ${
-                  uploading ? 'opacity-50 cursor-not-allowed' : ''
-                }`}
-                disabled={uploading || !selectedFile}
-                onClick={handleUpload}
-                whileHover={!uploading ? { scale: 1.05 } : {}}
-                whileTap={!uploading ? { scale: 0.95 } : {}}
+      <motion.div
+        className="bg-blue-500 text-white py-6 px-6 rounded-lg shadow-lg"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Lottie animationData={animationData} style={{ width: 400, height: 300 }} />
+        <h1 className="text-3xl font-bold mb-4">Upload Notes - Module {moduleNumber}</h1>
+        {!uploadSuccess ? (
+          <>
+            <input
+              type="file"
+              accept="application/pdf"
+              className="mb-4"
+              onChange={handleFileChange}
+            />
+            <motion.button
+              className={`bg-green-500 text-white py-2 px-6 rounded-lg ${
+                uploading ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+              disabled={uploading || !selectedFile}
+              onClick={handleUpload}
+              whileHover={!uploading ? { scale: 1.05 } : {}}
+              whileTap={!uploading ? { scale: 0.95 } : {}}
+            >
+              {uploading ? 'Uploaded' : 'Upload'}
+            </motion.button>
+          </>
+        ) : (
+          <>
+            {showSuccessMessage ? (
+              <motion.div
+                className="text-xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
               >
-                {uploading ? 'Uploaded' : 'Upload'}
-              </motion.button>
-            </>
-          ) : (
-            <>
-              {showSuccessMessage ? (
-                <motion.div
-                  className="text-xl"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  Successfully Uploaded!
-                </motion.div>
-              ) : null}
-              <motion.button
-                className="bg-green-500 text-white py-2 px-6 rounded-lg mt-4"
-                onClick={() => setUploadSuccess(false)}
-              >
-                Upload Again
-              </motion.button>
-            </>
-          )}
-        </motion.div>
-      )}
+                Successfully Uploaded!
+              </motion.div>
+            ) : null}
+            <motion.button
+              className="bg-green-500 text-white py-2 px-6 rounded-lg mt-4"
+              onClick={() => setUploadSuccess(false)}
+            >
+              Upload Again
+            </motion.button>
+          </>
+        )}
+      </motion.div>
     </div>
   );
 }
 
-export default UploadNotes;
+export default Uploadmn1;

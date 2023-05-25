@@ -20,6 +20,7 @@
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-file-upload": "^0.0.4",
     "react-router-dom": "^6.11.2",
     "reactstrap": "^9.1.10",
     "recharts": "^2.6.2"

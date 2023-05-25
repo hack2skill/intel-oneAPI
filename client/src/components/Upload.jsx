@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import UploadNotes from './UploadNotes';
+import UploadPYQ from './Uploadpyq';
+import UploadSyllabus from './Uploadsyllabus';
 
 function Upload() {
   const [numModules, setNumModules] = useState(0);
   const [numPYQs, setNumPYQs] = useState(0);
+  const [activeComponent, setActiveComponent] = useState(null);
 
   const handleModuleUpload = (moduleNumber) => {
-    // Handle module upload logic here
-    console.log(`Upload module ${moduleNumber} PDF`);
+    setActiveComponent(() => <UploadNotes moduleNumber={moduleNumber} />);
   };
-
+  
   const handlePYQUpload = (pyqNumber) => {
     // Handle PYQ upload logic here
-    console.log(`Upload PYQ ${pyqNumber} PDF`);
+    setActiveComponent(<UploadPYQ pyqNumber={pyqNumber} />);
   };
 
   const handleSyllabusUpload = () => {
     // Handle syllabus upload logic here
-    console.log('Upload syllabus');
+    setActiveComponent(<UploadSyllabus />);
   };
 
   const handleNumModulesChange = (event) => {
@@ -30,37 +32,34 @@ function Upload() {
 
   const renderModuleUploadButtons = () => {
     const buttons = [];
-
+  
     for (let i = 1; i <= numModules; i++) {
       buttons.push(
         <div key={`module-${i}`}>
           <label>Upload Module {i} PDF:</label>
-          <Link to="/uploadnotes">
-            <button onClick={() => handleModuleUpload(i)}>Upload</button>
-          </Link>
+          <button onClick={() => handleModuleUpload(i)}>Upload</button>
         </div>
       );
     }
-
+  
     return buttons;
   };
-
+  
   const renderPYQUploadButtons = () => {
     const buttons = [];
-
+  
     for (let i = 1; i <= numPYQs; i++) {
       buttons.push(
         <div key={`pyq-${i}`}>
           <label>Upload PYQ {i} PDF:</label>
-          <Link to="/uploadsyllabus">
-            <button onClick={() => handlePYQUpload(i)}>Upload</button>
-          </Link>
+          <button onClick={() => handlePYQUpload(i)}>Upload</button>
         </div>
       );
     }
-
+  
     return buttons;
   };
+  
 
   return (
     <div>
@@ -89,9 +88,17 @@ function Upload() {
       <h2>Upload Syllabus</h2>
       <div>
         <label>Upload Syllabus PDF:</label>
-        <Link to="/uploadsyllabus">
-          <button onClick={handleSyllabusUpload}>Upload</button>
-        </Link>
+        <button onClick={handleSyllabusUpload}>Upload</button>
+      </div>
+
+      <div className="upload-container">
+        <div className="left-side">
+          {/* Display the active component on the left side */}
+          {activeComponent}
+        </div>
+        <div className="right-side">
+          {/* You can place any other content or components on the right side */}
+        </div>
       </div>
     </div>
   );
