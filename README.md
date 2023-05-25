@@ -1,8 +1,8 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - Ai Artistss
+#### Problem Statement - Object Detection For Autonomous Vehicles
+#### Team Leader Email - riddhishwar.s2020@vitstudent.ac.in
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
