@@ -11,7 +11,9 @@ import About from "./components/About";
 import Team from "./components/Team";
 import Studyplanner from "./components/Studyplanner";
 import Features from "./components/Features";
-
+import Upload from "./components/Upload";
+import Uploadpyq from "./components/Uploadpyq";
+import Uploadsyllabus from "./components/Uploadsyllabus";
 function App() {
   return (
     <div className="container">
@@ -29,7 +31,9 @@ function App() {
           <Route path="/studyplanner" element={<Studyplanner/>} />
           <Route path="/features" element={<Features/>} />
           <Route path="/login" element={<Login/>} />
-          
+          <Route path="/upload" element={<Upload/>} />
+          <Route path="/uploadpyq" element={<Uploadpyq/>} />
+          <Route path="/uploadsyllabus" element={<Uploadsyllabus/>} />
         </Routes>
       </BrowserRouter>
     </div>
