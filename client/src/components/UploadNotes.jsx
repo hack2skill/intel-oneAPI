@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Lotte from 'lottie-react';
 import animationData from '../assets/95241-uploading.json';
+
 function UploadNotes() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -11,55 +12,67 @@ function UploadNotes() {
     setSelectedFile(event.target.files[0]);
   };
 
-  const handleUpload = async () => {
+  const handleUpload = () => {
     if (!selectedFile) {
       return;
     }
-
+  
     setUploading(true);
-
-    // Generate a pre-signed URL for file upload
-    const url = await getPresignedUrl(selectedFile.name, selectedFile.type);
-
-    try {
-      // Use the generated URL to upload the file directly to S3
-      await uploadFile(url, selectedFile);
-      setUploadSuccess(true);
-    } catch (error) {
-      console.error('Error uploading file:', error);
-    }
-
-    setUploading(false);
+  
+    const reader = new FileReader();
+  
+    reader.onload = () => {
+      // Get the file contents
+      const fileContents = reader.result;
+  
+      // Create a Blob from the file contents
+      const blob = new Blob([fileContents], { type: selectedFile.type });
+  
+      // Create a file path within the Local_Storage/notes_pdf folder
+      const filePath = `Local_Storage/notes_pdf/${selectedFile.name}`;
+  
+      // Save the file locally
+      saveFileLocally(filePath, blob)
+        .then(() => {
+          setUploadSuccess(true);
+          setUploading(false);
+        })
+        .catch((error) => {
+          console.error('Error saving file:', error);
+        });
+    };
+  
+    reader.readAsArrayBuffer(selectedFile);
   };
-
-  // Function to generate a pre-signed URL for file upload
-  const getPresignedUrl = async (filename, filetype) => {
-    const response = await fetch(`/api/get-upload-url?filename=${filename}&filetype=${filetype}`);
-    const data = await response.json();
-    return data.url;
-  };
-
-  // Function to upload the file to the generated URL
-  const uploadFile = async (url, file) => {
-    await fetch(url, {
-      method: 'PUT',
-      body: file,
-      headers: {
-        'Content-Type': file.type,
-      },
+  
+  const saveFileLocally = (filePath, file) => {
+    return new Promise((resolve, reject) => {
+      const virtualLink = document.createElement('a');
+      virtualLink.href = URL.createObjectURL(file);
+      virtualLink.download = filePath;
+      virtualLink.addEventListener('load', () => {
+        URL.revokeObjectURL(virtualLink.href);
+        resolve();
+      });
+      virtualLink.addEventListener('error', (error) => {
+        reject(error);
+      });
+      document.body.appendChild(virtualLink);
+      virtualLink.click();
+      document.body.removeChild(virtualLink);
     });
   };
+  
 
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center">
-      
       <motion.div
         className="bg-blue-500 text-white py-6 px-6 rounded-lg shadow-lg"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Lotte animationData={animationData} style={{width: 400, height: 300}}/>
+        <Lotte animationData={animationData} style={{ width: 400, height: 300 }} />
         <h1 className="text-3xl font-bold mb-4">Upload Notes</h1>
         {!uploadSuccess ? (
           <>
