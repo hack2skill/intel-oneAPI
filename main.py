@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 #from Backend.pyqsorter import router as api1_router
 #from Backend.summariser import router_summariser as summariser
@@ -8,9 +9,22 @@ from Backend.Notes_Analyser import router as api4_router
 from Backend.texttoAIvideo import router as api6_router
 # import other API routers as needed
 
+origins = [
+    "http://localhost:3000",
+    "https://localhost:5000",
+]
+
+
 app = FastAPI()
 
-
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Replace with your frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Mount the API routerss
 #app.include_router(api1_router)
