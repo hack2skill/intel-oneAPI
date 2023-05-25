@@ -9,10 +9,7 @@ from Backend.Notes_Analyser import router as api4_router
 from Backend.texttoAIvideo import router as api6_router
 # import other API routers as needed
 
-origins = [
-    "http://localhost:3000",
-    "https://localhost:5000",
-]
+origins = ["*"]
 
 
 app = FastAPI()
