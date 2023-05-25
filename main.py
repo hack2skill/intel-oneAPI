@@ -5,7 +5,7 @@ from fastapi import FastAPI
 #from Backend.summariser import router_summariser as summariser
 from Backend.Notes_Analyser import router as api4_router
 #from Backend.speech_text import router as api5_router
-from Backend.texttoAIvideo import app as api6_router
+from Backend.texttoAIvideo import router as api6_router
 # import other API routers as needed
 
 app = FastAPI()

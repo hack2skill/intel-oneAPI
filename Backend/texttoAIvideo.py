@@ -1,13 +1,16 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 
-app = FastAPI()
+router = APIRouter()
 
-@app.get('/api6')
+@router.get('/api6')
 async def get_text_from_file():
     with open('input.txt', 'r') as file:
         file_text = file.read(200)
-    return file_text
+    return JSONResponse(content=file_text)
+
+# Register the router with the main FastAPI app
+app.include_router(router)
 
 # Configure CORS
 app.add_middleware(
