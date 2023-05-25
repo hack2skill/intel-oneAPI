@@ -7,7 +7,6 @@ import Dashboard from "./components/Dashboard"
 import UploadNotes from "./components/UploadNotes";
 import Navbar from "./components/Navbar";
 import Landingpage from "./components/Landingpage";
-import Anav from "./components/Anav";
 import About from "./components/About";
 import Team from "./components/Team";
 import Studyplanner from "./components/Studyplanner";
@@ -23,7 +22,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/uploadnotes" element={<UploadNotes/>} />
           <Route path="/Navbar" element={<Navbar/>} />
-          <Route path="/Anav" element={<Anav/>} />
+           
           <Route path="/landing" element={<Landingpage/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/team" element={<Team/>} />
