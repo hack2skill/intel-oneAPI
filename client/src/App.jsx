@@ -4,16 +4,16 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./components/Home"
 import Login from "./components/Login"
 import Dashboard from "./components/Dashboard"
-import UploadNotes from "./components/UploadNotes";
 import Navbar from "./components/Navbar";
 import Landingpage from "./components/Landingpage";
 import About from "./components/About";
 import Team from "./components/Team";
 import Studyplanner from "./components/Studyplanner";
 import Features from "./components/Features";
-import Upload from "./components/Upload";
-import Uploadpyq from "./components/Uploadpyq";
 import Uploadsyllabus from "./components/Uploadsyllabus";
+import Uploadnote from "./components/Uploadnote";
+
+
 function App() {
   return (
     <div className="container">
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<Landingpage/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/uploadnotes" element={<UploadNotes/>} />
+         
           <Route path="/Navbar" element={<Navbar/>} />
            
           <Route path="/landing" element={<Landingpage/>} />
@@ -31,9 +31,10 @@ function App() {
           <Route path="/studyplanner" element={<Studyplanner/>} />
           <Route path="/features" element={<Features/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/upload" element={<Upload/>} />
-          <Route path="/uploadpyq" element={<Uploadpyq/>} />
+         
+       
           <Route path="/uploadsyllabus" element={<Uploadsyllabus/>} />
+          <Route path="/uploadnote" element={<Uploadnote/>} />
         </Routes>
       </BrowserRouter>
     </div>
