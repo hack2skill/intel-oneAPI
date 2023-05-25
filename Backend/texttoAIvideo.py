@@ -1,6 +1,8 @@
-from fastapi import APIRouter
+from fastapi import FastAPI, APIRouter
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI()
 router = APIRouter()
 
 @router.get('/api6')
