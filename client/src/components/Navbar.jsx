@@ -37,10 +37,10 @@ const Navbar = () => {
                 About
               </Link>
               <Link
-                to="/features"
+                to="/aibot"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
               >
-                Features
+                Tutor
               </Link>
               <Link
                 to="/team"
@@ -55,10 +55,10 @@ const Navbar = () => {
                 Study Planner
               </Link>
               <Link
-                to="/login"
+                to="/dashboard"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
               >
-                Login
+                Dashboard
               </Link>
             </div>
           </div>
