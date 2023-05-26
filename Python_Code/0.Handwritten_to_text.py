@@ -24,9 +24,9 @@ def pdf_to_images(pdf_path, output_folder):
 
 substring_to_remove = "Scanned by CamScanner"
 
-for i in range(4):
-    pdf_path = f'Files/notes_pdf/module_{i+1}.pdf'
-    output_folder = f'Files/OutputImages'
+for i in range(1):
+    pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
+    output_folder = f'images/Notes_images/module_{i+1}'
     
     # Convert the PDF to images and save them in the output folder
     image_paths, noImg = pdf_to_images(pdf_path, output_folder)
@@ -37,7 +37,7 @@ for i in range(4):
     image_contents = " "
 
     for j in range(noImg):
-        image_path = f'Files/OutputImages/Module_{i+1}/page_{j+1}.jpeg'   
+        image_path = f'images/Notes_images/Module_{i+1}/page_{j+1}.jpeg'   
         with open(image_path, 'rb') as image_file:
             content = image_file.read()
             image = vision.Image(content=content)
@@ -47,7 +47,7 @@ for i in range(4):
             image_contents += text.replace(substring_to_remove, "")
 
 
-    output_file = f"Files/notes_txt/module{i+1}.txt"
+    output_file = f"Local_Storage/notes_txt/module{i+1}.txt"
 
 #    Write the text content to the output file
     with open(output_file, "w") as file:
