@@ -24,7 +24,7 @@ def pdf_to_images(pdf_path, output_folder):
     noImg = i+1     
     return image_paths,noImg
 
-@router.get("/NotesToText")
+@router.get("/notestotext")
 def NotesToText_handler():
     substring_to_remove = "Scanned by CamScanner"
     for i in range(4):

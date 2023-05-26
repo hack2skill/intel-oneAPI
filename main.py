@@ -5,9 +5,10 @@ from fastapi.middleware.cors import CORSMiddleware
 #from Backend.pyqsorter import router as api1_router
 #from Backend.summariser import router_summariser as summariser
 #from Backend.Notes_Analyser import router as api4_router
-from Backend.speech_text import router as api5_router
-from Backend.Narrator import router as narrator_router
-from Backend.texttoAIvideo import router as api6_router
+#from Backend.speech_text import router as api5_router
+#from Backend.Narrator import router as narrator_router
+#from Backend.texttoAIvideo import router as api6_router
+from Backend.NotesToText import router as notestotext
 # import other API routers as needed
 
 origins = ["*"]
@@ -29,9 +30,7 @@ app.add_middleware(
 #app.include_router(summariser)
 #app.include_router(api4_router)
 #app.include_router(api6_router)
-app.include_router(api5_router)
-app.include_router(narrator_router)
-app.include_router(api6_router)
+app.include_router(notestotext)
 
 # include other API routers as needed
 
