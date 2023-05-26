@@ -5,13 +5,11 @@ openai.api_key = "##"
 
 
 # Define your input parameters
-with open('#define path sorted questions here', 'r') as file:
-    sorted_questions = str(file.read())
-with open('#define path notebook questions here', 'r') as file:
-    notebook_questions = str(file.read())    
+with open('Local_Storage/Generated_Files/cluster_questions.txt', 'r') as file:
+    sorted_questions = str(file.read()) 
 with open('#define path for important topics here', 'r') as file:
     important_topics = str(file.read())  
-with open('#define path for reference paper here', 'r', encoding='latin-1') as file:
+with open('Local_Storage/pyqs_text', 'r', encoding='latin-1') as file:
     reference_paper = str(file.read())            
     
     
