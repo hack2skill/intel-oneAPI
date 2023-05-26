@@ -12,7 +12,7 @@ import Studyplanner from "./components/Studyplanner";
 import Features from "./components/Features";
 import Uploadsyllabus from "./components/Uploadsyllabus";
 import Uploadnote from "./components/Uploadnote";
-
+import Uploadpyq from "./components/Uploadpyq";
 
 function App() {
   return (
@@ -35,6 +35,8 @@ function App() {
        
           <Route path="/uploadsyllabus" element={<Uploadsyllabus/>} />
           <Route path="/uploadnote" element={<Uploadnote/>} />
+          <Route path="/uploadpyq" element={<Uploadpyq/>} />
+          
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import animationData from '../assets/95241-uploading.json';
+import animationData from '../assets/87967-task-completed.json';
 
 function Uploadsyllabus() {
   const [selectedFile, setSelectedFile] = useState(null);
