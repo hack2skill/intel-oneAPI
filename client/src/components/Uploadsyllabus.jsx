@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import animationData from '../assets/95241-uploading.json';
+import animationData from '../assets/87967-task-completed.json';
+import { Link } from 'react-router-dom';
 
 function Uploadsyllabus() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -67,9 +68,9 @@ function Uploadsyllabus() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
+    <div className="flex flex-col items-center justify-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400">
       <motion.div
-        className="bg-blue-500 text-white py-6 px-6 rounded-lg shadow-lg"
+        className="bg-violet-900 text-white py-6 px-6 rounded-lg shadow-lg justify-center items-center flex flex-col"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -95,6 +96,9 @@ function Uploadsyllabus() {
             >
               {uploading ? 'Uploaded' : 'Upload'}
             </motion.button>
+            <Link to="/anythingmore" className="bg-green-500 text-white py-2 px-6 mt-4 rounded-lg">
+                Next
+              </Link>
           </>
         ) : (
           <motion.div

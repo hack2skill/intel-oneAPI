@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import animationData from '../assets/95241-uploading.json';
+import animationData from '../assets/101391-online-test.json';
 import { Link } from 'react-router-dom';
 
-function Uploadnote({ moduleNumber }) {
+function Uploadpyq({ moduleNumber }) {
   const [numNotes, setNumNotes] = useState(0);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -104,7 +104,7 @@ function Uploadnote({ moduleNumber }) {
     for (let i = 0; i < numNotes; i++) {
       inputs.push(
         <div key={`upload-input-${i}`}>
-          <label>Module {i + 1} PDF:</label>
+          <label>PYQ {i + 1} :</label>
           <input
             type="file"
             accept="application/pdf"
@@ -119,20 +119,20 @@ function Uploadnote({ moduleNumber }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen text-center h-screen bg-gradient-to-tr from-violet-700 via-green-600 to-green-400">
+    <div className="flex flex-col items-center justify-center w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400">
       {!fadeOut && (
         <motion.div
-          className="bg-violet-900 text-white py-6 px-6 rounded-lg shadow-lg text-center justify-center items-center flex flex-col"
+          className="bg-violet-900 text-white py-6 px-6 mt-8 mb-8 rounded-lg shadow-lg justify-center items-center flex flex-col"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
           <Lottie animationData={animationData} style={{ width: 400, height: 300 }} />
-          <h1 className="text-3xl font-bold mb-4">Upload Notes - Module Wise {moduleNumber}</h1>
+          <h1 className="text-3xl font-bold mb-4">Upload PYQ  {moduleNumber}</h1>
           {!uploadSuccess ? (
             <>
               <label htmlFor="num-notes" className="block font-medium mb-2">
-                Number of Modules:
+                Number of PYQs to upload:
               </label>
               <input
                 type="number"
@@ -154,7 +154,7 @@ function Uploadnote({ moduleNumber }) {
               >
                 {uploading ? 'Uploaded' : 'Upload'}
               </motion.button>
-              <Link to="/uploadpyq" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
+              <Link to="/uploadsyllabus" className="bg-green-500 text-white py-3 px-6 ml-4 rounded-lg mt-4">
                 Next
               </Link>
             </>
@@ -175,7 +175,7 @@ function Uploadnote({ moduleNumber }) {
               >
                 Upload Another
               </motion.button>
-              <Link to="/uploadpyq" className="text-blue-500 mt-8">
+              <Link to="/uploadpyq" className="text-blue-500 underline mt-4">
                 Next
               </Link>
             </>
@@ -186,4 +186,4 @@ function Uploadnote({ moduleNumber }) {
   );
 }
 
-export default Uploadnote;
+export default Uploadpyq;
