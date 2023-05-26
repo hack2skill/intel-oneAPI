@@ -1,7 +1,7 @@
 import openai
 
 # Set up your OpenAI API credentials
-openai.api_key = "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"
+openai.api_key = ""
 
 
 # Define your input parameters
