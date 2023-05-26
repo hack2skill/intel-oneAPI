@@ -1,7 +1,9 @@
 import os
-from fastapi import APIRouter
+from fastapi import APIRouter,UploadFile,File
 from pdf2image import convert_from_path
 from google.cloud import vision
+from typing import List
+
 
 # Create an instance of APIRouter
 router = APIRouter()
@@ -27,10 +29,19 @@ def pdf_to_images(pdf_path, output_folder):
 @router.get("/notestotext")
 def NotesToText_handler():
     substring_to_remove = "Scanned by CamScanner"
-    for i in range(4):
-        print(f"converting module-{i+1}....")
-        pdf_path = f'Local_Storage/notes_pdf/module_{i+1}.pdf'
-        output_folder = f'images/Notes_images/module_{i+1}'
+    
+    folder_path = "Local_Storage/notes_pdf"
+
+    # Get all files in the folder
+    mod_files = os.listdir(folder_path)
+
+    # Print the file names
+    for file_name in mod_files:
+        file_name=file_name.split(".")[0]
+
+        print(f"converting {file_name}....")
+        pdf_path = f'Local_Storage/notes_pdf/{file_name}.pdf'
+        output_folder = f'images/Notes_images/{file_name}'
         
         # Convert the PDF to images and save them in the output folder
         image_paths, noImg = pdf_to_images(pdf_path, output_folder)
@@ -41,9 +52,9 @@ def NotesToText_handler():
 
         # [START vision_python_migration_text_detection]
         image_contents = " "
-
+        
         for j in range(noImg):
-            image_path = f'images/Notes_images/Module_{i+1}/page_{j+1}.jpeg'   
+            image_path = f'images/Notes_images/{file_name}/page_{j+1}.jpeg'   
             with open(image_path, 'rb') as image_file:
                 content = image_file.read()
                 image = vision.Image(content=content)
@@ -53,11 +64,11 @@ def NotesToText_handler():
                 image_contents += text.replace(substring_to_remove, "")
 
 
-        output_file = f"Local_Storage/notes_txt/module_{i+1}.txt"
+        output_file = f"Local_Storage/notes_txt/{file_name}.txt"
     #    Write the text content to the output file
-        with open(output_file, "w") as file:
+        with open(output_file, "w",encoding="utf-8") as file:
             file.write(image_contents)
-            print(f"module-{i+1} completed")
+            print(f"{file_name} completed")
               
         if response.error.message:
             raise Exception(
@@ -67,3 +78,42 @@ def NotesToText_handler():
 
 
 
+@router.post("/notestotext_modwise")
+async def upload_files(files: List[UploadFile] = File(...)):
+    filenames = []
+    for file in files:
+        contents = await file.read()
+        with open("Local_Storage/notes_pdf/"+file.filename, "wb") as f:
+            f.write(contents)
+        filenames.append(file.filename)
+    return {"filenames": filenames}
+
+@router.post("/notestotext_syllabus")
+async def upload_files(files: List[UploadFile] = File(...)):
+    filenames = []
+    for file in files:
+        contents = await file.read()
+        with open("Local_Storage/syllabus_pdf"+file.filename, "wb") as f:
+            f.write(contents)
+        filenames.append(file.filename)
+    return {"filenames": filenames}
+
+@router.post("/notestotext_pyqs")
+async def upload_files(files: List[UploadFile] = File(...)):
+    filenames = []
+    for file in files:
+        contents = await file.read()
+        with open("Local_Storage/pyqs_pdf"+file.filename, "wb") as f:
+            f.write(contents)
+        filenames.append(file.filename)
+    return {"filenames": filenames}
+
+@router.post("/notestotext_anythingelse")
+async def upload_files(files: List[UploadFile] = File(...)):
+    filenames = []
+    for file in files:
+        contents = await file.read()
+        with open("Local_Storage/anything_else/"+file.filename, "wb") as f:
+            f.write(contents)
+        filenames.append(file.filename)
+    return {"filenames": filenames}

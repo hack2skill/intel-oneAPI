@@ -729,7 +729,7 @@ n+1
 K-map for Q1
 The characteristic equation
 of a JK flip-flop is
-44Excitation Table – S R Flip Flop
+44Excitation Table - S R Flip Flop
 SR
 Present state
 Q₂
@@ -845,7 +845,7 @@ is transferred to the slave, whose outputs are Q and
 ●
 Thus, the actual outputs of the flip-flop, i.e. Q and a change
 just after the negative-going transition of the clock.
-There are three basic types of master-slave flip-flops-S-R, D,
+There are three basic types of master-slave flip-flops- S-R, D,
 and J-K.
 49• The key to identifying a master-slave flip-flop by its
 logic symbol is the postponed output symbol at the
@@ -1643,7 +1643,7 @@ X
 0
 X
 1
-71an
+/1an
 0
 J-K flip-flop to D flip-flop
 0
@@ -1842,7 +1842,7 @@ Some registers do nothing more than storing a binary
 word.
 • The buffer register is the simplest of registers.
 It simply stores the binary word.
-•The buffer may be a controlled buffer.
+• The buffer may be a controlled buffer.
 • Most of the buffer registers use D flip-flops.
 78●
 ●
@@ -1879,10 +1879,8 @@ in serial form or in parallel form.
 • There are four basic types of shift registers:
 ●
 • 1. serial-in, serial-out
-●
 • 2. serial-in, parallel-out
-3. parallel-in, serial-out
-●
+•3. parallel-in, serial-out
 4. parallel-in, parallel-out
 81Serial
 data
@@ -1997,15 +1995,15 @@ FF₁
 R₁Q₁
 864-bit serial-in, serial-out,
 shift-left, shift register.
-Serial input
-Q D -0
 Serial
-output
 Q₁ D₁
+output
+שחתה
 Qg Da
 Q₂ D₂
-HTTE
 (a) Logic diagram
+Serial input
+Q D -0
 CLK
 87Serial-in, Parallel-out,
 Shift Regictor
@@ -2237,6 +2235,7 @@ The four multiplexers have two common selection inputs S1 and SO.
 ●
 ●
 ●
+●
 Input 0 in each multiplexer is selected when S1S0 = 00, input 1 is selected when S1S0 = 01,
 and input 2 is selected when S1S0 = 10 and input 3 is selected when S1S0 = 11.
 ●
@@ -2358,10 +2357,10 @@ Terminal count.
 count.
 110Asynchronous
 Counters
-•Two-bit Ripple Up-counter Using Negative
+• Two-bit Ripple Up-counter Using Negative
 Edge-triggered Flip-Flops
 •The 2-bit up-counter counts in the order 0, 1, 2, 3, 0, 1,
-….., i.e. 00, 01, 10, 11, 00, 01,..., etc.
+.., i.e. 00, 01, 10, 11, 00, 01,..., etc.
 01
 J₁₁ Q₁
 oto FF₁
@@ -2473,9 +2472,11 @@ CLK
 [
 Q₂0
 Q₁1010
+Q₁ 1 0 1 0
 1
 1
 0
+1
 (b) Timing diagram
 0
 0
@@ -2499,9 +2500,8 @@ J₁ Q₁
 K₁
 FF₁
 √₂
-K₂
 Q₂
-Q₂
+K₂ Q₂
 When M = 1 for up co Q1 ng,
 is transmitted to the clock of
 FF2 and when M = 0 for down counting, Q1 is transmitted to the
@@ -2980,7 +2980,7 @@ Q3 Q₂ Q₁
 101
 100
 Required excitations
-Jz Kz J₂ K₂ J₁ K₁
+Jz K₂ J₂ K₂ J₁ K₁
 1 x
 1 x
 0
@@ -3097,8 +3097,6 @@ Q3 Q₂ Q₁
 0 1 0
 0 1
 0
-0 1 1
-0 1 1
 1 X
 000
 000
@@ -3129,6 +3127,8 @@ x 0
 x 0
 x 0
 x 0
+0 1 1
+0 1 1
 NS
 M Q3 Q₂ Q₁ J3 K3 J₂ K₂
 2
@@ -3150,12 +3150,10 @@ Figure 12.13 Synchronous 3-bit up-down counter.
 1
 0 0
 1 0 0
-1
-0 1
+1 0 1
 1 0 1
 1 1 0
 1 1 0
-1 1
 1
 1 1 1
 0
@@ -3168,11 +3166,11 @@ Required excitations
 0
 1
 0
+1
+1 1 0
+1
 0 0 1
 0 1 1
-1
-0
-1
 1 X
 0 x
 0 x
@@ -3187,7 +3185,8 @@ X
 x
 0x
 1 x
-x 1
+x
+1
 x 0
 x 0
 X
@@ -3221,15 +3220,15 @@ Q3Q₂
 01
 00 1
 Q₁M
+100₁
 10 X
 00 1
 01
 8
-00₁
-X
 12
 13
 11 x X X
+X
 11 x
 10 1
 0
@@ -3413,6 +3412,11 @@ M
 1
 NS
 Q4 Q3 Q3 Q1
+01
+0
+01
+0 0
+10
 10
 0
 0
@@ -3437,11 +3441,6 @@ Q4 Q3 Q3 Q1
 1 1
 0 1
 1 0
-01
-0
-01
-0 0
-10
 01
 0
 1000
@@ -3493,18 +3492,17 @@ T2
 0
 1
 0 0
-01
-1
-1
 T1
 01
+1
+1
+01
 01
 1
 1
+1 1
 0
 0
-1
-1
 1
 1
 1
@@ -3750,32 +3748,22 @@ Q4 Q3 Q₂ Q₁ Q4 Q3 Q₂ Q₁ T4 T3 T₂ T₁
 00000001 00 0 1
 00010011
 0010
-0
-0 0 1 1
 0 0 1 0
-0 0
-1
-0 0 1 0
+0 0 0 1
 0 1 1 0
-0 1 0 0
-0 1 1 1
-0 0
+1 0 0
 0
-1
-0 1 1 0
+0 0 0 1
 0 1 1 1
-0 1 0 1
 0 1 0 1
 0 0
 1 0
 0 1 0 0
-0 0
 0
+0 0
 1
-0 1 0 0
 1 1 0 0
 1 0 0 0
-1 1 0 0
 1 1 0 1 0 0 0 1
 11010000 1 1 01
 (a) State diagram
@@ -3784,6 +3772,13 @@ Figure 12.29 Synchronous mod-10 Gray code counter.
 0000 0001 0011 00100110
 1101 1100 0100 0101
 0111
+0 0 1 1
+0 0 1 0
+0 1 1 0
+0 1 1 1
+0 1 0 1
+0 1 0 0
+1 1 0 0
 147Q₂Q₁
 Q₂Q3
 00
@@ -4487,7 +4482,7 @@ Shift register counters are obtained from serial-in,
 serial-out shift registers by providing feedback from the
 output of the last FF to the input of the first FF.
 • The most widely used shift register counters are
-•1. Ring Counter
+• 1. Ring Counter
 •2. Twisted Ring Counter (Johnson Counter)
 163Ring Counter
 1000

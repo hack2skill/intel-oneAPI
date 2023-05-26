@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Anythingmore() {
   const [details, setDetails] = useState('');
@@ -25,12 +26,14 @@ function Anythingmore() {
         onChange={handleInputChange}
         placeholder="Enter details..."
       ></textarea>
+      <Link to="/dashboard">
       <button
         className="bg-violet-900 text-white py-2 px-6 rounded-lg"
         onClick={handleSubmit}
       >
         Finish
       </button>
+      </Link>
     </div>
   );
 }

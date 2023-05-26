@@ -102,7 +102,7 @@ Half-adder
 S
 10•The sum (S) is the X-OR of A and B.
 S = AB + AB=A+B
-• The carry (C) is the AND of A and B.
+•The carry (C) is the AND of A and B.
 Therefore, C = AB
 A half-adder can, therefore, be realized by using one X-OR gate and
 one AND gate as shown in Figure 7.3a. Realization using AOI logic is
@@ -498,7 +498,7 @@ connected to the carry-in of the next stage.
 •The sum and carry-out bits of any stage cannot be
 produced, until some time after the carry-in of that
 stage occurs.
-• This is due to the propagation delays in the logic
+•This is due to the propagation delays in the logic
 circuitry, which lead to a time delay in the addition
 process.
 • The carry propagation delay for each full-adder is the
@@ -565,7 +565,7 @@ This is done by including an X-OR gate with each full-adder.
 The mode input M controls the operation. When M = 0, the circuit is
 an adder, and when M = 1, the circuit becomes a subtractor.
 Each X-OR gate receives input M and one of the inputs of B.
-= B. The full-adder receives the value of
+n = B. The full-adder receives the value of
 • When M = 0, we have B
 B, the input carry is O and the circuit performs A + B.
 +
@@ -667,11 +667,11 @@ Next P and C are added using the X-OR gate inside the
 second half adder to produce the final sum bit
 and
 n
-☺
+Ⓒ
 output carry C = P_ . C
 0
 C =
-n'
+n°
 Ⓒ
 n
 (AⒸB).C which becomes
@@ -825,7 +825,8 @@ circuit is a 4-bit binary and the output is a 4-bit Gray
 code.
 G₁ =B4
 G₁ =B₁ B₂
-G₂=B₂B₂
+G₂=
+B₂B₂
 G₁ = B₂B₁
 4-bit binary
 B₂ B3 B₂ B₁
@@ -836,15 +837,14 @@ oooooooo
 0
 OOO OTTO
 0
-0 0 1
-0
 0 0 1 0
 1
 0
 1
 0 1 1 0
 1
-1 0 0 0
+1
+0 0 0
 1
 0 0
 1
@@ -866,6 +866,8 @@ OOO OTTO
 1
 1 1
 1
+0 0 1
+0
 0 0 1
 COT-OOTTO
 1
@@ -1119,7 +1121,7 @@ D.
 (c) Logic diagram
 B₁
 B₂
-B₂₁
+B₁₂
 B₁
 51G₂G₁
 G.G 00
@@ -1307,7 +1309,6 @@ HIGH.
 will be forced to the LOW state regardless of the levels at
 the A, B, and C inputs.
 572-Line-to-4-Line Decoder
-Do
 D
 -D₁
 Jo
@@ -1402,7 +1403,7 @@ The bottom decoder outputs all Os, and top 8 outputs
 generate minterms.
 • When A3 is HIGH, the lower decoder is enabled and the
 upper decoder is disabled.
-•The bottom decoder outputs generate minterms 1000
+• The bottom decoder outputs generate minterms 1000
 to 1111 while the outputs of the top decoder are all Os.
 60ENCODERS
 • An encoder is a device whose inputs are decimal digits and/or
@@ -1413,7 +1414,7 @@ symbols into coded format.
 ●
 An encoder may be said to be a combinational logic circuit that
 performs the 'reverse' operation of the decoder.
-The opposite of the decoding process is called encoding.
+• The opposite of the decoding process is called encoding.
 • An encoder has a number of input lines, only one of which is
 activated at a given time, and produces an N-bit output code
 depending on which input is activated.
@@ -1508,17 +1509,11 @@ D₁ D₂ D₂ D₂ D₂ D D7 Dg Dg
 912
 Binary
 Ag A₂ A₁ A₂
-0 000
-0 0 0 1
+0
+000
+0
+0 0 1
 0 0 1 0
-0011
-0100
-0101
-0110
-1
-0 1 1
-1000
-1001
 3
 4
 5
@@ -1527,6 +1522,14 @@ Ag A₂ A₁ A₂
 8
 9
 (b) Truth table
+0011
+0100
+0101
+0110
+1
+0 1 1
+1000
+1001
 Ag
 A₂
 BCD
@@ -1603,7 +1606,7 @@ HIGH level indicates that
 71•The binary representations of the
 quantities A and B to be compared are
 applied as inputs to the comparator.
-One of the outputs, A< B, A = B or A > B
+One of the outputs, A < B, A = B or A > B
 goes HIGH, depending on the
 magnitudes of the input quantities.
 • The figure illustrates comparison of 8
