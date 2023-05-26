@@ -119,10 +119,10 @@ function Uploadpyq({ moduleNumber }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center">
+    <div className="flex flex-col items-center justify-center w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400">
       {!fadeOut && (
         <motion.div
-          className="bg-blue-500 text-white py-6 px-6 mt-8 mb-8 rounded-lg shadow-lg justify-center items-center flex flex-col"
+          className="bg-violet-900 text-white py-6 px-6 mt-8 mb-8 rounded-lg shadow-lg justify-center items-center flex flex-col"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}

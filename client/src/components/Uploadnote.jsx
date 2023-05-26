@@ -119,10 +119,10 @@ function Uploadnote({ moduleNumber }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center h-screen">
+    <div className="flex flex-col items-center justify-center w-screen text-center h-screen bg-gradient-to-tr from-violet-700 via-green-600 to-green-400">
       {!fadeOut && (
         <motion.div
-          className="bg-blue-500 text-white py-6 px-6 rounded-lg shadow-lg text-center justify-center items-center flex flex-col"
+          className="bg-violet-900 text-white py-6 px-6 rounded-lg shadow-lg text-center justify-center items-center flex flex-col"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -154,7 +154,7 @@ function Uploadnote({ moduleNumber }) {
               >
                 {uploading ? 'Uploaded' : 'Upload'}
               </motion.button>
-              <Link to="/uploadpyq" className="bg-green-500 text-white py-3 px-6 ml-4 rounded-lg">
+              <Link to="/uploadpyq" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
                 Next
               </Link>
             </>
