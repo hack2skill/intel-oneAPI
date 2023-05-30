@@ -1,8 +1,10 @@
 # intel-oneAPI
 
-#### Team Name -
+#### Team Name - BrainX
 #### Problem Statement - 
+object detection for autonomous vehicles
 #### Team Leader Email -
+koratdishant536631@gmail.com
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
