@@ -1,8 +1,8 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - Fite starters 
+#### Problem Statement - open innovation in education 
+#### Team Leader Email - gairola.vivekk@gmail.com
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
