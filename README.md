@@ -1,8 +1,8 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - EduBOt
+#### Problem Statement - OPen INnovation in education
+#### Team Leader Email - 20bec008@nith.ac.in
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
