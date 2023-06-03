@@ -1,10 +1,9 @@
 import openai
-import shutil
-import os
 import chardet
 from fastapi import FastAPI,UploadFile,File
 from fastapi import APIRouter
 
+openai.api_key = "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"  # Replace with your API key
 
 def detect_encoding(data):
     result = chardet.detect(data)
@@ -29,27 +28,7 @@ async def gen_questions(sorted_q: UploadFile = File(...),notebook_q: UploadFile 
     decoded_reference_paper = reference_paper.decode(detect_encoding(reference_paper))
 
 
-    prompt = f"generate 10 questions that are not in reference paper but similar \nSorted Previous Year Questions:\n{decoded_sorted_questions}\n\nNotebook Question List:\n{decoded_notebook_questions}\n\nImportant Topics:\n{decoded_important_topics}\n\nReference Paper:\n{decoded_reference_paper}\n\n"
-
-
-# Generate questions using OpenAI API
-    response = openai.Completion.create(
-        engine="davinci",
-        prompt=prompt,
-        max_tokens=1000,  # Adjust the max_tokens value as per your requirement
-        temperature=0.4,  # Adjust the temperature value to control the creativity of the generated questions
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        n=5  # Adjust the 'n' value to generate more or fewer questions
-    )
-
-    # Extract the generated questions from the API response
-    generated_questions = [choice['text'].strip() for choice in response.choices]
-
-    # Print the generated questions
-    for i, question in enumerate(generated_questions):
-        print(f"Question {i+1}: {question}")   
+   
 
 
 
