@@ -11,8 +11,8 @@ app = FastAPI()
 
 # Mount the API routers
 #app.include_router(api1_router)
-#app.include_router(summariser)
-app.include_router(generate_question)
+app.include_router(summariser)
+#app.include_router(generate_question)
 #app.include_router(api4_router)
 
 # include other API routers as needed

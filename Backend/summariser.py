@@ -64,22 +64,22 @@ async def gen_summary(file):
     return await loop.run_in_executor(None, summary, text)
 
 
-# router_summariser = APIRouter()
+router_summariser = APIRouter()
 
 
-# @router_summariser.post("/get-summary")
-# async def get_summary(file: UploadFile = File(...)):
-#     data = await gen_summary(file)
-#     return data
+@router_summariser.post("/get-summary")
+async def get_summary(file: UploadFile = File(...)):
+    data = await gen_summary(file)
+    return data
 
-# @router_summariser.get("/summary-gen-progress") # route to track progress of summarization
-# def get_summary_progress():
-#     global progress
-#     if progress is None :
-#         return {"status" : "No summarisation process in progress" }
-#     elif progress == 100 :
-#         return {"status" : "Completed" , "value" : progress}
-#     elif progress in range(0,101) :
-#         return {"status" : progress}
-#     else :
-#         return {"invalid data detected"}
+@router_summariser.get("/summary-gen-progress") # route to track progress of summarization
+def get_summary_progress():
+    global progress
+    if progress is None :
+        return {"status" : "No summarisation process in progress" }
+    elif progress == 100 :
+        return {"status" : "Completed" , "value" : progress}
+    elif progress in range(0,101) :
+        return {"status" : progress}
+    else :
+        return {"invalid data detected"}
