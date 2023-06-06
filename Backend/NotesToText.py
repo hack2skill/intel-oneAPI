@@ -3,6 +3,13 @@ from fastapi import APIRouter,UploadFile,File
 from pdf2image import convert_from_path
 from google.cloud import vision
 from typing import List
+import boto3
+from botocore.exceptions import NoCredentialsError
+from io import BytesIO
+
+s3_access_key = "AKIAZTHHIOR4CN6UXO6N"
+s3_secret_access_key = "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"
+s3_bucket_name = "learnmateai"
 
 
 # Create an instance of APIRouter
@@ -80,42 +87,79 @@ def NotesToText_handler():
 
 @router.post("/notestotext_modwise")
 async def upload_files(files: List[UploadFile] = File(...)):
+    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
+
     for file in files:
         contents = await file.read()
-        with open("Local_Storage/notes_pdf/"+file.filename, "wb") as f:
-            f.write(contents)
-        filenames.append(file.filename)
+        file_obj = BytesIO(contents)
+        try:
+            s3.upload_fileobj(
+                file_obj,
+                s3_bucket_name,
+                "notes_pdf/" + file.filename,
+            )
+            filenames.append(file.filename)
+        except NoCredentialsError:
+            return {"error": "AWS credentials not found."}
+    
     return {"filenames": filenames}
 
 @router.post("/notestotext_syllabus")
 async def upload_files(files: List[UploadFile] = File(...)):
+    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
     for file in files:
         contents = await file.read()
-        with open("Local_Storage/syllabus_pdf"+file.filename, "wb") as f:
-            f.write(contents)
-        filenames.append(file.filename)
+        file_obj = BytesIO(contents)
+        try:
+            s3.upload_fileobj(
+                file_obj,
+                s3_bucket_name,
+                "syllabus_pdf/" + file.filename,
+            )
+            filenames.append(file.filename)
+        except NoCredentialsError:
+            return {"error": "AWS credentials not found."}
+    
     return {"filenames": filenames}
 
 @router.post("/notestotext_pyqs")
 async def upload_files(files: List[UploadFile] = File(...)):
+    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
     for file in files:
         contents = await file.read()
-        with open("Local_Storage/pyqs_pdf"+file.filename, "wb") as f:
-            f.write(contents)
-        filenames.append(file.filename)
+        file_obj = BytesIO(contents)
+        try:
+            s3.upload_fileobj(
+                file_obj,
+                s3_bucket_name,
+                "pyqs_pdf/" + file.filename,
+            )
+            filenames.append(file.filename)
+        except NoCredentialsError:
+            return {"error": "AWS credentials not found."}
+    
     return {"filenames": filenames}
 
 @router.post("/notestotext_anythingelse")
 async def upload_files(files: List[UploadFile] = File(...)):
+    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
     for file in files:
         contents = await file.read()
-        with open("Local_Storage/anything_else/"+file.filename, "wb") as f:
-            f.write(contents)
-        filenames.append(file.filename)
+        file_obj = BytesIO(contents)
+        try:
+            s3.upload_fileobj(
+                file_obj,
+                s3_bucket_name,
+                "anything_else/" + file.filename,
+            )
+            filenames.append(file.filename)
+        except NoCredentialsError:
+            return {"error": "AWS credentials not found."}
+    
     return {"filenames": filenames}
 
 @router.get("/")
