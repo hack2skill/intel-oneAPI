@@ -30,16 +30,13 @@ function Uploadsyllabus() {
       // Create a Blob from the file contents
       const blob = new Blob([fileContents], { type: selectedFile.type });
 
-      // Create a file path within the Local_Storage/notes_pdf folder
-      const filePath = `Local_Storage/notes_pdf/${selectedFile.name}`;
-
-      // Save the file locally
-      saveFileLocally(filePath, blob)
+      // Call the API to process the syllabus
+      uploadSyllabus(blob)
         .then(() => {
           setUploadSuccess(true);
         })
         .catch((error) => {
-          console.error('Error saving file:', error);
+          console.error('Error uploading syllabus:', error);
         })
         .finally(() => {
           setUploading(false);
@@ -49,21 +46,10 @@ function Uploadsyllabus() {
     reader.readAsArrayBuffer(selectedFile);
   };
 
-  const saveFileLocally = (filePath, file) => {
-    return new Promise((resolve, reject) => {
-      const virtualLink = document.createElement('a');
-      virtualLink.href = URL.createObjectURL(file);
-      virtualLink.download = filePath;
-      virtualLink.addEventListener('load', () => {
-        URL.revokeObjectURL(virtualLink.href);
-        resolve();
-      });
-      virtualLink.addEventListener('error', (error) => {
-        reject(error);
-      });
-      document.body.appendChild(virtualLink);
-      virtualLink.click();
-      document.body.removeChild(virtualLink);
+  const uploadSyllabus = (file) => {
+    return fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext_syllabus', {
+      method: 'POST',
+      body: file,
     });
   };
 
@@ -94,18 +80,14 @@ function Uploadsyllabus() {
               whileHover={!uploading ? { scale: 1.05 } : {}}
               whileTap={!uploading ? { scale: 0.95 } : {}}
             >
-              {uploading ? 'Uploaded' : 'Upload'}
+              {uploading ? 'Uploading...' : 'Upload'}
             </motion.button>
             <Link to="/anythingmore" className="bg-green-500 text-white py-2 px-6 mt-4 rounded-lg">
-                Next
-              </Link>
+              Next
+            </Link>
           </>
         ) : (
-          <motion.div
-            className="text-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+          <motion.div className="text-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             Upload successful!
           </motion.div>
         )}

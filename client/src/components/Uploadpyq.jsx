@@ -5,26 +5,49 @@ import animationData from '../assets/101391-online-test.json';
 import { Link } from 'react-router-dom';
 
 function Uploadpyq({ moduleNumber }) {
-  const [numNotes, setNumNotes] = useState(0);
+  const [numPYQs, setNumPYQs] = useState(0);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [fadeOut, setFadeOut] = useState(false); // New state to control fading out
 
-  const handleNumNotesChange = (event) => {
+  const handleNumPYQsChange = (event) => {
     const count = parseInt(event.target.value, 10);
-    setNumNotes(count);
+    setNumPYQs(count);
     setSelectedFiles(new Array(count).fill(null));
     setUploadSuccess(false);
   };
 
-  const handleFileChange = (index, event) => {
+  const handleFileChange = async (index, event) => {
     const file = event.target.files[0];
     const updatedFiles = [...selectedFiles];
     updatedFiles[index] = file;
     setSelectedFiles(updatedFiles);
     setUploadSuccess(false);
+
+    try {
+      const formData = new FormData();
+      formData.append('files', file);
+
+      const response = await fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext_syllabus', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setUploadSuccess(true);
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+          setFadeOut(true);
+        }, 10000);
+      } else {
+        throw new Error('Error uploading file');
+      }
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
   };
 
   const handleUpload = () => {
@@ -41,7 +64,7 @@ function Uploadpyq({ moduleNumber }) {
         reader.onload = () => {
           const fileContents = reader.result;
           const blob = new Blob([fileContents], { type: file.type });
-          const filePath = `Local_Storage/notes_pdf/module_${moduleNumber}/${file.name}`;
+          const filePath = `Local_Storage/pyq_pdf/module_${moduleNumber}/${file.name}`;
 
           saveFileLocally(filePath, blob)
             .then(() => {
@@ -64,8 +87,8 @@ function Uploadpyq({ moduleNumber }) {
         setShowSuccessMessage(true);
         setTimeout(() => {
           setShowSuccessMessage(false);
-          setFadeOut(true); // Set fadeOut state to true after the success message
-        }, 10000); // Set timeout for 10 seconds
+          setFadeOut(true);
+        }, 10000);
       })
       .catch((error) => {
         console.error('Error uploading files:', error);
@@ -92,7 +115,7 @@ function Uploadpyq({ moduleNumber }) {
   };
 
   const handleUploadAnother = () => {
-    setSelectedFiles(new Array(numNotes).fill(null));
+    setSelectedFiles(new Array(numPYQs).fill(null));
     setUploadSuccess(false);
     setShowSuccessMessage(false);
     setFadeOut(false);
@@ -101,10 +124,10 @@ function Uploadpyq({ moduleNumber }) {
   const renderUploadInputs = () => {
     const inputs = [];
 
-    for (let i = 0; i < numNotes; i++) {
+    for (let i = 0; i < numPYQs; i++) {
       inputs.push(
         <div key={`upload-input-${i}`}>
-          <label>PYQ {i + 1} :</label>
+          <label>PYQ {i + 1}:</label>
           <input
             type="file"
             accept="application/pdf"
@@ -128,18 +151,18 @@ function Uploadpyq({ moduleNumber }) {
           transition={{ duration: 0.5 }}
         >
           <Lottie animationData={animationData} style={{ width: 400, height: 300 }} />
-          <h1 className="text-3xl font-bold mb-4">Upload PYQ  {moduleNumber}</h1>
+          <h1 className="text-3xl font-bold mb-4">Upload PYQ {moduleNumber}</h1>
           {!uploadSuccess ? (
             <>
-              <label htmlFor="num-notes" className="block font-medium mb-2">
+              <label htmlFor="num-pyqs" className="block font-medium mb-2">
                 Number of PYQs to upload:
               </label>
               <input
                 type="number"
-                id="num-notes"
+                id="num-pyqs"
                 min={0}
-                value={numNotes}
-                onChange={handleNumNotesChange}
+                value={numPYQs}
+                onChange={handleNumPYQsChange}
                 className="border border-gray-300 rounded-md px-3 py-2 mb-4"
               />
               {renderUploadInputs()}
@@ -152,7 +175,7 @@ function Uploadpyq({ moduleNumber }) {
                 whileHover={!uploading ? { scale: 1.05 } : {}}
                 whileTap={!uploading ? { scale: 0.95 } : {}}
               >
-                {uploading ? 'Uploaded' : 'Upload'}
+                {uploading ? 'Uploading...' : 'Upload'}
               </motion.button>
               <Link to="/uploadsyllabus" className="bg-green-500 text-white py-3 px-6 ml-4 rounded-lg mt-4">
                 Next
@@ -175,7 +198,7 @@ function Uploadpyq({ moduleNumber }) {
               >
                 Upload Another
               </motion.button>
-              <Link to="/uploadpyq" className="text-blue-500 underline mt-4">
+              <Link to="/uploadsyllabus" className="text-blue-500 underline mt-4">
                 Next
               </Link>
             </>
