@@ -13,6 +13,7 @@ s3_bucket_name = "learnmateai"
 
 s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
 # Create an instance of APIRouter
+
 router = APIRouter()
 
 def pdf_to_images(pdf_path, output_folder):
