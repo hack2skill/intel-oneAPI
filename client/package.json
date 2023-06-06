@@ -9,7 +9,6 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": "vite -- --host"
-    
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.1.0",
