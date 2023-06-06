@@ -1,0 +1,52 @@
+Module 1:
+- I. (a) Convert (63.25) 10 to Hexa decimal and octal.
+- I. (a) Perform the following number conversions:
+- I. (a) Convert (AB2)16 to octal.
+- I. (a) (
+- I. (a) Perform the following:
+- I. (a) Given the two binary numbers X = 1010100 and Y = 1000011, perform the
+Module 2:
+- IV. Explain the design procedure of combinational circuit with an example
+- V. Implement the following function using a multiplexer
+- IX. Compare TTL and CMOS logic families.
+- V. Implement the following Boolean function with NAND gates: OR
+- VI. Implement the following function using a multiplexer (Use B as input).
+- VIII. Explain the operation of 2 input CMOS NOR gate and CMOS inverter in
+- IX. Explain with circuit diagram a typical 2 input TTL NAND gate.
+- IV. (a) Explain the working of a 4-bit BCD adder with block diagram                          (7)
+- V. (a) Explain the working of a 4-bit magnitude comparator. (5)
+- VI. (a) Explain the working of SR latch with NAND gate with the help of logic diagram                                                                                                                                 (6)
+- VIII. (a) Design a combinational circuit using a ROM.The circuit accepts three bit                                                                                                                                      (6)
+- IX. Explain the working of RTL and DTL circuit. Explain how fan-out of DTL gate                                                                                                              (10)
+- V. (a) Explain the working of Decimal adder with block diagram and explain the        (5)
+- X. (5)
+- VI. (a) Explain the working of SR latch using NOR gate with the help of logic          (6)
+- IX. (a) Draw and explain the working of Basic RTL NOR gate. (5)
+- VIII. (a)  Design a PLA circuit to implement the functions                            (6)
+- IX. (a)  Draw circuit of an TTL NAND gate and explain the operation. (7)
+Module 3:
+- VII. Design and explain a 4 bit asynchronous up-down binary counter.
+- VIII. Write short notes on (1) Fan in and Fan out (ii) Propogation delay
+- IV. Derive the expressions for a 4-bit magnitude comparator and implement it
+- V. (a) Design a decimal adder using 4-bit binary parallel adders.
+- VI. Design a 4-bit Johnson counter. How does it differ from a ring counter?
+- VII. Design a 4-bit binary ripple counter using JK flip flops.
+- VIII. Design a RAM consisting of four words of four bits each. Also show the
+- VII. Design a 4 bit binary ripple counter using JK flip flops. OR
+- VII. Design a counter that has repeated sequence of six states 0,1,2,4,5,6 using JK OR                                                                                                        (10)
+- VII. (a) Design a 2 bit synchronous up counter using .1K flipflops. (5)
+- VIII. Differentiate PLA and PAL. Draw the PLA for functions:                    (10)
+- V. (a)  What is Carry Propagation delay? Design a 4- bit binary parallel adder     (6)
+- VI. (a)  Design a synchronous counter using .T flip-flops which counts the          (6)
+- VII. (a)  Draw the logic diagram of a four-bit binary ripple counter. Show that a    (6)
+Module 4:
+- II. Simplify the following Boolean function into (1) sum-of-products form
+- III. Prove the theorems of Boolean algebra by using postulates.
+- II. Simplify the following function using Quine McCluskey method.
+- IV. Simplify the following Boolean function into (i) sum-of-products form and
+- II. (a) Using 10's complement, subtract 3250-72532. (2)
+- III. (a) Simplify the followng Boolean functions using K-map                                 (5)
+- II. (a) What is a gray code? What are the advantages of gray code? Find the gray (3)
+- III. Simplify the following Boolean function using the tabulation method.
+- III. (a)  Simplify the following Boolean function into                               (6)
+- IV. (a)  Implement the following four Boolean expressions with three half adders:   (6)
