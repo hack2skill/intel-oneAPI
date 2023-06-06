@@ -4,10 +4,40 @@ from transformers import pipeline
 import shutil
 import os
 import asyncio
+import boto3
+from botocore.exceptions import NoCredentialsError
+
+
+s3_access_key = "AKIAZTHHIOR4CN6UXO6N"
+s3_secret_access_key = "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"
+s3_bucket_name = "learnmateai"
+
+def save_file_to_s3(filename, content):
+    try:
+        # Connect to Amazon S3
+        s3 = boto3.client(
+            "s3",
+            aws_access_key_id=s3_access_key,
+            aws_secret_access_key=s3_secret_access_key
+        )
+
+        # Set the desired S3 key
+        s3_key = f"Generated_Files/Summarised_Notes/summarised_{filename}"
+
+        # Save the file content to Amazon S3
+        s3.put_object(Body=content.encode('utf-8'), Bucket=s3_bucket_name, Key=s3_key)
+
+        return {"message": "File uploaded successfully"}
+    except NoCredentialsError:
+        return {"message": "AWS credentials not found"}
+
+
+
+
 
 progress = None # just for tracking progress
 
-def summary(text):
+def summary(text,filename):
     # Load the summarization pipeline
     summarizer = pipeline("summarization")
     # Split the text into smaller chunks
@@ -44,33 +74,44 @@ def summary(text):
     # Print and return the combined summary
     print("Combined Summary:")
     print(combined_summary)
-    print("Deleting the saved file.......")
-    os.remove("dat.txt")
-    print("deleted....")
-    return{"summary" : combined_summary,"exceptions" : exceptions}
+    with open(f'Local_Storage\Generated_Files\Summarised_Notes\summarised_{filename}', 'w', encoding='utf-8') as file:
+        file.write(combined_summary)
+    response = save_file_to_s3(filename, combined_summary)
+    print(response)
+    
 
 
-async def gen_summary(file):
-    try:
-        with open("dat.txt", "wb") as buffer:      # saving file
-            shutil.copyfileobj(file.file, buffer)
-    finally:
-        file.file.close()
+async def gen_summary():
+                                # reading file
+    folder_path = 'Local_Storage\\notes_txt'
+    # Get the list of files in the folder
+    file_list = os.listdir(folder_path)
 
-    with open("dat.txt", "r", encoding='utf-8') as file:
-        text = file.read()                               # reading file
+    # Iterate over each file in the folder
+    for file_name in file_list:
+        # Construct the full file path
+        file_path = os.path.join(folder_path, file_name)
 
-    loop = asyncio.get_running_loop()                   # making it to run in background
-    return await loop.run_in_executor(None, summary, text)
+        # Check if the path is a file (not a directory)
+        if os.path.isfile(file_path):
+            
+            with open(file_path, 'r', encoding='utf-8') as file:
+                text = file.read()
+
+            loop = asyncio.get_running_loop()                   # making it to run in background
+            await loop.run_in_executor(None, summary, text,file_name)
+
+
+    
 
 
 router_summariser = APIRouter()
 
 
 @router_summariser.post("/get-summary")
-async def get_summary(file: UploadFile = File(...)):
-    data = await gen_summary(file)
-    return data
+async def get_summary():
+    await gen_summary()
+    return {"status" : 1}
 
 @router_summariser.get("/summary-gen-progress") # route to track progress of summarization
 def get_summary_progress():
