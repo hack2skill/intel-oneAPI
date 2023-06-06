@@ -19,12 +19,35 @@ function Uploadnote({ moduleNumber }) {
     setUploadSuccess(false);
   };
 
-  const handleFileChange = (index, event) => {
+  const handleFileChange = async (index, event) => {
     const file = event.target.files[0];
     const updatedFiles = [...selectedFiles];
     updatedFiles[index] = file;
     setSelectedFiles(updatedFiles);
     setUploadSuccess(false);
+
+    try {
+      const formData = new FormData();
+      formData.append('files', file);
+
+      const response = await fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext_modwise', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setUploadSuccess(true);
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+          setFadeOut(true);
+        }, 10000);
+      } else {
+        throw new Error('Error uploading file');
+      }
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
   };
 
   const handleUpload = () => {
@@ -65,20 +88,20 @@ function Uploadnote({ moduleNumber }) {
 
   const saveFileLocally = (filePath, file) => {
     return new Promise((resolve, reject) => {
-        const virtualLink = document.createElement('a');
-        virtualLink.href = URL.createObjectURL(file);
-        virtualLink.download = filePath;
-        virtualLink.addEventListener('load', () => {
-          URL.revokeObjectURL(virtualLink.href);
-          resolve();
-        });
-        virtualLink.addEventListener('error', (error) => {
-          reject(error);
-        });
-        document.body.appendChild(virtualLink);
-        virtualLink.click();
-        document.body.removeChild(virtualLink);
+      const virtualLink = document.createElement('a');
+      virtualLink.href = URL.createObjectURL(file);
+      virtualLink.download = filePath;
+      virtualLink.addEventListener('load', () => {
+        URL.revokeObjectURL(virtualLink.href);
+        resolve();
       });
+      virtualLink.addEventListener('error', (error) => {
+        reject(error);
+      });
+      document.body.appendChild(virtualLink);
+      virtualLink.click();
+      document.body.removeChild(virtualLink);
+    });
   };
 
   const handleUploadAnother = () => {
@@ -151,11 +174,7 @@ function Uploadnote({ moduleNumber }) {
           ) : (
             <>
               {showSuccessMessage && (
-                <motion.div
-                  className="text-xl"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
+                <motion.div className="text-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                   Successfully Uploaded!
                 </motion.div>
               )}
