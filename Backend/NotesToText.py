@@ -11,7 +11,7 @@ s3_access_key = "AKIAZTHHIOR4CN6UXO6N"
 s3_secret_access_key = "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"
 s3_bucket_name = "learnmateai"
 
-
+s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
 # Create an instance of APIRouter
 router = APIRouter()
 
@@ -87,7 +87,6 @@ def NotesToText_handler():
 
 @router.post("/notestotext_modwise")
 async def upload_files(files: List[UploadFile] = File(...)):
-    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
 
     for file in files:
@@ -107,7 +106,6 @@ async def upload_files(files: List[UploadFile] = File(...)):
 
 @router.post("/notestotext_syllabus")
 async def upload_files(files: List[UploadFile] = File(...)):
-    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
     for file in files:
         contents = await file.read()
@@ -126,7 +124,6 @@ async def upload_files(files: List[UploadFile] = File(...)):
 
 @router.post("/notestotext_pyqs")
 async def upload_files(files: List[UploadFile] = File(...)):
-    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
     for file in files:
         contents = await file.read()
@@ -145,7 +142,6 @@ async def upload_files(files: List[UploadFile] = File(...)):
 
 @router.post("/notestotext_anythingelse")
 async def upload_files(files: List[UploadFile] = File(...)):
-    s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
     filenames = []
     for file in files:
         contents = await file.read()
