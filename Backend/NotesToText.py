@@ -118,6 +118,6 @@ async def upload_files(files: List[UploadFile] = File(...)):
         filenames.append(file.filename)
     return {"filenames": filenames}
 
-@router.post("/")
+@router.get("/")
 async def hello():
     return {"hello nigga"}
