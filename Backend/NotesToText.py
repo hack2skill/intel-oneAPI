@@ -87,7 +87,7 @@ def NotesToText_handler():
 
 
 @router.post("/notestotext_modwise")
-async def upload_files(files: List[UploadFile] = File(...)):
+async def upload_files1(files: List[UploadFile] = File(...)):
     filenames = []
 
     for file in files:
@@ -106,7 +106,7 @@ async def upload_files(files: List[UploadFile] = File(...)):
     return {"filenames": filenames}
 
 @router.post("/notestotext_syllabus")
-async def upload_files(files: List[UploadFile] = File(...)):
+async def upload_files2(files: List[UploadFile] = File(...)):
     filenames = []
     for file in files:
         contents = await file.read()
@@ -124,7 +124,7 @@ async def upload_files(files: List[UploadFile] = File(...)):
     return {"filenames": filenames}
 
 @router.post("/notestotext_pyqs")
-async def upload_files(files: List[UploadFile] = File(...)):
+async def upload_files3(files: List[UploadFile] = File(...)):
     filenames = []
     for file in files:
         contents = await file.read()
@@ -142,7 +142,7 @@ async def upload_files(files: List[UploadFile] = File(...)):
     return {"filenames": filenames}
 
 @router.post("/notestotext_anythingelse")
-async def upload_files(files: List[UploadFile] = File(...)):
+async def upload_files4(files: List[UploadFile] = File(...)):
     filenames = []
     for file in files:
         contents = await file.read()
