@@ -30,24 +30,24 @@ const Navbar = () => {
               > 
                 Home
               </Link>
-              <Link
+              {/* <Link
                 to="/about"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
               >
                 About
-              </Link>
+              </Link> */}
               <Link
                 to="/aibot"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
               >
                 Tutor
               </Link>
-              <Link
+              {/* <Link
                 to="/team"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
               >
                 Quiz
-              </Link>
+              </Link> */}
               <Link
                 to="/studyplanner"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
