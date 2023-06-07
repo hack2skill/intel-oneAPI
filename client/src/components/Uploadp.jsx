@@ -167,7 +167,7 @@ function Uploadp({ moduleNumber }) {
               >
                 {uploading ? 'Uploaded' : 'Upload'}
               </motion.button>
-              <Link to="/uploadsyllabus" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
+              <Link to="/uploads" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
                 Next
               </Link>
             </>
@@ -184,7 +184,7 @@ function Uploadp({ moduleNumber }) {
               >
                 Upload Another
               </motion.button>
-              <Link to="/uploadsyllabus" className="text-blue-500 mt-8">
+              <Link to="/uploads" className="text-blue-500 mt-8">
                 Next
               </Link>
             </>

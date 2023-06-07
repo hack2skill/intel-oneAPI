@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
 import Navbar from "./Navbar";
 
 const data = {
@@ -61,39 +60,51 @@ const Dashboard = () => {
   return (
     <div className="w-screen">
       <Navbar />
-      <div className="flex flex-col items-center justify-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400 mt-3">
-        <div className="flex flex-wrap justify-center gap-8 p-6">
+      <div className="flex flex-col items-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400 mt-3">
+        <div className="grid grid-cols-2 gap-16 py-16 h-96">
+          <div className="grid grid-cols-2 gap-4">
           <motion.div
-            className="w-full sm:w-1/2 bg-slate-50 rounded-lg shadow-lg p-6"
+            className="bg-slate-100 rounded-lg shadow-lg py-6 h-96 w-60"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <h3 className="text-lg font-medium mb-4">Important Topics</h3>
+            <h3 className="text-xl mb-4">Important Topics</h3>
             <pre>{impTopicContent}</pre>
+            <p>Half adder</p>
+            <p>Full adder</p>
+            <p>Half Subtractor</p>
+            <p>Full Subtractor</p>
           </motion.div>
 
           <motion.div
-            className="w-full sm:w-1/2 bg-slate-50 rounded-lg shadow-lg p-6"
+            className="bg-slate-100 rounded-lg shadow-lg py-6 w-60"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-lg font-medium mb-4">Topic List</h3>
+            <h3 className="text-xl mb-4">Topic List</h3>
             <pre>{topicListContent}</pre>
           </motion.div>
+          </div>
 
           <motion.div
-            className="w-full sm:w-1/2 bg-slate-50 rounded-lg shadow-lg p-6"
+            className="bg-slate-50 rounded-lg shadow-lg py-6 w-120"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.4 }}
           >
-            <h3 className="text-lg font-medium mb-4">Cluster Questions</h3>
-            <pre>{clusterQuestionsContent}</pre>
+            <h3 className="text-lg font-semibold mb-4">Cluster Questions</h3>
+            <iframe
+              src="https://mrcet.com/downloads/digital_notes/CSE/II%20Year/DBMS.pdf"
+              className="w-full h-full"
+              title="PDF Viewer"
+            />
           </motion.div>
+
+         
         </div>
       </div>
     </div>

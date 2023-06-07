@@ -17,21 +17,6 @@ function Anythingmore() {
     // Create a text file from the input content
     const textFile = new Blob([details], { type: 'text/plain' });
 
-    // Create a file URL for downloading
-    const fileURL = URL.createObjectURL(textFile);
-
-    // Create a temporary link element
-    const downloadLink = document.createElement('a');
-    downloadLink.href = fileURL;
-    downloadLink.download = 'anything.txt';
-
-    // Append the link to the document body and trigger the download
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-
-    // Remove the link from the document body
-    document.body.removeChild(downloadLink);
-
     // Call the API to push the text file
     callAPI(textFile)
       .then(() => {
@@ -55,7 +40,7 @@ function Anythingmore() {
 
   const callAPI = (file) => {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('file', file, 'anythingelse.txt');
 
     return fetch(
       'https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext_anythingelse',
@@ -66,8 +51,8 @@ function Anythingmore() {
     );
   };
 
-  const retryAPI = (file) => {
-    callAPI(file)
+  const retryAPI = (textfile) => {
+    callAPI(textfile)
       .then(() => {
         console.log('API call retried successfully');
         setApiError(false);
@@ -90,7 +75,7 @@ function Anythingmore() {
       <button className="bg-violet-900 text-white py-2 px-6 rounded-lg mb-4" onClick={handleSubmit}>
         Submit
       </button>
-      {apiError && <p className="text-red-500">Error calling API. Retrying...</p>}
+      {apiError && <p className="text-red-500"></p>}
       <Link to="/dashboard">
         <button className="bg-violet-900 text-white py-2 px-6 rounded-lg">Finish</button>
       </Link>

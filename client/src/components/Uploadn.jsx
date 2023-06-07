@@ -4,13 +4,13 @@ import Lottie from 'lottie-react';
 import animationData from '../assets/95241-uploading.json';
 import { Link } from 'react-router-dom';
 
-function Uploadnote({ moduleNumber }) {
+function Uploadn({ moduleNumber }) {
   const [numNotes, setNumNotes] = useState(0);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [fadeOut, setFadeOut] = useState(false); // New state to control fading out
+  const [fadeOut, setFadeOut] = useState(false);
 
   const handleNumNotesChange = (event) => {
     const count = parseInt(event.target.value, 10);
@@ -19,12 +19,35 @@ function Uploadnote({ moduleNumber }) {
     setUploadSuccess(false);
   };
 
-  const handleFileChange = (index, event) => {
+  const handleFileChange = async (index, event) => {
     const file = event.target.files[0];
     const updatedFiles = [...selectedFiles];
     updatedFiles[index] = file;
     setSelectedFiles(updatedFiles);
     setUploadSuccess(false);
+
+    try {
+      const formData = new FormData();
+      formData.append('files', file);
+
+      const response = await fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext_modwise', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setUploadSuccess(true);
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+          setFadeOut(true);
+        }, 10000);
+      } else {
+        throw new Error('Error uploading file');
+      }
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
   };
 
   const handleUpload = () => {
@@ -65,20 +88,20 @@ function Uploadnote({ moduleNumber }) {
 
   const saveFileLocally = (filePath, file) => {
     return new Promise((resolve, reject) => {
-        const virtualLink = document.createElement('a');
-        virtualLink.href = URL.createObjectURL(file);
-        virtualLink.download = filePath;
-        virtualLink.addEventListener('load', () => {
-          URL.revokeObjectURL(virtualLink.href);
-          resolve();
-        });
-        virtualLink.addEventListener('error', (error) => {
-          reject(error);
-        });
-        document.body.appendChild(virtualLink);
-        virtualLink.click();
-        document.body.removeChild(virtualLink);
+      const virtualLink = document.createElement('a');
+      virtualLink.href = URL.createObjectURL(file);
+      virtualLink.download = filePath;
+      virtualLink.addEventListener('load', () => {
+        URL.revokeObjectURL(virtualLink.href);
+        resolve();
       });
+      virtualLink.addEventListener('error', (error) => {
+        reject(error);
+      });
+      document.body.appendChild(virtualLink);
+      virtualLink.click();
+      document.body.removeChild(virtualLink);
+    });
   };
 
   const handleUploadAnother = () => {
@@ -86,6 +109,20 @@ function Uploadnote({ moduleNumber }) {
     setUploadSuccess(false);
     setShowSuccessMessage(false);
     setFadeOut(false);
+  };
+
+  const handleFinish = () => {
+    fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext')
+      .then((response) => {
+        if (response.ok) {
+          // Handle successful response
+        } else {
+          throw new Error('Error requesting data');
+        }
+      })
+      .catch((error) => {
+        console.error('Error requesting data:', error);
+      });
   };
 
   const renderUploadInputs = () => {
@@ -144,18 +181,14 @@ function Uploadnote({ moduleNumber }) {
               >
                 {uploading ? 'Uploaded' : 'Upload'}
               </motion.button>
-              <Link to="/uploadpyq" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
+              <Link to="/uploadp" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
                 Next
               </Link>
             </>
           ) : (
             <>
               {showSuccessMessage && (
-                <motion.div
-                  className="text-xl"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
+                <motion.div className="text-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                   Successfully Uploaded!
                 </motion.div>
               )}
@@ -165,9 +198,12 @@ function Uploadnote({ moduleNumber }) {
               >
                 Upload Another
               </motion.button>
-              <Link to="/uploadpyq" className="text-blue-500 mt-8">
+              <Link to="/uploadp" className="text-blue-500 mt-8">
                 Next
               </Link>
+              <button className="text-blue-500 mt-8" onClick={handleFinish}>
+                Finish
+              </button>
             </>
           )}
         </motion.div>
@@ -176,4 +212,4 @@ function Uploadnote({ moduleNumber }) {
   );
 }
 
-export default Uploadnote;
+export default Uploadn;

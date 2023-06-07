@@ -10,13 +10,14 @@ import About from "./components/About";
 import Team from "./components/Team";
 import Studyplanner from "./components/Studyplanner";
 import Features from "./components/Features";
-import Uploadsyllabus from "./components/Uploadsyllabus";
+
 import Uploadnote from "./components/Uploadnote";
-import Uploadpyq from "./components/Uploadpyq";
+
 import Anythingmore from "./components/Anythingmore";
 import Uploadn from "./components/Uploadn";
 import Aibot from "./components/Aibot";
 import Uploadp from "./components/Uploadp";
+import Uploads from "./components/Uploads";
 
 function App() {
   return (
@@ -37,12 +38,14 @@ function App() {
           <Route path="/login" element={<Login/>} />
          
        
-          <Route path="/uploadsyllabus" element={<Uploadsyllabus/>} />
+         
           <Route path="/uploadnote" element={<Uploadnote/>} />
-          <Route path="/uploadpyq" element={<Uploadpyq/>} />
+         
           <Route path="/anythingmore" element={<Anythingmore/>} />
           <Route path="/uploadn" element={<Uploadn/>} />
           <Route path="/uploadp" element={<Uploadp/>} />
+          <Route path="/uploads" element={<Uploads/>} />
+
           
           <Route path="/aibot" element={<Aibot/>} />
 

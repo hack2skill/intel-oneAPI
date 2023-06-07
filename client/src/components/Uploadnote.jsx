@@ -167,7 +167,7 @@ function Uploadnote({ moduleNumber }) {
               >
                 {uploading ? 'Uploaded' : 'Upload'}
               </motion.button>
-              <Link to="/uploadpyq" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
+              <Link to="/uploadp" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
                 Next
               </Link>
             </>
@@ -184,7 +184,7 @@ function Uploadnote({ moduleNumber }) {
               >
                 Upload Another
               </motion.button>
-              <Link to="/uploadpyq" className="text-blue-500 mt-8">
+              <Link to="/uploadp" className="text-blue-500 mt-8">
                 Next
               </Link>
             </>
