@@ -10,7 +10,7 @@ function Uploadn({ moduleNumber }) {
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [fadeOut, setFadeOut] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false); // New state to control fading out
 
   const handleNumNotesChange = (event) => {
     const count = parseInt(event.target.value, 10);
@@ -85,6 +85,21 @@ function Uploadn({ moduleNumber }) {
         setUploading(false);
       });
   };
+  const handleNextButtonClick = () => {
+    // Call the API URL: https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext
+    fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext')
+      .then((response) => {
+        if (response.ok) {
+          // Handle the response here
+          console.log('API call successful');
+        } else {
+          throw new Error('Error calling API');
+        }
+      })
+      .catch((error) => {
+        console.error('Error calling API:', error);
+      });
+  };
 
   const saveFileLocally = (filePath, file) => {
     return new Promise((resolve, reject) => {
@@ -109,20 +124,6 @@ function Uploadn({ moduleNumber }) {
     setUploadSuccess(false);
     setShowSuccessMessage(false);
     setFadeOut(false);
-  };
-
-  const handleFinish = () => {
-    fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/notestotext')
-      .then((response) => {
-        if (response.ok) {
-          // Handle successful response
-        } else {
-          throw new Error('Error requesting data');
-        }
-      })
-      .catch((error) => {
-        console.error('Error requesting data:', error);
-      });
   };
 
   const renderUploadInputs = () => {
@@ -181,9 +182,11 @@ function Uploadn({ moduleNumber }) {
               >
                 {uploading ? 'Uploaded' : 'Upload'}
               </motion.button>
-              <Link to="/uploadp" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
+              <Link to="/uploadp" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg" onClick={handleNextButtonClick}>
                 Next
               </Link>
+              
+              
             </>
           ) : (
             <>
@@ -201,9 +204,7 @@ function Uploadn({ moduleNumber }) {
               <Link to="/uploadp" className="text-blue-500 mt-8">
                 Next
               </Link>
-              <button className="text-blue-500 mt-8" onClick={handleFinish}>
-                Finish
-              </button>
+             
             </>
           )}
         </motion.div>

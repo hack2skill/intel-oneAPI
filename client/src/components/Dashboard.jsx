@@ -61,10 +61,57 @@ const Dashboard = () => {
     <div className="w-screen">
       <Navbar />
       <div className="flex flex-col items-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400 mt-3">
-        <div className="grid grid-cols-2 gap-16 py-16 h-96">
+        <div className="grid grid-cols-4 gap-4 py-12 h-12">
+        <motion.div
+            className="bg-slate-100 rounded-lg shadow-lg py-6 w-72"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="mb-4">Total hours</h3>
+            <pre></pre>
+          </motion.div>
+          <motion.div
+            className="bg-slate-100 rounded-lg shadow-lg py-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="mb-4">Maximum retention</h3>
+            <pre></pre>
+          </motion.div>
+          <motion.div
+            className="bg-slate-100 rounded-lg shadow-lg py-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="mb-4">Completed hours</h3>
+            <pre></pre>
+          </motion.div>
+          <motion.div
+            className="bg-slate-100 rounded-lg shadow-lg py-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="mb-4">Average retention</h3>
+            <pre></pre>
+          </motion.div>
+          
+          
+        
+        
+          </div>
+
+        <div className="grid grid-cols-2 gap-16 py-16">
           <div className="grid grid-cols-2 gap-4">
           <motion.div
-            className="bg-slate-100 rounded-lg shadow-lg py-6 h-96 w-60"
+            className="bg-slate-100 rounded-lg shadow-lg py-6 h-88 w-60"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -90,7 +137,7 @@ const Dashboard = () => {
           </div>
 
           <motion.div
-            className="bg-slate-50 rounded-lg shadow-lg py-6 w-120"
+            className="bg-slate-50 rounded-lg shadow-lg py-6 w-120 h-96"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

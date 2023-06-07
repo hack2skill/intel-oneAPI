@@ -170,6 +170,7 @@ function Uploadnote({ moduleNumber }) {
               <Link to="/uploadp" className="bg-green-500 text-white py-2 ml-4 px-6 mt-4 rounded-lg">
                 Next
               </Link>
+              
             </>
           ) : (
             <>
