@@ -3,10 +3,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
 #from Backend.pyqsorter import router as api1_router
-from Backend.summariser import router_summariser as summariser
+#from Backend.summariser import router_summariser as summariser
+from Backend.new_sorter import test as sorter
 #from Backend.Notes_Analyser import router as api4_router
 #from Backend.Narrator import router as api5_router
-#from Backend.NotesToText import router as notestotext
+from Backend.NotesToText import router as notestotext
 # import other API routers as needed
 
 origins = ["*"]
@@ -26,7 +27,8 @@ app.add_middleware(
 
 # Mount the API routerss
 #app.include_router(api1_router)
-app.include_router(summariser)
+app.include_router(notestotext)
+app.include_router(sorter)
 #app.include_router(api4_router)
 #app.include_router(api6_router)
 #app.include_router(notestotext)

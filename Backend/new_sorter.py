@@ -1,5 +1,6 @@
+#pyqsorter , sorts set of pyqs into modules
 from fastapi import APIRouter
-import io
+import os
 import re
 import chardet
 import numpy as np
@@ -8,25 +9,36 @@ import tensorflow_hub as hub
 from sklearnex import patch_sklearn
 patch_sklearn()
 from sklearn.cluster import KMeans
-import boto3
+
+
+
 
 # Create an instance of APIRouter
 test = APIRouter()
 
-def extract_questions_from_file(file_content):
-    pattern = r'((?:[IVX]+|\([a-z]\))\. .*(?:\n\s+\(\w\)\. .*)*)'
-    matches = re.findall(pattern, file_content)
-    questions = [re.sub(r'\n\s+\(\w\)\. ', ' ', match.strip()) for match in matches]
+def extract_questions_from_file(filepath):
+    with open(filepath, 'rb') as f:
+        result = chardet.detect(f.read())
+    encoding = result['encoding']
+    with open(filepath, encoding=encoding) as f:
+        content = f.read()
+        pattern = r'((?:[IVX]+|\([a-z]\))\. .*(?:\n\s+\(\w\)\. .*)*)'
+        matches = re.findall(pattern, content)
+        questions = [re.sub(r'\n\s+\(\w\)\. ', ' ', match.strip()) for match in matches]
     return questions
 
-def extract_questions_from_s3(bucket, key):
-    s3 = boto3.client('s3')
-    response = s3.get_object(Bucket=bucket, Key=key)
-    content = response['Body'].read().decode('utf-8')
-    return extract_questions_from_file(content)
 
-def cluster_questions(questions, num_clusters):
+def extract_questions_from_directory(directory):
+    questions = []
+    for filename in os.listdir(directory):
+        filepath = os.path.join(directory, filename)
+        if os.path.isfile(filepath):
+            questions += extract_questions_from_file(filepath)
+    return questions
+
+def cluster_questions_1(questions, num_clusters):
     module_url = "https://tfhub.dev/google/universal-sentence-encoder-large/5"
+
     embed = hub.load(module_url)
     embeddings = embed(questions).numpy()
     kmeans = KMeans(n_clusters=num_clusters)
@@ -41,23 +53,13 @@ def cluster_questions(questions, num_clusters):
 
     return y_kmeans, repeated_indices
 
+
 @test.get("/api1")
 def api1_handler():
-    s3_bucket = 'learnmateai'
-    s3_key_prefix = 'pyqs_text/'
+    questions = extract_questions_from_directory('Local_Storage/pyqs_text')
     num_clusters = 4
     
-    s3 = boto3.client('s3')
-    questions = []
-    response = s3.list_objects_v2(Bucket=s3_bucket, Prefix=s3_key_prefix)
-    for obj in response['Contents']:
-        key = obj['Key']
-        if key.endswith('.txt'):
-            response = s3.get_object(Bucket=s3_bucket, Key=key)
-            content = response['Body'].read().decode('utf-8')
-            questions += extract_questions_from_file(content)
-
-    labels, repeated_indices = cluster_questions(questions, num_clusters)
+    labels, repeated_indices = cluster_questions_1(questions, num_clusters)
 
     print("Clustering questions")
     for i in range(num_clusters):
@@ -72,22 +74,19 @@ def api1_handler():
         for index in repeated_indices:
             print(f" - {questions[index]}")
 
-    # Save the results to S3
-    output_key = 'Generated_Files/cluster_questions.txt'
-    output_content = ""
-    for i in range(num_clusters):
-        cluster_questions = np.array(questions)[np.where(labels == i)[0]]
-        output_content += f"Module {i+1}:\n"
-        for question in cluster_questions:
-            output_content += f" - {question}\n"
-        output_content += "\n"
+    with open('Local_Storage/Generated_Files/cluster_questions.txt', 'w') as f:
+        for i in range(num_clusters):
+            cluster_questions = np.array(questions)[np.where(labels == i)[0]]
+            f.write(f"Module {i+1}:\n")
+            for question in cluster_questions:
+                f.write(f" - {question}\n")
+            f.write("\n")
 
-    if repeated_indices:
-        output_content += "Repeated Questions:\n"
-        for index in repeated_indices:
-            output_content += f" - {questions[index]}\n"
-
-    s3.put_object(Body=output_content.encode('utf-8'), Bucket=s3_bucket, Key=output_key)
+        # Write repeated questions to file
+        if repeated_indices:
+            f.write("Repeated Questions:\n")
+            for index in repeated_indices:
+                f.write(f" - {questions[index]}\n")
 
     return {"message": "Previous Year question papers sorted to modules"}
 
