@@ -36,7 +36,7 @@ def extract_questions_from_directory(directory):
             questions += extract_questions_from_file(filepath)
     return questions
 
-def cluster_questions_1(questions, num_clusters, syllabus_file):
+def cluster_questions_1(questions, num_clusters):
     module_url = "https://tfhub.dev/google/universal-sentence-encoder-large/5"
 
     embed = hub.load(module_url)
@@ -58,8 +58,8 @@ def cluster_questions_1(questions, num_clusters, syllabus_file):
 def api1_handler():
     questions = extract_questions_from_directory('Local_Storage/pyqs_text')
     num_clusters = 4
-    syllabus_file = 'Local_Storage/syllabus.txt'
-    labels, repeated_indices = cluster_questions_1(questions, num_clusters, syllabus_file)
+    
+    labels, repeated_indices = cluster_questions_1(questions, num_clusters)
 
     print("Clustering questions")
     for i in range(num_clusters):

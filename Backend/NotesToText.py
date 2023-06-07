@@ -6,6 +6,8 @@ from typing import List
 import boto3
 from botocore.exceptions import NoCredentialsError
 from io import BytesIO
+import tempfile
+
 
 s3_access_key = "AKIAZTHHIOR4CN6UXO6N"
 s3_secret_access_key = "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"
@@ -34,91 +36,99 @@ def download_files_from_s3(bucket_name, prefix, local_directory):
                 
 
 
-def pdf_to_images(pdf_path, output_folder):
+def pdf_to_images_from_bytes(pdf_content, output_folder, file_name):
+    s3_bucket_name = 'learnmateai'
+    
+    # Save PDF content to a temporary file
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        temp_filename = temp_file.name
+        temp_file.write(pdf_content)
     
     # Convert PDF pages to images
-    images = convert_from_path(pdf_path)
+    images = convert_from_path(temp_filename)
+    
+    # Remove the temporary file
+    os.remove(temp_filename)
 
-    # Create the output folder if it doesn't exist
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-
-    # Save each image in the specified output folder
+    # Save each image to S3
     image_paths = []
     for i, image in enumerate(images):
-        image_path = os.path.join(output_folder, f'page_{i+1}.jpeg')
-        image.save(image_path, 'JPEG')
-        image_paths.append(image_path)
+        image_bytes = BytesIO()
+        image.save(image_bytes, 'JPEG')
+        image_bytes.seek(0)
+        
+        image_key = f'{output_folder}/page_{i+1}.jpeg'
+        s3.put_object(Body=image_bytes, Bucket=s3_bucket_name, Key=image_key)
+        
+        image_paths.append(image_key)
     noImg = i+1     
-    return image_paths,noImg
+    return image_paths, noImg
 
 @router.get("/notestotext")
 def NotesToText_handler():
     substring_to_remove = "Scanned by CamScanner"
+    s3_bucket_name = 'learnmateai'
+
     
     prefix = 'notes_pdf/'
-    local_directory = 'Local_Storage/notes_pdf'
-
-    # Create the local directory if it doesn't exist
-    os.makedirs(local_directory, exist_ok=True)
-
-    # Download files from S3
-    download_files_from_s3(s3_bucket_name, prefix, local_directory)
     
-    folder_path = "Local_Storage/notes_pdf"
-
-    # Get all files in the folder
-    mod_files = os.listdir(folder_path)
-
-    # Print the file names
-    for file_name in mod_files:
-        file_name=file_name.split(".")[0]
-
-        print(f"converting {file_name}....")
-        pdf_path = f'Local_Storage/notes_pdf/{file_name}.pdf'
-        output_folder = f'images/Notes_images/{file_name}'
+    # List files in the S3 bucket with the specified prefix
+    response = s3.list_objects_v2(Bucket=s3_bucket_name, Prefix=prefix)
+    
+    # Extract the file names from the response
+    files = [obj['Key'] for obj in response.get('Contents', [])]
+    
+    # Process each file
+    for file_name in files:
+        file_name = os.path.splitext(os.path.basename(file_name))[0]
         
-        # Convert the PDF to images and save them in the output folder
-        image_paths, noImg = pdf_to_images(pdf_path, output_folder)
+        print(f"converting {file_name}....")
+        
+        # Download the PDF file from S3
+        pdf_object = s3.get_object(Bucket=s3_bucket_name, Key=f'{prefix}{file_name}.pdf')
+        pdf_content = pdf_object['Body'].read()
+        
+        # Create the output folder in S3
+        output_folder = f'images/Notes_images/{file_name}'
+        s3.put_object(Body='', Bucket=s3_bucket_name, Key=f'{output_folder}/')
+        
+        # Convert the PDF to images and save them in the output folder in S3
+        image_paths, noImg = pdf_to_images_from_bytes(pdf_content, output_folder, file_name)
         print(noImg)
         
         os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'Files/client_file_vision.json'
         client = vision.ImageAnnotatorClient()
-
+        
         # [START vision_python_migration_text_detection]
         image_contents = " "
         
         for j in range(noImg):
-            image_path = f'images/Notes_images/{file_name}/page_{j+1}.jpeg'   
-            with open(image_path, 'rb') as image_file:
-                content = image_file.read()
-                image = vision.Image(content=content)
-                response = client.text_detection(image=image)
-                texts = response.text_annotations[0]
-                text = str(texts.description)
-                image_contents += text.replace(substring_to_remove, "")
-
-
-        output_file = f"Local_Storage/notes_txt/{file_name}.txt"
-    #    Write the text content to the output file
-        with open(output_file, "w",encoding="utf-8") as file:
-            file.write(image_contents)
-            print(f"{file_name} completed")
+            image_path = f'{output_folder}/page_{j+1}.jpeg'
+            
+            # Download the image from S3
+            image_object = s3.get_object(Bucket=s3_bucket_name, Key=image_path)
+            image_content = image_object['Body'].read()
+            
+            content = vision.Image(content=image_content)
+            response = client.text_detection(image=content)
+            texts = response.text_annotations[0]
+            text = str(texts.description)
+            image_contents += text.replace(substring_to_remove, "")
         
         s3_key = f'notes_txt/{file_name}.txt'
-
-        # Write the text content to the output file
+        
+        # Upload the text content to S3
         s3.put_object(
             Body=image_contents,
             Bucket=s3_bucket_name,
             Key=s3_key
         )
-              
+        
         if response.error.message:
             raise Exception(
-            '{}\nFor more info on error messages, check: '
-            'https://cloud.google.com/apis/design/errors'.format(
-                response.error.message))
+                '{}\nFor more info on error messages, check: '
+                'https://cloud.google.com/apis/design/errors'.format(
+                    response.error.message))
 
 
 
