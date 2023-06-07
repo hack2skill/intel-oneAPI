@@ -17,6 +17,23 @@ s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s
 
 router = APIRouter()
 
+def download_files_from_s3(bucket_name, prefix, local_directory):
+    
+    paginator = s3.get_paginator('list_objects_v2')
+    operation_parameters = {'Bucket': bucket_name, 'Prefix': prefix}
+
+    page_iterator = paginator.paginate(**operation_parameters)
+
+    for page in page_iterator:
+        if 'Contents' in page:
+            for item in page['Contents']:
+                key = item['Key']
+                local_file_path = os.path.join(local_directory, os.path.basename(key))
+                s3.download_file(bucket_name, key, local_file_path)
+                print(f"Downloaded {key} to {local_file_path}")
+                
+
+
 def pdf_to_images(pdf_path, output_folder):
     
     # Convert PDF pages to images
@@ -38,6 +55,15 @@ def pdf_to_images(pdf_path, output_folder):
 @router.get("/notestotext")
 def NotesToText_handler():
     substring_to_remove = "Scanned by CamScanner"
+    
+    prefix = 'notes_pdf/'
+    local_directory = 'Local_Storage/notes_pdf'
+
+    # Create the local directory if it doesn't exist
+    os.makedirs(local_directory, exist_ok=True)
+
+    # Download files from S3
+    download_files_from_s3(s3_bucket_name, prefix, local_directory)
     
     folder_path = "Local_Storage/notes_pdf"
 
@@ -78,6 +104,15 @@ def NotesToText_handler():
         with open(output_file, "w",encoding="utf-8") as file:
             file.write(image_contents)
             print(f"{file_name} completed")
+        
+        s3_key = f'notes_txt/{file_name}.txt'
+
+        # Write the text content to the output file
+        s3.put_object(
+            Body=image_contents,
+            Bucket=s3_bucket_name,
+            Key=s3_key
+        )
               
         if response.error.message:
             raise Exception(
