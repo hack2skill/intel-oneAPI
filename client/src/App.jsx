@@ -16,6 +16,7 @@ import Uploadpyq from "./components/Uploadpyq";
 import Anythingmore from "./components/Anythingmore";
 import Uploadn from "./components/Uploadn";
 import Aibot from "./components/Aibot";
+import Uploadp from "./components/Uploadp";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/uploadpyq" element={<Uploadpyq/>} />
           <Route path="/anythingmore" element={<Anythingmore/>} />
           <Route path="/uploadn" element={<Uploadn/>} />
+          <Route path="/uploadp" element={<Uploadp/>} />
           
           <Route path="/aibot" element={<Aibot/>} />
 
