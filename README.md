@@ -11,6 +11,12 @@
   <img src="Data/oneAPI_ODAV.png" />
 </p>
   
+<p align="center">
+    <img src="Data/demo.gif", width="480">
+    <br>
+    <sup>Loading ....</sup>
+</p>
+  
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
    - Intel® AI Analytics Toolkits
