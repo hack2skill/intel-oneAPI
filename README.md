@@ -13,7 +13,7 @@
 ![Screenshot 2023-06-08 224156](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/e0a0869a-2830-43f2-89c5-336e32ac5a35)
 
 ## Architecture Diagram: 
-![Screenshot 2023-06-08 225154](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/9735fa86-10b2-4b75-877a-0c8960a0188a)
+
   
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
