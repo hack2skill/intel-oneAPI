@@ -33,7 +33,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
   
 <details>
-  <h2>Image to Speech</h2>
+  <heading>Image to Speech</heading>
   <h3>Introduction</h3>
   <p>This is image to speech</p>
 </details>
