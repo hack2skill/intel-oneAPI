@@ -13,11 +13,11 @@
   
 ## Tech Stack: 
 List of technologies used both in hardware and software
-* [![Raspberry pi 4 board][Raspberry pi 4 board]] 
-* [![LIDAR sensor pro][LIDAR sensor pro]]
-* [![Raspberry pi][Raspberry pi]]
-* [![camera night vision][camera night vision]]
-* [![Raspion os][Raspion os]]
+* Raspberry pi 4 board
+* LIDAR sensor pro
+* Raspberry pi
+* camera night vision
+* Raspion os
    
 ## Step-by-Step Code Execution Instructions:
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed.
