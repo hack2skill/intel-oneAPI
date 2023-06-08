@@ -38,14 +38,14 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
   
 <details>
-  <summary><h2>Image to Speech</h2></summary>
+  <summary><h2>3D Model with AR Interface</h2></summary>
   <h3>Introduction</h3>
   <p>Bringing 3D models into the learning process and utilizing an augmented reality interface, students can visualize complex concepts, objects, in a more interactive and engaging manner.    This technology enables students to manipulate and explore virtual objects, enhancing their understanding and retention of the subject matter.</p>
  
   <h3>How we did?</h3>
    
-✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br>
-✅ The models are converted into the glTF format and uploaded to the chosen platform. <br>
+✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
+✅ The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
 ✅ Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
 ✅This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
    
@@ -58,11 +58,57 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 </details>
 
 <details>
-  <summary><h2>Image to Speech</h2></summary>
+  <summary><h2>Image to Speech Recognition</h2></summary>
   <h3>Introduction</h3>
-  <p>This is image to speech</p>
-  <h3>How we did?</h3>
-   
+  <p>This feature enables students to capture images of text, such as medical prescription or text on whiteboards, and convert them into speech. It can assist students with visual    impairments or those who prefer auditory learning, making educational content more accessible.</p>
+ 
+<h3>How we did?</h3>  
+✅Create SYCL kernels using the DPC++ programming model provided by the Intel oneAPI Toolkit.<br><br>
+✅Compile the SYCL DPC++ code using the DPC++ compiler provided by the Intel oneAPI Toolkit.<br><br>
+✅Use ctypes to create a Python wrapper for the compiled C++ code.<br><br>
+✅Import the Python wrapper into your Flask application.<br><br>
+✅Use the wrapper to call the SYCL DPC++ functions for image processing and speech conversion.<br><br>
+ 
+ <h3>How to run?</h3>
+ 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
+ 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+ 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
+ 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
+ 
+</details>
+
+<details>
+  <summary><h2>ML driven suggestion of books</h2></summary>
+  <h3>Introduction</h3>
+  <p>With This feature , you can bid farewell to the overwhelming task of choosing your next read. The system analyzes your reading history, genre preferences, favorite authors, you will be able to choose what to read next by selecting the book which you already selected. It shows  similar kind of suggestions.</p>
+ 
+<h3>How we did?</h3>  
+✅The daal4py is used here.The main purpose of using daal4py in the project is to leverage the optimized implementations of algorithms provided by oneDAL.<br><br>
+✅The oneAPI Data Analytics Library (oneDAL) and its Python wrapper, daal4py, are used for computing cosine similarity between vectors.<br><br>
+ 
+ <h3>How to run?</h3>
+ 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
+ 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+ 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
+ 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
+</details>
+
+<details>
+  <summary><h2>AI powered Document Assistant</h2></summary>
+  <h3>Introduction</h3>
+  <p>This is feature  advanced AI-powered document assistant that revolutionizes the way you search and extract information from PDFs. It eliminates the need for manual searching and scrolling through lengthy documents by leveraging the power of GPT-3.5 and Intel oneApi. With PDFGPT, you can effortlessly ask questions and receive instant answers, allowing for efficient and hassle-free document exploration.</p>
+ 
+<h3>How we did?</h3>  
+✅Imports the SYCL context from the daal4py.onea pi module.<br><br>
+✅This module provides SYCL functionality for GPU acceleration.<br><br>
+✅This flexibility allows you to take advantage of the specific strengths of GPUs while maintaining portability across different hardware architectures.<br><br>
+✅It is a game-changing tool for researchers, students, and professionals, providing a seamless and effective solution for working with PDF documents.<br><br>
+ 
+ <h3>How to run?</h3>
+ 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
+ 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+ 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
+ 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
 </details>
   
 ## What I Learned:
