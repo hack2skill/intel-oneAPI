@@ -9,7 +9,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   
   This section must include UML Daigrms and prototype description
 ## Architecture Diagram
-<img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch2.png" alt="Logo" height="500">
+<img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch2.png" alt="Logo" height="400">
  
   
 ## Tech Stack: 
