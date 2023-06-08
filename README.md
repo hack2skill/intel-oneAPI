@@ -5,19 +5,11 @@
 #### Team Leader Email - 
 
 ## A Brief of the Prototype:
-A NEUROLOGICAL CONDITION CALLED DYSLEXIA IMPAIRS A PERSON'S CAPACITY FOR READING,
-WRITING, AND SPELLING. IT AFFECTS HOW THE BRAIN INTERPRETS LANGUAGE, MAKING IT
-CHALLENGING FOR THOSE WITH DYSLEXIA TO UNDERSTAND
-WRITTEN CONTENT. BETWEEN 5% AND 20% OF INDIANS SUFFER WITH DYSLEXIA, WITH URBAN
-REGIONS HAVING A HIGHER PREVALENCE OF THE CONDITION. THIS INDICATES THAT MILLIONS
-OF INDIAN SCHOOL CHILDREN EXPERIENCE READING AND COMPREHENSION PROBLEMS AS A
-RESULT OF THIS DISORDER. THE CREATION OF SOLUTIONS LIKE OUR PRODUCT DYSLEXIFY, A
-MACHINE LEARNING INITIATIVE INTENDED TO HELP PEOPLE WITH DYSLEXIA IMPROVE THEIR
-READING AND COMPREHENSION SKILLS, has been made possible by technological developments using Intel's oneAPI.
+A neurological condition called dyslexia impairs a person's capacity for reading, writing, and spelling. It affects how the brain interprets language, making it challenging for those with dyslexia to understand written content. Between 5% and 20% of Indians suffer with dyslexia, with urban regions having a higher prevalence of the condition. This indicates that millions of Indian school children experience reading and comprehension problems as a result of this disorder. The creation of solutions like our product Dyslexify, a machine learning initiative intended to help people with dyslexia improve their reading and comprehension skills, has been made possible by technological developments using intel’s oneAPI.
   
   This section must include UML Daigrms and prototype description
-  
-  <blockquote class="imgur-embed-pub" lang="en" data-id="a/iFeHh0I" data-context="false" ><a href="//imgur.com/a/iFeHh0I"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch.jpg" alt="Logo" height="200">
+ 
   
 ## Tech Stack: 
 * Intel's oneAPI
