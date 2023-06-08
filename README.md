@@ -52,3 +52,7 @@ Run [train.ipynb](./train.ipynb) followed by [export.ipynb](./export.ipynb) to s
 
 ## What I Learned:
 Write about the biggest learning you had while developing the prototype
+
+### System Info for Carbon Emissions:
+![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/system.png)
+Power Usage in Watt - lower is better. Upto 18.5% efficient with Intel optimizations.
