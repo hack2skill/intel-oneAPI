@@ -1,6 +1,5 @@
 import cv2
 from ultralyticsplus import YOLO, render_result
-import time
 
 # load model
 model = YOLO('keremberke/yolov8n-pothole-segmentation')
