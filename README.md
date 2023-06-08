@@ -32,7 +32,7 @@ and more..
   2. Cone the repository with the code: `git clone https://github.com/SneakyTurtIe/intel-oneAPI.git`
   3. Change the working directory to the deployment directory: `cd intel-oneAPI/Deployment`
   4. Install the requirements of the project with `pip install -r requirements.txt`
-  5. Run the deployment on localhost using the command: `python main.py`
+  5. Run the deployment on localhost using the command: `python app.py`
 
 <p align="center">
   Your prototype should be running at localhost:5000 <br>
