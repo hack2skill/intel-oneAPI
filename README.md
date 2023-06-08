@@ -64,4 +64,18 @@
 
   
 ## What I Learned:
-   In this road sign detection project utilizing oneAPI, our team gained significant insights and expertise in several key areas. We developed a strong proficiency in oneAPI integration, computer vision techniques, dataset collection and annotation, model training, performance evaluation, error analysis, and real-world application considerations. This project honed our skills in handling oneAPIs effectively, implementing advanced computer vision algorithms, optimizing models, and addressing practical challenges. Overall, the project enriched our knowledge and capabilities in road sign detection, empowering us to tackle complex computer vision tasks with confidence and expertise.
+ **Image processing and computer vision techniques:** Road sign detection often involves applying various image processing and computer vision algorithms to identify and locate signs within images or video streams. This includes techniques like image segmentation, feature extraction, and object detection.
+
+**Data collection and preprocessing:** Gathering a diverse dataset of road sign images is crucial for training and evaluating the detection model. You would have learned how to collect and preprocess the data, including labeling the signs and handling data augmentation techniques.
+
+**Model selection and training:** Choosing an appropriate model architecture for road sign detection and training it using the collected dataset. This involves understanding different deep learning models and their suitability for the task, selecting loss functions, and optimizing hyperparameters.
+
+**Integration of oneAPI tools:** oneAPI provides a unified programming model for diverse hardware architectures. You would have learned how to leverage oneAPI tools, such as oneDNN (oneAPI Deep Neural Network Library) and oneVPL (oneAPI Video Processing Library), to optimize and accelerate the road sign detection pipeline on specific hardware platforms.
+
+**Performance optimization:** Road sign detection often requires real-time or near real-time processing, especially in autonomous driving applications. You would have explored optimization techniques to improve the inference speed and efficiency of the detection model, such as model quantization, pruning, and parallelization.
+
+**Evaluation and accuracy assessment:** Assessing the performance of the road sign detection model through evaluation metrics like precision, recall, and F1 score. This helps measure the accuracy and effectiveness of the model in correctly identifying road signs.
+
+**Deployment and integration:** Integrating the trained road sign detection model into larger systems or applications, such as autonomous vehicles or traffic management systems. This involves considering deployment requirements, performance constraints, and compatibility with existing software or hardware components.
+
+
