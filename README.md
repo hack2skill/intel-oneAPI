@@ -2,7 +2,7 @@
 
 #### Team Name -Team Xion
 #### Problem Statement - Object Detection in Autonomous Vehicles
-#### Team Leader Email -sarthakjoshisj93@gmail.com
+#### Team Leader Email - sarthakjoshisj93@gmail.com
 
 ## A Brief of the Prototype:
   #### Developed a road sign detection model using the oneAPI framework in conjunction with the openVINO toolkit. 
