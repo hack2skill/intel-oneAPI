@@ -79,7 +79,7 @@ $ cd oneAPI_ODAV
 $ cd oneAPI_ODAV_App
 ```
 - Download the Trained Models and Test_Video Folder from google Drive link given below and extract it inside oneAPI_ODAV_App Folder
-- https://drive.google.com/file/d/1YXf8kMjowu28J5Z_ZPXoRIDABRKzmHis/view?usp=sharing
+- https://drive.google.com/file/d/1EZAifBEQU9q8AgOkVzM_IqtC3tjQJrXA/view?usp=sharing
 
 ```sh
 $ wget https://drive.google.com/file/d/1YXf8kMjowu28J5Z_ZPXoRIDABRKzmHis/view?usp=sharing
