@@ -14,7 +14,7 @@ OF INDIAN SCHOOL CHILDREN EXPERIENCE READING AND COMPREHENSION PROBLEMS AS A
 RESULT OF THIS DISORDER. THE CREATION OF SOLUTIONS LIKE OUR PRODUCT DYSLEXIFY, A
 MACHINE LEARNING INITIATIVE INTENDED TO HELP PEOPLE WITH DYSLEXIA IMPROVE THEIR
 READING AND COMPREHENSION SKILLS, has been made possible by technological developments using Intel's oneAPI.
-  <img src="https://imgur.com/a/iFeHh0I.jpg" alt="Logo" width="100" height="100">
+  <img src="https://imgur.com/a/iFeHh0I" alt="Logo" width="100" height="100">
   This section must include UML Daigrms and prototype description
   
 ## Tech Stack: 
