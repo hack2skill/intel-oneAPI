@@ -11,7 +11,7 @@
   ####  Trained a deep learning model SSD using the dataset within the oneAPI framework. 
   ####  Fine-tuned the model to improve its accuracy in detecting Indian road signs. 
   ####  Converted the trained model to the OpenVINO Intermediate Representation (IR) format for deployment. Utilized openVINO's inference engine to perform real-time    road sign detection on different hardware platforms. 
-  #####  Achieved high accuracy and real-time performance in road sign detection tasks using the combined power of the oneAPI framework and OpenVINO toolkit, showcasing their synergy in computer vision applications.
+  ####  Achieved high accuracy and real-time performance in road sign detection tasks using the combined power of the oneAPI framework and OpenVINO toolkit, showcasing their synergy in computer vision applications.
   
 ## Tech Stack: 
    * Intel SYCL/C++ Library
