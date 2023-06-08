@@ -2,7 +2,7 @@
 
 #### Team Name - Hitaya
 #### Problem Statement - Object Detection For Autonomous Vehicles
-#### Team Leader Email - jayitab25@gmail.com
+#### Team Leader Email - manijb13@gmail.com
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
