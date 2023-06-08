@@ -32,6 +32,10 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ## Step-by-Step Code Execution Instructions:
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
   
+<details>
+  ## Application
+</details>
+  
 ## What I Learned:
 The Dyslexify project aimed to address the challenges faced by individuals with dyslexia in reading, writing, and comprehension. By leveraging Intel's oneAPI technologies, including the Intel Data Analytics Acceleration Library (DAAL), Intel Math Kernel Library (MKL), and Intel Deep Learning (oneDNN), the project aimed to create a machine learning initiative to improve the lives of students in India and worldwide who struggle with dyslexia.
 Through the Dyslexify project and the utilization of Intel's oneAPI technologies, we have learned the transformative impact that technology can have on the lives of individuals with dyslexia. By leveraging machine learning and deep learning capabilities, Dyslexify has the potential to revolutionize the way dyslexic students access, comprehend, and engage with written content. This project serves as a testament to the power of innovation and collaboration in making a positive difference in the lives of millions of dyslexic individuals in India and beyond.
