@@ -50,11 +50,9 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ✅This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
    
  <h3>How to run?</h3>
- 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
- 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
- 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
- 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
- 
+ 1. Visit the website or you can scan the QR code.<br><br>
+ 2. Give the required permissions to view the 3D AR model.<br><br>
+ 3. Navigate in the 3D space to view the model from different perspectives.<br><br>
 </details>
 
 <details>
@@ -69,9 +67,10 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ✅Import the Python wrapper into your Flask application.<br><br>
 ✅Use the wrapper to call the SYCL DPC++ functions for image processing and speech conversion.<br><br>
  
- <h3>How to run?</h3>
- 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
- 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+ <h3>How to run it locally?</h3>
+ 1. Visit the address /ads/asdasd/asdsa in the this repo.<br><br>
+ 2. Install the packages mentioned in Requirements.txt<br><br>
+   pip install -r requirements.txt
  3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
  4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
  
