@@ -27,6 +27,11 @@ Metrics in fraction - higher is better.
 ## Step-by-Step Code Execution Instructions:
 ```python
 !git clone https://github.com/rishiraj/intel-oneAPI.git
+!conda env create -f environment.yml # Installs Intel AIKit packages
+```
+
+### Inference:
+```python
 !pip install -q ultralytics
 from ultralytics import YOLO
 ```
@@ -38,6 +43,9 @@ from ultralytics import YOLO
 | :--- | :--- |
 | `import cv2` | `from google.colab.patches import cv2_imshow` |
 | `cv2.imshow("result", model(img)[0].plot())` | `cv2_imshow(model(img)[0].plot())` |
+
+### Training:
+Run [train.ipynb](./train.ipynb) followed by [export.ipynb](./export.ipynb) to save trained model in format of choice.
 
 ## What I Learned:
 Write about the biggest learning you had while developing the prototype
