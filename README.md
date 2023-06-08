@@ -49,7 +49,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   <summary><h2>Image to Speech</h2></summary>
   <h3>Introduction</h3>
   <p>This is image to speech</p>
-  <h3>How we did?/h3>
+  <h3>How we did?</h3>
   <p>
     * The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility. 
     * The models are converted into the glTF format and uploaded to the chosen platform. 
