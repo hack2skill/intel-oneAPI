@@ -54,7 +54,6 @@ A neurological condition called dyslexia impairs a person's capacity for reading
  2. Give the required permissions to view the 3D AR model.<br><br>
  3. Navigate in the 3D space to view the model from different perspectives.<br><br>
 </details>
-
 <details>
   <summary><h2>Image to Speech Recognition</h2></summary>
   <h3>Introduction</h3>
@@ -72,7 +71,6 @@ A neurological condition called dyslexia impairs a person's capacity for reading
  2. Install the packages mentioned in Requirements.txt <code>pip install -r requirements.txt</code><br><br>
  3. Run this command <code>python app.py</code><br><br>
 </details>
-
 <details>
   <summary><h2>ML driven suggestion of books</h2></summary>
   <h3>Introduction</h3>
@@ -86,7 +84,6 @@ A neurological condition called dyslexia impairs a person's capacity for reading
  1. Visit this website or use this directory /asdas/sadsad if running locally.<br><br>
  2. Run this command <code>python app.py</code><br><br><br><br>
 </details>
-
 <details>
   <summary><h2>AI powered Document Assistant</h2></summary>
   <h3>Introduction</h3>
@@ -99,7 +96,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ✅It is a game-changing tool for researchers, students, and professionals, providing a seamless and effective solution for working with PDF documents.<br><br>
  
  <h3>How to run?</h3>
- 1. Visit the website or the address /ads/asdasd/asdsa in the this repo.<br><br><br><br>
+ 1. Visit the website or the address /ads/asdasd/asdsa in the this repo.<br><br>
  2. If running locally run this command <code>cd backend</code> after which <code>python app.py</code><br><br>
  3. Go back to the previous directory using <code>cd ../</code> and navigate to frontend directory using the command <code>cd frontend</code><br><br>
  4. Run this command <code>npm start</code>.<br><br>
