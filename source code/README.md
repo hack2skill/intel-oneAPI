@@ -1,2 +1,2 @@
-# DES
+# DES (Dynamic education system)
  
