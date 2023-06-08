@@ -142,7 +142,7 @@ Object types:
 ```
 
 <p align="center">
-    <img src="Data/Screenshots/5.png" width="800">
+    <img src="Data/Screenshots/04.png" width="800">
 </p>
 
 
