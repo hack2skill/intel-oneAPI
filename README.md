@@ -1,7 +1,8 @@
 # intel-oneAPI
 
-#### Team Name - SneakyTurtle
-#### Problem Statement - Object Detection For Autonomous Vehicles
+#### Team Name - SneakyTurtle <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/f7ee32ba-d85e-4ab3-8731-b6701d94b313" height = "50px">
+
+#### Problem Statement - Object Detection For Autonomous Vehicles 🚗
 #### Team Leader Email - shreyashmohadikar@gmail.com
 
 
