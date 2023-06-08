@@ -19,6 +19,7 @@ List of technologies used both in hardware and software
 * camera night vision
 * Raspion os
 * numactl
+* intel-oneAPI
    
 ## Step-by-Step Code Execution Instructions:
 Step 1: CLone the repository
