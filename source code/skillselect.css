@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+
+a{
+    text-decoration: none;
+}
+#logout{
+    color: white;
+    padding-left: 90%;
+    
+    padding-right: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#text{
+    text-align: center;
+}
+.back{
+    background-image: url('img/bg3.png');
+    background-repeat: repeat;
+}
+.log{
+
+   padding-left: 45%;
+}
+.writing{
+    color: white;
+  text-align: center;
+  text-decoration-style: wavy;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+}
+.autotype{
+    color: rgb(245, 123, 42);
+}
+.dom{
+    font-size: 40px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 2%;
+
+}
+
+
+.eff{
+    width: 30%;
+    display: inline-block;
+    float: inline-end;
+    overflow: hidden;
+    border-style: solid;
+    border-color: WHITE;
+    position: relative;
+}
+.eff img{
+    transition: transform 0.7s ease;
+}
+.eff:hover img{
+    transform: scale(1.3);
+}
+
+
+.opt{
+    margin-left: 4%;
+}
+.navigation{
+    background-color: black;
+    padding-top: 10%;
+}
+#nav{
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

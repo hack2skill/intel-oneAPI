@@ -1,0 +1,52 @@
+.background{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+}
+h3{
+    font-family: Calibri; 
+    font-size: 25pt;         
+    font-style: normal; 
+    font-weight: bold; 
+    color:whitesmoke;
+    text-align: center; 
+    text-decoration: underline
+    }
+    
+    table{
+      font-family: Calibri; 
+      color:white; 
+      font-size: 11pt; 
+      font-style: normal;
+      font-weight: bold;
+      background: transparent;
+    }
+    table.inner{
+      border: 0px
+    }
+    form{
+      border: 2px white solid;
+      margin: 20%;
+      margin-top: 0%;
+      margin-bottom: auto;
+    }
+    legend{
+      color: aliceblue;
+    }
+
+    /* footer part */
+ .footer{
+  text-align: center;
+  font-size: 12px;
+  margin-top: auto;
+  padding-top: 2%;
+  background-color: rgba(5, 0, 19, 0.993);
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+#cp{
+  color: white;
+}

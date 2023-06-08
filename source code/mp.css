@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bg{
+    background-image: url(img/darkbg1.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.LO{
+    padding-left: 90%;
+    text-decoration: none;
+    color:white;
+    font-size: 7sp;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.log a:hover{
+    color: rgb(241, 145, 34);
+}
+
+.log{
+    position: relative;
+    margin-top: 0%;
+}
+.op{
+    text-decoration: none;
+    margin-left: 7%;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 7sp;
+}
+#imga{
+    margin-top: 0%;
+}
+.wel{
+    color: white;
+    margin-left: 1%;
+}
+.wel h1{
+    font-size: 50px;
+    color: rgb(241, 145, 34);
+}
+.wel p{
+    font-size: 15px;
+    padding-left: 5%;
+    font-family: sans-serif;
+}
+.innerbox{
+    border-radius: 20px;
+    height: 50px;
+    background-color: aqua;    
+}

@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.option{
+    text-decoration-style: wavy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top:2% ;
+    padding-left:30%;
+    padding-right: 30%;
+    font-size: 30px;
+}
+#head{
+    text-decoration-style: wavy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: black;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.btn{
+    padding-left: 10%;
+}
+.button{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: black;
+    color: white;
+    font-style: Bold;
+    font-size: large;
+}

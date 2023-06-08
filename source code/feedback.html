@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DES(Dynamic Education System)</title>
+    <link rel="stylesheet" href="feed/feedback.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="feed/feedback.js"></script>
+</head>
+
+<body>
+
+
+    <nav id="navbar">
+        <a href="home.html" target="_blank" class="home"><i class="fa-sharp fa-solid fa-house"></i>&nbsp;HOME</a>
+        <a href="#" class="navbar">TRAINING</a>
+        <a href="#" class="navbar"><i class="fa-duotone fa-kitchen-set"></i>&nbsp;SKILLS</a>
+        <a href="dashboard.html" target="_blank" class="navbar"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;DASHBOARD</a>
+        <a href="#" class="navbar">LOGOUT &nbsp;<i class="fa-regular fa-address-card"></i></a>
+    </nav>
+    <br>
+
+
+
+    <section>
+        <div class="bg-black text-white py-20">
+            <div class="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
+                <div class="flex flex-col w-full lg:w-1/3 p-8">
+                    <p class="text-3xl md:text-5xl my-4 leading-relaxed md:leading-snug" style="font-size: 1.5cm;">Leave
+                        us a feedback!</p>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                        Please provide your valuable feedback and suggestions ...
+                    </p>
+                </div>
+                <div class="flex flex-col w-full lg:w-2/3 justify-center">
+                    <div class="container w-full px-4">
+                        <div class="flex flex-wrap justify-center">
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div
+                                    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white">
+                                    <div class="flex-auto p-5 lg:p-10">
+                                        <h4 class="text-2xl mb-4 text-black font-semibold">Have a suggestion?</h4>
+                                        <form id="feedback" action="" method="">
+                                            <div class="relative w-full mb-3">
+                                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    for="email">Email</label><input type="email" name="email" id="email"
+                                                    class="border-0 px-3 py-3 rounded text-sm shadow w-full
+                                                    bg-gray-300 placeholder-black text-gray-800 outline-none focus:bg-gray-400"
+                                                    placeholder="Write your email here..."
+                                                    style="transition: all 0.15s ease 0s;" required />
+                                            </div>
+                                            <div class="relative w-full mb-3">
+                                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    for="message">Message</label><textarea maxlength="300"
+                                                    name="feedback" id="feedback" rows="4" cols="80"
+                                                    class="border-0 px-3 py-3 bg-gray-300 placeholder-black text-gray-800 rounded text-sm shadow focus:outline-none w-full"
+                                                    placeholder="Write your feedback..." required></textarea>
+                                            </div>
+                                            <div class="text-center mt-6">
+                                                <button id="feedbackBtn"
+                                                    class="bg-yellow-300 text-black text-center mx-auto active:bg-yellow-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                                    type="submit" style="transition: all 0.15s ease 0s;">Submit
+                                                </button>
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- footer -->
+<nav class="footer">
+    <p id="cp">Developed by ITGians Copyright @des pvt.ltd. </p>
+</nav>
+  
+
+
+
+</body>
+
+</html>
