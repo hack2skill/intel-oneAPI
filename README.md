@@ -12,7 +12,7 @@
 </p>
   
 <p align="center">
-    <img src="Data/demo.gif", width="480">
+    <img src="Data/demo.gif", width="640">
     <br>
     <sup>Loading ....</sup>
 </p>
