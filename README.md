@@ -51,7 +51,9 @@ Run [train.ipynb](./train.ipynb) followed by [export.ipynb](./export.ipynb) to s
 | ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/train_batch1.jpg) | ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/train_batch2.jpg) |
 
 ## What I Learned:
-Write about the biggest learning you had while developing the prototype
+By leveraging Intel's optimized tools, I learned how crucial it is to fine-tune and optimize the deep learning pipeline for the specific hardware platform. These tools provided a substantial boost to the overall speed and efficiency of the object detection solution. They showcased the importance of understanding the underlying hardware architecture and utilizing specialized optimizations to leverage its full potential.
+
+Another significant learning came from the application of post-training quantization techniques. Converting the model's 32-bit float parameters into 8-bit fixed representations through quantization was an enlightening process. It demonstrated how reducing the precision of the model's parameters can lead to significant improvements in resource utilization, especially when deploying on Edge TPU and Coral hardware.
 
 ### System Info for Carbon Emissions:
 ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/system.png)
