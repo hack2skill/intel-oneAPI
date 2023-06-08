@@ -16,7 +16,7 @@
 **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
    
 ## Step-by-Step Code Execution Instructions:
-  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
+  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed in the future
   
 ## What I Learned:
   1) We learnt to interface the raspberry pi cam with the raspberry pi board.
