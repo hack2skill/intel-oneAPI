@@ -21,7 +21,7 @@
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
-![Colab](https://img.shields.io/badge/google%20colab-%040404.svg?style=for-the-badge&logo=googlecolab&logoColor=white)  
+![Colab](https://img.shields.io/badge/google%20colab-%040404.svg?style=for-the-badge&logo=googlecolab&logoColor=white)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)  
 and more..
 
