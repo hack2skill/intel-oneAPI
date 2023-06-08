@@ -13,13 +13,14 @@
   ####  Converted the trained model to the OpenVINO Intermediate Representation (IR) format for deployment. Utilized openVINO's inference engine to perform real-time    road sign detection on different hardware platforms. 
   ####  Achieved high accuracy and real-time performance in road sign detection tasks using the combined power of the oneAPI framework and OpenVINO toolkit, showcasing their synergy in computer vision applications.
   
-  # Diagram
-  ![Architect Diagram](https://web.whatsapp.com/d27bf362-0b8b-4dfa-b70a-88a39825daf5)
-   
+  ### Diagram
+  ![Diagram](https://github.com/Craniace/intel-oneAPI/assets/100042684/be5c1803-083c-4879-8cde-c2d4ec154092)
+
+
 ## Tech Stack: 
    * Intel SYCL/C++ Library
    * Intel Distribution for Python
-   * openVINO
+   * openVINO for Python
    * Visual Studio Code
    * Python 3.11
    * Intel DevCloud Platform
