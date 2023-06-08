@@ -34,8 +34,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   
 <details>
   <summary>Image to Speech</summary>
-  <ol>
-  </ol>
+  <h2>Introduction</h2>
+  <p>This is image to speech</p>
 </details>
   
 ## What I Learned:
