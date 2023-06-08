@@ -6,8 +6,13 @@
 
 ## A Brief of the Prototype:
 A neurological condition called dyslexia impairs a person's capacity for reading, writing, and spelling. It affects how the brain interprets language, making it challenging for those with dyslexia to understand written content. Between 5% and 20% of Indians suffer with dyslexia, with urban regions having a higher prevalence of the condition. This indicates that millions of Indian school children experience reading and comprehension problems as a result of this disorder. The creation of solutions like our product Dyslexify, a machine learning initiative intended to help people with dyslexia improve their reading and comprehension skills, has been made possible by technological developments using intel’s oneAPI.
-  
-  This section must include UML Daigrms and prototype description
+
+## Features we Offer
+* 3D model with AR interface usIng oneAPI Rendering toolkit
+* Image to speech recognition, text to speech recognition, using SYCL
+* Ml driven suggestion of books ,using daal4py
+* Ai Powered Document Assistant,using GPU Strength
+
 ## Architecture Diagram
 <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch2.png" alt="Logo" height="300">
  
@@ -35,7 +40,23 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 <details>
   <summary><h2>Image to Speech</h2></summary>
   <h3>Introduction</h3>
+  <p>Bringing 3D models into the learning process and utilizing an augmented reality interface, students can visualize complex concepts, objects, in a more interactive and engaging manner.    This technology enables students to manipulate and explore virtual objects, enhancing their understanding and retention of the subject matter.</p>
+  <h3>How we did?/h3>
   <p>This is image to speech</p>
+</details>
+
+<details>
+  <summary><h2>Image to Speech</h2></summary>
+  <h3>Introduction</h3>
+  <p>This is image to speech</p>
+  <h3>How we did?/h3>
+  <p>
+    * The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility. 
+    * The models are converted into the glTF format and uploaded to the chosen platform. 
+    * Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.
+    This combination of powerful rendering tools powered by intel oneAPI 
+    and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
+  </p>
 </details>
   
 ## What I Learned:
