@@ -46,6 +46,9 @@ from ultralytics import YOLO
 
 ### Training:
 Run [train.ipynb](./train.ipynb) followed by [export.ipynb](./export.ipynb) to save trained model in format of choice.
+| train_batch1 | train_batch2 |
+| :---: | :---: |
+| ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/train_batch1.jpg) | ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/train_batch2.jpg) |
 
 ## What I Learned:
 Write about the biggest learning you had while developing the prototype
