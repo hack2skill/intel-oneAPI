@@ -69,8 +69,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
  
  <h3>How to run it locally?</h3>
  1. Visit the address /ads/asdasd/asdsa in the this repo.<br><br>
- 2. Install the packages mentioned in Requirements.txt<br><br>
-  pip install -r requirements.txt
+ 2. Install the packages mentioned in Requirements.txt '''pip install -r requirements.txt'''<br><br>
  3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
  4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
  
