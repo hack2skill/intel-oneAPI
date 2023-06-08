@@ -44,8 +44,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
  
   <h3>How we did?</h3>
    
-✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
-✅ The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br>
+✅ The models are converted into the glTF format and uploaded to the chosen platform. <br>
 ✅ Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
 ✅This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
    
