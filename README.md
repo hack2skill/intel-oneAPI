@@ -5,13 +5,13 @@
 #### Team Leader Email - sarthakjoshisj93@gmail.com
 
 ## A Brief of the Prototype 🎦:
-  #### Developed a road sign detection model using the oneAPI framework in conjunction with the openVINO toolkit. 
-  ####  Leveraged the oneAPI libraries and tools for efficient implementation and optimization. 
-  ####  Utilized a dataset containing German road sign images for training and evaluation. 
-  ####  Trained a deep learning model SSD using the dataset within the oneAPI framework. 
-  ####  Fine-tuned the model to improve its accuracy in detecting Indian road signs. 
-  ####  Converted the trained model to the OpenVINO Intermediate Representation (IR) format for deployment. Utilized openVINO's inference engine to perform real-time    road sign detection on different hardware platforms. 
-  ####  Achieved high accuracy and real-time performance in road sign detection tasks using the combined power of the oneAPI framework and OpenVINO toolkit, showcasing their synergy in computer vision applications.
+  #### Developed a road sign 🛑 detection model using the oneAPI framework in conjunction with the openVINO toolkit. 
+  #### Leveraged the oneAPI libraries and tools for efficient implementation and optimization. 
+  #### Utilized a dataset containing German road sign images for training and evaluation. 
+  #### Trained a deep learning model SSD using the dataset within the Intel oneAPI oneDAL(DATA ANALYTIC LIBRARY). 
+  #### Fine-tuned the model to improve its accuracy in detecting Indian road signs and help autonomous vehicles.
+  #### Converted the trained model to the OpenVINO Intermediate Representation (IR) format for deployment. Utilized openVINO's inference engine to perform real-time road sign detection on different hardware platforms. 
+  #### Achieved high accuracy and real-time performance in road sign detection tasks using the combined power of the oneAPI framework and OpenVINO toolkit, showcasing their synergy in computer vision applications.
   
   ### Diagram
   ![Diagram](https://github.com/Craniace/intel-oneAPI/assets/100042684/be5c1803-083c-4879-8cde-c2d4ec154092)
@@ -34,8 +34,10 @@
 ### Step 2: Gather and Preprocess Data
 
 - Collect or create a dataset for training your object detection model.
-- Annotate the dataset by labeling the objects of interest with bounding boxes.
+- Annotate the dataset by labelling the objects of interest with bounding boxes.
 - Split the dataset into training and testing sets.
+ ![image](https://github.com/Craniace/intel-oneAPI/assets/100042684/24732fa4-96bd-4e73-9739-28273e372c65)
+
 
 ### Step 3: Trained model with **oneAPI**
 
