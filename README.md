@@ -69,10 +69,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
  
  <h3>How to run it locally?</h3>
  1. Visit the address /ads/asdasd/asdsa in the this repo.<br><br>
- 2. Install the packages mentioned in Requirements.txt '''pip install -r requirements.txt'''<br><br>
- 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
- 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
- 
+ 2. Install the packages mentioned in Requirements.txt <code>pip install -r requirements.txt</code><br><br>
+ 3. Run this command <code>python app.py</code><br><br>
 </details>
 
 <details>
@@ -85,10 +83,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ✅The oneAPI Data Analytics Library (oneDAL) and its Python wrapper, daal4py, are used for computing cosine similarity between vectors.<br><br>
  
  <h3>How to run?</h3>
- 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
- 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
- 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
- 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
+ 1. Visit this website or use this directory /asdas/sadsad if running locally.<br><br>
+ 2. Run this command <code>python app.py</code><br><br><br><br>
 </details>
 
 <details>
@@ -103,10 +99,10 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ✅It is a game-changing tool for researchers, students, and professionals, providing a seamless and effective solution for working with PDF documents.<br><br>
  
  <h3>How to run?</h3>
- 1. The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
- 2. The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
- 3. Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
- 4. This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
+ 1. Visit the website or the address /ads/asdasd/asdsa in the this repo.<br><br><br><br>
+ 2. If running locally run this command <code>cd backend</code> after which <code>python app.py</code><br><br>
+ 3. Go back to the previous directory using <code>cd ../</code> and navigate to frontend directory using the command <code>cd frontend</code><br><br>
+ 4. Run this command <code>npm start</code>.<br><br>
 </details>
   
 ## What I Learned:
