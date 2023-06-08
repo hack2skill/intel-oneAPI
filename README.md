@@ -5,12 +5,12 @@
 #### Team Leader Email -sarthakjoshisj93@gmail.com
 
 ## A Brief of the Prototype:
-  ##### Developed a road sign detection model using the oneAPI framework in conjunction with the openVINO toolkit. 
-  #####  Leveraged the oneAPI libraries and tools for efficient implementation and optimization. 
-  #####  Utilized a dataset containing German road sign images for training and evaluation. 
-  #####  Trained a deep learning model SSD using the dataset within the oneAPI framework. 
-  #####  Fine-tuned the model to improve its accuracy in detecting Indian road signs. 
-  #####  Converted the trained model to the OpenVINO Intermediate Representation (IR) format for deployment. Utilized openVINO's inference engine to perform real-time    road sign detection on different hardware platforms. 
+  #### Developed a road sign detection model using the oneAPI framework in conjunction with the openVINO toolkit. 
+  ####  Leveraged the oneAPI libraries and tools for efficient implementation and optimization. 
+  ####  Utilized a dataset containing German road sign images for training and evaluation. 
+  ####  Trained a deep learning model SSD using the dataset within the oneAPI framework. 
+  ####  Fine-tuned the model to improve its accuracy in detecting Indian road signs. 
+  ####  Converted the trained model to the OpenVINO Intermediate Representation (IR) format for deployment. Utilized openVINO's inference engine to perform real-time    road sign detection on different hardware platforms. 
   #####  Achieved high accuracy and real-time performance in road sign detection tasks using the combined power of the oneAPI framework and OpenVINO toolkit, showcasing their synergy in computer vision applications.
   
 ## Tech Stack: 
