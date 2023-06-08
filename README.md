@@ -41,12 +41,13 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   <summary><h2>Image to Speech</h2></summary>
   <h3>Introduction</h3>
   <p>Bringing 3D models into the learning process and utilizing an augmented reality interface, students can visualize complex concepts, objects, in a more interactive and engaging manner.    This technology enables students to manipulate and explore virtual objects, enhancing their understanding and retention of the subject matter.</p>
+ 
   <h3>How we did?</h3>
    
-    ✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility. 
-    ✅ The models are converted into the glTF format and uploaded to the chosen platform. 
-    ✅ Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.
-    ✅This combination of powerful rendering tools powered by intel oneAPI 
+✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
+✅ The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+✅ Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
+✅This combination of powerful rendering tools powered by intel oneAPI 
     and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
    
 </details>
