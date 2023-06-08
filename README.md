@@ -22,22 +22,22 @@
    * Intel DevCloud Platform
    
 ## Step-by-Step Code Execution Instructions:
-   # Step 1: Install Required Libraries
+   ### Step 1: Install Required Libraries
 
 - Make sure you have Python installed on your system.
 - Install the necessary libraries, such as OpenCV, openVINO, and os, using pip or conda.
 
-# Step 2: Gather and Preprocess Data
+### Step 2: Gather and Preprocess Data
 
 - Collect or create a dataset for training your object detection model.
 - Annotate the dataset by labeling the objects of interest with bounding boxes.
 - Split the dataset into training and testing sets.
 
-# Step 3: Choose a Pre-Trained Model
+### Step 3: Choose a Pre-Trained Model
 
 - Select a pre-trained object detection model that suits your requirements.
 
-# Step 4: Fine-tune the Model
+### Step 4: Fine-tune the Model
 
 - Load the pre-trained model weights.
 - Replace the classification head with a new head suitable for your specific objects.
@@ -45,12 +45,12 @@
 - Train the model using the annotated training dataset.
 - Adjust hyperparameters, such as learning rate and batch size, to optimize performance.
 
-# Step 5: Evaluate the Model
+### Step 5: Evaluate the Model
 
 - Evaluate the performance of your trained model using the testing dataset.
 - Measure metrics like precision, recall, and average precision to assess the model's accuracy.
 
-# Step 6: Implement Object Detection
+### Step 6: Implement Object Detection
 
 - Use the trained model to perform object detection on new images or videos.
 - Preprocess the input by resizing, normalizing, and converting it to the appropriate format.
