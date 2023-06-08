@@ -26,7 +26,17 @@
 and more..
 
 ## Step-by-Step Code Execution Instructions:
-  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
-  
+  #### To clone and run the prototype use the following instructions:
+  1. Open up a bash terminal(Linux) or Command Prompt(Windows)
+  2. Cone the repository with the code: `git clone https://github.com/SneakyTurtIe/intel-oneAPI.git`
+  3. Change the working directory to the deployment directory: `cd intel-oneAPI/Deployment`
+  4. Install the requirements of the project with `pip install -r requirements.txt`
+  5. Run the deployment on localhost using the command: `python main.py`
+
+<p align="center">
+  Your prototype should be running at localhost:5000 <br>
+  <img src = "https://media.giphy.com/media/JqDeI2yjpSRgdh35oe/giphy.gif" height = "250"/>
+</p>
+
 ## What I Learned:
    Write about the biggest learning you had while developing the prototype
