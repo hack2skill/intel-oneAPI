@@ -75,17 +75,6 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  <br>
   <p>Our project provides informational content on Dyslexia. It gives resources, training sites, and information regarding this disorder. Our goal is to provide families with the resources to create a successful path for people with Dyslexia, it encourages people to look at this disorder as a superpower and not a disease.</p>
  
-  <h3>How we did?</h3>
-   
-✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
-✅ The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
-✅ Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
-✅This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
-   
- <h3>How to run?</h3>
- 1. Visit the website or you can scan the QR code.<br><br>
- 2. Give the required permissions to view the 3D AR model.<br><br>
- 3. Navigate in the 3D space to view the model from different perspectives.<br><br>
 </details>
 
 <details> 
