@@ -9,8 +9,10 @@ app = Flask(__name__, template_folder = "templates")
 def home():
     output = "hold"
     if request.method == "POST":
-        predict()
+        f = request.files['file']
+        f.save("inputImage.jpg") 
         output = "show"
+        predict()
     return render_template("index.html", output = output)
 
 if __name__ == "__main__":
