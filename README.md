@@ -66,3 +66,9 @@ Application Design: When designing your application with the oneAPI programming 
 Command Invocation: You can invoke Numactl commands within your application code or in the execution environment to set memory placement and process/thread affinity. For example, you can use system calls or execute shell commands from your application to invoke Numactl with the desired options.
 
 Resource Management: Intel oneAPI provides libraries and tools to manage resources and optimize performance for specific hardware architectures, such as CPUs, GPUs, and FPGAs. While Numactl focuses on NUMA-specific memory and process management, oneAPI tools can handle other aspects of resource management, such as task scheduling, workload distribution, and hardware-specific optimizations.
+
+## Highlights
+* video 1
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Kj6hxT09CPg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+* video 2
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=s-9vVI95zn8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
