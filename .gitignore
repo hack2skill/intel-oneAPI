@@ -100,7 +100,7 @@ wheels/
 /wandb/
 .installed.cfg
 *.egg
-evenrts.out.tfevents.*
+events.out.tfevents.*
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
