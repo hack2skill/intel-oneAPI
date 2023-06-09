@@ -9,9 +9,39 @@
 
 
 ## <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/80522c5e-f814-4c3d-906a-e5518ccdd150" height = "50px" > A Brief of the Prototype:
-  This section must include UML Daigrms and prototype description
+  
   
   <img src ="https://media.giphy.com/media/dqQxplKANtn8c/giphy.gif" height = "250" width = "100%"/>
+  
+  
+This repository contains the code and resources for an advanced object detection model for autonomous vehicles. The Prototpe is designed to excel in extreme weather conditions like fog and snow, thereby improving the safety and reliability of autonomous driving systems.
+
+### Dataset Acquisition
+The dataset used in this project was obtained from Roboflow, a platform for computer vision data management. The dataset can be accessed using the following link: [Roboflow - Self-driving Car Object Detection](https://public.roboflow.com/object-detection/self-driving-car)
+
+### Data Preprocessing
+To prepare the dataset for training, we utilized the preprocessing capabilities offered by Roboflow. The following preprocessing steps were applied to the images:
+
+- Auto-orientation of pixel data, including EXIF-orientation stripping.
+- Resizing the images to a resolution of 640x640 pixels using a stretch method.
+- Random brightness adjustment of the images within a range of -26% to +26%.
+- Random Gaussian blur with a variance between 0 and 2 pixels.
+- The application of salt and pepper noise to 2% of the pixels in the images.
+
+### Model Training
+After preprocessing the dataset, we employed the DETR (Detection Transformer) transfer learning technique to train our advanced object detection model. By leveraging this state-of-the-art approach, we aimed to enhance the model's ability to accurately detect and classify objects in real-time, even in challenging weather conditions.
+
+### Deployment
+For the deployment of the trained prototype, we used Flask. We developed a web application that provides an intuitive interface for users to use the prototype. The Flask app allows users to upload images for object detection. The detected objects are then visualized and displayed to the user, providing valuable insights and enhancing the capabilities of autonomous driving systems.
+
+### Repository Structure
+- `Deployment/`: You can find the deployment of the prototype.
+- `notebooks/`: Jupyter notebooks showcasing the data preprocessing, model training, and evaluation processes.
+- `README.md`: The file you are currently reading, providing an overview of the project.
+
+
+
+  
   
 
 ##  <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/51de0cd9-f6e8-43ce-bb09-baccd71c0447" height = "50px">  Tech Stack: 
@@ -45,4 +75,9 @@ and more..
 </p>
 
 ## What I Learned:
-   Write about the biggest learning you had while developing the prototype
+Throughout the course of this project, we gained valuable insights and knowledge in the field of object detection for autonomous vehicles. We learnt about the limitations of existing models in extreme weather conditions and the importance of developing specialized models for such scenarios. Additionally, we acquired hands-on experience in leveraging the DETR transfer learning technique to create an advanced object detection model. Furthermore, we explored the capabilities of Intel's oneAPI OneDNN tool and discovered its effectiveness in optimizing and accelerating the performance of the code.
+
+
+
+
+
