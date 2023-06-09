@@ -60,6 +60,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 <details>
   <summary><h2>Image to Speech Recognition</h2></summary>
   <h3>Introduction</h3>
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/ImagetoSpeech.jpg" alt="Logo" width="1000">
   <p>This feature enables students to capture images of text, such as medical prescription or text on whiteboards, and convert them into speech. It can assist students with visual    impairments or those who prefer auditory learning, making educational content more accessible.</p>
  
 <h3>How we did?</h3>  
