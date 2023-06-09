@@ -1,0 +1,46 @@
+append variables
+  -
+    var articles = [
+      {
+        image:'article-1.png',
+        title:'Disease detection',
+        text:'In this case, the role of the health laboratory is very important to do a disease detection...'
+      },
+      {
+        image:'article-2.png',
+        title:'Herbal medicines ',
+        text:'Herbal medicine is very widely used at this time because of its very good for your health...'
+      },
+      {
+        image:'article-3.png',
+        title:'Natural care ',
+        text:'A healthy lifestyle should start from now and also for your skin health.There are some...'
+      },
+    ];
+
+mixin Article(config)
+  .col-12.col-sm-9.col-md-4.mt-4
+    .card.h-100.rounded-3.shadow
+      img(src=`${CWD}assets/img/gallery/${config.image}`  alt='')
+      .card-body.p-4.text-center.text-md-start
+        h5.fw-bold=config.title
+        p.card-text=config.text
+        a(href='#' role="button").stretched-link.text-decoration-none Read more
+          svg.bi.bi-arrow-right-short(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16')
+            path(fill-rule='evenodd' d='M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z')
+
+mixin Articles
+  section
+    +Background({ image: `${CWD}assets/img/illustrations/article-bg.png`, attrs: { style: { 'background-position': 'right center', 'background-size': 'auto'} }, className: '' })  
+    .container-lg
+      +Background({ image: `${CWD}assets/img/illustrations/dot-2.png`, attrs: { style: { 'background-position': 'left top', 'background-size': 'initial', 'margin-top':'120px','margin-left':'-35px'} }, className: '' })  
+      .row.flex-center
+        .col-auto.text-center
+          h2.fw-bold Check out our latest article
+          hr.mx-auto.text-dark(style="height:2px;width:50px")
+      .row.h-100.justify-content-center.pt-6
+        each article in articles
+          +Article(article)
+        
+        .text-center.pt-4.z-index-2
+          button.btn.btn-lg.btn-outline-primary.rounded-pill.z-index-2.hover-top(type='submit') View all

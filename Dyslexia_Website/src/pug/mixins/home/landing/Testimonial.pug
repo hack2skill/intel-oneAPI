@@ -1,0 +1,135 @@
+mixin Testimonial(config)
+  .col-12
+    .card.text-white.bg-primary-gradient
+      .card-body.p-4.p-md-4.p-lg-7
+        h2.fw-bold.text-white.text-center=config.title
+        hr.mx-auto(style="height:2px;width:50px")
+        .d-md-flex.align-items-md-center.mt-5.text-center.text-md-start
+          img(src=`${CWD}assets/img/gallery/${config.userImage}` width="100" alt='').img-fluid.me-4.me-md-3.me-lg-4
+          .w-md-25.my-3
+            h5.mb-0.fw-medium.text-white=config.name
+            p.fw-normal.mb-0=config.designation
+          .w-md-75
+            p.card-text.ms-md-5=config.text
+
+mixin Testimonials
+  section.py-8#testimonial
+    .container
+      +Background({ image: `${CWD}assets/img/illustrations/dot.png`, attrs: { style: { 'background-position': 'right top', 'background-size': 'auto','margin-left':'-30px','margin-top':'10px','filter':'contrast(1.5)'} }, className: 'z-index-1' })
+      +Background({ image: `${CWD}assets/img/illustrations/dot-2.png`, attrs: { style: { 'background-position': 'left bottom', 'background-size': 'auto','margin-left':'-35px','margin-top':'-65px','filter':'contrast(1.5)'} }, className: 'z-index-1' })
+      #carouselExampleDark.carousel.slide(data-bs-ride='carousel')
+        .carousel-inner
+          .carousel-item.active(data-bs-interval='10000')
+            .row.h-100
+              +Testimonial({userImage: 'user-1.png', title:'What our customer are saying',name:'Edward Newgate',designation:'Founder Circle',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})                   
+          .carousel-item(data-bs-interval='2000')
+            .row.h-100
+              +Testimonial({userImage: 'user-2.png', title:'Our dear customers said about us',name:'Jhon Doe',designation:'UI/UX Designer',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})
+          .carousel-item
+            .row.h-100
+              +Testimonial({userImage: 'user-3.png', title:'Our dear customers said about us',name:'Jeny Doe',designation:'Web Designer',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})
+
+        .row.mt-4.flex-center
+          .col-4.col-sm-5.text-end.position-relative.z-index-2
+            a.carousel-control-prev.carousel-icon.z-index-2(href='#carouselExampleDark' role='button' data-bs-slide='prev')
+              span.carousel-control-prev-icon(aria-hidden='true')
+              span.visually-hidden Previous
+          .col-auto.position-relative.z-index-2
+            ol.carousel-indicators
+              li.active(data-bs-target='#carouselExampleDark' data-bs-slide-to='0')
+              li(data-bs-target='#carouselExampleDark' data-bs-slide-to='1')
+              li(data-bs-target='#carouselExampleDark' data-bs-slide-to='2')
+          .col-4.col-sm-5.position-relative.z-index-2
+            a.carousel-control-next.carousel-icon.z-index-2(href='#carouselExampleDark' role='button' data-bs-slide='next')
+              span.carousel-control-next-icon(aria-hidden='true')
+              span.visually-hidden Next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- mixin Testimonial
+//-   section
+//-     +Background({ image: `${CWD}assets/img/gallery/testimonial-bg.png`, attrs: { style: { 'background-position': 'center center', 'background-size': 'contain',} }, className: '' }) 
+//-     .container
+//-       .card.bg-info.p-7
+//-         h1.mb-5.fw-bold.text-light Testimonials
+//-         //- .row      
+//-           //- .col-12.col-md-9.col-lg-8.col-xl-7.col-xxl-6
+          
+//-         #carouselExampleControls.carousel.slide(data-bs-ride='carousel')
+//-           .carousel-inner.active
+//-             //- .card.py-sm-6.px-sm-5.testimonial-card-shadow.shadow-sm(style="transform: translateY(52px) scale(.9)")
+//-             //- .card.py-sm-6.px-sm-5.testimonial-card-shadow.shadow-sm(style="transform: translateY(32px) scale(.934)")
+//-             //- .card.py-sm-6.px-sm-5.testimonial-card-shadow.shadow-sm
+//-             .carousel-item.active
+//-               .row.h-100
+//-                 .col-md-6
+//-                   .card.py-4.px-3.py-sm-6.px-sm-5.px-xl-7
+//-                     +Background({ image: `${CWD}assets/img/gallery/q.png`, attrs: { style: { 'background-position': 'center top', 'background-size': '150px',} }, className: 'mt-4' }) 
+//-                     .card-body
+//-                       p.card-text.fs-2.text-center Suspendisse ultrices at diam lectus nullam.Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+//-                 .col-md-6   
+//-                   .card.py-4.px-3.py-sm-6.px-sm-5.px-xl-7
+//-                     +Background({ image: `${CWD}assets/img/gallery/q.png`, attrs: { style: { 'background-position': 'center top', 'background-size': '150px',} }, className: 'mt-4' }) 
+//-                     .card-body
+//-                       p.card-text.fs-2.text-center Suspendisse ultrices at diam lectus nullam.Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+                    
+//-             .carousel-item.z-index-1
+//-               .row.h-100
+//-                 .col-md-6
+//-                   .card.py-4.px-3.py-sm-6.px-sm-5.px-xl-7
+//-                     +Background({ image: `${CWD}assets/img/gallery/q.png`, attrs: { style: { 'background-position': 'center top', 'background-size': '150px',} }, className: 'mt-4' }) 
+//-                     .card-body.z-index-1
+//-                       p.card-text.fs-2.text-center Suspendisse ultrices at diam lectus nullam.Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+//-                 .col-md-6   
+//-                   .card.py-4.px-3.py-sm-6.px-sm-5.px-xl-7
+//-                     +Background({ image: `${CWD}assets/img/gallery/q.png`, attrs: { style: { 'background-position': 'center top', 'background-size': '150px',} }, className: 'mt-4' }) 
+//-                     .card-body.z-index-1
+//-                       p.card-text.fs-2.text-center Suspendisse ultrices at diam lectus nullam.Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+//-             .carousel-item.z-index-1
+//-               .row.h-100
+//-                 .col-md-6
+//-                   .card.py-4.px-3.py-sm-6.px-sm-5.px-xl-7
+//-                     +Background({ image: `${CWD}assets/img/gallery/q.png`, attrs: { style: { 'background-position': 'center top', 'background-size': '150px',} }, className: 'mt-4' }) 
+//-                     .card-body.z-index-1
+//-                       p.card-text.fs-2.text-center Suspendisse ultrices at diam lectus nullam.Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+//-                 .col-md-6   
+//-                   .card.py-4.px-3.py-sm-6.px-sm-5.px-xl-7
+//-                     +Background({ image: `${CWD}assets/img/gallery/q.png`, attrs: { style: { 'background-position': 'center top', 'background-size': '150px',} }, className: 'mt-4' }) 
+//-                     .card-body.z-index-1
+//-                       p.card-text.fs-2.text-center Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+            
+//-           .row.mt-8
+//-             .col-6.position-relative
+//-               ol.carousel-indicators
+//-                 li.active(data-bs-target='#carouselExampleDark' data-bs-slide-to='0')
+//-                 li(data-bs-target='#carouselExampleDark' data-bs-slide-to='1')
+//-                 li(data-bs-target='#carouselExampleDark' data-bs-slide-to='2')
+//-             .col-6.position-relative.text-end
+//-               a.carousel-control-prev(href='#carouselExampleControls' role='button' data-bs-slide='prev')
+//-                 span.carousel-control-prev-icon(aria-hidden='true')
+//-                 span.visually-hidden Previous
+//-               a.carousel-control-next(href='#carouselExampleControls' role='button' data-bs-slide='next')
+//-                 span.carousel-control-next-icon(aria-hidden='true')
+//-                 span.visually-hidden Next
+        
+

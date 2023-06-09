@@ -1,0 +1,244 @@
+/*Website body*/
+body {
+  font-family: 'Varela Round', sans-serif;
+  margin: 0;
+  color: #2D2E27;
+}
+
+/*Navbar*/
+/*
+.navbar {
+  padding-bottom: 10px;
+  background-color: #6d24cc;
+  display: inline-block;
+  width: 100%;
+  font-family: 'Varela Round', sans-serif;
+  margin: 0;
+}
+
+.navbar-content li {
+  text-align: center;
+  float: left;
+  padding: 20px 30px;
+  display: block;
+  color: #2D2E27;
+  font-size: 20px;
+}
+
+.navbar-content a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-content a:hover {
+  color: #F6F2E3;
+}
+*/
+
+
+
+/*Footer styling*/
+
+/*.footer {
+  height: 150px;
+  background-color: #6d24cc;
+  align-content: center;
+  display: grid;
+  grid-gap: 80px;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+
+}
+
+.footer-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%
+}
+*/
+
+/*Simulations styling*/
+
+.simul-heading {
+  padding-left: 6%;
+}
+
+/*Simulation description styling*/
+.simul-container {
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+
+.simul-card {
+  height: auto;
+  background-color: #e3f6f6;
+  width: auto;
+  border-radius: 20px;
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 250px auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.simul-pic img {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.simul-info {
+  padding-top: 30px;
+}
+
+.simul-info a {
+  padding: 10px 15px;
+  background-color: #2D2E27;
+  color: white;
+  font-size: 15px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.simul-info a:hover {
+  box-shadow: 0px 3px 5px #cccccc;
+  background-color: #6d24cc;
+}
+
+/*Qr Code Page styling for full 3d simulations*/
+.qr-code-page-container{
+  margin-top: 30px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-container  {
+  width: 500px;
+  padding: 7px;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+  border-radius: 30px;
+  text-align: center;
+}
+
+/*Styling for Skeletal System Info page*/
+
+.full-qr-skeletal{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skeletal-container {
+  width: 100%;
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.full-skeletal {
+  height: 685px;
+  width: 500px;
+  background-image: url('Pictures/skeletal.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/*Styling for skeletal system body parts, positioning do icons*/
+.full-skeletal i {
+  font-size: 13px;
+}
+
+.full-skeletal i:hover {
+  color: #6d24cc;
+}
+
+#skull {
+  margin: 30px 0px 0px 260px;
+}
+
+#clavicle {
+  margin: 76px 0px 0px 280px;
+}
+
+#scapula {
+  margin: 0px 0px 0px 290px;
+}
+
+#sternum {
+  margin: 10px 0px 0px 245px;
+}
+
+#ribs {
+  margin: 10px 0px 0px 210px;
+}
+
+#humerus {
+  margin: 5px 0px 0px 308px;
+}
+
+#vertebrae {
+  margin: 5px 0px 0px 243px;
+}
+
+#coxal-bone {
+  margin: 35px 0px 0px 205px;
+}
+
+#ulna {
+  margin: 0px 0px 0px 315px;
+}
+
+#radius {
+  margin: 0px 0px 0px 330px;
+}
+
+#phalanges-fingers {
+  margin: 45px 0px 0px 155px;
+}
+
+#femur {
+  margin: 6px 0px 0px 278px;
+}
+
+#patella {
+  margin: 30px 0px 0px 213px;
+}
+
+#tibia {
+  margin: 30px 0px 0px 270px;
+}
+
+#fibula {
+  margin: 20px 0px 0px 283px;
+}
+
+#toes {
+  margin: 80px 0px 0px 213px;
+}
+
+/*Styling for skeletal system descriptions and additional information for 3d models*/
+.description {
+  height: auto;
+  width: 450px;
+  background-color: #a6e0e0;
+  border: 1px solid #F6F2E3;
+  border-radius: 20px;
+  padding: 50px;
+  margin-bottom: 60px;
+  box-shadow: 0px 3px 5px #cccccc;
+}
+
+.description-content img{
+  height: 230px;
+  width: 230px;
+  border-radius: 30px;
+}
+

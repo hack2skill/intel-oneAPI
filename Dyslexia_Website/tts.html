@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>DYSLEXIFY</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="public/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="public/assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="public/assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="public/assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="public/assets/css/theme.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <style>
+        .title {
+            text-align: center;
+        }
+        
+        .textbox {
+            height: 300px;
+            width: 500px;
+            margin-left: 500px;
+            background-color: #FAE3D9;
+        }
+        
+        .button {
+            margin-inline-start: 720px;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="index.html"><img class="d-inline-block me-3" src="public/assets/img/icons/logo.png" alt="" />DYSLEXIFY</a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
+                    <li class="nav-item"><a class="nav-link fw-bold active" aria-current="page" href="index.html">Home</a></li>
+                    <div class="dropdown">
+                        <button class="dropbtn1">Dyslexia</button>
+                        <div class="dropdown-content1">
+                            <a href="Dyslexia.html">Information</a>
+                            <a href="quiz.html">Quiz</a>
+                            <a href="profs.html">Find Help</a>
+                        </div>
+                    </div>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="dropbtn1">Activities</button>
+                            <div class="dropdown-content1">
+                                <a href="activity.html">Activities</a>
+                                <a href="gallery.html">All Models</a>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="dropdown">
+                        <button class="dropbtn1">Models</button>
+                        <div class="dropdown-content1">
+                            <a href="biology.html">Biology</a>
+                            <a href="chemistry.html">Chemistry</a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h1 class="title">Text to Speech Converter</h1>
+        <br>
+        <textarea id="txt" class="textbox"></textarea>
+        <br>
+        <br>
+        <input onclick="speakText()" type="button" value="submit" class="button">
+    </section>
+
+    <script>
+        function speakText() {
+            var text = document.getElementById('txt').value;
+            responsiveVoice.speak(text);
+
+        }
+    </script>
+</body>
+
+</html>
