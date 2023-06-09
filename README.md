@@ -123,7 +123,7 @@ $ pyinstaller -i "favicon.ico" --onefile -w --hiddenimport=EasyTkinter --hiddeni
 
 ## 4. Working Samples 
 
-- For Video Demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=o_VaF7S8ptM](https://www.youtube.com/watch?v=aCLAOy6iWAs">here.</a>
+- For Video Demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=aCLAOy6iWAs](https://www.youtube.com/watch?v=aCLAOy6iWAs">here.</a>
 
 ### GUI INTERFACE SAMPLES
 
