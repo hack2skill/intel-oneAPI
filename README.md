@@ -187,9 +187,9 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
   
   $ bash pot_benchmark_qa.sh
 
-  Please note that, above shell script can perform optimization using IPEX to get Pytorch-(IPEX)-FP32 model
-  or It can perform optimization/quantization using Intel® Neural Compressor to get Static-QAT-INT8, 
-  Static-Smooth-QAT-INT8 models. Moreover, you can choose the backend as `default` or `ipex` for INT8 models.
+  # Please note that, above shell script can perform optimization using IPEX to get Pytorch-(IPEX)-FP32 model
+  # or It can perform optimization/quantization using Intel® Neural Compressor to get Static-QAT-INT8, 
+  # Static-Smooth-QAT-INT8 models. Moreover, you can choose the backend as `default` or `ipex` for INT8 models.
 
 ```
 
@@ -255,7 +255,7 @@ recent Generative AI LLMs (Large Language models) (open access models like LLaMA
 
 Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (Few options are like https://huggingface.co/decapoda-research/llama-7b-hf-int8 etc.)  
 
-Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive Service to use models like GPT3 paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `hf_pipeline` in the below configuration and then add `<your_key>` 
+Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive Service to use models like GPT3 paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `azure_gpt3` in the below configuration and then add `<your_key>` 
 
 ```python
 
