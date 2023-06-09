@@ -81,7 +81,7 @@ streamlit run app.py
 
 Medium Article Link: [Optimizing Object Detection for Autonomous Vehicles](https://medium.com/@creatorrp3010/optimizing-object-detection-for-autonomous-vehicles-leveraging-intel-oneapi-libraries-for-enhanced-3f7341f675d5)
 
-Demo Video: [Object Detection for Autonomous Vecihles](https://www.youtube.com/watch?v=dWaTq5gzsvU)
+Demo Video: [Object Detection for Autonomous Vehicles](https://www.youtube.com/watch?v=dWaTq5gzsvU)
 
 ## What I Learned:
 
