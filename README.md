@@ -4,7 +4,7 @@
 #### Problem Statement - Object Detection For Autonomous Vehicles
 #### Team Leader Email - riddhishwar.s2020@vitstudent.ac.in
 
-## A Brief of the Prototype:
+## 📜 A Brief of the Prototype:
 - Our prototype's real-time object detection and distance recognition features are meant to make self-driving cars safer and more efficient. By leveraging the power of Intel technologies and frameworks, we've created a robust system that combines advanced computer vision algorithms and deep learning models.Intel AI Analytics Toolkit, featuring optimised deep learning frameworks like PyTorch and TensorFlow, powers the prototype. Intel-optimized libraries like oneDNN and oneDAL were used to train and infer deep learning models. This helps us locate items around the car.
 
 ![Screenshot 2023-06-08 224156](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/76ffb3f4-7977-4bc2-8e0d-6826b45aff5e)
@@ -49,7 +49,7 @@
 ```
 
 
-## Tech Stack: 
+## 📜 Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
    ![Screenshot 2023-06-09 182951](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/08f722e9-7637-4a44-877a-b496d5fde92f)
    ![qwe](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/de88cc7b-d827-4601-909e-dc07e47d3253)
