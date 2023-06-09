@@ -137,6 +137,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  2. If running locally run this command <code>cd backend</code> after which <code>python app.py</code><br><br>
  3. Go back to the previous directory using <code>cd ../</code> and navigate to frontend directory using the command <code>cd frontend</code><br><br>
  4. Run this command <code>npm start</code>.<br><br>
+ 5. Run both the terminal simultanously.<br><br>
 </details>
   
 
