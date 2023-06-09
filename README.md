@@ -5,6 +5,7 @@
 #### Team Leader Email - joeljoseph1810@gmail.com
 #### Website link - https://joeljjoseph.github.io/Brainwave_Dyslexify/index.html
 #### PPT - https://github.com/JoelJJoseph/intel-oneAPI/tree/main/PPT
+#### Medium - https://medium.com/@joeljoseph1810/dyslexify-67e45e7e61a6
 ## DEMO VIDEO - https://youtu.be/bcyEJcy2iyQ
 ## A Brief of the Prototype <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81390908-eaae-4fb1-bb79-0fa8f96bd15c" height="80" width="80"> <br>
 
