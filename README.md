@@ -40,6 +40,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 <details>
   <summary><h2>3D Model with AR Interface</h2></summary>
   <h3>Introduction</h3>
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D.jpg" alt="Logo" height="500">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D2.jpg" alt="Logo" height="500">
   <p>Bringing 3D models into the learning process and utilizing an augmented reality interface, students can visualize complex concepts, objects, in a more interactive and engaging manner.    This technology enables students to manipulate and explore virtual objects, enhancing their understanding and retention of the subject matter.</p>
  
   <h3>How we did?</h3>
@@ -74,6 +76,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 <details>
   <summary><h2>ML driven suggestion of books</h2></summary>
   <h3>Introduction</h3>
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Books.png" alt="Logo" height="400">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Books2.png" alt="Logo" height="400">
   <p>With This feature , you can bid farewell to the overwhelming task of choosing your next read. The system analyzes your reading history, genre preferences, favorite authors, you will be able to choose what to read next by selecting the book which you already selected. It shows  similar kind of suggestions.</p>
  
 <h3>How we did?</h3>  
