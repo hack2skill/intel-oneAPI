@@ -138,6 +138,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  4. Run this command <code>npm start</code>.<br><br>
 </details>
   
-## What I Learned: <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/2c22b52d-3971-4c89-83a6-81de23ffbb21" height="80" width="80"> <br>
+
+## What I Learned: <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/fb7ba852-f261-4fec-90a7-3fa629f0fee4" height="80" width="80"> <br>
 The Dyslexify project aimed to address the challenges faced by individuals with dyslexia in reading, writing, and comprehension. By leveraging Intel's oneAPI technologies, including the Intel Data Analytics Acceleration Library (DAAL), Intel Math Kernel Library (MKL), and Intel Deep Learning (oneDNN), the project aimed to create a machine learning initiative to improve the lives of students in India and worldwide who struggle with dyslexia.
 Through the Dyslexify project and the utilization of Intel's oneAPI technologies, we have learned the transformative impact that technology can have on the lives of individuals with dyslexia. By leveraging machine learning and deep learning capabilities, Dyslexify has the potential to revolutionize the way dyslexic students access, comprehend, and engage with written content. This project serves as a testament to the power of innovation and collaboration in making a positive difference in the lives of millions of dyslexic individuals in India and beyond.
