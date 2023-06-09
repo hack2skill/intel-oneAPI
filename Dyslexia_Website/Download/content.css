@@ -1,0 +1,170 @@
+/* Font */
+
+@font-face {
+    font-family: "opendyslexic-regular";
+    src: url('chrome-extension://__MSG_@@extension_id__/static/fonts/OpenDyslexic-Regular.otf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+	font-family: 'opendyslexic-italic';
+	src: url('chrome-extension://__MSG_@@extension_id__/static/fonts/OpenDyslexic-Italic.otf');
+	font-style: italic;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'opendyslexic-bold';
+	src: url('chrome-extension://__MSG_@@extension_id__/static/fonts/OpenDyslexic-Bold.otf');
+	font-weight: bold;
+	font-style: normal;
+} 
+
+@font-face {
+	font-family: 'opendyslexic-bolditalic';
+	src: url('chrome-extension://__MSG_@@extension_id__/static/fonts/OpenDyslexic-BoldItalic.otf');
+	font-weight: bold;
+	font-style: italic;
+}  
+
+.context-menu {
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+
+.context-menu--active {
+  display: block;
+}
+
+/* Modals */
+[data-ml-modal] {
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	overflow-x:hidden;
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch;
+	z-index:999;
+	width:0;
+	height:0;
+	opacity:0;
+}
+[data-ml-modal]:target {
+	width:auto;
+	height:auto;
+	opacity:1;
+	-webkit-transition:  opacity 1s ease;
+	transition: opacity 1s ease;
+}
+[data-ml-modal]:target .modal-overlay {
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	cursor:pointer;
+	background-color:#000;
+	background-color:rgba(0, 0, 0, 0.7);
+	z-index:1;
+}
+[data-ml-modal] .modal-dialog {
+	border-radius:6px;
+	box-shadow:0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+	position:relative;
+	width: 90%;
+	max-width:660px;
+	max-height:70%;
+	margin:10% auto;
+	overflow-x:hidden;
+	overflow-y:auto;
+	z-index:2;
+}
+.modal-dialog-lg {max-width:820px !important;}
+
+.text-center {text-align:center !important;}
+
+[data-ml-modal] .modal-dialog > h3 {
+	background-color:#eee;
+	border-bottom:1px solid #b3b3b3;
+	font-size:24px;
+	font-weight: 400;
+	margin:0;
+	padding:0.8em 56px .8em 27px; 
+}
+[data-ml-modal] .modal-content {background:#fff; padding:23px 27px;}
+[data-ml-modal] .modal-close {
+  	position:absolute;
+	top:13px;
+	right:13px;
+	color:#6d24cc;
+	background-color:#fff;
+	border-radius:50%;
+	height:40px;
+	width:40px;
+	font-size:30px;
+	line-height:37px;
+	text-align:center;
+	-webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+[data-ml-modal] .modal-close:hover {background-color:#0085a6; color:#fff; cursor:pointer;}
+[data-ml-modal] p:first-child, [data-ml-modal] p:last-child {margin:0;}
+@media (max-width:767px) {
+	[data-ml-modal] .modal-dialog {margin:20% auto;}
+}
+
+/* Text-To-Speech */
+.modal-button {
+  border-radius: 4px;
+  background-color:#d35400;
+  border: none;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  text-align: center;
+  cursor: pointer;
+  font-size:20px;
+  margin: 0 0 0 10px;
+  color:#fff;
+  font-family: "opendyslexic-regular";
+}
+
+.modal-button:focus {
+	outline: none;
+}
+
+#speakText {
+	font-size: 25px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-family: "opendyslexic-regular";
+}
+
+/* Ruler */
+
+:root {
+    --height: 24px;
+    --mouse-y: 100px;
+    --hue: #FFF;
+    --opacity: 0;
+}
+
+#readingRuler {
+    position: fixed;
+    z-index: 1000;
+    left:0;
+    right:0;
+    pointer-events: none;
+    height: var(--height);
+    top: var(--mouse-y);
+    background-color: var(--hue);
+    opacity: var(--opacity);
+}
+
+#readingRuler.inactive {
+    opacity: 0;
+}

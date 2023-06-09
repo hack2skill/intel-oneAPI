@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEXILEARN</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <header>
+        <h1 style="font-family: 'Ultra', serif; font-size: 30px">LEXILEARN</h1>
+    </header>
+    <main>
+
+        <div class="faq-container">
+
+            <div class="faq">
+                <div class="faq-title" style="font-size: 18px;">
+                    Dyslexic Font
+                    <label class="switch" style="float: right;">
+              <input id="FontToggle" class="section-toggle" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+                </div>
+                <div class="faq-text">
+                    <div id="fonttype-input-container" class="input-container ch-r2c1" style="margin: 0 10px;">
+                        <select name="fonttype" id="fonttype" style="width: 100%">
+                        <option id="regular" value="opendyslexic-regular" selected>Regular</option>
+                        <option id="bold" value="opendyslexic-bold">Bold</option>
+                        <option id="italic" value="opendyslexic-italic">Italic</option>
+                        <option id="bold-italic" value="opendyslexic-bolditalic">Bold-Italic</option>
+                    </select>
+                    </div>
+
+                    <div id="fontsize-input-container" class="input-container">
+                        <input id="fontsize-slider" class="slider-input" type="range" min="8" max="24" value="14" step="1" />
+                        <label for="fontsize-num">Font Size:
+                        <input id="fontsize-num" class="num-input" type="number" min="8" max="24" value="14" step="1" />
+                    pt</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-title" style="font-size: 18px;">
+                    Reading Ruler
+                    <label class="switch" style="float: right;">
+              <input id="RulerToggle" class="section-toggle" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+                </div>
+                <div class="faq-text">
+                    <!-- Height: -->
+                    <div id="ruler-height-container" class="r3-c1 input-container">
+                        <input id="ruler-height-slider" class="slider-input" type="range" min="10" max="100" value="24" step="1" />
+                        <br>
+                        <label for="ruler-height-num">Height:
+                    <input id="ruler-height-num" class="num-input" type="number" min="10" max="100" value="24" step="1" />
+                px</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-title" style="font-size: 18px;">
+                    Spacing Adjust
+                    <label class="switch" style="float: right;">
+              <input id="SpacingToggle" class="section-toggle" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+                </div>
+                <div class="faq-text">
+                    <!-- Height: -->
+                    <div id="wordsp-input-container" class="input-container ch-r2c1">
+                        <input id="wordsp-slider" class="slider-input" type="range" min="0" max="1.5" value="0.5" step="0.1" />
+                        <br>
+                        <label for="wordsp-num">Word Spacing:
+                        <input id="wordsp-num" class="num-input" type="number" min="0" max="1.5" value="0.5" step="0.1" />
+                    em</label>
+                    </div>
+
+                    <div id="lettersp-input-container" class="input-container">
+                        <input id="lettersp-slider" class="slider-input" type="range" min="0" max="0.33" value="0.1" step="0.01" />
+                        <br>
+                        <label for="lettersp-num">Letter Spacing:
+                        <input id="lettersp-num" class="num-input" type="number" min="0" max="0.33" value="0.1" step="0.01" />
+                    em</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="faq-title" style="font-size: 18px;">
+                    Line Height Adjust
+                    <label class="switch" style="float: right;">
+              <input id="LineHtToggle" class="section-toggle" type="checkbox">
+              <span class="slider round"></span>
+            </label>
+                </div>
+                <div class="faq-text">
+                    <!-- Height: -->
+                    <div id="lha-height-container" class="r3-c1 input-container">
+                        <input id="lha-slider" class="slider-input" type="range" min="0.5" max="4" value="1.5" step="0.1" />
+                        <br>
+                        <label for="lha-num">Original &times;</label>
+                        <input id="lha-num" class="num-input" type="number" min="0.5" max="4" value="1.5" step="0.1" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script type="text/javascript" src="popup.js"></script>
+
+</body>
+
+</html>

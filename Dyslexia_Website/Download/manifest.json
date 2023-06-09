@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+
+    "name": "LEXILEARN",
+    "description": "This extension will make the web more friendly for all learners!",
+    "version": "1.0",
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "css": ["content.css"],
+        "js": ["content.js"]
+    }],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "LEXILEARN Chrome Extension!"
+    },
+    "web_accessible_resources": [
+        "static/fonts/*"
+    ],
+    "icons": {
+        "32": "/static/logo/icon-1.png",
+        "64": "/static/logo/icon-1.png",
+        "128": "/static/logo/icon-1.png"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}
