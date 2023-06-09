@@ -93,7 +93,9 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 <details>
   <summary><h2>AI powered Document Assistant</h2></summary>
   <h3>Introduction</h3>
- <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/PDFGPT.png" alt="Logo" height="500">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/pdf1.png" alt="Logo" width="1000">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/pdf2.png" alt="Logo" width="1000">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/pdf3.png" alt="Logo" width="1000">
  <br>
   <p>This is feature  advanced AI-powered document assistant that revolutionizes the way you search and extract information from PDFs. It eliminates the need for manual searching and scrolling through lengthy documents by leveraging the power of GPT-3.5 and Intel oneApi. With PDFGPT, you can effortlessly ask questions and receive instant answers, allowing for efficient and hassle-free document exploration.</p>
  
