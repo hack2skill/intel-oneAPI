@@ -19,7 +19,7 @@ export KEEP_ACCENTS=False
 export DO_LOWER_CASE=True
 export MAX_EVAL_SAMPLES=200
 
-export TUNE=False
+export TUNE=True
 export PTQ_METHOD="dynamic_int8" # "dynamic_int8", "static_int8", "static_smooth_int8"
 export BACKEND="default" # default, ipex
 export ITERS=100

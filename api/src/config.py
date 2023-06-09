@@ -6,7 +6,7 @@ PORT = 8500
 ASK_DOUBT_CONFIG = {
   "emb_model_name_or_path": "ai4bharat/indic-bert",
   "emb_model_type": "semantic",  #options: syntactic, semantic
-  "qa_model_name_or_path": "artifacts/model/indic-mALBERT-uncased",
+  "qa_model_name_or_path": "vanichandna/indic-bert-finetuned-squad",
   "qa_model_type": "vanilla_fp32",  #options: vanilla_fp32, quantized_int8
   
   "intel_scikit_learn_enabled": True,
