@@ -21,28 +21,31 @@
 |-client          #client side folder (frontend code)
 |  public
 |     --
-|  src                  #building the business componenst for the algorithm for the frontend
+|  src                  #building the source code
 |     assests
-|     components
-|     App.js
+|     components        #building the business component for our website
+|     App.js            #Root folder for the division for each components
 |     index.css
 |     index.js
 |  package.json
 |  package-lock.json
 |
+|-dataset
+|  export
+|     -images           #containing the images for training,validating and testing our model
+|     -labels           #contains the equivalent format yolo format for each images
+|     data.yaml
 |
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
+|-yolov5
+|     classify
+|        ...
+|     data
+|        ...
+|        custom_dataset.yaml        #this is the .yaml file for training our model
+|        ...
+|     ...
+|     requirements.txt              #contains all the necessary packages
+|     ...
 ```
 
 
