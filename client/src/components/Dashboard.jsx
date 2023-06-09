@@ -61,7 +61,7 @@ const Dashboard = () => {
     <div className="w-screen">
       <Navbar />
       <div className="flex flex-col items-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400 mt-3">
-        <div className="grid grid-cols-4 gap-4 py-12 h-12">
+        {/* <div className="grid grid-cols-4 gap-4 py-12 h-12">
         <motion.div
             className="bg-slate-100 rounded-lg shadow-lg py-6 w-72"
             variants={containerVariants}
@@ -106,7 +106,7 @@ const Dashboard = () => {
           
         
         
-          </div>
+          </div> */}
 
         <div className="grid grid-cols-2 gap-16 py-16">
           <div className="grid grid-cols-2 gap-4">
@@ -118,10 +118,10 @@ const Dashboard = () => {
           >
             <h3 className="text-xl mb-4">Important Topics</h3>
             <pre>{impTopicContent}</pre>
-            <p>Half adder</p>
-            <p>Full adder</p>
-            <p>Half Subtractor</p>
-            <p>Full Subtractor</p>
+            <p>NFA and DFA</p>
+            <p>NFA to DFA conversion</p>
+            <p>Minimisation</p>
+            <p>Ardens Theorem</p>
           </motion.div>
 
           <motion.div
@@ -133,6 +133,10 @@ const Dashboard = () => {
           >
             <h3 className="text-xl mb-4">Topic List</h3>
             <pre>{topicListContent}</pre>
+            <p>Finite state systems</p>
+            <p>Definitions</p>
+            <p>Minimisation</p>
+            <p>Moore and Mealy machinesm</p>
           </motion.div>
           </div>
 
@@ -145,7 +149,7 @@ const Dashboard = () => {
           >
             <h3 className="text-lg font-semibold mb-4">Cluster Questions</h3>
             <iframe
-              src="https://mrcet.com/downloads/digital_notes/CSE/II%20Year/DBMS.pdf"
+              src="http://www.gpcet.ac.in/wp-content/uploads/2017/04/flat-10.pdf"
               className="w-full h-full"
               title="PDF Viewer"
             />
