@@ -27,7 +27,7 @@ Step 1: CLone the repository
 git clone https://github.com/mansi12340/object_detection_for_autonomous_vehicles_oneAPI object_detection && cd object_detection
 ```
 
-Step 2: Install required libraries of Intel-openAPI
+Step 2: Install the required libraries of Intel-openAPI
 ```bash
 # APT Package Manager
 sudo apt install intel-aikit
