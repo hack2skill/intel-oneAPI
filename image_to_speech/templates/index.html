@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brainwave-Dyslexify</title>
+    <style>
+        /* CSS */
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #video-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        #capture-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #result-container {
+            text-align: center;
+        }
+        
+        #recognized-text {
+            font-size: 18px;
+            white-space: pre-wrap;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        #speak-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Dyslexify</h1><br>
+    <br>
+    <h2>Image to Speech Converter</h2>
+    <div id="video-container">
+        <video id="video-feed" autoplay></video>
+        <button id="capture-btn" disabled>Capture Image</button>
+    </div>
+
+    <div id="result-container">
+        <h2>Recognized Text</h2>
+        <pre id="recognized-text"></pre>
+        <button id="speak-btn" disabled>Speak</button>
+    </div>
+
+    <script>
+        // JavaScript code
+        var video = document.getElementById('video-feed');
+        var captureBtn = document.getElementById('capture-btn');
+        var recognizedText = document.getElementById('recognized-text');
+        var speakBtn = document.getElementById('speak-btn');
+
+        // Get user media
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({
+                    video: true
+                })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                    captureBtn.disabled = false;
+                })
+                .catch(function(error) {
+                    console.error('Error accessing camera: ', error);
+                });
+        }
+
+        // Capture image from video feed
+        captureBtn.addEventListener('click', function() {
+            var canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            var context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            var dataURL = canvas.toDataURL('image/png');
+            $.ajax({
+                url: '/process',
+                type: 'POST',
+                data: {
+                    image: dataURL
+                },
+                success: function(data) {
+                    recognizedText.textContent = data.text;
+                    speakBtn.disabled = false;
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error processing image: ', error);
+                }
+            });
+        });
+
+        // Speak recognized text
+        speakBtn.addEventListener('click', function() {
+            var text = recognizedText.textContent;
+            var audio = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(audio);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+flask
+pytesseract
+tesseract
+opencv-python
+pyttsx3

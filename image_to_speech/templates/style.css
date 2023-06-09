@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#app {
+    cursor: pointer;
+    position: relative;
+    width: 180px
+}
+
+#message {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1;
+    padding: 20px 25px;
+    text-align: center;
+    border-radius: 40px;
+    transition: 0.3s ease background-color, 0.3s ease box-shadow;
+    background: #1e2a78;
+}
+
+#send_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    padding: 18px 12px;
+    cursor: pointer;
+    transition: 0.3s ease transform;
+}
+
+#message.sending {
+    background-color: #ffd615;
+    box-shadow: 0 20px 30px -6px #ffd615;
+}
+
+#send_btn.sending {
+    transform: rotateZ(-90deg);
+    animation: shake 0.3s ease 0.5s infinite;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0) rotateZ(-90deg);
+    }
+    20%,
+    80% {
+        transform: translate3d(1px, 0, 0) rotateZ(-90deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-1px, 0, 0) rotateZ(-90deg);
+    }
+    40%,
+    60% {
+        transform: translate3d(1px, 0, 0) rotateZ(-90deg);
+    }
+}
+
+#message.sent {
+    background-color: #ff1f5a;
+    box-shadow: 0 20px 30px -6px #ff1f5a;
+}
+
+#send_btn.sent {
+    transform: rotateZ(-90deg);
+    animation: moveUp 1s ease 0s forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        margin-top: 0;
+        transform: scale(1) rotateZ(-90deg);
+    }
+    100% {
+        color: #ff1f5a;
+        margin-top: -100px;
+        transform: scale(0) rotateZ(-90deg);
+    }
+}
