@@ -8,7 +8,7 @@
 
 Intel Hackathon Prototype Implementation for our LEAP Platform
 
-## A Brief of the Prototype:
+# A Brief of the Prototype:
 
 #### INSPIRATION ![image](https://user-images.githubusercontent.com/72274851/218500470-ec078b99-0a50-4b06-a2df-c09e47ecc187.png)
 
@@ -40,13 +40,13 @@ process.
 examiner conducting viva after each learning session. The AI examiner starts by asking question and always tries to motivate and provide
 hints to the student to arrive at correct answer, enhancing student engagement and motivation.
 
-## Detailed LEAP Process Flow:
+# Detailed LEAP Process Flow:
 
 ![](./assets/Process-Flow.png)
 
-## Tech Stack:
+# Technology Stack:
 
-  - Intel® oneAPI (Intel® AI Analytics Toolkit)  Tech Stack
+  - Intel® oneAPI (Intel® AI Analytics Toolkit) Tech Stack
 
   ![](./assets/Intel-Tech-Stack.png)
 
@@ -56,23 +56,27 @@ hints to the student to arrive at correct answer, enhancing student engagement a
     4. Intel® distribution for Modin: Used for basic initial data analysis/EDA.
     5. Intel® optimized Python: Used for data pre-processing, reading etc.
 
-  - Base Tech Stack
+  - Prototype App Tech Stack
 
   ![](./assets/Tech-Stack.png)
 
-## Step-by-Step Code Execution Instructions:
+# Demo Video
 
-a) Easy Option to Start Demo
+[![LEAP](https://img.youtube.com/vi/QoVWsOSlwvI/0.jpg)](https://www.youtube.com/watch?v=QoVWsOSlwvI)
+
+# Step-by-Step Code Execution Instructions:
+
+### Quick Setup Option
 
 - Clone the Repository
-```console
+```python
  $ git clone https://github.com/rohitc5/intel-oneAPI/tree/main
  $ cd Intel-oneAPI
 
 ```
 - Start the LEAP RESTFul Service to consume both components (Ask Question/Doubt and Interactive Conversational AI Examiner) over API
 
-```console
+```python
   $ cd api
   
   # build the docker file
@@ -90,7 +94,7 @@ a) Easy Option to Start Demo
 
 - Start the demo webapp build using streamlit
 
-```console
+```python
   $ cd webapp
   
   # build the docker file
@@ -103,12 +107,13 @@ a) Easy Option to Start Demo
   $ docker run -it -p 8502:8502 --name=leap-demo [IMAGE_ID]
 
 ```
+- Go to http://localhost:8502
 
-b) Step-by-Step Option
+### Manual Setup Option
 
 - Clone the Repository
 
-```console
+```python
  $ git clone https://github.com/rohitc5/intel-oneAPI/tree/main
  $ cd Intel-oneAPI
 
@@ -123,7 +128,7 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 
 ![](./assets/Ask-Doubt.png)
 
-```console
+```python
   $ cd nlp/question_answering
 
   # install dependencies
@@ -153,7 +158,7 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 
 - Optimize using IPEX, Intel® Neural Compressor and run the bennchmark for comparison with Pytorch(Base)-FP32
 
-```console
+```python
   # modify the params in pot_benchmark_qa.sh
   $ vi pot_benchmark_qa.sh
 
@@ -190,14 +195,14 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 
 - Run quick inference to test the model output
 
-```console
+```python
   $ python run_qa_inference.py --model_name_or_path=[FP32 or INT8 finetuned model]  --model_type=["vanilla_fp32" or "quantized_int8"] --do_lower_case  --keep_accents --ipex_enable
 
 ```
 
 - Train/Infer/Benchmark TFIDF Embedding model for Scikit-Learn (Base) vs Intel® Extension for Scikit-Learn
 
-```console
+```python
   $ cd nlp/feature_extractor
 
   # train (.fit_transform func), infer (.transform func) and perform benchmark
@@ -209,7 +214,7 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 
 - Setup LEAP API
 
-```console
+```python
   $ cd api
   
   # install dependencies
@@ -252,7 +257,7 @@ Here for performance gain, we can use INT8 quantized model optimized using Intel
 
 Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive Service to use models like GPT3 paid subscription API. You just need to provide `azure_deployment_name` below configuration and `<your_key>`
 
-```console
+```python
 
   AI_EXAMINER_CONFIG = {
       "llm_name": "azure_gpt3",
@@ -273,7 +278,7 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
 - Start the API server
 
-```console
+```python
   $ cd api/src/
   
   # start the gunicorn server
@@ -282,7 +287,7 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
 - Start the Streamlit web UI demo
 
-```console
+```python
   $ cd webapp
 
   # install dependencies
@@ -296,19 +301,16 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
 # Benchmark Results with Intel® oneAPI AI Analytics Toolkit
 
-- We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that share results are
+- We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that the shared results are based
 on provided Intel® Dev Cloud machine *(Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM)*
   
-# What I learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
+# What we learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
 
 
-![image](https://user-images.githubusercontent.com/72274851/220130227-3c48e87b-3e68-4f1c-b0e4-8e3ad9a4805a.png)
+![image](assets/Intel-ai-analytics-banner.png)
 
-✅ Building application using Intel® AI Analytics Toolkit: The Intel® AI Analytics Toolkit gives data scientists, AI developers, and researchers familiar Python* tools and frameworks to accelerate end-to-end data science and analytics pipelines on Intel® architecture. The components are built using oneAPI libraries for low-level compute optimizations. This toolkit maximizes performance from preprocessing through deep learning, machine learning, and provides interoperability for efficient model development.
+✅ Utilizing the Intel® AI Analytics Toolkit: By utilizing the Intel® AI Analytics Toolkit, developers can leverage familiar Python* tools and frameworks to accelerate the entire data science and analytics process on Intel® architecture. This toolkit incorporates oneAPI libraries for optimized low-level computations, ensuring maximum performance from data preprocessing to deep learning and machine learning tasks. Additionally, it facilitates efficient model development through interoperability.
 
-✅ Easy to Adapt: The Intel® AI Analytics Toolkit requires minimal changes to adapt to a machine learning, deep learning workloads.
+✅ Seamless Adaptability: The Intel® AI Analytics Toolkit enables smooth integration with machine learning and deep learning workloads, requiring minimal modifications.
 
-✅Collaboration: Building a project like this likely required collaboration with a team of experts in various fields, such as deep learning, and data analysis, and I likely learned the importance of working together to achieve common goals.
-
-These are just a few examples of the knowledge and skills that i likely gained while building this project. 
-Overall, building a helpful platform like LEAP is a challenging and rewarding experience that requires a combination of technical expertise and agricultural knowledge.
+✅ Fostered Collaboration: The development of such an application likely involved collaboration with a team comprising experts from diverse fields, including deep learning and data analysis. This experience likely emphasized the significance of collaborative efforts in attaining shared objectives.
