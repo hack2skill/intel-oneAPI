@@ -4,7 +4,7 @@
 #### Problem Statement - Object Detection in Autonomous Vehicles
 #### Team Leader Email - sarthakjoshisj93@gmail.com
 
-#### Video Demo:- https://www.youtube.com/watch?v=ZCrOj5g974A
+#### Demo Video:- https://www.youtube.com/watch?v=ZCrOj5g974A
 
 ## A Brief of the Prototype 🎦:
   #### Developed a road sign 🛑 detection model using the oneAPI framework in conjunction with the openVINO toolkit. 
