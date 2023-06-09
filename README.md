@@ -4,6 +4,7 @@
 #### Problem Statement - Object Detection For Autonomous Vehicles
 #### Team Leader Email - rshrjacharya@gmail.com
 #### Medium Post - [Accelerating Real-Time Object Detection with YOLOv8m and Intel’s Optimization Tools](https://keras.medium.com/accelerating-real-time-object-detection-with-yolov8m-and-intels-optimization-tools-eb2263d94183)
+#### Real-time Demo - [YouTube](https://youtu.be/UVJY7L8zyzs)
 
 ## A Brief of the Prototype:
 | Description | Diagram |
