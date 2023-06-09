@@ -10,10 +10,10 @@
 ![Screenshot 2023-06-08 224156](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/76ffb3f4-7977-4bc2-8e0d-6826b45aff5e)
 ![Screenshot 2023-06-08 224156](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/e0a0869a-2830-43f2-89c5-336e32ac5a35)
 
-## Architecture Diagram: 
+## 📜 Architecture Diagram: 
 ![Screenshot 2023-06-09 181317](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/93c796c8-9a13-4a41-ac06-c343c20f3ebf)
 
-## Flow Diagram:
+## 📜 Flow Diagram:
 ![Screenshot 2023-06-09 181606](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/8c6dc9d9-6955-4908-b164-c00728b7738f)
 
 ## 🍞 Folder Structure
