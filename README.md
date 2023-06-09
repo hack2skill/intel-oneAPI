@@ -42,6 +42,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   <h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D.jpg" alt="Logo" height="500">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D2.jpg" alt="Logo" height="500">
+ <br>
   <p>Bringing 3D models into the learning process and utilizing an augmented reality interface, students can visualize complex concepts, objects, in a more interactive and engaging manner.    This technology enables students to manipulate and explore virtual objects, enhancing their understanding and retention of the subject matter.</p>
  
   <h3>How we did?</h3>
@@ -78,6 +79,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
   <h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Books.png" alt="Logo" height="400">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Books2.png" alt="Logo" height="400">
+ <br>
   <p>With This feature , you can bid farewell to the overwhelming task of choosing your next read. The system analyzes your reading history, genre preferences, favorite authors, you will be able to choose what to read next by selecting the book which you already selected. It shows  similar kind of suggestions.</p>
  
 <h3>How we did?</h3>  
@@ -91,6 +93,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 <details>
   <summary><h2>AI powered Document Assistant</h2></summary>
   <h3>Introduction</h3>
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/PDFGPT.png" alt="Logo" height="500">
+ <br>
   <p>This is feature  advanced AI-powered document assistant that revolutionizes the way you search and extract information from PDFs. It eliminates the need for manual searching and scrolling through lengthy documents by leveraging the power of GPT-3.5 and Intel oneApi. With PDFGPT, you can effortlessly ask questions and receive instant answers, allowing for efficient and hassle-free document exploration.</p>
  
 <h3>How we did?</h3>  
