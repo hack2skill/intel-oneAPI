@@ -1,5 +1,6 @@
 # intel-oneAPI
 
+<<<<<<< HEAD
 #### Team Name - Dream Hack
 #### Problem Statement - Object detection for autonomous vehicles
 #### Team Leader Email - mansibansal7467@gmail.com
@@ -78,3 +79,20 @@ https://www.youtube.com/watch?v=Kj6hxT09CPg
 https://www.youtube.com/watch?v=s-9vVI95zn8
 ```
 [<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOPNC8IVVkBB_5_yGlAtuFSZZt4R_NujjIOg&usqp=CAU" width="50%">](https://www.youtube.com/watch?v=s-9vVI95zn8 "Now in Android: 55")
+=======
+#### Team Name -
+#### Problem Statement - 
+#### Team Leader Email -
+
+## A Brief of the Prototype:
+  This section must include UML Daigrms and prototype description
+  
+## Tech Stack: 
+   List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
+   
+## Step-by-Step Code Execution Instructions:
+  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
+  
+## What I Learned:
+   Write about the biggest learning you had while developing the prototype
+>>>>>>> origin/main
