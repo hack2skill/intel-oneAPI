@@ -1,0 +1,3 @@
+/Users/omprakashvisvanathan/Documents/workspace/scalar/mnist/CMakeFiles/edit_cache.dir
+/Users/omprakashvisvanathan/Documents/workspace/scalar/mnist/CMakeFiles/rebuild_cache.dir
+/Users/omprakashvisvanathan/Documents/workspace/scalar/mnist/CMakeFiles/DisplayImage.dir

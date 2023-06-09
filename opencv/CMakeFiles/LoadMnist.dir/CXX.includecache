@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/mnist/mnist/opencv/read_mnist_opencv.cpp
+iostream
+-
+fstream
+-
+opencv2/opencv.hpp
+-
+string
+-
+cstdlib
+-
+
