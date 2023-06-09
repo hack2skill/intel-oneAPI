@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for
+from prediction import predict
 
 app = Flask(__name__, template_folder = "templates")
 
@@ -8,7 +9,7 @@ app = Flask(__name__, template_folder = "templates")
 def home():
     output = "hold"
     if request.method == "POST":
-        print("HERE")
+        predict()
         output = "show"
     return render_template("index.html", output = output)
 
