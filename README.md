@@ -47,7 +47,8 @@
 |     requirements.txt              #contains all the necessary packages
 |     ...
 ```
-
+## Dataset and Annotations
+   ![Screenshot 2023-06-09 225151](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/dcd478b6-cae1-4eb8-9c28-f658ef331900)
 
 ## 📜 Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
@@ -84,5 +85,9 @@ python train.py --data custom_dataset.yaml --epochs 300 --weights '' --cfg yolov
                                                                  yolov5l                    24
                                                                  yolov5x                    16
 ```
+## Output Videos From Our Model
+Video 1:
+https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/ff1181b9-fac1-42d9-b6c5-438f982b004e
+Video 2:
 ## What I Learned:
    Write about the biggest learning you had while developing the prototype
