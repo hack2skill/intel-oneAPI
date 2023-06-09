@@ -69,10 +69,11 @@ Resource Management: Intel oneAPI provides libraries and tools to manage resourc
 
 ## Highlights
 * video 1
-```html
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Kj6hxT09CPg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[<img src="https://www.youtube.com/watch?v=Kj6hxT09CPg" width="50%">](https://www.youtube.com/watch?v=Kj6hxT09CPg "Now in Android: 55")
+```
+
 ```
 * video 2
-```html
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=s-9vVI95zn8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+```mp4
+https://www.youtube.com/watch?v=s-9vVI95zn8
 ```
