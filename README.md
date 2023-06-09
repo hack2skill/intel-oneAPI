@@ -5,7 +5,7 @@
 #### Team Leader Email - joeljoseph1810@gmail.com
 #### Website link - https://joeljjoseph.github.io/Brainwave_Dyslexify/index.html
 #### PPT - https://github.com/JoelJJoseph/intel-oneAPI/tree/main/PPT
-
+## DEMO VIDEO - https://youtu.be/bcyEJcy2iyQ
 ## A Brief of the Prototype <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81390908-eaae-4fb1-bb79-0fa8f96bd15c" height="80" width="80"> <br>
 
 A neurological condition called dyslexia impairs a person's capacity for reading, writing, and spelling. It affects how the brain interprets language, making it challenging for those with dyslexia to understand written content. Between 5% and 20% of Indians suffer with dyslexia, with urban regions having a higher prevalence of the condition. This indicates that millions of Indian school children experience reading and comprehension problems as a result of this disorder. The creation of solutions like our product Dyslexify, a machine learning initiative intended to help people with dyslexia improve their reading and comprehension skills, has been made possible by technological developments using intel’s oneAPI.
