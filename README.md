@@ -78,8 +78,10 @@ streamlit run app.py
 ![FasterRCNN_NightTime_Benchmark](https://github.com/rppadmakumar3/oneAPI_ObjectDetection/assets/116913142/b6d3829a-4806-46d1-8d86-00ae60df742f)
 
 
-  
-  
+
+Medium Article Link: [Optimizing Object Detection for Autonomous Vehicles](https://medium.com/@creatorrp3010/optimizing-object-detection-for-autonomous-vehicles-leveraging-intel-oneapi-libraries-for-enhanced-3f7341f675d5)
+Demo Video: [Object Detection for Autonomous Vecihles](https://www.youtube.com/watch?v=dWaTq5gzsvU)
+
 ## What I Learned:
 
 Deep Learning Model Selection: Through this project, I gained insights into different deep learning models for object detection, specifically comparing Faster R-CNN (MobileNetV3-Large) and YOLOv5. I learned how to choose the most suitable model based on factors like accuracy, speed, and resource efficiency.
