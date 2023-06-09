@@ -57,7 +57,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
 <br>
 
 
-<img src="https://codemyui.com/wp-content/uploads/2016/10/pure-css-site-scroll-micro-animation.gif" height="80" width="80"> <br>
+<img src="https://codemyui.com/wp-content/uploads/2016/10/pure-css-site-scroll-micro-animation.gif" > <br>
 <details> 
 
 
