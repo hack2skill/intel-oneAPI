@@ -1,0 +1,202 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div style="margin-top: -200px;">
+                    <h1 style="font-weight: bold; font-size: 40px; margin-bottom: 20px;">Welcome to <span style="color: #458FF6;">Dyslexify</span></h1>
+                    <p>BookSense is an advanced AI-driven reading recommendation system designed to elevate your book selection process. 
+                      Leveraging the power of machine learning algorithms, BookSense provides personalized suggestions 
+                      tailored to your unique reading preferences. The system analyzes your reading history, genre preferences, 
+                      favorite authors, and even factors such as writing style and narrative themes to 
+                      generate accurate and relevant recommendations. Embark on a journey of literary exploration with confidence,
+                      knowing that BookSense will guide you towards discovering extraordinary books that resonate with you. 
+                    </p>
+                  </div>
+                  <div class="col-lg-12" style="margin-top: 30px;">
+                    <div class="main-green-button scroll-to-section">
+                      <a href="{{url_for('library')}}">Go to Library</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="/static/assets/images/banner2.png" alt="" height="90%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="services" class="our-services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h6>Why ?</h6>
+            <h2>To Promote the <span>United Nations</span> Sustainable Development Goal 4: <em>Education</em></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/static/assets/images/service-icon-01.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Accoring to the UN:</h4>
+                  <p>Entrenched inequities in education have only worsened during the pandemic.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/static/assets/images/service-icon-02.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Solution:</h4>
+                  <p>We must increase the accessibility to educational resources and make it exciting to learn.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/static/assets/images/service-icon-03.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>How:</h4>
+                  <p>Dyslexify</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="features" class="features section">
+    <div class="container">
+      <div class="row">
+      <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+        <h2 style="text-align:center;"><em>Technologies Used:</em></h2>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="features-content">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                  <div class="icon"></div>
+                  <h4>Model</h4>
+                  <div class="line-dec"></div>
+                  <p>Python accesses the description of the original book and all of the other options in a .csv file and converts them into vectors using a pre-built machine learning feature-extraction model from sklearn. Then, the sklearn cosine similarity model is run to determine how similar those extracted features are to the original text. Finally, the number output is used to sort the csv file to obtain the top 4 books with similar descriptions.</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                  <div class="icon"></div>
+                  <h4>Front End</h4>
+                  <div class="line-dec"></div>
+                  <p>HTML files are used as templates, loaded when the url changes to display output. CSS formats this output and adds style, in addition to the loading animation. JavaScript is used to add more animations, such as text sliding in or elements popping up. Finally, JQuery is used to manage complexity and format the result of pressing buttons and going to HTML pages.</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                  <div class="icon"></div>
+                  <h4>Flask</h4>
+                  <div class="line-dec"></div>
+                  <p>Flask connects the back-end python to cache in browser, which then calls HTML templates and loads CSS, JavaScript, and JQuery. Flask also allows for python to be used inline. This allows the HTML template for the library page to iterate through nested lists in order to display the books as images using CSS formating and JavaScript reactions to hovering.</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="features-item second-feature last-features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="icon"></div>
+                  <h4>Product</h4>
+                  <div class="line-dec"></div>
+                  <p>The library allows users to view over 6,000 books with their description, ratings, and genres. Clicking on a book will generate a page of reccomended similar books based off of the description, chosen from the .csv file by machine learning. Additionally, a map of all the public libraries in America is given so that users may locate where they can get the book of their choosing fre of charge.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1SCIhYPbOkjaSl0A3w2fc2IGj3fswPjM&ehbc=2E312F" width="640" height="480"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="section-heading">
+            <h6>MAP</h6>
+            <h2>Find <em>Public Libraries</em> Near You</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-sm-4">
+              <div class="about-item">
+                <h4>30,000+</h4>
+                <h6>Public Libraries in India</h6>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+              <div class="about-item">
+                <h4>97,500+</h4>
+                <h6>Public Libraries with Internet Access in India</h6>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+              <div class="about-item">
+                <h4>218,000,000+</h4>
+                <h6>elecronic loans in 2014</h6>
+              </div>
+            </div>
+          </div>
+          <p>Use the widget to the right in order to locate the public library closest to your location. Cick on a book icon to see information about that library, including the address, phone number, and directions. Share the map to spread awareness about libraries in India so that we may better utilize them. Additionally, click the button below to see a sample 7K books and get reccomendations based upon their description.</p>
+          <div class="main-green-button"><a href="{{url_for('library')}}">Go to Library</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

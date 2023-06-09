@@ -1,0 +1,20 @@
+daal4py is a Python library that serves as a Python interface for the oneAPI Data Analytics Library (oneDAL). It provides access to optimized implementations of various data analytics algorithms, enabling faster execution of data processing and analysis tasks.
+
+The oneAPI Data Analytics Library (oneDAL) and its Python wrapper, daal4py, are used for computing cosine similarity between vectors. 
+Here's how we used:
+
+
+
+1. Importing and Patching:
+   - The code imports the necessary libraries, including `daal4py.sklearn.patch_sklearn` and `daal4py.daalinit`.
+   - `patch_sklearn()` is used to patch the scikit-learn library with daal4py implementations.
+   - `daalinit()` initializes the oneDAL library.
+
+2. Computing Cosine Similarity:
+   - The `get_recommendations` function uses `cosine_similarity` from `daal4py` to compute cosine similarity between vectors.
+   - The `cosine_similarity` function takes the target vector and an array of vectors as input.
+   - The function returns the cosine similarity scores between the target vector and all other vectors in the array.
+
+The main purpose of using daal4py in this code is to leverage the optimized implementations of algorithms provided by oneDAL. By using daal4py, the code benefits from the performance optimizations of oneDAL for computing cosine similarity, resulting in faster execution compared to using the standard scikit-learn implementation.
+
+ is a Python wrapper for oneDAL, which is a low-level library designed to accelerate data analytics workloads on a variety of hardware architectures, including CPUs and GPUs. oneDAL provides efficient parallel implementations of various data analytics algorithms, such as clustering, classification, regression, and similarity computations like cosine similarity.

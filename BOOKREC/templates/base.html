@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="/static/assets/images/logo-icon.png">
+    <title>DYSLEXIFY</title>
+
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-seo-dream.css">
+    <link rel="stylesheet" href="/static/assets/css/animated.css">
+    <link rel="stylesheet" href="/static/assets/css/owl.css">
+
+</head>
+
+<body>
+
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="{{url_for('index')}}" class="logo">
+              <h4>DYSLEXIFY</h4>
+              <!-- <img src="/static/assets/images/logo-icon.png" alt=""> -->
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="{{url_for('index')}}" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="http://127.0.0.1:5000/#about">Map</a></li>
+              <!-- <li class="scroll-to-section"><a href="#services">Services</a></li> -->
+              <li> <div class="main-blue-button"><a href="{{url_for('library')}}">Library</a></div></li> 
+            </ul>
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  {% block content %}
+
+  {% endblock %}
+  
+  <footer>
+    <div class="container">
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/js/owl-carousel.js"></script>
+  <script src="/static/assets/js/animation.js"></script>
+  <script src="/static/assets/js/imagesloaded.js"></script>
+  <script src="/static/assets/js/custom.js"></script>
+
+</body>
+</html>

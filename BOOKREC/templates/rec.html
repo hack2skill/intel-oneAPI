@@ -1,0 +1,271 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="info-stat">
+                      <h6>Average Rating:</h6>
+                      <h4>{{recDict['original'][-1]}}</h4>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <h2>{{recDict['original'][0]}}</h2>
+                    <h3>Authors: {{recDict['original'][1]}}</h3>
+                    <p>Genre: {{recDict['original'][2]}} </p>
+                    <p><em>{{recDict['original'][4]}}</em><br></p>
+                    <br>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="main-green-button scroll-to-section">
+                      <a href="{{ url_for('library') }}">Back to Library</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{{recDict['original'][3]}}" alt="" style="max-width: 50%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <h1 style="text-align:center;">Books with Similar Decriptions:</h1>
+  <div id="features" class="features section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="features-content">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+                  <div class="first-number number">
+                    <h6>01</h6>
+                  </div>
+                  <a href="/loadrecs/{{recDict['rec_1'][0]}}"><h4>{{recDict['rec_1'][0]}}</h4></a>
+                  <h7><em>Authors: {{recDict['rec_1'][1]}}</em></h7>
+                  <div class="line-dec"></div>
+                  <p>{{recDict['rec_1'][4][:244]}}...</p>
+                  <p>Average Rating: {{recDict['rec_1'][-1]}}</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="features-item second-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                  <div class="second-number number">
+                    <h6>02</h6>
+                  </div>
+                  <a href="/loadrecs/{{recDict['rec_2'][0]}}"><h4>{{recDict['rec_2'][0]}}</h4></a>
+                  <h7><em>Authors: {{recDict['rec_2'][1]}}</em></h7>
+                  <div class="line-dec"></div>
+                  <p>{{recDict['rec_2'][4][:244]}}...</p>
+                  <p>Average Rating: {{recDict['rec_2'][-1]}}</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                  <div class="third-number number">
+                    <h6>03</h6>
+                  </div>
+                  <a href="/loadrecs/{{recDict['rec_3'][0]}}"><h4>{{recDict['rec_3'][0]}}</h4></a>
+                  <h7><em>Authors: {{recDict['rec_3'][1]}}</em></h7>
+                  <div class="line-dec"></div>
+                  <p>{{recDict['rec_3'][4][:244]}}...</p>
+                  <p>Average Rating: {{recDict['rec_3'][-1]}}</p>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="features-item second-feature last-features-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="fourth-number number">
+                    <h6>04</h6>
+                    <a href="/loadrecs/{{recDict['rec_4'][0]}}"><h4>{{recDict['rec_4'][0]}}</h4></a>
+                    <h7><em>Authors: {{recDict['rec_4'][1]}}</em></h7>
+                    <div class="line-dec"></div>
+                    <p>{{recDict['rec_4'][4][:244]}}...</p>
+                    <p>Average Rating: {{recDict['rec_4'][-1]}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Why this app is needed: inclde statistics and UN goals, include increased accessibility -->
+
+<!--
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+            <img src="/assets/images/about-left-image.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="section-heading">
+            <h6>PURPOSE</h6>
+            <h2>Top <em>marketing</em> agency &amp; consult your website <span>with us</span></h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-sm-4">
+              <div class="about-item">
+                <h4>750+</h4>
+                <h6>projects finished</h6>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+              <div class="about-item">
+                <h4>340+</h4>
+                <h6>happy clients</h6>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+              <div class="about-item">
+                <h4>128+</h4>
+                <h6>awards</h6>
+              </div>
+            </div>
+          </div>
+          <p><a rel="nofollow" href="https://templatemo.com/tm-563-seo-dream" target="_parent">SEO Dream</a> is free digital marketing CSS template provided by TemplateMo website. You are allowed to use this template for your business websites. Please DO NOT redistribute this template ZIP file on any Free CSS collection websites. You may contact us for more information. Thank you.</p>
+          <div class="main-green-button"><a href="#">Discover company</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+ <!-- Services: Maybe replace with what I learned, creaticity, or more technical skill info?  -->
+ <!--
+  <div id="services" class="our-services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h6>Our Services</h6>
+            <h2>Discover What We Do &amp; <span>Offer</span> To Our <em>Clients</em></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/assets/images/service-icon-01.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Similar Websites</h4>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/assets/images/service-icon-02.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Website Trends</h4>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/assets/images/service-icon-03.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Traffic Analysis</h4>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/assets/images/service-icon-03.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Optimizing Keywords</h4>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.7s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/assets/images/service-icon-01.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Page Optimizations</h4>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.8s">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="icon">
+                  <img src="/assets/images/service-icon-02.png" alt="">
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="right-content">
+                  <h4>Deep URL Analysis</h4>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque laudantium.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+  {% endblock %}

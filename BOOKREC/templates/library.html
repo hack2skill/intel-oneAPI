@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+          <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+            <h6 style="text-align:center;"> <br> Library</h6>
+            <h2 style="text-align:center;">Discover Top <em>Books</em></h2>
+            <h2 style="text-align:center;">Hover for <span>Ratings,</span> Click for <span>Custom Reccomendations</span></h2>
+          </div>
+      </div>
+    </div>
+    <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="loop owl-carousel">
+            {%for i in listofdicts%}
+            <div class="item">
+              {%for j in i%}
+              <div class="portfolio-item">
+                <div class="thumb">
+                  <img src= "{{j['thumbnail']}}" alt="">
+                  <div class="hover-content">
+                    <div class="inner-content">
+                      <a href="loadrecs/{{ j['title'] }}"><h4>{{j['title']}}</h4>
+                      <span>{{j['authors']}}</span>
+                      <span><em>{{ j['short_descript'] }}...</em></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {%endfor%}
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
