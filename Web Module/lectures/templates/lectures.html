@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners'Ed - Lectures</title>
+    <link rel="stylesheet" href="{% static 'styles-lectures.css' %}">
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <p class="text-3xl font-bold mt-28 px-12 py-5 ml-auto mr-auto rounded-full w-9/12 outline-xl outline black bg-white">Lectures</p>
+    <div id="box" class="flex mt-10 flex-col w-9/12 mr-auto overflow-y-auto ml-auto pt-5 p-10 border-4 border-black bg-white">
+        <div class="lecture mt-6 flex justify-between border-4 border-black px-10 py-5 items-center">
+            <div class="flex flex-col w-1/2">
+                <p class="text-xl font-bold">Lecture 1</p>
+                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Watch Time</p>
+                <p class="desc text-center">29:38</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Lecture Time</p>
+                <p class="desc text-center">1:32:12</p>
+            </div>
+            <div id="play" class="flex justify-between items-center gap-x-10">
+                <button class="px-4 py-2 border-4 text-xl text-white border-white w-32 font-bold rounded-full" onclick='location.href="/lecture_attend/"'>Watch</button>
+                <div class="flex flex-col justify-between items-center">
+                    <p class="font-bold text-base">Status</p>
+                    <p id="status" class="text-2xl">&#x274C;</p> 
+                    <!-- &#9989; -->
+                </div>
+            </div>
+        </div>
+        <div class="lecture mt-6 flex justify-between border-4 border-black px-10 py-5 items-center">
+            <div class="flex flex-col w-1/2">
+                <p class="text-xl font-bold">Lecture 2</p>
+                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Watch Time</p>
+                <p class="desc text-center">29:38</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Lecture Time</p>
+                <p class="desc text-center">1:32:12</p>
+            </div>
+            <div id="play" class="flex justify-between items-center gap-x-10">
+                <button class="px-4 py-2 border-4 text-xl text-white border-white w-32 font-bold rounded-full" onclick='location.href="/lecture_attend/"'>Watch</button>
+                <div class="flex flex-col justify-between items-center">
+                    <p class="font-bold text-base">Status</p>
+                    <p id="status" class="text-2xl">&#x274C;</p> 
+                    <!-- &#9989; -->
+                </div>
+            </div>
+        </div>
+        <div class="lecture mt-6 flex justify-between border-4 border-black px-10 py-5 items-center">
+            <div class="flex flex-col w-1/2">
+                <p class="text-xl font-bold">Lecture 3</p>
+                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Watch Time</p>
+                <p class="desc text-center">29:38</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Lecture Time</p>
+                <p class="desc text-center">1:32:12</p>
+            </div>
+            <div id="play" class="flex justify-between items-center gap-x-10">
+                <button class="px-4 py-2 border-4 text-xl text-white border-white w-32 font-bold rounded-full" onclick='location.href="/lecture_attend/"'>Watch</button>
+                <div class="flex flex-col justify-between items-center">
+                    <p class="font-bold text-base">Status</p>
+                    <p id="status" class="text-2xl">&#x274C;</p> 
+                    <!-- &#9989; -->
+                </div>
+            </div>
+        </div>
+        <div class="lecture mt-6 flex justify-between border-4 border-black px-10 py-5 items-center">
+            <div class="flex flex-col w-1/2">
+                <p class="text-xl font-bold">Lecture 4</p>
+                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Watch Time</p>
+                <p class="desc text-center">29:38</p>
+            </div>
+            <div class="flex flex-col">
+                <p class="text-base font-bold text-center">Lecture Time</p>
+                <p class="desc text-center">1:32:12</p>
+            </div>
+            <div id="play" class="flex justify-between items-center gap-x-10">
+                <button class="px-4 py-2 border-4 text-xl text-white border-white w-32 font-bold rounded-full" onclick='location.href="/lecture_attend/"'>Watch</button>
+                <div class="flex flex-col justify-between items-center">
+                    <p class="font-bold text-base">Status</p>
+                    <p id="status" class="text-2xl">&#x274C;</p> 
+                    <!-- &#9989; -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'script-lectures.js' %}"></script>   
+</body>
+</html>

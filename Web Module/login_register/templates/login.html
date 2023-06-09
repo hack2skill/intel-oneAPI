@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners'Ed - Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}" />
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full box">
+        <div class="background">
+            <img src="{% static 'images/LearnersEd.png' %}">
+        </div>
+        <div class="log">
+            <h3>Login</h3>
+            <img id="log-image" src="{% static 'images/person.png' %}">
+            <form method="POST" action="/login/">
+                {% csrf_token %}
+                <label for="Email_Id">Email Id:</label>
+                <input type="email" id="Email_Id" name="Email_Id" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Login">
+            </form>
+            {% if error_message %}
+                <p class="error">{{ error_message }}</p>
+            {% endif %}
+            <p>Not a member? <a id="link" class="hover:shadow-none" href="/register/">Register.</a></p>
+        </div>
+    </div>
+</body>
+</html>

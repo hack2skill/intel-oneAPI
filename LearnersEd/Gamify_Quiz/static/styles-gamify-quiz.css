@@ -1,0 +1,139 @@
+body {
+    background-image: url(./images/bg-new.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    scroll-behavior: smooth;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+#title {
+    position: fixed;
+    z-index: 999999999;
+    box-shadow: 0 0 10px 2px gray;
+    left: 12%;
+    font-size: 40px;
+}
+
+#questionText {
+    box-shadow: inset 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+.opt {
+    background-color: white;
+    transition-duration: 200ms;
+    border: 8px solid black;
+}
+
+main {
+    width: 100%;
+}
+
+#videoElement {
+    transform: scaleX(-1);
+}
+
+.selected {
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 3s infinite ease-in-out;
+    background-size: 200% 200%;
+    border: 8px solid white;
+    color: white;
+    box-shadow: 0 0 10px 2px gray;
+    transform: scale(1.2);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  #result {
+    position: absolute;
+  }
+  
+  #start-div {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#result {
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 5s infinite ease-in-out;
+    background-size: 200% 200%;
+    box-shadow: 0 0 10px 2px gray;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: 8px solid white;
+}
+
+#startButton {
+    padding: 30px 40px;
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 5s infinite ease-in-out;
+    background-size: 200% 200%;
+    border-radius: 30px;
+    outline: 4px solid white;
+    box-shadow: 0 0 10px 2px gray;
+    transition-duration: 200ms;
+}
+
+@keyframes gradientAnimation {
+    0%, 100% {
+      background-position: left top;
+    }
+    50% {
+      background-position: right bottom;
+    }
+}
+
+#startButton:hover {
+    transform: scale(1.4);
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
+
+#startButton:active {
+    transform: scale(0.9);
+    background-color: black;
+    background-image: none;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+}
+
+#res-div {
+    position: fixed;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}

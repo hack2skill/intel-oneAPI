@@ -1,0 +1,17 @@
+nav {
+    font-family: 'Rowdies', cursive;
+    z-index: 9999999999999999999999;    
+    box-shadow: 0 2px 10px 0 gray;
+    border-bottom: 2px solid black;
+}
+
+#l:hover {
+    box-shadow: 0 0 10px 0 gray;
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+#l:active {
+    transform: scale(0.9);
+    transition-duration: 200ms;
+}

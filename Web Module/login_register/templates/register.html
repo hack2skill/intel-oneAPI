@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners'Ed - Register</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{% static 'register-script.js' %}"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="background">
+            <img src="{% static 'images/LearnersEd.png' %}">
+        </div>
+        <div class="log">
+            <div id="temp">
+                <h3>Register</h3>
+                <img id="log-image" src="{% static 'images/person.png' %}">
+            </div>
+            <div id="info">
+                <form method="POST" action="#" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    <div class="r">
+                        <div class="p">
+                            <label for="student_name">Student Name:</label>
+                            <input type="text" id="student_name" name="student_name" required>
+                        </div>
+                        <div class="p">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+        
+                    <div class="r">
+                        <div class="p">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="p">
+                            <label for="confirm_password">Confirm Password:</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="r">
+                        <div class="p">
+                            <label for="class">Class:</label>
+                            <input type="text" id="class" name="class" required>
+                        </div>
+                        <div class="p">
+                            <label for="section">Section:</label>
+                            <input type="text" id="section" name="section" required>
+                        </div>
+                    </div>
+                    
+                    <div class="p">
+                        <div class="r">
+                            <label>Favourite Categories:</label>
+                        </div>
+                        <div class="r bg-white rounded-lg flex justify-center shadow-2xl items-center">
+                            <div class="r">
+                                <input type="checkbox" id="category_1_checkbox" name="favourite_categories" value="Tech">
+                                <label for="category_1_checkbox">Tech</label>
+                            </div>
+                            <div class="r">
+                                <input type="checkbox" id="category_2_checkbox" name="favourite_categories" value="Science">
+                                <label for="category_2_checkbox">Science</label>
+                            </div>
+                            <div class="r">
+                                <input type="checkbox" id="category_3_checkbox" name="favourite_categories" value="Computer">
+                                <label for="category_3_checkbox">Computer</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="r justify-center mt-4 w-full items-center">
+                        <div class="p w-full justify-center items-center">
+                            <input type="submit" class="w-36" value="Register">
+                            {% if error_message %}
+                                <p class="error">{{ error_message }}</p>
+                            {% endif %}
+                            <p>Already a member? <a id="link" href="/login/">Login.</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./images/bg-new.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+.info {
+    text-align: center;
+    font-weight: bold;
+}
+
+#weather-icon {
+    background-image: url(./images/weather.png);
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#circle {
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.il-1 {
+    width: 30%;
+}
+
+#title {
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 5s infinite ease-in-out;
+    background-size: 200% 200%;
+    transition-duration: 200ms;
+    padding: 50px 40px;
+    outline: 8px solid white;
+}
+
+.il {
+    padding: 0 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 40px;
+    transition-duration: 200ms;
+    outline: 2px solid black;
+    background-color: white;
+}
+
+#list {
+list-style: circle;
+}
+
+/* width */
+    ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.il>p {
+    margin-top: 10px;
+}
+
+.il:hover {
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+#row1>div{
+    box-shadow: 0 0 10px 2px gray;
+}
+
+#row2>div{
+    box-shadow: 0 0 10px 2px gray;
+}
+
+#row3>div{
+    box-shadow: 0 0 10px 2px gray;
+}   
+
+#rank {
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 5s infinite ease-in-out;
+    background-size: 200% 200%;
+    transition-duration: 200ms;
+    box-shadow: 0 0 10px 2px gray, inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    outline: 4px solid white;
+    cursor: pointer;
+}
+
+#progress-bar {
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+    width: 280px;
+  }
+  
+  #progress-bar > span {
+    display: block;
+    height: 100%;
+    background-color: #C4B0FF;
+    width: 0;
+    transition: width 1s ease; /* Adjust the duration as needed */
+  }
+  
+
+#rank:hover {
+    transition-duration: 200ms;
+    outline: 8px solid white;
+    box-shadow: 0 0 20px 2px gray;
+}
+
+#rval {
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+}
+
+#rval:hover {
+    transition-duration: 200ms;
+    transform: scale(1.2);
+}
+
+.il-2 {
+    width: 35%; 
+}
+
+.il-3 {
+    width: 48%;
+    height: 200px;
+}
+
+#coin {
+  background-image: url(./images/coins.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 1rem gold);
+  animation: pulsate 6s infinite;
+}
+
+#pet {
+  background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+  animation: gradientAnimation 5s infinite ease-in-out;
+  background-size: 200% 200%;
+  border-radius: 40px;
+  transition-duration: 200ms;
+  outline: 4px solid white;
+}
+
+#pet-graph{
+    box-shadow: inset 2px 0px 5px 0px rgba(0,0,0,0.75);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+#pet:hover {
+  transform: scale(1.1);
+  transition-duration: 200ms;
+}
+
+
+@keyframes pulsate {
+  0% {
+    transform: rotateY(360deg) scale(1);
+    filter: drop-shadow(0 0 0.5rem gold);
+  } 
+  30% {
+    transform: rotateY(0deg) scale(1.1);
+    filter: drop-shadow(0 0 1rem gold);
+  }
+  100% {
+    transform: rotateY(360deg) scale(1);
+    filter: drop-shadow(0 0 0.5rem gold);
+  }
+}
+
+#learners-coin {
+  background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+  animation: gradientAnimation 5s infinite ease-in-out;
+  background-size: 200% 200%;
+}
+
+.il-4 {
+    width: 100%;
+}
+
+#sub {
+    margin-right: 5px;
+}
+
+#list>li:nth-child(odd) {
+    background-color: #C4B0FF;
+    color: white; /* First color */
+  }
+  
+#list>li:nth-child(even) {
+    background-color: #e6e6e6; /* Second color */
+  }
+
+@keyframes gradientAnimation {
+    0%, 100% {
+      background-position: left top;
+    }
+    50% {
+      background-position: right bottom;
+    }
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    overflow-x: auto;
+    scrollbar-color: #888 transparent;
+    padding-bottom: 10px;
+  }
+  
+  .video-wrapper {
+    display: flex;
+  }
+  
+  .video {
+    position: relative;
+    width: 500px;
+    height: 300px; /* Adjust the height to fit your design */
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .video iframe {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .video-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+  }
+  
+  .video-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .video-description {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  /* Adjust the width of the scrollbar */
+.video-container::-webkit-scrollbar {
+  width: 2px; /* Adjust the width as needed */
+}
+
+/* Adjust the appearance of the scrollbar track */
+.video-container::-webkit-scrollbar-track {
+  background-color: #e6e6e6;
+}
+
+/* Adjust the appearance of the scrollbar thumb */
+.video-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+/* Adjust the appearance of the scrollbar thumb on hover */
+.video-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.loading-animation {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    overflow-y: hidden;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #C4B0FF;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+ 
+  

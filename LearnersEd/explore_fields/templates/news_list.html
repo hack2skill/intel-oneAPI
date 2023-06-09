@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learners'Ed - Explore Fields</title>
+
+    <style>
+        /* news.css */
+
+        body {
+            font-family: 'Darker Grotesque', sans-serif;
+            box-sizing: border-box;
+            background-image: url(../static/images/bg-new.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .cont {
+            margin-top: 50px;
+        }
+
+        hr {
+            margin-top: 30px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f5f5f5;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background-color: #ccc;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: #f5f5f5;
+        }
+
+        #Topic {
+            text-align: center;
+            text-transform: uppercase;
+            width: 95%; 
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            padding: 60px 0;
+            border-radius: 30px;
+            font-size: 30px;
+            outline: 4px solid white;
+            box-shadow: 0 0 10px 5px grey;
+            background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+            animation: gradientAnimation 5s infinite ease-in-out;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientAnimation {
+            0%, 100% {
+            background-position: left top;
+            }
+            50% {
+            background-position: right bottom;
+            }
+        }
+
+        .horizontal-scroller::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
+            background-color: #f5f5f5; /* Background color of the scrollbar track */
+        }
+
+        .horizontal-scroller::-webkit-scrollbar-thumb {
+            background-color: #888; /* Color of the scrollbar thumb */
+            border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+        }
+
+        .horizontal-scroller::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Color of the scrollbar thumb on hover */
+        }
+
+        .horizontal-scroller::-webkit-scrollbar-track {
+            background-color: #f5f5f5; /* Background color of the scrollbar track */
+        }
+
+        .horizontal-scroller::-webkit-scrollbar-track:hover {
+            background-color: #ccc; /* Background color of the scrollbar track on hover */
+        }
+
+        .horizontal-scroller::-webkit-scrollbar-corner {
+            background-color: #f5f5f5; /* Background color of the scrollbar corner */
+        }
+
+        .horizontal-scroller {
+            padding: 20px 0;
+            padding-left: 15px;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 20px;
+            padding-bottom: 20px;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+
+        .article {
+            flex: 0 0 auto;
+            width: 300px;
+            margin-right: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: center;
+            transition: transform 0.3s ease-in-out; /* Add transition effect */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article:hover {
+            transform: scale(1.05); /* Increase size on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+
+        .article img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0; /* Rounded top corners */
+            margin-bottom: 10px;
+        }
+
+        .article h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .article p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .title {
+            font-weight: bold;
+            text-align: center;
+            background-color: white;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            border: 4px solid black;
+            color: black;
+            border-radius: 30px;
+            box-shadow: 0 0 10px 5px grey;
+            padding: 30px 0;
+            margin-top: 150px;
+        }
+        
+        .article .read-more {
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .article .read-more:hover {
+            color: #0056b3;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1 class="title">Explore Fields</h1>
+    {% for category, articles in articles_by_category.items %}
+    <div class="cont">
+        <h2 id="Topic">{{ category }}</h2>
+        <div class="horizontal-scroller">
+            {% for article in articles %}
+                <div class="article">
+                    <img src="{{ article.image_url }}" alt="{{ article.title }}">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.description }}</p>
+                    <a href="{{ article.read_more }}" class="read-more" target="_blank">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+        <hr/>
+    </div>
+    {% endfor %}
+</body>
+</html>
