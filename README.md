@@ -28,12 +28,8 @@
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
   ## Installation
 
-   All necessary Libraries for the project can be downloaded by executing the following commands:
 
-   ```
-      pip install -r requirements.txt
-   ```
-  Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a
+  Clone repo and install [requirements.txt](https://github.com/Senthil-Riddhish/Ai-Artistss/blob/main/yolov5/requirements.txt) in a
    [**Python>=3.7.0**](https://www.python.org/) environment, including
    [**PyTorch>=1.7**](https://pytorch.org/get-started/locally/).
 
@@ -42,5 +38,22 @@
    cd yolov5
    pip install -r requirements.txt  # install
    ```
+   <summary>Training</summary>
+
+The commands below reproduce YOLOv5 [COCO](https://github.com/ultralytics/yolov5/blob/master/data/scripts/get_coco.sh)
+results. [Models](https://github.com/ultralytics/yolov5/tree/master/models)
+and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest
+YOLOv5 [release](https://github.com/ultralytics/yolov5/releases). Training times for YOLOv5n/s/m/l/x are
+1/2/4/6/8 days on a V100 GPU ([Multi-GPU](https://docs.ultralytics.com/yolov5/tutorials/multi_gpu_training) times faster). Use the
+largest `--batch-size` possible, or pass `--batch-size -1` for
+YOLOv5 [AutoBatch](https://github.com/ultralytics/yolov5/pull/5092). Batch sizes shown for V100-16GB.
+
+```bash
+python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
+                                                                 yolov5s                    64
+                                                                 yolov5m                    40
+                                                                 yolov5l                    24
+                                                                 yolov5x                    16
+```
 ## What I Learned:
    Write about the biggest learning you had while developing the prototype
