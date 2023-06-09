@@ -5,7 +5,7 @@
 #### Team Leader Email - manijb13@gmail.com
 
 ## A Brief of the Prototype:
-  This section must include UML Daigrms and prototype description
+  This section includes UML Daigrms and prototype description
   
 <p align="center">
   <img src="Data/oneAPI_ODAV.png" />
@@ -20,13 +20,18 @@
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
    - Intel® AI Analytics Toolkits
-
+   - Intel Distribution for Python
    
 ## Step-by-Step Code Execution Instructions:
-  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
+  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed 
+  - Kindly scroll down and head over to the Project Architecture section were we've explained in detail steps to run
   
 ## What I Learned:
    Write about the biggest learning you had while developing the prototype
+  - We've been able to custom label/annotate the objects in detection.
+  - Came up with novel algorithms for different kinds of object detection specific to autonomous cars.
+  - Using Intel® AI Analytics Toolkits we were able to enhance performance speed in training data.
+  - Our applications works under all kinds of weather conditions and provides proper analysis over the data.
 
 
 <h1 align="center">oneAPI_ODAV</h1>
