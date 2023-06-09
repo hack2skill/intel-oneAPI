@@ -16,8 +16,34 @@
 ## Flow Diagram:
 ![Screenshot 2023-06-09 181606](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/8c6dc9d9-6955-4908-b164-c00728b7738f)
 
-
-## Folder Hierarchy
+## 🍞 Folder Structure
+```bash
+|-client          #client side folder (frontend code)
+|  public
+|     --
+|  src                  #building the business componenst for the algorithm for the frontend
+|     assests
+|     components
+|     App.js
+|     index.css
+|     index.js
+|  package.json
+|  package-lock.json
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+```
 
 
 ## Tech Stack: 
@@ -47,7 +73,7 @@ YOLOv5 [release](https://github.com/ultralytics/yolov5/releases). Training times
 1/2/4/6/8 days on a V100 GPU ([Multi-GPU](https://docs.ultralytics.com/yolov5/tutorials/multi_gpu_training) times faster). Use the
 largest `--batch-size` possible, or pass `--batch-size -1` for
 YOLOv5 [AutoBatch](https://github.com/ultralytics/yolov5/pull/5092). Batch sizes shown for V100-16GB.
-
+### Just get into the yolov5 folder and execute this commnd for training the model
 ```bash
 python train.py --data custom_dataset.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
                                                                  yolov5s                    64
