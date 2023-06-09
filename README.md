@@ -54,8 +54,12 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card1.jpg" alt="Logo" height="200">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card2.jpg" alt="Logo" height="200">
 </h2> 
+<br>
+
+<img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/e387d578-4c92-4e91-bb95-9709d9b2c50d"> <br>
+
 <details>
-	
+
 
   <summary><h2>3D Model with AR Interface</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/13e37eb3-bfc6-4630-94c3-fc5391f97f0e" height="80" width="80"> <br></summary>
   <h3>Introduction</h3>
