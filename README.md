@@ -35,7 +35,8 @@ intel-tensorflow,
 intel devcloud,
    
 ## Step-by-Step Code Execution Instructions:
-  This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
-  
+step-1 : clone this repository
+step-2 : run train.py
+
 ## What I Learned:
 I learnt how to work with Intel oneapi and devcloud. Intel oneapi has also given me a chance to explore various different libraries and toolkits that had helped us to optimize the performance of our model.
