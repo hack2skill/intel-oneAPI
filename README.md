@@ -16,13 +16,6 @@
 ## Flow Diagram:
 ![Screenshot 2023-06-09 181606](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/8c6dc9d9-6955-4908-b164-c00728b7738f)
 
-## Installation
-
-All necessary Libraries for the project can be downloaded by executing the following commands:
-
-```
-pip install -r requirements.txt
-```
 
 ## Folder Hierarchy
 
@@ -33,6 +26,13 @@ pip install -r requirements.txt
    ![qwe](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/de88cc7b-d827-4601-909e-dc07e47d3253)
 ## Step-by-Step Code Execution Instructions:
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
+  ## Installation
+
+   All necessary Libraries for the project can be downloaded by executing the following commands:
+
+   ```
+      pip install -r requirements.txt
+   ```
   
 ## What I Learned:
    Write about the biggest learning you had while developing the prototype
