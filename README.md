@@ -91,7 +91,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
 ✅Use the wrapper to call the SYCL DPC++ functions for image processing and speech conversion.<br><br>
  
  <h3>How to run it locally?</h3>
- 1. Visit the address <code> Image_to_Speech</code> in the this repo.<br><br>
+ 1. Visit the terminal and type <code>cd Image_to_Speech</code>.<br><br>
  2. Install the packages mentioned in Requirements.txt <code>pip install -r requirements.txt</code><br><br>
  3. Run this command <code>python app.py</code><br><br>
 </details>
@@ -110,8 +110,9 @@ When the AR card is scanned, the user is directed to any one of the of five symb
 ✅The oneAPI Data Analytics Library (oneDAL) and its Python wrapper, daal4py, are used for computing cosine similarity between vectors.<br><br>
  
  <h3>How to run?</h3>
- 1. Visit this website or use this directory /asdas/sadsad if running locally.<br><br>
- 2. Run this command <code>python app.py</code><br><br><br><br>
+ 1. Visit this website or use this directory by opening the terminal and type <code>cd bookrec</code> if you want to run locally.<br><br>
+ 2. Install the packages mentioned in Requirements.txt <code>pip install -r requirements.txt</code><br><br>
+ 3. Run this command <code>python app.py</code><br><br><br><br>
 </details>
 <details>
 	
@@ -132,7 +133,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
 ✅It is a game-changing tool for researchers, students, and professionals, providing a seamless and effective solution for working with PDF documents.<br><br>
  
  <h3>How to run?</h3>
- 1. Visit the website or the address /ads/asdasd/asdsa in the this repo.<br><br>
+ 1. Visit the website or the address <code>cd pdfgpt</code> in the this repo.<br><br>
  2. If running locally run this command <code>cd backend</code> after which <code>python app.py</code><br><br>
  3. Go back to the previous directory using <code>cd ../</code> and navigate to frontend directory using the command <code>cd frontend</code><br><br>
  4. Run this command <code>npm start</code>.<br><br>
