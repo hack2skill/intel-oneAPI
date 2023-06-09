@@ -55,7 +55,9 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card2.jpg" alt="Logo" height="200">
 </h2> 
 <details>
-  <summary><h2>3D Model with AR Interface</h2></summary>
+	
+
+  <summary><h2>3D Model with AR Interface</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/13e37eb3-bfc6-4630-94c3-fc5391f97f0e" height="80" width="80"> <br></summary>
   <h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D.jpg" alt="Logo" height="500">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D2.jpg" alt="Logo" height="500">
@@ -75,7 +77,8 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  3. Navigate in the 3D space to view the model from different perspectives.<br><br>
 </details>
 <details>
-  <summary><h2>Image to Speech Recognition</h2></summary>
+  <summary><h2>Image to Speech Recognition</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/1668f35c-922e-443b-9a07-38f4f8895025" height="80" width="80"> <br></summary>
+
   <h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/ImagetoSpeech.jpg" alt="Logo" width="1000">
   <p>This feature enables students to capture images of text, such as medical prescription or text on whiteboards, and convert them into speech. It can assist students with visual    impairments or those who prefer auditory learning, making educational content more accessible.</p>
@@ -93,7 +96,9 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  3. Run this command <code>python app.py</code><br><br>
 </details>
 <details>
-  <summary><h2>ML driven suggestion of books</h2></summary>
+	
+
+  <summary><h2>ML driven suggestion of books</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/2c22b52d-3971-4c89-83a6-81de23ffbb21" height="80" width="80"> <br></summary>
   <h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Books.png" alt="Logo" height="400">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Books2.png" alt="Logo" height="400">
@@ -109,7 +114,9 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  2. Run this command <code>python app.py</code><br><br><br><br>
 </details>
 <details>
-  <summary><h2>AI powered Document Assistant</h2></summary>
+	
+	
+  <summary><h2>AI powered Document Assistant</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/9765ebd7-e368-4b9e-8408-ce466d0e3e23" height="80" width="80"> <br></summary>
   <h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/pdf1.png" alt="Logo" width="1000">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/pdf2.png" alt="Logo" width="1000">
@@ -117,7 +124,8 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  <br>
   <p>This is feature  advanced AI-powered document assistant that revolutionizes the way you search and extract information from PDFs. It eliminates the need for manual searching and scrolling through lengthy documents by leveraging the power of GPT-3.5 and Intel oneApi. With PDFGPT, you can effortlessly ask questions and receive instant answers, allowing for efficient and hassle-free document exploration.</p>
  
-<h3>How we did?</h3>  
+
+<h3>How we did?</h3> <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/9765ebd7-e368-4b9e-8408-ce466d0e3e23" height="80" width="80"> <br> 
 ✅Imports the SYCL context from the daal4py.onea pi module.<br><br>
 ✅This module provides SYCL functionality for GPU acceleration.<br><br>
 ✅This flexibility allows you to take advantage of the specific strengths of GPUs while maintaining portability across different hardware architectures.<br><br>
@@ -130,6 +138,6 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  4. Run this command <code>npm start</code>.<br><br>
 </details>
   
-## What I Learned:
+## What I Learned: <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/2c22b52d-3971-4c89-83a6-81de23ffbb21" height="80" width="80"> <br>
 The Dyslexify project aimed to address the challenges faced by individuals with dyslexia in reading, writing, and comprehension. By leveraging Intel's oneAPI technologies, including the Intel Data Analytics Acceleration Library (DAAL), Intel Math Kernel Library (MKL), and Intel Deep Learning (oneDNN), the project aimed to create a machine learning initiative to improve the lives of students in India and worldwide who struggle with dyslexia.
 Through the Dyslexify project and the utilization of Intel's oneAPI technologies, we have learned the transformative impact that technology can have on the lives of individuals with dyslexia. By leveraging machine learning and deep learning capabilities, Dyslexify has the potential to revolutionize the way dyslexic students access, comprehend, and engage with written content. This project serves as a testament to the power of innovation and collaboration in making a positive difference in the lives of millions of dyslexic individuals in India and beyond.
