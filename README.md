@@ -16,7 +16,7 @@ Applications of FFT are endless and range from codecs for media/broadcasting to 
 This library uses C++/C and the CMake build system.
    
 ## Step-by-Step Code Execution Instructions:
-Just type make to compile and then run 'prog_name' to run program
+Just type make to compile and then run 'deeplearn' to run program
   
 ## What I Learned:
 Mostly about the FFT algorithm and its implementation details. Already studied fft in college and hence was easier. There still were nuances to understand. The theory behind eigen 
