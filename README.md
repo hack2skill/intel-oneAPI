@@ -10,7 +10,7 @@
   1) object detection= Our project detects the objects in front of the vehicles in a range of 10 metres to 40 metres.
   2)pothole detection= Our project detects the potholes in front of the vehicles in the range 5 metres to 6 metres with accuracy.
   Other than this, our project can detect the object and vehicles in night and in fog which is the most suitable thing to avoid accidents. 
-# Components Used ![image](https://github.com/mansi12340/object_detection_for_autonomous_vehicles_oneAPI/blob/main/images/Components.png)
+# Components Used ![image](https://github.com/mansi12340/object_detection_for_autonomous_vehicles_oneAPI/blob/main/images/Components.jpg)
 ## Tech Stack: 
 List of technologies used both in hardware and software
 * Raspberry pi 4 board
