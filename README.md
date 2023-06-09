@@ -5,7 +5,8 @@
 #### Team Leader Email - manijb13@gmail.com
 
 ## A Brief of the Prototype:
-  This section includes UML Daigrms and prototype description
+    This section includes UML Daigrms and prototype description
+  - OneAI_ODAV PPT <a href="Data/oneAPI_ODAV Hack2skill Final INTEL oneAPI Hackathon PPT.pptx">here.</a>
   
 <p align="center">
   <img src="Data/oneAPI_ODAV.png" />
@@ -32,7 +33,9 @@
   - Came up with novel algorithms for different kinds of object detection specific to autonomous cars.
   - Using Intel® AI Analytics Toolkits we were able to enhance performance speed in training data.
   - Our applications works under all kinds of weather conditions and provides proper analysis over the data.
-
+  <p align="center">
+    <img src="Data/pytorchvsipex.png" />
+  </p>
 
 <h1 align="center">oneAPI_ODAV</h1>
 
@@ -123,7 +126,7 @@ $ pyinstaller -i "favicon.ico" --onefile -w --hiddenimport=EasyTkinter --hiddeni
 
 ## 4. Working Samples 
 
-- For Video Demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=aCLAOy6iWAs](https://www.youtube.com/watch?v=aCLAOy6iWAs">here.</a>
+- For Video Demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=aCLAOy6iWAs">here.</a>
 
 ### GUI INTERFACE SAMPLES
 
