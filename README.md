@@ -34,6 +34,16 @@ After preprocessing the dataset, we employed the DETR (Detection Transformer) tr
 ### Deployment
 For the deployment of the trained prototype, we used Flask. We developed a web application that provides an intuitive interface for users to use the prototype. The Flask app allows users to upload images for object detection. The detected objects are then visualized and displayed to the user, providing valuable insights and enhancing the capabilities of autonomous driving systems.
 
+
+### Process Flow Diagram
+![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/8116caf3-48df-4d64-9c89-39b222329b5f)
+
+
+### Architecture Diagram
+![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/4ae5024a-068c-42aa-abca-6adfab25bb46)
+
+
+
 ### Repository Structure
 - `Deployment/`: You can find the deployment of the prototype.
 - `notebooks/`: Jupyter notebooks showcasing the data preprocessing, model training, and evaluation processes.
