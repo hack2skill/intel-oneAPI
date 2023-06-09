@@ -24,6 +24,9 @@ All necessary Libraries for the project can be downloaded by executing the follo
 pip install -r requirements.txt
 ```
 
+## Folder Hierarchy
+
+
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
    ![Screenshot 2023-06-09 182951](https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/08f722e9-7637-4a44-877a-b496d5fde92f)
