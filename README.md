@@ -40,8 +40,16 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ## Step-by-Step Code Execution Instructions:<img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/c1f1a73e-3850-4160-8955-2f1311f2a421" height="80" width="80"> <br>
 
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
-  
-## Augmented-Reality Smart Card
+
+
+## Augmented-Reality Smart Card <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81d0354b-6865-4aff-ab05-9058c5f6a391" height="80" width="80"> <br>
+When the AR card is scanned, the user is directed to any one of the of five symbols that represent valued services:
+	⭐ The webpage of Dyslexify.<br>
+ ⭐ The AR page to view few 3d model from the website<br>
+ ⭐ The PDFGPT to learn better<br>
+ ⭐ The book recomendation system<br>
+ ⭐ Image to speech application<br>
+	
 <h2>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card1.jpg" alt="Logo" height="200">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card2.jpg" alt="Logo" height="200">
