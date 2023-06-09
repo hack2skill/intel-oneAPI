@@ -1,6 +1,6 @@
 # intel-oneAPI
 
-#### Team Name -Team Xion
+#### Team Name -Team Xion (Extreme Identification Of Navigation)
 #### Problem Statement - Object Detection in Autonomous Vehicles
 #### Team Leader Email - sarthakjoshisj93@gmail.com
 
