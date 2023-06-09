@@ -1,8 +1,10 @@
 # intel-oneAPI
 
-#### Team Name -
-#### Problem Statement - 
-#### Team Leader Email -
+#### Team Name - LAOS Expedition
+
+#### Problem Statement - To make use of Intel-One API and SYS CL libraries in some application
+
+#### Team Leader Email - ovisvanathan@gmail.com
 
 ## A Brief of the Prototype:
 This project is an implementation of the Fast Fourier Transform algorithm FFT in C++/C. It is a traditional implementation that does not make use of any parallel processing 
