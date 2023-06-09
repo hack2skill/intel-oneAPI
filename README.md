@@ -38,5 +38,10 @@ intel devcloud,
 step-1 : clone this repository
 step-2 : run train.py
 
+for more information please visit our [medium page ... ](https://medium.com/@sidd6758harth/optimizing-object-detection-models-for-autonomous-vehicle-using-intel-oneapi-6dc674e40c71)
+
+## output video
+[drive linkk](https://drive.google.com/file/d/17MbKJJEGVEm68UgP8DH8fiSOFjdJtLLe/view?usp=sharing)
+
 ## What I Learned:
 I learnt how to work with Intel oneapi and devcloud. Intel oneapi has also given me a chance to explore various different libraries and toolkits that had helped us to optimize the performance of our model.
