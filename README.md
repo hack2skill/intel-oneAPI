@@ -296,7 +296,8 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
 # Benchmark Results with Intel® oneAPI AI Analytics Toolkit
 
-- We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to`benchmark` folder to view the results.
+- We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that share results are
+on provided Intel® Dev Cloud machine *(Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM)*
   
 # What I learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
 
