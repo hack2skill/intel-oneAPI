@@ -50,7 +50,7 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 
 ## Augmented-Reality Smart Card <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81d0354b-6865-4aff-ab05-9058c5f6a391" height="80" width="80"> <br>
 When the AR card is scanned, the user is directed to any one of the of five symbols that represent valued services:
-	⭐ The webpage of Dyslexify.<br>
+ ⭐ The webpage of Dyslexify.<br>
  ⭐ The AR page to view few 3d model from the website<br>
  ⭐ The PDFGPT to learn better<br>
  ⭐ The book recomendation system<br>
@@ -64,12 +64,33 @@ When the AR card is scanned, the user is directed to any one of the of five symb
 
 
 <img src="https://codemyui.com/wp-content/uploads/2016/10/pure-css-site-scroll-micro-animation.gif" > <br>
+
 <details> 
+  <summary><h2>Dyslexify</h2><img src="https://cdn-icons-png.flaticon.com/128/4406/4406319.png" height="60" width="60"> <br></summary>
+<h3>Introduction</h3>
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home2.jpg" alt="Logo" height="500">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home3.jpg" alt="Logo" height="500">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home4.jpg" alt="Logo" height="500">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home5.jpg" alt="Logo" height="500">
+ <br>
+  <p>Our project provides informational content on Dyslexia. It gives resources, training sites, and information regarding this disorder. Our goal is to provide families with the resources to create a successful path for people with Dyslexia, it encourages people to look at this disorder as a superpower and not a disease.</p>
+ 
+  <h3>How we did?</h3>
+   
+✅ The oneAPI Rendering Toolkit is used to create 3D models, which are then hosted on a WebAR platform for easy accessibility.<br><br>
+✅ The models are converted into the glTF format and uploaded to the chosen platform. <br><br>
+✅ Users can view and interact with the models through web browsers on various devices, without the need for specialized applications or high-end hardware.<br><br>
+✅This combination of powerful rendering tools powered by intel oneAPI and WebAR technology provides a seamless experience for individuals to explore and engage with captivating in augmented reality.
+   
+ <h3>How to run?</h3>
+ 1. Visit the website or you can scan the QR code.<br><br>
+ 2. Give the required permissions to view the 3D AR model.<br><br>
+ 3. Navigate in the 3D space to view the model from different perspectives.<br><br>
+</details>
 
-
-
+<details> 
   <summary><h2>3D Model with AR Interface</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/13e37eb3-bfc6-4630-94c3-fc5391f97f0e" height="60" width="60"> <br></summary>
-  <h3>Introduction</h3>
+<h3>Introduction</h3>
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D.jpg" alt="Logo" height="500">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/3D2.jpg" alt="Logo" height="500">
  <br>
@@ -87,7 +108,8 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  2. Give the required permissions to view the 3D AR model.<br><br>
  3. Navigate in the 3D space to view the model from different perspectives.<br><br>
 </details>
-<details>
+
+<details>	
   <summary><h2>Image to Speech Recognition</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/1668f35c-922e-443b-9a07-38f4f8895025" height="60" width="60"> <br></summary>
 
   <h3>Introduction</h3>
@@ -126,7 +148,6 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  3. Run this command <code>python app.py</code><br><br><br><br>
 </details>
 <details>
-	
 	
   <summary><h2>AI powered Document Assistant</h2><img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/9765ebd7-e368-4b9e-8408-ce466d0e3e23" height="60" width="60"> <br></summary>
   <h3>Introduction</h3>
