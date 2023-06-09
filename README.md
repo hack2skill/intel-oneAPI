@@ -37,6 +37,11 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ## Step-by-Step Code Execution Instructions:
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
   
+## Augmented-Reality Smart Card
+<h2>
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card1.jpg" alt="Logo" height="200">
+ <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/card2.jpg" alt="Logo" height="200">
+</h2> 
 <details>
   <summary><h2>3D Model with AR Interface</h2></summary>
   <h3>Introduction</h3>
