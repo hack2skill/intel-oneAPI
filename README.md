@@ -30,8 +30,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 * Intel's oneAPI
   * oneDAAL
   * DYC++/SYCL
-  * OSPray Studio
   * Rendering Toolkit
+  	* OSPray and OSPray Studio
 * Intel's Devcloud
 * Python
 * Flask
