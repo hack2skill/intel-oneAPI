@@ -87,7 +87,6 @@ python train.py --data custom_dataset.yaml --epochs 300 --weights '' --cfg yolov
 ```
 ## Output Videos From Our Model
 Video 1:
-https://github.com/Senthil-Riddhish/Ai-Artistss/assets/82893678/ff1181b9-fac1-42d9-b6c5-438f982b004e
 Video 2:
 ## What I Learned:
    Write about the biggest learning you had while developing the prototype
