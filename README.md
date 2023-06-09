@@ -91,7 +91,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
 ✅Use the wrapper to call the SYCL DPC++ functions for image processing and speech conversion.<br><br>
  
  <h3>How to run it locally?</h3>
- 1. Visit the address /ads/asdasd/asdsa in the this repo.<br><br>
+ 1. Visit the address <code> Image_to_Speech</code> in the this repo.<br><br>
  2. Install the packages mentioned in Requirements.txt <code>pip install -r requirements.txt</code><br><br>
  3. Run this command <code>python app.py</code><br><br>
 </details>
