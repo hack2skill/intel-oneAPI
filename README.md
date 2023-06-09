@@ -164,5 +164,31 @@ When the AR card is scanned, the user is directed to any one of the of five symb
   
 
 ## What I Learned: <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/fb7ba852-f261-4fec-90a7-3fa629f0fee4" height="80" width="80"> <br>
-The Dyslexify project aimed to address the challenges faced by individuals with dyslexia in reading, writing, and comprehension. By leveraging Intel's oneAPI technologies, including the Intel Data Analytics Acceleration Library (DAAL), Intel Math Kernel Library (MKL), and Intel Deep Learning (oneDNN), the project aimed to create a machine learning initiative to improve the lives of students in India and worldwide who struggle with dyslexia.
-Through the Dyslexify project and the utilization of Intel's oneAPI technologies, we have learned the transformative impact that technology can have on the lives of individuals with dyslexia. By leveraging machine learning and deep learning capabilities, Dyslexify has the potential to revolutionize the way dyslexic students access, comprehend, and engage with written content. This project serves as a testament to the power of innovation and collaboration in making a positive difference in the lives of millions of dyslexic individuals in India and beyond.
+We delve into the key learnings and technologies utilized during the creation of our project. By harnessing a diverse set of cutting-edge technologies, we aimed to develop an innovative solution that seamlessly integrates multiple domains, including SYCL DPC++ using Intel oneAPI, oneDAAL, Intel Rendering Toolkit with OSPRay and OSPRay Studio, Intel DevCloud, Python wrapper framework, Flask, JavaScript Chrome extensions, OpenAI's GPT-3.5, Blender, Unity, and WebAR (Web-based Augmented Reality).
+
+* SYCL DPC++ using Intel oneAPI:
+SYCL (Single-source Heterogeneous Programming) and DPC++ (Data Parallel C++) enable efficient parallel programming across different devices and platforms. Leveraging Intel oneAPI, we harnessed the power of these technologies to optimize computation-intensive tasks and achieve high performance.
+
+* oneDAAL:
+oneDAAL (oneAPI Data Analytics Library) is a powerful framework for accelerated data analytics. By utilizing oneDAAL, we were able to process and analyze vast amounts of data efficiently, providing valuable insights and improving decision-making capabilities within our project.
+
+* Intel Rendering Toolkit with OSPRay and OSPRay Studio:
+Intel Rendering Toolkit offers advanced rendering capabilities for visualizing complex scenes and data. OSPRay, a key component, enabled us to generate stunning visualizations with high fidelity and interactive performance. OSPRay Studio complemented the toolkit by providing a comprehensive environment for creating, editing, and exploring rendered scenes.
+
+* Intel DevCloud:
+Intel DevCloud is a cloud-based development platform that provides access to a wide range of Intel hardware resources. We leveraged the power of DevCloud to scale our project, perform large-scale experiments, and optimize performance on diverse hardware configurations.
+
+* Python Wrapper Framework and Flask:
+Python Wrapper Frameworks simplify the integration of libraries and APIs into Python applications. By utilizing such a framework, we streamlined the integration of various technologies within our project, allowing for seamless communication and interoperability. Flask, a Python-based web framework, facilitated the development of our project's backend, enabling us to build a robust and scalable web application.
+
+* JavaScript Chrome Extensions:
+JavaScript Chrome Extensions enhanced the functionality and user experience of our project by extending the capabilities of the Google Chrome web browser. These extensions enabled us to integrate additional features, customize user interfaces, and interact with external services seamlessly.
+
+* OpenAI's GPT-3.5:
+OpenAI's GPT-3.5, an advanced language model, played a pivotal role in our project by providing natural language processing capabilities and generating human-like text. By leveraging GPT-3.5, we enhanced the interactivity and intelligence of our project, enabling dynamic and context-aware user interactions.
+
+* Blender and Unity:
+Blender, a powerful 3D creation suite, and Unity, a popular game development platform, empowered us to create visually stunning and interactive experiences within our project. These tools facilitated the creation of immersive environments, realistic simulations, and engaging visual elements.
+
+* WebAR (Web-based Augmented Reality):
+WebAR allows users to experience augmented reality directly through web browsers, eliminating the need for dedicated applications. By utilizing WebAR technologies, we expanded the reach and accessibility of our project, enabling users to interact with augmented content using their web browsers and compatible devices.
