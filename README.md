@@ -89,6 +89,7 @@ Augmentation techniques: To create diverse variations of each source image, we e
 
 Leveraging Intel's oneAPI OneDNN: Throughout our project, we explored the capabilities of Intel's oneAPI OneDNN tool. By utilizing this deep neural network tool, we were able to optimize and accelerate the performance of our object detection code. Leveraging hardware accelerators and parallel computing, we achieved improved efficiency and speed in our models.
 
+Overall, our project focused on addressing the limitations of existing object detection models in extreme weather conditions. Through specialized model development, data augmentation, and the use of advanced tools like Intel's oneAPI OneDNN, we aimed to improve the accuracy, reliability, and robustness of object detection for autonomous vehicles in challenging weather scenarios.
 
 
 
