@@ -33,8 +33,8 @@ Step 4: Execute the Code
 Run the Python script using the following command:
 python model.py 
   
-## What I Learned:
-I have learned the following key points:
+## What we Learnt:
+we have learned the following key points:
 
 Model Export: The code demonstrates how to export a trained model for deployment using Intel's OpenVINO toolkit. It loads the model from the specified directory, consisting of the model files (model.xml and model.bin), and utilizes the IECore class to read the network and its weights.
 
