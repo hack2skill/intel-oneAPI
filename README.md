@@ -2,14 +2,19 @@
 
 #### Team Name - SneakyTurtle <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/f7ee32ba-d85e-4ab3-8731-b6701d94b313" height = "50px">
 
-#### Problem Statement - Object Detection For Autonomous Vehicles 🚗
+#### Problem Statement - Object Detection For Autonomous Vehicles <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/549af82b-79e6-436a-b067-2e83641a9095" height = "50px">
 #### Team Leader Email - shreyashmohadikar@gmail.com
 
 
-## A Brief of the Prototype:
+
+
+## <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/80522c5e-f814-4c3d-906a-e5518ccdd150" height = "50px" > A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
   
-## Tech Stack: 
+  <img src ="https://media.giphy.com/media/dqQxplKANtn8c/giphy.gif" height = "250" width = "100%"/>
+  
+
+##  <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/51de0cd9-f6e8-43ce-bb09-baccd71c0447" height = "50px">  Tech Stack: 
 1. Roboflow: For image input and preprocessing.
 1. OneDAN: For data analysis of images and drawing conclusions.
 1. OneDNN: for framework optimization.
@@ -26,7 +31,7 @@
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)  
 and more..
 
-## Step-by-Step Code Execution Instructions:
+## <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/8d918e92-7fa3-4218-80b9-d47a0c0e7bcb" height = "50px"> Step-by-Step Code Execution Instructions:
   #### To clone and run the prototype use the following instructions:
   1. Open up a bash terminal(Linux) or Command Prompt(Windows)
   2. Cone the repository with the code: `git clone https://github.com/SneakyTurtIe/intel-oneAPI.git`
