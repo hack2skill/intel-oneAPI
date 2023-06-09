@@ -10,8 +10,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 ## Features we Offer
 * 3D model with AR interface usIng oneAPI Rendering toolkit
 * Image to speech recognition, text to speech recognition, using SYCL
-* Ml driven suggestion of books ,using daal4py
-* Ai Powered Document Assistant,using GPU Strength
+* ML driven suggestion of books ,using daal4py
+* AI Powered Document Assistant, using GPU Strength
 
 ## Architecture Diagram
 <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch2.png" alt="Logo" height="300">
