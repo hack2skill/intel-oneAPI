@@ -18,22 +18,22 @@
 
 ## 🍞 Folder Structure
 ```bash
-|-client          #client side folder (frontend code)
+|-client                            #client side folder (frontend code)
 |  public
 |     --
-|  src                  #building the source code
+|  src                              #building the source code
 |     assests
-|     components        #building the business component for our website
-|     App.js            #Root folder for the division for each components
+|     components                    #building the business component for our website
+|     App.js                        #Root folder for the division for each components
 |     index.css
 |     index.js
 |  package.json
 |  package-lock.json
 |
 |-dataset
-|  export
-|     -images           #containing the images for training,validating and testing our model
-|     -labels           #contains the equivalent format yolo format for each images
+|     export
+|        -images                    #containing the images for training,validating and testing our model
+|        -labels                    #contains the equivalent format yolo format for each images
 |     data.yaml
 |
 |-yolov5
