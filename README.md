@@ -6,7 +6,7 @@
 
 ## A Brief of the Prototype:
     This section includes UML Daigrms and prototype description
-  - OneAI_ODAV PPT <a href="Data/oneAPI_ODAV Hack2skill Final INTEL oneAPI Hackathon PPT.pptx">here.</a>
+  - OneAI_ODAV PPT <a href="Data/oneAPI_ODAV Hack2skill Final INTEL oneAPI Hackathon PPT.pdf">here.</a>
   
 <p align="center">
   <img src="Data/oneAPI_ODAV.png" />
