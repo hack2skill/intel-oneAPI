@@ -75,7 +75,19 @@ and more..
 </p>
 
 ## What I Learned:
-Throughout the course of this project, we gained valuable insights and knowledge in the field of object detection for autonomous vehicles. We learnt about the limitations of existing models in extreme weather conditions and the importance of developing specialized models for such scenarios. Additionally, we acquired hands-on experience in leveraging the DETR transfer learning technique to create an advanced object detection model. Furthermore, we explored the capabilities of Intel's oneAPI OneDNN tool and discovered its effectiveness in optimizing and accelerating the performance of the code.
+During the course of our project in object detection for autonomous vehicles, we have gained valuable insights and experiences. Here are the elaborations and additional points:
+
+Limitations of existing models: We have identified several limitations in existing object detection models, particularly in extreme weather conditions such as fog, mist, and camouflage. These conditions can significantly affect the accuracy and reliability of object detection algorithms, making it essential to address these challenges.
+
+Specialized models for extreme weather: Recognizing the limitations, we have emphasized the importance of developing specialized models specifically tailored for extreme weather conditions. These models incorporate advanced techniques and algorithms that can handle the challenges posed by weather-related factors, enabling more accurate and robust object detection.
+
+Data augmentation for weather conditions: To tackle the limitations caused by extreme weather, we performed data augmentation techniques. By augmenting the dataset to resemble various weather conditions, such as fog and mist, we aimed to train the object detection models to be more resilient and adaptable in adverse weather scenarios.
+
+Pre-processing steps: As part of the data preparation, we applied pre-processing steps to each image. These steps included auto-orientation of pixel data with EXIF-orientation stripping and resizing the images to a standardized size of 640x640 pixels, allowing consistent input for the object detection models.
+
+Augmentation techniques: To create diverse variations of each source image, we employed augmentation techniques. This involved randomly adjusting the brightness of the images within a range of -26% to +26%, applying random Gaussian blur with a range of 0 to 2 pixels, and introducing salt and pepper noise to 2% of the pixels. These augmentations aimed to increase the variability of the dataset and improve the model's generalization capabilities.
+
+Leveraging Intel's oneAPI OneDNN: Throughout our project, we explored the capabilities of Intel's oneAPI OneDNN tool. By utilizing this deep neural network tool, we were able to optimize and accelerate the performance of our object detection code. Leveraging hardware accelerators and parallel computing, we achieved improved efficiency and speed in our models.
 
 
 
