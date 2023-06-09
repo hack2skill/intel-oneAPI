@@ -72,6 +72,7 @@ When the AR card is scanned, the user is directed to any one of the of five symb
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home3.jpg" alt="Logo" height="500">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home4.jpg" alt="Logo" height="500">
  <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home5.jpg" alt="Logo" height="500">
+<img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Home6.jpg" alt="Logo" height="500">
  <br>
   <p>Our project provides informational content on Dyslexia. It gives resources, training sites, and information regarding this disorder. Our goal is to provide families with the resources to create a successful path for people with Dyslexia, it encourages people to look at this disorder as a superpower and not a disease.</p>
  
