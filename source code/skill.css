@@ -1,0 +1,33 @@
+.container{
+    align-self: center;
+    font-size :20px;
+    border: 2px solid transparent;
+    align-items: center;
+    /* margin: 20%; */
+    margin-bottom: 5%;
+    margin-left: 40%;
+    margin-top: 7%;
+}
+.button {
+    position: absolute;
+    top:50%;
+    background-color:#0a0a23;
+}
+.footer{
+    text-align: center;
+    font-size: 12px;
+    margin-top: auto;
+    padding-top: 2%;
+    background-color: rgba(5, 0, 19, 0.993);
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  #cp{
+    color: white;
+  }
+  .cont{
+    margin-top: 0%;
+    margin-left: 40%;
+    margin-bottom: 20%;
+  }
