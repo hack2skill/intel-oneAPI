@@ -20,7 +20,9 @@
 
 All necessary Libraries for the project can be downloaded by executing the following commands:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
