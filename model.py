@@ -6,6 +6,7 @@ from pathlib import Path
 
 import cv2
 import numpy as np
+import onedal
 from IPython import display
 from openvino import runtime as ov
 from openvino.tools.mo.front import tf as ov_tf_front
