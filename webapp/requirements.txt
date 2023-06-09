@@ -1,0 +1,10 @@
+streamlit==1.23.1
+streamlit_chat==0.0.2.2
+Pillow==9.5.0
+audio_recorder_streamlit==0.0.8
+openai-whisper==20230314
+soundfile==0.12.1
+PyYAML==6.0
+moviepy==1.0.3
+pydub==0.25.1
+SpeechRecognition==3.10.0
