@@ -119,7 +119,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
 ```
 
-- Train/Fine-tune the Extractive QA Multilingual Model (Part of our Ask Question/Doubt Component).
+- Train/Fine-tune the Extractive QA Multilingual Model (Part of our **Ask Question/Doubt** Component).
 Please note that, by default we use this (https://huggingface.co/ai4bharat/indic-bert) as a Backbone (BERT topology)
 and finetune it on SQuAD v1 dataset. Moreover, IndicBERT is a multilingual ALBERT model pretrained exclusively on 12 major Indian languages. It is pre-trained on novel monolingual corpus of around 9 billion tokens and subsequently evaluated on a set of diverse tasks. So finetuning, on SQuAD v1 (English) dataset automatically results in cross-lingual
 transfer on other 11 indian languages.
@@ -250,19 +250,21 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 
 ```
 
-- For our Interactive Conversational AI Examiner component, as of now we are not doing any training as its based on 
-recent Generative AI LLM (Large Language model) (open access models like LLaMA, Falcon etc.). You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models
+- For our **Interactive Conversational AI Examiner** Component, as of now we are not doing any training as its based on 
+recent Generative AI LLMs (Large Language models) (open access models like LLaMA, Falcon etc.). You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs
 
 Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (Few options are like https://huggingface.co/decapoda-research/llama-7b-hf-int8 etc.)  
 
-Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive Service to use models like GPT3 paid subscription API. You just need to provide `azure_deployment_name` below configuration and `<your_key>`
+Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive Service to use models like GPT3 paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `hf_pipeline` in the below configuration and then add `<your_key>` 
 
 ```python
 
   AI_EXAMINER_CONFIG = {
-      "llm_name": "azure_gpt3",
+      "llm_name": "azure_gpt3", # azure_gpt3, hf_pipeline
       "azure_deployment_name": "text-davinci-003-prod",
+
       "hf_model_name": "TheBloke/falcon-7b-instruct-GPTQ", # mosaicml/mpt-7b-instruct
+
       "device": 0, # cuda:0
       "llm_kwargs":{
           "do_sample": True,
@@ -274,6 +276,9 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
           "num_return_sequences": 1,
           "stop_sequence": "<|endoftext|>"
     }
+  ...
+
+  os.environ["OPENAI_API_KEY"] = "<your_key>"
 ```
 
 - Start the API server
@@ -303,14 +308,17 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
 - We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that the shared results are based
 on provided Intel® Dev Cloud machine *(Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM)*
+
+# Comprehensive Implementation PPT (Presentation)
+
+- Please view `ppt/Intel-oneAPI-Hackathon-Implementation.pdf` for more details.
   
 # What we learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
 
-
 ![image](assets/Intel-ai-analytics-banner.png)
 
-✅ Utilizing the Intel® AI Analytics Toolkit: By utilizing the Intel® AI Analytics Toolkit, developers can leverage familiar Python* tools and frameworks to accelerate the entire data science and analytics process on Intel® architecture. This toolkit incorporates oneAPI libraries for optimized low-level computations, ensuring maximum performance from data preprocessing to deep learning and machine learning tasks. Additionally, it facilitates efficient model development through interoperability.
+✅ **Utilizing the Intel® AI Analytics Toolkit**: By utilizing the Intel® AI Analytics Toolkit, developers can leverage familiar Python* tools and frameworks to accelerate the entire data science and analytics process on Intel® architecture. This toolkit incorporates oneAPI libraries for optimized low-level computations, ensuring maximum performance from data preprocessing to deep learning and machine learning tasks. Additionally, it facilitates efficient model development through interoperability.
 
-✅ Seamless Adaptability: The Intel® AI Analytics Toolkit enables smooth integration with machine learning and deep learning workloads, requiring minimal modifications.
+✅ **Seamless Adaptability**: The Intel® AI Analytics Toolkit enables smooth integration with machine learning and deep learning workloads, requiring minimal modifications.
 
-✅ Fostered Collaboration: The development of such an application likely involved collaboration with a team comprising experts from diverse fields, including deep learning and data analysis. This experience likely emphasized the significance of collaborative efforts in attaining shared objectives.
+✅ **Fostered Collaboration**: The development of such an application likely involved collaboration with a team comprising experts from diverse fields, including deep learning and data analysis. This experience likely emphasized the significance of collaborative efforts in attaining shared objectives.

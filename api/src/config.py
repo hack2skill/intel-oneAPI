@@ -19,7 +19,7 @@ ASK_DOUBT_CONFIG = {
 
 
 AI_EXAMINER_CONFIG = {
-  "llm_name": "azure_gpt3",
+  "llm_name": "azure_gpt3", # azure_gpt3, hf_pipeline
   "azure_deployment_name": "text-davinci-003-prod",
   "hf_model_name": "TheBloke/falcon-7b-instruct-GPTQ", # mosaicml/mpt-7b-instruct
   "device": 0, # cuda:0
