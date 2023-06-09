@@ -4,7 +4,7 @@
 #### Problem Statement - Open Innovation in Education
 #### Team Leader Email - joeljoseph1810@gmail.com
 #### Website link - https://joeljjoseph.github.io/Brainwave_Dyslexify/index.html
-#### PPT - https://joeljjoseph.github.io/Brainwave_Dyslexify/index.html
+#### PPT - https://github.com/JoelJJoseph/intel-oneAPI/tree/main/PPT
 
 ## A Brief of the Prototype <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81390908-eaae-4fb1-bb79-0fa8f96bd15c" height="80" width="80"> <br>
 
