@@ -4,21 +4,23 @@
 #### Problem Statement - Open Innovation in Education
 #### Team Leader Email - 
 
-## A Brief of the Prototype <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81390908-eaae-4fb1-bb79-0fa8f96bd15c" height="60" width="60"> <br>
+## A Brief of the Prototype <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81390908-eaae-4fb1-bb79-0fa8f96bd15c" height="80" width="80"> <br>
 
 A neurological condition called dyslexia impairs a person's capacity for reading, writing, and spelling. It affects how the brain interprets language, making it challenging for those with dyslexia to understand written content. Between 5% and 20% of Indians suffer with dyslexia, with urban regions having a higher prevalence of the condition. This indicates that millions of Indian school children experience reading and comprehension problems as a result of this disorder. The creation of solutions like our product Dyslexify, a machine learning initiative intended to help people with dyslexia improve their reading and comprehension skills, has been made possible by technological developments using intel’s oneAPI.
 
-## Features we Offer <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/ab7b93c9-160c-49f1-91f3-853a5aaeaf22" height="60" width="60"> <br>
+## Features we Offer <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/ab7b93c9-160c-49f1-91f3-853a5aaeaf22" height="80" width="80"> <br>
 ⭐ 3D model with AR interface usIng oneAPI Rendering toolkit <br>
 ⭐ Image to speech recognition, text to speech recognition, using SYCL <br>
 ⭐ ML driven suggestion of books ,using daal4py <br>
 ⭐ AI Powered Document Assistant, using GPU Strength <br>
 
-## Architecture Diagram
+
+## Architecture Diagram <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/136f45e1-5d5a-4aa5-b71b-73a644686216" height="80" width="80"> <br>
 <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch2.png" alt="Logo" height="300">
  
-  
-## Tech Stack: 
+
+
+## Tech Stack: <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/13362666-adb9-4e7f-ae11-d00ad0339e9e" height="80" width="80"> <br>
 * Intel's oneAPI
   * oneDAAL
   * DYC++/SYCL
@@ -35,7 +37,8 @@ A neurological condition called dyslexia impairs a person's capacity for reading
 * WebAR
 * PythonAnywhere
    
-## Step-by-Step Code Execution Instructions:
+## Step-by-Step Code Execution Instructions:<img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/c1f1a73e-3850-4160-8955-2f1311f2a421" height="80" width="80"> <br>
+
   This Section must contain set of instructions required to clone and run the prototype, so that it can be tested and deeply analysed
   
 ## Augmented-Reality Smart Card
