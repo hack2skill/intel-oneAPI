@@ -3,6 +3,7 @@
 #### Team Name - Chhota Bheem
 #### Problem Statement - Object Detection For Autonomous Vehicles
 #### Team Leader Email - rshrjacharya@gmail.com
+#### Medium Post - [Accelerating Real-Time Object Detection with YOLOv8m and Intel’s Optimization Tools](https://keras.medium.com/accelerating-real-time-object-detection-with-yolov8m-and-intels-optimization-tools-eb2263d94183)
 
 ## A Brief of the Prototype:
 | Description | Diagram |
