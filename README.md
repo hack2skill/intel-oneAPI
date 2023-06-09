@@ -4,14 +4,15 @@
 #### Problem Statement - Open Innovation in Education
 #### Team Leader Email - 
 
-## A Brief of the Prototype
+## A Brief of the Prototype <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/81390908-eaae-4fb1-bb79-0fa8f96bd15c" height="60" width="60"> <br>
+
 A neurological condition called dyslexia impairs a person's capacity for reading, writing, and spelling. It affects how the brain interprets language, making it challenging for those with dyslexia to understand written content. Between 5% and 20% of Indians suffer with dyslexia, with urban regions having a higher prevalence of the condition. This indicates that millions of Indian school children experience reading and comprehension problems as a result of this disorder. The creation of solutions like our product Dyslexify, a machine learning initiative intended to help people with dyslexia improve their reading and comprehension skills, has been made possible by technological developments using intel’s oneAPI.
 
-## Features we Offer
-* 3D model with AR interface usIng oneAPI Rendering toolkit
-* Image to speech recognition, text to speech recognition, using SYCL
-* ML driven suggestion of books ,using daal4py
-* AI Powered Document Assistant, using GPU Strength
+## Features we Offer <img src="https://github.com/JoelJJoseph/intel-oneAPI/assets/72274851/ab7b93c9-160c-49f1-91f3-853a5aaeaf22" height="60" width="60"> <br>
+⭐ 3D model with AR interface usIng oneAPI Rendering toolkit <br>
+⭐ Image to speech recognition, text to speech recognition, using SYCL <br>
+⭐ ML driven suggestion of books ,using daal4py <br>
+⭐ AI Powered Document Assistant, using GPU Strength <br>
 
 ## Architecture Diagram
 <img src="https://raw.githubusercontent.com/raison024/ArchDiagram/main/Arch2.png" alt="Logo" height="300">
