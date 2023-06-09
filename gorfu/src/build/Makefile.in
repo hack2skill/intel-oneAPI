@@ -1,0 +1,51 @@
+#_cgo_export.c  _cgo_export.h  _cgo_flags  _cgo_gotypes.go  _cgo_main.c  _cgo_.o  hello.cgo1.go  hello.cgo2.c
+
+#CGO_LDFLAGS=_cgo_export.o calladd.so funcwrap.so $(LDPATH_linux)
+LDPATH_linux=_obj
+CGO_LDFLAGS=_cgo_export.o cprog.o $(LDPATH_linux)
+#CGO_DEPS=_cgo_export.o calladd.so funcwrap.so
+CGO_DEPS=_cgo_export.o cprog.o
+IFLAGS=-I_cgo_export.h -I..
+CLEANFILES+=main
+GC=go
+SRC=.
+SRCOBJ=_obj
+BUILD=build
+#COPY_FILES1 := $(patsubst $(SRC)/%,$(BUILD)/%,$(wildcard $(SRC)/*))
+#COPY_FILES2 := $(patsubst $(SRCOBJ)/%,$(BUILD)/%,$(wildcard $(SRCOBJ)/*))
+COPY_FILES1 := $(SRC)/*
+COPY_FILES2 := $(SRCOBJ)/*
+MKDIR_P = mkdir -p
+
+
+#include $(GOROOT)/src/Make.pkg
+
+all: clean dirs main
+
+_cgo_main.o: _cgo_main.c _cgo_export.h
+	gcc $(_CGO_CFLAGS_$(GOARCH)) -g -c -fPIC $(CFLAGS) -o $@ $<
+
+_cgo_export.o: _cgo_export.c _cgo_export.h
+	gcc $(_CGO_CFLAGS_$(GOARCH)) -g -c -fPIC $(CFLAGS) -o $@ $<
+
+hello.cgo2.o: hello.cgo2.c _cgo_export.h
+	gcc $(_CGO_CFLAGS_$(GOARCH)) -g -c -fPIC $(CFLAGS) $(IFLAGS) -o $@ $<
+
+clean:
+	rm -rf $(BUILD)
+
+dirs: $(BUILD)
+
+$(BUILD):
+	cd .. 
+	${MKDIR_P} ../${BUILD}
+	cp -f $(COPY_FILES1) ../$(BUILD)
+	cp -f $(COPY_FILES2) ../$(BUILD)
+
+#funcwrap.so: funcwrap.o
+#    gcc $(_CGO_CFLAGS_$(GOARCH)) -o $@ funcwrap.o $(_CGO_LDFLAGS_$(GOOS))
+
+main: hello.cgo2.o hello.cgo1.go 
+	cd $(BUILD)
+	$(GC) tool cgo build
+	$(LD) -o $@ main.$O

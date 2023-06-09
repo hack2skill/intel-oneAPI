@@ -1,0 +1,1 @@
+/usr/bin/c++    -fpermissive    CMakeFiles/rowcsv.dir/mnistrow.cpp.o CMakeFiles/rowcsv.dir/builder.cpp.o  -o rowcsv  -L/home/numerical/dl/beyondcpp/builder  -L/home/numerical/dl/beyondcpp/eigenlib -rdynamic -leigen -lworkflow -Wl,-rpath,/home/numerical/dl/beyondcpp/builder:/home/numerical/dl/beyondcpp/eigenlib 
