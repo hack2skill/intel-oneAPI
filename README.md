@@ -1,7 +1,7 @@
 # intel-oneAPI
 
 #### Team Name - Scoops Troops
-#### Problem Statement - object deduction in autonomous vehicles
+#### Problem Statement - Object Detection in Autonomous Vehicles.
 #### Team Leader Email -jerish716@gmail.com
 
 ## A Brief of the Prototype:
