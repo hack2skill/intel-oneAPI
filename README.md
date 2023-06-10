@@ -55,7 +55,7 @@ For the deployment of the trained prototype, we used Flask. We developed a web a
 - `README.md`: The file you are currently reading, providing an overview of the project.
 
 
-
+**Note:** Please download the model file from [here](https://drive.google.com/file/d/1rD6eBrp7F3GFdWe_0e8SaDgmxEwCekhQ/view?usp=sharing) and save it in the `Deployment/` repository before use.
   
   
 
