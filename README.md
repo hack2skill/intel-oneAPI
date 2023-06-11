@@ -123,7 +123,7 @@ Please note that, by default we use this (https://huggingface.co/ai4bharat/indic
 and finetune it on SQuAD v1 dataset. Moreover, IndicBERT is a multilingual ALBERT model pretrained exclusively on 12 major Indian languages. It is pre-trained on novel monolingual corpus of around 9 billion tokens and subsequently evaluated on a set of diverse tasks. So finetuning, on SQuAD v1 (English) dataset automatically results in cross-lingual
 transfer on other 11 indian languages.
 
-Here is the detailed architecture of `Ask Question/Doubt` component:
+Here is the architecture of `Ask Question/Doubt` component:
 
 ![](./assets/Ask-Doubt.png)
 
