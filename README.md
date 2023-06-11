@@ -9,7 +9,7 @@
 
 # LEAP
 
-Intel® oneAPI Hackathon - Prototype Implementation for our LEAP Platform
+Intel® oneAPI Hackathon 2023 - Prototype Implementation for our LEAP Solution
 
 # A Brief of the Prototype:
 
@@ -25,7 +25,7 @@ Online learning is crucial for students even post-pandemic due to its flexibilit
 - It can be challenging to sift through pile of lengthy videos or documents to find relevant information.
 - Teachers or instructors may not be available around the clock to offer guidance
 
-#### Our Proposed Solution ![image](https://user-images.githubusercontent.com/72274851/218503394-b52dfcc9-0620-4f44-94f5-46a09a5cc970.png)
+#### PROPOSED SOLUTION ![image](https://user-images.githubusercontent.com/72274851/218503394-b52dfcc9-0620-4f44-94f5-46a09a5cc970.png)
 
 To mitigate the above challenges, we propose LEAP (Learning Enhancement and Assistance Platform), which is an AI-powered
 platform designed to enhance student learning outcomes and provide equitable access to quality education. The platform comprises two main features that aim to improve the overall learning experience of the student:
@@ -49,9 +49,9 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
   ![](./assets/Intel-Tech-Stack.png)
 
-    1. Intel® Extension for Pytorch: Used for Multilingual Extractive QA model training optimization.
-    2. Intel® Neural Compressor: Used for Multilingual Extractive QA model inference and Generative AI model inference optimization.
-    3. Intel® Extension for Scikit-Learn: Used for Multilingual Embedding model training optimization.
+    1. Intel® Extension for Pytorch: Used for our Multilingual Extractive QA model Training/Inference optimization.
+    2. Intel® Neural Compressor: Used for Multilingual Extractive QA model and Generative AI model Inference optimization.
+    3. Intel® Extension for Scikit-Learn: Used for Multilingual Embedding model Training/Inference optimization.
     4. Intel® distribution for Modin: Used for basic initial data analysis/EDA.
     5. Intel® optimized Python: Used for data pre-processing, reading etc.
 
