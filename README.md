@@ -25,7 +25,7 @@ Online learning is crucial for students even post-pandemic due to its flexibilit
 - It can be challenging to sift through pile of lengthy videos or documents to find relevant information.
 - Teachers or instructors may not be available around the clock to offer guidance
 
-#### Our Proposed Solution ![image](https://user-images.githubusercontent.com/72274851/218503394-b52dfcc9-0620-4f44-94f5-46a09a5cc970.png)
+#### PROPOSED SOLUTION ![image](https://user-images.githubusercontent.com/72274851/218503394-b52dfcc9-0620-4f44-94f5-46a09a5cc970.png)
 
 To mitigate the above challenges, we propose LEAP (Learning Enhancement and Assistance Platform), which is an AI-powered
 platform designed to enhance student learning outcomes and provide equitable access to quality education. The platform comprises two main features that aim to improve the overall learning experience of the student:
