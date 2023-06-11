@@ -57,7 +57,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
   - Prototype webapp Tech Stack
 
-  ![](./assets/Tech-Stack.png)
+  ![](./assets/Prototype-Tech-Stack.png)
 
 # Demo Video
 
@@ -69,7 +69,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
 - Clone the Repository
 ```python
- $ git clone https://github.com/rohitc5/intel-oneAPI/tree/main
+ $ git clone https://github.com/rohitc5/intel-oneAPI/
  $ cd Intel-oneAPI
 
 ```
@@ -251,7 +251,11 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 ```
 
 - For our **Interactive Conversational AI Examiner** Component, as of now we are not doing any training as its based on 
-recent Generative AI LLMs (Large Language models) (open access models like LLaMA, Falcon etc.). You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs
+recent Generative AI LLMs (Large Language models) (open access models like LLaMA, Falcon etc.). You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs.
+
+Here is the architecture of `Interactive Conversational AI Examiner` component:
+
+![](./assets/AI-Examiner.png)
 
 Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (Few options are like https://huggingface.co/decapoda-research/llama-7b-hf-int8 etc.)  
 
@@ -306,6 +310,10 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
 # Benchmark Results with Intel® oneAPI AI Analytics Toolkit
 
+- We follow the below process flow to optimize our models from both the components
+
+![benchmark](./assets/Intel-Optimization.png)
+
 - We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that the shared results are based
 on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM]*
 
@@ -315,7 +323,7 @@ on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 1
   
 # What we learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
 
-![image](assets/Intel-ai-analytics-banner.png)
+![image](assets/Intel-AI-Analytics-Banner.png)
 
 ✅ **Utilizing the Intel® AI Analytics Toolkit**: By utilizing the Intel® AI Analytics Toolkit, developers can leverage familiar Python* tools and frameworks to accelerate the entire data science and analytics process on Intel® architecture. This toolkit incorporates oneAPI libraries for optimized low-level computations, ensuring maximum performance from data preprocessing to deep learning and machine learning tasks. Additionally, it facilitates efficient model development through interoperability.
 
