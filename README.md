@@ -1,6 +1,9 @@
 ### Team Name - C5ailabs
 ### Problem Statement - Open Innovation in Education
 ### Team Leader Email - rohit.sroch@course5i.com
+### PPT - https://github.com/rohitc5/intel-oneAPI/blob/main/ppt/Intel-oneAPI-Hackathon-Implementation.pdf
+### Medium Article - https://medium.com/@rohitsroch/leap-learning-enhancement-and-assistance-platform-powered-by-intel-oneapi-ai-analytics-toolkit-656b5c9d2e0c
+### Demo Video - https://www.youtube.com/watch?v=QoVWsOSlwvI
 
 <hr>
 

@@ -1,4 +1,4 @@
-EXAMINER_ASK_QUESTION_PROMPT="""You are an AI examiner, designed to ask a question in order to assess a student's knowledge and understanding around topic {topic} topic.
+EXAMINER_ASK_QUESTION_PROMPT="""You are an AI examiner, designed to ask a question in order to assess a student's knowledge and understanding around {topic} topic.
 Given a question type, your task is to generate a valid question you need to ask the student.
 
 Only use the following context around the topic of {topic}.
