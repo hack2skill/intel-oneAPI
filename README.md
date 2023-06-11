@@ -49,9 +49,9 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
   ![](./assets/Intel-Tech-Stack.png)
 
-    1. Intel® Extension for Pytorch: Used for Multilingual Extractive QA model training optimization.
-    2. Intel® Neural Compressor: Used for Multilingual Extractive QA model inference and Generative AI model inference optimization.
-    3. Intel® Extension for Scikit-Learn: Used for Multilingual Embedding model training optimization.
+    1. Intel® Extension for Pytorch: Used for our Multilingual Extractive QA model Training/Inference optimization.
+    2. Intel® Neural Compressor: Used for Multilingual Extractive QA model and Generative AI model Inference optimization.
+    3. Intel® Extension for Scikit-Learn: Used for Multilingual Embedding model Training/Inference optimization.
     4. Intel® distribution for Modin: Used for basic initial data analysis/EDA.
     5. Intel® optimized Python: Used for data pre-processing, reading etc.
 
