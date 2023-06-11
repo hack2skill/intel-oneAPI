@@ -250,16 +250,17 @@ Here is the architecture of `Ask Question/Doubt` component:
 
 ```
 
-- For our **Interactive Conversational AI Examiner** Component, as of now we are not doing any training as its based on 
-recent Generative AI LLMs (Large Language models) (open access models like LLaMA, Falcon etc.). You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs.
+- For our **Interactive Conversational AI Examiner** Component, we use an Instruct-tuned or RLHF Large Language model (LLM) based on recent advancements in Generative AI. You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs.
 
 Here is the architecture of `Interactive Conversational AI Examiner` component:
 
 ![](./assets/AI-Examiner.png)
 
-Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (Few options are like https://huggingface.co/decapoda-research/llama-7b-hf-int8 etc.)  
+We can use several open access models from hugging face Hub like MPT-7B-instruct (https://huggingface.co/mosaicml/mpt-7b-instruct), Falcon-7B-instruct (https://huggingface.co/TheBloke/falcon-7b-instruct-GPTQ), etc. (follow https://huggingface.co/models for more options.) 
 
-Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive Service to use models like GPT3 paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `azure_gpt3` in the below configuration and then add `<your_key>` 
+Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (like https://huggingface.co/decapoda-research/llama-7b-hf-int8 etc.) 
+
+Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to use models like GPT3 with paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `azure_gpt3` in the below configuration and then add `<your_key>` 
 
 ```python
 
