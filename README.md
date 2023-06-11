@@ -9,7 +9,7 @@
 
 # LEAP
 
-Intel® oneAPI Hackathon - Prototype Implementation for our LEAP Platform
+Intel® oneAPI Hackathon 2023 - Prototype Implementation for our LEAP Platform
 
 # A Brief of the Prototype:
 
