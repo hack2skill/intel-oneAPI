@@ -326,7 +326,7 @@ on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 1
   
 # What we learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
 
-![banner](./assets/Intel-AI-Analytics-Banner.png)
+![banner](./assets/Intel-AI-Kit-Banner.png)
 
 ✅ **Utilizing the Intel® AI Analytics Toolkit**: By utilizing the Intel® AI Analytics Toolkit, developers can leverage familiar Python* tools and frameworks to accelerate the entire data science and analytics process on Intel® architecture. This toolkit incorporates oneAPI libraries for optimized low-level computations, ensuring maximum performance from data preprocessing to deep learning and machine learning tasks. Additionally, it facilitates efficient model development through interoperability.
 
