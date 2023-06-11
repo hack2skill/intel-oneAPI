@@ -156,7 +156,7 @@ Here is the architecture of `Ask Question/Doubt` component:
   $ bash finetune_qa.sh
 ```
 
-- Optimize using IPEX, Intel® Neural Compressor and run the bennchmark for comparison with Pytorch(Base)-FP32
+- Perform Post Training Optimization using IPEX, Intel® Neural Compressor and run the bennchmark for comparison with Pytorch(Base)-FP32
 
 ```python
   # modify the params in pot_benchmark_qa.sh
