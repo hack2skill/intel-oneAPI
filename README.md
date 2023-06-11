@@ -320,7 +320,7 @@ on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 1
 
 # Comprehensive Implementation PPT & Article
 
-- Please view 🎉 `ppt/Intel-oneAPI-Hackathon-Implementation.pdf` for more details
+- Please view 🎉 https://github.com/rohitc5/intel-oneAPI/blob/main/ppt/Intel-oneAPI-Hackathon-Implementation.pdf for more details
 
 - Please go to 📄 https://medium.com/@rohitsroch/leap-learning-enhancement-and-assistance-platform-powered-by-intel-oneapi-ai-analytics-toolkit-656b5c9d2e0c for more details
   
