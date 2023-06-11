@@ -1,5 +1,5 @@
 
-# Preprocess course dataset (To maintain minimum text length of each subtitle)
+## Preprocess course dataset (To maintain minimum text length of each subtitle)
 
 - Run the `preprocess_subtitle.py` script
 
@@ -9,7 +9,7 @@
    $ python preprocess_subtitle.py --course_dir=../../dataset/courses --min_text_len=500
 ```
 
-# Perform Basic EDA on course dataset
+## Perform Basic EDA on course dataset
 
 - Run the `run_eda.py` script
 
