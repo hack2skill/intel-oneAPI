@@ -318,9 +318,11 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
 - We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that the shared results are based
 on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM]*
 
-# Comprehensive Implementation PPT (Presentation)
+# Comprehensive Implementation PPT & Article
 
-- Please view `ppt/Intel-oneAPI-Hackathon-Implementation.pdf` for more details.
+- Please view 🎉 `ppt/Intel-oneAPI-Hackathon-Implementation.pdf` for more details
+
+- Please go to 📄 https://medium.com/@rohitsroch/leap-learning-enhancement-and-assistance-platform-powered-by-intel-oneapi-ai-analytics-toolkit-656b5c9d2e0c for more details
   
 # What we learned ![image](https://user-images.githubusercontent.com/72274851/218499685-e8d445fc-e35e-4ab5-abc1-c32462592603.png)
 
