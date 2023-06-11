@@ -6,7 +6,7 @@
 
 # LEAP
 
-Intel Hackathon Prototype Implementation for our LEAP Platform
+Intel® oneAPI Hackathon - Prototype Implementation for our LEAP Platform
 
 # A Brief of the Prototype:
 
@@ -16,20 +16,16 @@ Intel Hackathon Prototype Implementation for our LEAP Platform
 MOOCs (Massive Open Online Courses) have surged in popularity in recent years, particularly during the COVID-19 pandemic. These
 online courses are typically free or low-cost, making education more accessible worldwide.
 
-- Online learning is crucial for students even post-pandemic due to its flexibility, accessibility, and quality. But still, the learning experience
-  for students is not optimal, as in case of doubts they need to repeatedly go through videos and documents or ask in the forum which may
-  not be effective because of the following challenges:
+Online learning is crucial for students even post-pandemic due to its flexibility, accessibility, and quality. But still, the learning experience for students is not optimal, as in case of doubts they need to repeatedly go through videos and documents or ask in the forum which may not be effective because of the following challenges:
 
-  - Resolving doubts can be a time-consuming process.
-  - It can be challenging to sift through pile of lengthy videos or documents to find relevant information.
-  - Teachers or instructors may not be available around the clock to offer guidance
-
-- To mitigate the above challenges, we propose LEAP (Learning Enhancement and Assistance Platform), which is an AI-powered
-  platform designed to enhance student learning outcomes and provide equitable access to quality education. The platform comprises two main features that aim to improve the overall learning experience of the student:
+- Resolving doubts can be a time-consuming process.
+- It can be challenging to sift through pile of lengthy videos or documents to find relevant information.
+- Teachers or instructors may not be available around the clock to offer guidance
 
 #### Our Proposed Solution ![image](https://user-images.githubusercontent.com/72274851/218503394-b52dfcc9-0620-4f44-94f5-46a09a5cc970.png)
 
-LEAP stands for Learning Enhancement and Assistance Platform:
+To mitigate the above challenges, we propose LEAP (Learning Enhancement and Assistance Platform), which is an AI-powered
+platform designed to enhance student learning outcomes and provide equitable access to quality education. The platform comprises two main features that aim to improve the overall learning experience of the student:
 
 ❑ Ask Question/Doubt: This allows the students to ask real-time questions around provided reading material, which includes videos and
 documents, and get back answers along with the exact timestamp in the video clip containing the answer (so that students don’t have to
@@ -46,7 +42,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
 # Technology Stack:
 
-  - Intel® oneAPI (Intel® AI Analytics Toolkit) Tech Stack
+  - Intel® oneAPI AI Analytics Toolkit Tech Stack
 
   ![](./assets/Intel-Tech-Stack.png)
 
@@ -56,7 +52,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
     4. Intel® distribution for Modin: Used for basic initial data analysis/EDA.
     5. Intel® optimized Python: Used for data pre-processing, reading etc.
 
-  - Prototype App Tech Stack
+  - Prototype webapp Tech Stack
 
   ![](./assets/Tech-Stack.png)
 
@@ -74,7 +70,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
  $ cd Intel-oneAPI
 
 ```
-- Start the LEAP RESTFul Service to consume both components (Ask Question/Doubt and Interactive Conversational AI Examiner) over API
+- Start the LEAP RESTFul Service to consume both components (Ask Question/Doubt and Interactive Conversational AI Examiner) as a REST API
 
 ```python
   $ cd api
@@ -114,7 +110,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 - Clone the Repository
 
 ```python
- $ git clone https://github.com/rohitc5/intel-oneAPI/tree/main
+ $ git clone https://github.com/rohitc5/intel-oneAPI/
  $ cd Intel-oneAPI
 
 ```
@@ -224,6 +220,7 @@ Here is the detailed architecture of `Ask Question/Doubt` component:
 
   # create a local vector store of course content for faster retrieval during inference
   # Here we get semantic or syntactic (TFIDF) embedding of each content from course and index it.
+  # Please Note that, we use FAISS (local vector store) (https://github.com/facebookresearch/faiss) to create a course content index
   $ python core/create_vector_index.py --course_dir=../../dataset/courses --emb_model_type=[semantic or syntactic] \
       --model_name_or_path=[Hugging face model name for semantic] --keep_accents
   
@@ -261,7 +258,7 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 
   AI_EXAMINER_CONFIG = {
       "llm_name": "azure_gpt3", # azure_gpt3, hf_pipeline
-      "azure_deployment_name": "text-davinci-003-prod",
+      "azure_deployment_name": "text-davinci-003",
 
       "hf_model_name": "TheBloke/falcon-7b-instruct-GPTQ", # mosaicml/mpt-7b-instruct
 
@@ -307,7 +304,7 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Cognitive S
 # Benchmark Results with Intel® oneAPI AI Analytics Toolkit
 
 - We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that the shared results are based
-on provided Intel® Dev Cloud machine *(Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM)*
+on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM]*
 
 # Comprehensive Implementation PPT (Presentation)
 
