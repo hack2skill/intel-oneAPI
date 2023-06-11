@@ -76,7 +76,7 @@ if __name__ == "__main__":
         "--course_dir",
         type=str,
         help="base directory containing courses",
-        default="dataset/courses"
+        default="../../dataset/courses"
     )
     parser.add_argument(
         "--min_text_len",
@@ -84,16 +84,7 @@ if __name__ == "__main__":
         default=500,
         help="Minimum length of each subtitle text (in chars)"
     )
-    parser.add_argument(
-        "--output_dir",
-        type=str,
-        default=None,
-        help="Output dir where preprocessed subtitles will be saved"
-    )
-
+    
     args = parser.parse_args()
-
-    if args.output_dir is not None:
-        os.makedirs(args.output_dir, exist_ok=True)
 
     main(args)

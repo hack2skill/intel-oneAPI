@@ -15,4 +15,6 @@ optimum[neural-compressor]==1.8.6
 neural-compressor==2.1.1
 optimum-intel==1.8.1
 nltk==3.8.1
+scikit-learn==1.2.2
+scikit-learn-intelex==2023.1.1
 webvtt-py==0.4.6
