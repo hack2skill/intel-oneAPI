@@ -189,16 +189,6 @@ def display_video_tabs(selected_course):
                                     video_path=video_path, add_style=False)
                                 st.button(label=subtopic_name , key=f"{week_tab}{i+1}", use_container_width=True, on_click=set_session_state, kwargs={
                                         "state_name": "video_selected", "state_value": video_path})
-                # with col_3:
-                #     if i+2 < len(subtopic_names):
-                #         video_path = study_material[week_name][subtopic_names[i+2]].get("video_file", None)
-                #         subtopic_name = subtopic_names[i+2]
-                #         if video_path is not None:
-                #             with st.container():
-                #                 display_video(
-                #                     video_path=video_path, add_style=False)
-                #                 st.button(label=subtopic_name, key=f"{week_tab}{i+2}", use_container_width=True, on_click=set_session_state, kwargs={
-                #                         "state_name": "video_selected", "state_value": video_path})
     
     st.markdown("---")
     st.button(label="Course Viva Exam", use_container_width=True, on_click=set_session_state, kwargs={

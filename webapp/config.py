@@ -1,5 +1,5 @@
 BASE_DIR = 'static'
-DATASET_COURSE_BASE_DIR = "../dataset/courses/"
+DATASET_COURSE_BASE_DIR = "./dataset/courses/"
 
 API_CONFIG = {
     "server_host": "localhost",

@@ -1,8 +1,4 @@
-import json
 import requests
-import requests
-import streamlit as st
-from config import API_CONFIG
 
 from utils.logging_handler import Logger
 

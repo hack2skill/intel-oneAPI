@@ -80,6 +80,9 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 Also Start the webapp demo build using streamlit.
 
 ```python
+  # copy the dataset
+  $ cp -r ./dataset webapp/ 
+
   # build using docker compose
   $ docker-compose build
   
@@ -276,10 +279,26 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
   $ bash start.sh
 ```
 
-- Start the Streamlit web UI demo
+- Start the Streamlit webapp demo
 
 ```python
   $ cd webapp
+
+  # update the config
+  $ vi config.py
+
+  ''''
+  # set the correct dataset path
+  DATASET_COURSE_BASE_DIR = "../dataset/courses/"
+
+  API_CONFIG = {
+    "server_host": "localhost",
+    "server_port": "8500",
+
+  }
+  ...
+
+  ''''
 
   # install dependencies
   $ pip install -r requirements.txt

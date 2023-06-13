@@ -9,3 +9,4 @@ moviepy==1.0.3
 pydub==0.25.1
 SpeechRecognition==3.10.0
 requests==2.31.0
+webvtt-py==0.4.6
