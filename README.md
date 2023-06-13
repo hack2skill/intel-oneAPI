@@ -179,7 +179,7 @@ Here is the architecture of `Ask Question/Doubt` component:
 - Run quick inference to test the model output
 
 ```python
-  $ python run_qa_inference.py --model_name_or_path=[FP32 or INT8 finetuned model]  --model_type=["vanilla_fp32" or "quantized_int8"] --do_lower_case  --keep_accents --ipex_enable
+  $ python run_qa_inference.py --model_name_or_path=[FP32 or INT8 finetuned model]  --model_type=["vanilla_fp32" or "quantized_int8"] --do_lower_case --keep_accents --ipex_enable
 
 ```
 
@@ -250,8 +250,8 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
   
   ''''
   AI_EXAMINER_CONFIG = {
-      "llm_name": "azure_gpt3", # azure_gpt3, hf_pipeline
-      "azure_deployment_name": "text-davinci-003",
+      "llm_name": "azure_gpt3", #options: azure_gpt3, hf_pipeline
+      "azure_deployment_name": "text-davinci-003", # provide deployment name
 
       "hf_model_name": "mosaicml/mpt-7b-instruct", # mosaicml/mpt-7b-instruct
 
@@ -267,7 +267,8 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
           "stop_sequence": "<|endoftext|>"
     }
   ...
-
+  
+  # provide api key
   os.environ["OPENAI_API_KEY"] = "<your_key>"
 
   ''''
@@ -295,8 +296,8 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
   DATASET_COURSE_BASE_DIR = "../dataset/courses/"
 
   API_CONFIG = {
-    "server_host": "localhost",
-    "server_port": "8500",
+    "server_host": "localhost", # set the server host
+    "server_port": "8500", # set the server port
 
   }
   ...

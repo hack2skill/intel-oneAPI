@@ -5,6 +5,7 @@ services:
       build:
         context: "./api/."
         dockerfile: ./Dockerfile
+      container_name: leap-api
       ports: 
         - "8500:8500"
     leap-webapp:
@@ -12,6 +13,7 @@ services:
       build:
         context: "./webapp/."
         dockerfile: ./Dockerfile
+      container_name: leap-webapp
       ports:
         - "8502:8502"
       depends_on:
