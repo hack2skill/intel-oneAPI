@@ -6,7 +6,7 @@ PORT = 8500
 ASK_DOUBT_CONFIG = {
   "emb_model_name_or_path": "ai4bharat/indic-bert",
   "emb_model_type": "semantic",  #options: syntactic, semantic
-  "qa_model_name_or_path": "vanichandna/indic-bert-finetuned-squad",
+  "qa_model_name_or_path": "rohitsroch/indic-mALBERT-squad-v2",
   "qa_model_type": "vanilla_fp32",  #options: vanilla_fp32, quantized_int8
   
   "intel_scikit_learn_enabled": True,
@@ -19,9 +19,9 @@ ASK_DOUBT_CONFIG = {
 
 
 AI_EXAMINER_CONFIG = {
-  "llm_name": "hf_pipeline", # azure_gpt3, hf_pipeline
+  "llm_name": "azure_gpt3", #options: azure_gpt3, hf_pipeline
   "azure_deployment_name": "text-davinci-003-prod",
-  "hf_model_name": "TheBloke/falcon-7b-instruct-GPTQ", # mosaicml/mpt-7b-instruct
+  "hf_model_name": "mosaicml/mpt-7b-instruct", # mosaicml/mpt-7b-instruct
   "device": 0, # cuda:0
   "llm_kwargs":{
       "do_sample": True,

@@ -1,0 +1,22 @@
+version: '3.4'
+services: 
+    leap-api:
+      restart: always
+      build:
+        context: "./api/."
+        dockerfile: ./Dockerfile
+      ports: 
+        - "8500:8500"
+      volumes:
+        - ./api:/opt
+    leap-webapp:
+      restart: always
+      build:
+        context: "./webapp/."
+        dockerfile: ./Dockerfile
+      ports:
+        - "8502:8502"
+      volumes:
+        - ./webapp:/opt
+      depends_on:
+        - leap-api

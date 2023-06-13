@@ -68,46 +68,27 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
 ### Quick Setup Option
 
+- Make sure you have already installed docker (https://docs.docker.com/get-docker/) and docker-compose (https://docs.docker.com/compose/)
+
 - Clone the Repository
 ```python
  $ git clone https://github.com/rohitc5/intel-oneAPI/
- $ cd Intel-oneAPI
+ $ cd intel-oneAPI
 
 ```
-- Start the LEAP RESTFul Service to consume both components (Ask Question/Doubt and Interactive Conversational AI Examiner) as a REST API
+- Start the LEAP RESTFul Service to consume both components (Ask Question/Doubt and Interactive Conversational AI Examiner) as a REST API. 
+Also Start the webapp demo build using streamlit.
 
 ```python
-  $ cd api
+  # build using docker compose
+  $ docker-compose build
   
-  # build the docker file
-  $ docker build -t leap-api:v1 .  
-
-  # get the docker image ID
-  $ docker images
-
-  # run the docker container
-  $ docker run -it -p 8500:8500 --name=leap-api [IMAGE_ID]
-
-  $ cd ../
-
+  # start the services
+  $ docker-compose up 
 ```
 
-- Start the demo webapp build using streamlit
-
-```python
-  $ cd webapp
-  
-  # build the docker file
-  $ docker build -t leap-demo:v1 .
-
-  # get the docker image ID
-  $ docker images
-
-  # run the docker container
-  $ docker run -it -p 8502:8502 --name=leap-demo [IMAGE_ID]
-
-```
 - Go to http://localhost:8502
+
 
 ### Manual Setup Option
 
@@ -116,7 +97,6 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 ```python
  $ git clone https://github.com/rohitc5/intel-oneAPI/
  $ cd Intel-oneAPI
-
 ```
 
 - Train/Fine-tune the Extractive QA Multilingual Model (Part of our **Ask Question/Doubt** Component).
