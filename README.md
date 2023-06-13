@@ -96,7 +96,7 @@ Also Start the webapp demo build using streamlit.
 
 ```python
  $ git clone https://github.com/rohitc5/intel-oneAPI/
- $ cd Intel-oneAPI
+ $ cd intel-oneAPI
 ```
 
 - Train/Fine-tune the Extractive QA Multilingual Model (Part of our **Ask Question/Doubt** Component).
