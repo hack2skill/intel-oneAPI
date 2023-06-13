@@ -247,12 +247,13 @@ Here for performance gain, we can use INT8 quantized model optimized using Intel
 Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to use models like GPT3 with paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `azure_gpt3` in the below configuration and then add `<your_key>` 
 
 ```python
-
+  
+  ''''
   AI_EXAMINER_CONFIG = {
       "llm_name": "azure_gpt3", # azure_gpt3, hf_pipeline
       "azure_deployment_name": "text-davinci-003",
 
-      "hf_model_name": "TheBloke/falcon-7b-instruct-GPTQ", # mosaicml/mpt-7b-instruct
+      "hf_model_name": "mosaicml/mpt-7b-instruct", # mosaicml/mpt-7b-instruct
 
       "device": 0, # cuda:0
       "llm_kwargs":{
@@ -268,6 +269,8 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
   ...
 
   os.environ["OPENAI_API_KEY"] = "<your_key>"
+
+  ''''
 ```
 
 - Start the API server
