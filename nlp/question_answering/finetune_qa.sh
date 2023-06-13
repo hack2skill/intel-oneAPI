@@ -6,20 +6,20 @@ HOME_DIR=`pwd`
 ##############################################################################################
 
 export MODEL_NAME_OR_PATH=ai4bharat/indic-bert
-export BACKBONE_NAME=indic-mALBERT-base
+export BACKBONE_NAME=indic-mALBERT-uncased
 export DATASET_NAME=squad # squad, squad_v2 (pass --version_2_with_negative)
 export TASK_NAME=qa
 
 # hyperparameters
 export SEED=42
 export BATCH_SIZE=32
-export MAX_SEQ_LENGTH=512
+export MAX_SEQ_LENGTH=384
 export NUM_TRAIN_EPOCHS=5
 export WEIGHT_DECAY=0.0
-export LEARNING_RATE=3e-5
+export LEARNING_RATE=5e-5
 export LR_SCHEDULER_TYPE=linear
 export WARMUP_RATIO=0.0
-export NUM_WARMUP_STEPS=814
+export NUM_WARMUP_STEPS= 365
 export DOC_STRIDE=128
 export OPTIMIZER=adamw_hf # adamw_hf, adamw_torch, adamw_torch_fused, adamw_torch_xla, adamw_apex_fused, adafactor, adamw_anyprecision, sgd, adagrad
 export LOGGING_STRATEGY=epoch  # no, steps, epoch 

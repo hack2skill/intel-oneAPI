@@ -6,16 +6,16 @@ HOME_DIR=`pwd`
 ##############################################################################################
 
 export MODEL_NAME_OR_PATH=artifacts/qa/squad/indic-mALBERT
-export BACKBONE_NAME=indic-mALBERT
+export BACKBONE_NAME=indic-mALBERT-uncased
 export DATASET_NAME=squad # squad, squad_v2 (pass --version_2_with_negative)
 export TASK_NAME=qa
 export USE_OPTIMUM=True  # whether to use hugging face wrapper optimum around intel neural compressor
 
 # other parameters
 export BATCH_SIZE=8
-export MAX_SEQ_LENGTH=256
+export MAX_SEQ_LENGTH=384
 export DOC_STRIDE=128
-export KEEP_ACCENTS=False
+export KEEP_ACCENTS=True
 export DO_LOWER_CASE=True
 export MAX_EVAL_SAMPLES=200
 

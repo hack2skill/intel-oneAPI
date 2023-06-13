@@ -122,15 +122,18 @@ Here is the architecture of `Ask Question/Doubt` component:
 
   ''''
   export MODEL_NAME_OR_PATH=ai4bharat/indic-bert
-  export BACKBONE_NAME=indic-mALBERT-base
+  export BACKBONE_NAME=indic-mALBERT-uncased
   export DATASET_NAME=squad # squad, squad_v2 (pass --version_2_with_negative)
   export TASK_NAME=qa
 
   # hyperparameters
   export SEED=42
   export BATCH_SIZE=32
-  export MAX_SEQ_LENGTH=512
+  export MAX_SEQ_LENGTH=384
   export NUM_TRAIN_EPOCHS=5
+
+  export KEEP_ACCENTS=True
+  export DO_LOWER_CASE=True
   ...
   
   ''''
@@ -146,17 +149,17 @@ Here is the architecture of `Ask Question/Doubt` component:
   $ vi pot_benchmark_qa.sh
 
   ''''
-  export MODEL_NAME_OR_PATH=artifacts/qa/squad/indic-mALBERT
-  export BACKBONE_NAME=indic-mALBERT
+  export MODEL_NAME_OR_PATH=artifacts/qa/squad/indic-mALBERT-uncased
+  export BACKBONE_NAME=indic-mALBERT-uncased
   export DATASET_NAME=squad # squad, squad_v2 (pass --version_2_with_negative)
   export TASK_NAME=qa
   export USE_OPTIMUM=True  # whether to use hugging face wrapper optimum around intel neural compressor
 
   # other parameters
   export BATCH_SIZE=8
-  export MAX_SEQ_LENGTH=256
+  export MAX_SEQ_LENGTH=384
   export DOC_STRIDE=128
-  export KEEP_ACCENTS=False
+  export KEEP_ACCENTS=True
   export DO_LOWER_CASE=True
   export MAX_EVAL_SAMPLES=200
 
