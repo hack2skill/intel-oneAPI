@@ -40,7 +40,7 @@ def write_ui():
         # Handles the initial page which displays the process flow
         st.session_state["demo_started"] = False
         img = Image.open(Path(BASE_DIR) / 'imgs/process-flow.png')
-        st.image(img)
+        st.image(img, use_column_width=True)
         if st.button(label="Start Demo", use_container_width=True):
             st.session_state["demo_started"] = True
     elif "viva_mode" in st.session_state:
