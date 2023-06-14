@@ -34,7 +34,7 @@ from utils.loss import ComputeLoss, ComputeLossOTA
 from utils.plots import plot_images, plot_labels, plot_results, plot_evolution
 from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_distributed_zero_first, is_parallel
 from utils.wandb_logging.wandb_utils import WandbLogger, check_wandb_resume
-# import intel_extension_for_pytorch as ipex
+import intel_extension_for_pytorch as ipex
 
 logger = logging.getLogger(__name__)
 
@@ -306,8 +306,8 @@ def train(hyp, opt, device, tb_writer=None):
                 f'Starting training for {epochs} epochs...')
     torch.save(model, wdir / 'init.pt')
     for epoch in range(start_epoch, epochs):  # epoch ------------------------------------------------------------------
+        model, optimizer = ipex.optimize(model, optimizer=optimizer)
         model.train()
-        # model, optimizer = ipex.optimize(model, optimizer=optimizer)
 
         # Update image weights (optional)
         if opt.image_weights:
