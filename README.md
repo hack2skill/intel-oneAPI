@@ -256,7 +256,7 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
       "llm_name": "azure_gpt3", #options: azure_gpt3, hf_pipeline
       "azure_deployment_name": "text-davinci-003", # provide deployment name
 
-      "hf_model_name": "mosaicml/mpt-7b-instruct", # mosaicml/mpt-7b-instruct
+      "hf_model_name": "mosaicml/mpt-7b-instruct", #options: mosaicml/mpt-7b-instruct, tiiuae/falcon-7b-instruct, more...
 
       "device": 0, # cuda:0
       "llm_kwargs":{
