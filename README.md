@@ -267,7 +267,8 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
           "top_k": 0,
           "repetition_penalty": 1.1,
           "num_return_sequences": 1,
-          "stop_sequence": "<|endoftext|>"
+          "stop_sequence": "<|endoftext|>",
+          "trust_remote_code": True
     }
   ...
   
