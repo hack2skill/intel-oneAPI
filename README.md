@@ -235,7 +235,7 @@ Here is the architecture of `Ask Question/Doubt` component:
 
   ''''
 ```
-NOTE: We have already released our finetuned Extractive QA model with rohitsroch/indic-mALBERT-squad-v2 (https://huggingface.co/rohitsroch/indic-mALBERT-squad-v2)
+Please Note that, we have already released our finetuned Extractive QA model available on Huggingface Hub (https://huggingface.co/rohitsroch/indic-mALBERT-squad-v2)
 
 - For our **Interactive Conversational AI Examiner** Component, we use an Instruct-tuned or RLHF Large Language model (LLM) based on recent advancements in Generative AI. You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs.
 
