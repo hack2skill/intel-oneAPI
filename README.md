@@ -225,7 +225,7 @@ Here is the architecture of `Ask Question/Doubt` component:
       "emb_model_type": "semantic",  #options: syntactic, semantic
       
       # finetuned Extractive QA model path previously done
-      "qa_model_name_or_path": "vanichandna/indic-bert-finetuned-squad", 
+      "qa_model_name_or_path": "rohitsroch/indic-mALBERT-squad-v2", 
       "qa_model_type": "vanilla_fp32",  #options: vanilla_fp32, quantized_int8
       
       # faiss index file path created previously
@@ -234,8 +234,8 @@ Here is the architecture of `Ask Question/Doubt` component:
     ...
 
   ''''
-
 ```
+NOTE: We have already released our finetuned Extractive QA model with rohitsroch/indic-mALBERT-squad-v2 (https://huggingface.co/rohitsroch/indic-mALBERT-squad-v2)
 
 - For our **Interactive Conversational AI Examiner** Component, we use an Instruct-tuned or RLHF Large Language model (LLM) based on recent advancements in Generative AI. You can update the API configuration by specifying hf_model_name (LLM name available in huggingface Hub). Please checkout https://huggingface.co/models for LLMs.
 
