@@ -245,7 +245,7 @@ Here is the architecture of `Interactive Conversational AI Examiner` component:
 
 We can use several open access models from hugging face Hub like MPT-7B-instruct (https://huggingface.co/mosaicml/mpt-7b-instruct), Falcon-7B-instruct (https://huggingface.co/TheBloke/falcon-7b-instruct-GPTQ), etc. (follow https://huggingface.co/models for more options.) 
 
-Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (like https://huggingface.co/decapoda-research/llama-7b-hf-int8 etc.) 
+Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (follow https://huggingface.co/Intel) 
 
 Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to use models like GPT3 with paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `azure_gpt3` in the below configuration and then add `<your_key>` 
 
