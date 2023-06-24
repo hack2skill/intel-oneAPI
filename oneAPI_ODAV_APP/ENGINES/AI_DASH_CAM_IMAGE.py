@@ -1,7 +1,8 @@
 import torch
 
-def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/visual_pollution.pt"):
+def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/yolov7.pt"):
 
+    import random
     import numpy as np
     import cv2
     from datetime import datetime
@@ -48,7 +49,12 @@ def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/visual_pollution.pt"):
     # Get names and colors
     names = model.module.names if hasattr(model, 'module') else model.names
 
-    colors = [(255, 255, 255), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255)
+    # colors = [(255, 255, 255), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255)
+    #     , (155, 255, 100), (255, 155, 100), (155, 100, 255), (155, 155, 100)]
+
+    colors = [[random.randint(0, 255) for _ in range(3)] for _ in names]
+
+    colors[0:11] = [(255, 255, 255), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255)
         , (155, 255, 100), (255, 155, 100), (155, 100, 255), (155, 155, 100)]
 
     # Run inference
@@ -58,17 +64,17 @@ def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/visual_pollution.pt"):
     old_img_b = 1
 
     TOTAL = 0
-    GRAFFITI = 0
-    FADED_SIGNAGE = 0
-    POTHOLES = 0
-    GARBAGE = 0
-    CONSTRUCTION_ROAD = 0
-    BROKEN_SIGNAGE = 0
-    BAD_STREETLIGHT = 0
-    BAD_BILLBOARD = 0
-    SAND_ON_ROAD = 0
-    CLUTTER_SIDEWALK = 0
-    UNKEPT_FACADE = 0
+    person = 0
+    bicycle = 0
+    car = 0
+    motorcycle = 0
+    bus = 0
+    truck = 0
+    traffic_light = 0
+    stop_sign = 0
+    parking_meter = 0
+    potted_plant = 0
+    clock = 0
 
 
     for path, img, im0s, vid_cap in dataset:
@@ -93,7 +99,7 @@ def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/visual_pollution.pt"):
         pred = non_max_suppression(pred, conf_thres, iou_thres)
 
         # Process detections
-        current_frame_potholes = 0
+        current_frame = 0
         for i, det in enumerate(pred):  # detections per image
 
             if webcam:  # batch_size >= 1
@@ -116,48 +122,50 @@ def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/visual_pollution.pt"):
                     label = f'{names[int(cls)]} {conf:.2f}'
                     TOTAL += 1
                     labelx = names[int(cls)]
-                    current_frame_potholes += 1
-                    if labelx == 'GRAFFITI':
+                    current_frame += 1
+                    # plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=1)
+                    if labelx == 'person':
                         plot_one_box(xyxy, im0, label=label, color=colors[0], line_thickness=1)
-                        GRAFFITI += 1
-                    elif labelx == 'FADED SIGNAGE':
+                        person += 1
+                    elif labelx == 'bicycle':
                         plot_one_box(xyxy, im0, label=label, color=colors[1], line_thickness=1)
-                        FADED_SIGNAGE += 1
-                    elif labelx == 'POTHOLES':
+                        bicycle += 1
+                    elif labelx == 'car':
                         plot_one_box(xyxy, im0, label=label, color=colors[2], line_thickness=1)
-                        POTHOLES += 1
-                    elif labelx == 'GARBAGE':
+                        car += 1
+                    elif labelx == 'motorcycle':
                         plot_one_box(xyxy, im0, label=label, color=colors[3], line_thickness=1)
-                        GARBAGE += 1
-                    elif labelx == 'CONSTRUCTION ROAD':
+                        motorcycle += 1
+                    elif labelx == 'bus':
                         plot_one_box(xyxy, im0, label=label, color=colors[4], line_thickness=1)
-                        CONSTRUCTION_ROAD += 1
-                    elif labelx == 'BROKEN SIGNAGE':
+                        bus += 1
+                    elif labelx == 'truck':
                         plot_one_box(xyxy, im0, label=label, color=colors[5], line_thickness=1)
-                        BROKEN_SIGNAGE += 1
-                    elif labelx == 'BAD STREETLIGHT':
+                        truck += 1
+                    elif labelx == 'traffic light':
                         plot_one_box(xyxy, im0, label=label, color=colors[6], line_thickness=1)
-                        BAD_STREETLIGHT += 1
-                    elif labelx == 'BAD BILLBOARD':
+                        traffic_light += 1
+                    elif labelx == 'stop sign':
                         plot_one_box(xyxy, im0, label=label, color=colors[7], line_thickness=1)
-                        BAD_BILLBOARD += 1
-                    elif labelx == 'SAND ON ROAD':
+                        stop_sign += 1
+                    elif labelx == 'parking meter':
                         plot_one_box(xyxy, im0, label=label, color=colors[8], line_thickness=1)
-                        SAND_ON_ROAD += 1
-                    elif labelx == 'CLUTTER SIDEWALK':
+                        parking_meter += 1
+                    elif labelx == 'potted plant':
                         plot_one_box(xyxy, im0, label=label, color=colors[9], line_thickness=1)
-                        CLUTTER_SIDEWALK += 1
-                    elif labelx == 'UNKEPT FACADE':
+                        potted_plant += 1
+                    elif labelx == 'clock':
                         plot_one_box(xyxy, im0, label=label, color=colors[10], line_thickness=1)
-                        UNKEPT_FACADE += 1
-
+                        clock += 1
+                    else:
+                        plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=1)
 
             (H, W) = im0.shape[:2]
 
             print(" ")
 
 
-            cv2.putText(im0, "Neom (Visual Pollution Detection System)", (110, 40),
+            cv2.putText(im0, "oneAPI ODAV", (250, 40),
                         font, 0.7 * 1, (255, 255, 255), 2)
             cv2.rectangle(im0, (20, 50), (W - 20, 15), (255, 255, 255), 2)
 
@@ -171,54 +179,54 @@ def AI_DASH_CAM_IMAGE(source="0", model_weights="../Model/visual_pollution.pt"):
 
             im0[H - 300:H + 40, 0:200] = res
 
-            cv2.putText(im0, str("GRAFFITI: " + str(GRAFFITI)), (30, H - 280),
+            cv2.putText(im0, str("PERSON: " + str(person)), (30, H - 280),
                         font, 0.4 * 1, colors[0], 1)
-            cv2.rectangle(im0, (10, H - 280), (20, H-285), colors[0], 7)
+            cv2.rectangle(im0, (10, H - 280), (20, H - 285), colors[0], 7)
 
-            cv2.putText(im0, str("FADED SIGNAGE: " + str(FADED_SIGNAGE)), (30, H - 255),
+            cv2.putText(im0, str("BICYCLE: " + str(bicycle)), (30, H - 255),
                         font, 0.4 * 1, colors[1], 1)
             cv2.rectangle(im0, (10, H - 255), (20, H - 260), colors[1], 7)
 
-            cv2.putText(im0, str("POTHOLES: " + str(POTHOLES)), (30, H - 230),
+            cv2.putText(im0, str("CAR: " + str(car)), (30, H - 230),
                         font, 0.4 * 1, colors[2], 1)
             cv2.rectangle(im0, (10, H - 230), (20, H - 235), colors[2], 7)
 
-            cv2.putText(im0, str("GARBAGE: " + str(GARBAGE)), (30, H - 205),
+            cv2.putText(im0, str("MOTORCYCLE: " + str(motorcycle)), (30, H - 205),
                         font, 0.4 * 1, colors[3], 1)
             cv2.rectangle(im0, (10, H - 205), (20, H - 210), colors[3], 7)
 
-            cv2.putText(im0, str("CONSTRUCTION ROAD: " + str(CONSTRUCTION_ROAD)), (30, H - 180),
+            cv2.putText(im0, str("BUS: " + str(bus)), (30, H - 180),
                         font, 0.4 * 1, colors[4], 1)
             cv2.rectangle(im0, (10, H - 180), (20, H - 185), colors[4], 7)
 
-            cv2.putText(im0, str("BROKEN SIGNAGE: " + str(BROKEN_SIGNAGE)), (30, H - 155),
+            cv2.putText(im0, str("TRUCK: " + str(truck)), (30, H - 155),
                         font, 0.4 * 1, colors[5], 1)
             cv2.rectangle(im0, (10, H - 155), (20, H - 160), colors[5], 7)
 
-            cv2.putText(im0, str("BAD STREETLIGHT: " + str(BAD_STREETLIGHT)), (30, H - 130),
+            cv2.putText(im0, str("TRAFFIC LIGHT: " + str(traffic_light)), (30, H - 130),
                         font, 0.4 * 1, colors[6], 1)
             cv2.rectangle(im0, (10, H - 130), (20, H - 135), colors[6], 7)
 
-            cv2.putText(im0, str("BAD BILLBOARD: " + str(BAD_BILLBOARD)), (30, H - 105),
+            cv2.putText(im0, str("STOP SIGN: " + str(stop_sign)), (30, H - 105),
                         font, 0.4 * 1, colors[7], 1)
             cv2.rectangle(im0, (10, H - 105), (20, H - 100), colors[7], 7)
 
-            cv2.putText(im0, str("SAND ON ROAD: " + str(SAND_ON_ROAD)), (30, H - 80),
+            cv2.putText(im0, str("PARKING METER: " + str(parking_meter)), (30, H - 80),
                         font, 0.4 * 1, colors[8], 1)
             cv2.rectangle(im0, (10, H - 80), (20, H - 85), colors[8], 7)
 
-            cv2.putText(im0, str("CLUTTER SIDEWALK: " + str(CLUTTER_SIDEWALK)), (30, H - 55),
+            cv2.putText(im0, str("POTTED PLANT: " + str(potted_plant)), (30, H - 55),
                         font, 0.4 * 1, colors[9], 1)
             cv2.rectangle(im0, (10, H - 55), (20, H - 60), colors[9], 7)
 
-            cv2.putText(im0, str("UNKEPT FACADE: " + str(UNKEPT_FACADE)), (30, H - 30),
+            cv2.putText(im0, str("CLOCK: " + str(clock)), (30, H - 30),
                         font, 0.4 * 1, colors[10], 1)
             cv2.rectangle(im0, (10, H - 30), (20, H - 35), colors[10], 7)
 
             cv2.putText(im0, str("TOTAL: " + str(TOTAL)), (30, H - 5),
                         font, 0.4 * 1, (0, 0, 0), 1)
 
-            cv2.putText(im0, str("CURRENT FRAME: " + str(current_frame_potholes)), (W - 225, H - 35),
+            cv2.putText(im0, str("CURRENT FRAME: " + str(current_frame)), (W - 225, H - 35),
                         font, 0.7 * 1, (0, 0, 255), 2)
 
             now = datetime.now()

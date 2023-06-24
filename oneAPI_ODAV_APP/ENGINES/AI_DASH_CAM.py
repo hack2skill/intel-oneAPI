@@ -249,4 +249,4 @@ def AI_DASH_CAM(source="0", model_weights="../Model/yolov7.pt"):
 
 # if __name__ == '__main__':
 #     with torch.no_grad():
-#         AI_DASH_CAM("../TEST_VIDEO/Visual_Pollution.mp4")
+#         AI_DASH_CAM("../TEST_VIDEO/test.mp4")
