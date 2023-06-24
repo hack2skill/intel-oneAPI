@@ -18,6 +18,9 @@ import Uploadn from "./components/Uploadn";
 import Aibot from "./components/Aibot";
 import Uploadp from "./components/Uploadp";
 import Uploads from "./components/Uploads";
+import Sortedpyq from "./components/Sortedpyq";
+import Generalpyq from "./components/Generalpyq";
+import Repetitivepyq from "./components/Repetitivepyq";
 
 function App() {
   return (
@@ -48,6 +51,9 @@ function App() {
 
           
           <Route path="/aibot" element={<Aibot/>} />
+          <Route path="/sortedpyq" element={<Sortedpyq/>} />
+          <Route path="/generalpyq" element={<Generalpyq/>} />
+          <Route path="/repetitivepyq" element={<Repetitivepyq/>} />
 
         </Routes>
       </BrowserRouter>

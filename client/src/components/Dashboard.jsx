@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const data = {
   coursesCompleted: 5,
@@ -61,7 +62,8 @@ const Dashboard = () => {
     <div className="w-screen">
       <Navbar />
       <div className="flex flex-col items-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400 mt-3">
-        {/* <div className="grid grid-cols-4 gap-4 py-12 h-12">
+         <div className="grid grid-cols-4 gap-6 py-12 h-4">
+        <Link to="/sortedpyq">
         <motion.div
             className="bg-slate-100 rounded-lg shadow-lg py-6 w-72"
             variants={containerVariants}
@@ -69,9 +71,11 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
-            <h3 className="mb-4">Total hours</h3>
-            <pre></pre>
+            <h2 className="mb-4">Sorted PYQ</h2>
+           
           </motion.div>
+          </Link>
+          <Link to="/generalpyq">
           <motion.div
             className="bg-slate-100 rounded-lg shadow-lg py-6"
             variants={containerVariants}
@@ -79,9 +83,11 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
-            <h3 className="mb-4">Maximum retention</h3>
-            <pre></pre>
+            <h2 className="mb-4">General Question Paper</h2>
+           
           </motion.div>
+          </Link>
+          <Link to="/repetitivepyq">
           <motion.div
             className="bg-slate-100 rounded-lg shadow-lg py-6"
             variants={containerVariants}
@@ -89,9 +95,11 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
-            <h3 className="mb-4">Completed hours</h3>
-            <pre></pre>
+            <h2 className="mb-4">Repetitive questions</h2>
+            
           </motion.div>
+          </Link>
+          <Link to="/studyplanner">
           <motion.div
             className="bg-slate-100 rounded-lg shadow-lg py-6"
             variants={containerVariants}
@@ -99,14 +107,15 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
-            <h3 className="mb-4">Average retention</h3>
-            <pre></pre>
+            <h2 className="mb-4">Study plan</h2>
+            
           </motion.div>
+          </Link>
           
           
         
         
-          </div> */}
+          </div> 
 
         <div className="grid grid-cols-2 gap-16 py-16">
           <div className="grid grid-cols-2 gap-4">
