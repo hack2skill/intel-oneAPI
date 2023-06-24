@@ -1,26 +1,21 @@
-from fastapi import APIRouter
 import tensorflow_hub as hub
-import tensorflow_text
 from sklearn.cluster import KMeans
 import numpy as np
-
-
-
-app = APIRouter()
-
-# Load the USE model
-embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
+from tqdm import tqdm
 
 # Preprocessing functions
 def preprocess_text(text):
     sentences = text.split('\n')  # Split text into sentences
     return sentences
 
-# API route for extracting topic-wise chunks
-@app.post("/extract_chunks")
-def extract_chunks(text: str):
+def extract_chunks(text):
     # Preprocess the input text
     sentences = preprocess_text(text)
+    
+    # Show progress bar while loading the model
+    with tqdm(total=1, desc="Loading model") as pbar:
+        embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-large/5")
+        pbar.update(1)
     
     # Generate sentence embeddings
     sentence_embeddings = embed(sentences)
@@ -48,3 +43,8 @@ def extract_chunks(text: str):
         chunks.append({"topic": f"Topic {cluster_index+1}", "subsections": chunk_sentences})
     
     return chunks
+
+# Example usage
+text = "This is an example text. It contains multiple sentences.\nEach sentence represents a subsection."
+result = extract_chunks(text)
+print(result)
