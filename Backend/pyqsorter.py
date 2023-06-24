@@ -9,7 +9,7 @@ import tensorflow_hub as hub
 from sklearnex import patch_sklearn
 patch_sklearn()
 from sklearn.cluster import KMeans
-from pathlib import path
+from pathlib import Path
 
 
 

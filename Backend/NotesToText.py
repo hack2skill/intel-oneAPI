@@ -19,22 +19,7 @@ s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s
 
 router = APIRouter()
 
-def download_files_from_s3(bucket_name, prefix, local_directory):
-    
-    paginator = s3.get_paginator('list_objects_v2')
-    operation_parameters = {'Bucket': bucket_name, 'Prefix': prefix}
-
-    page_iterator = paginator.paginate(**operation_parameters)
-
-    for page in page_iterator:
-        if 'Contents' in page:
-            for item in page['Contents']:
-                key = item['Key']
-                local_file_path = os.path.join(local_directory, os.path.basename(key))
-                s3.download_file(bucket_name, key, local_file_path)
-                print(f"Downloaded {key} to {local_file_path}")
                 
-
 
 def pdf_to_images_from_bytes(pdf_content, output_folder, file_name):
     s3_bucket_name = 'learnmateai'
