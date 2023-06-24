@@ -49,13 +49,13 @@ def pdf_to_images_from_bytes(pdf_content, output_folder, file_name):
     noImg = i+1     
     return image_paths, noImg
 
-@router.get("/notestotext")
-def NotesToText_handler():
+
+def convert(s):
     substring_to_remove = "Scanned by CamScanner"
     s3_bucket_name = 'learnmateai'
 
     
-    prefix = 'notes_pdf/'
+    prefix = s
     
     # List files in the S3 bucket with the specified prefix
     response = s3.list_objects_v2(Bucket=s3_bucket_name, Prefix=prefix)
@@ -114,6 +114,15 @@ def NotesToText_handler():
                 '{}\nFor more info on error messages, check: '
                 'https://cloud.google.com/apis/design/errors'.format(
                     response.error.message))
+
+
+@router.get("/notestotext")
+def NotesToText_handler():
+
+    prefix = 'notes_pdf/'
+    prefix2 = 'pyqs_pdf/'
+    convert(prefix)
+    convert(prefix2)
 
 
 

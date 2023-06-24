@@ -7,7 +7,7 @@ from mangum import Mangum
 
 #from Backend.Notes_Analyser import router as api4_router
 #from Backend.Narrator import router as api5_router
-from Backend.pyqsorter import router as sorter 
+#from Backend.pyqsorter import router as sorter 
 from Backend.NotesToText import router as notestotxt
 
 # import other API routers as needed
@@ -30,7 +30,7 @@ app.add_middleware(
 # Mount the API routerss
 #app.include_router(api1_router)
 
-app.include_router(sorter)
+#app.include_router(sorter)
 #app.include_router(api4_router)
 #app.include_router(api6_router)
 app.include_router(notestotxt)
