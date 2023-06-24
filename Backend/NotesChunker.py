@@ -1,50 +1,83 @@
-import tensorflow_hub as hub
-from sklearn.cluster import KMeans
-import numpy as np
-from tqdm import tqdm
+from fastapi import APIRouter
+import boto3
+import openai
+import time
 
-# Preprocessing functions
-def preprocess_text(text):
-    sentences = text.split('\n')  # Split text into sentences
-    return sentences
+s3_access_key = "AKIAZTHHIOR4JJ5HLTUB"
+s3_secret_access_key = "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"
+s3_bucket_name = "learnmateai"
 
-def extract_chunks(text):
-    # Preprocess the input text
-    sentences = preprocess_text(text)
-    
-    # Show progress bar while loading the model
-    with tqdm(total=1, desc="Loading model") as pbar:
-        embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-large/5")
-        pbar.update(1)
-    
-    # Generate sentence embeddings
-    sentence_embeddings = embed(sentences)
-    
-    # Determine the optimal number of clusters using the Elbow Method
-    distortions = []
-    K = range(1, 10)  # Set the range of possible clusters
-    for k in K:
-        kmeans = KMeans(n_clusters=k)
-        kmeans.fit(sentence_embeddings)
-        distortions.append(kmeans.inertia_)
-    
-    # Find the "elbow" point in the distortion plot
-    elbow_index = np.argmin(np.diff(distortions)) + 1
-    num_clusters = K[elbow_index]
-    
-    # Perform clustering with the determined number of clusters
-    kmeans = KMeans(n_clusters=num_clusters)
-    kmeans.fit(sentence_embeddings)
-    
-    # Retrieve topic-wise chunks with subsections
-    chunks = []
-    for cluster_index in range(num_clusters):
-        chunk_sentences = [sentences[i] for i in range(len(sentences)) if kmeans.labels_[i] == cluster_index]
-        chunks.append({"topic": f"Topic {cluster_index+1}", "subsections": chunk_sentences})
-    
-    return chunks
+s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
 
-# Example usage
-text = "This is an example text. It contains multiple sentences.\nEach sentence represents a subsection."
-result = extract_chunks(text)
-print(result)
+# Set up OpenAI API credentials
+openai.api_key = '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'
+
+def batch_text(input_text, delimiter="TOPIC:"):
+    batches = input_text.split(delimiter)
+    cleaned_batches = [batch.strip() for batch in batches if batch.strip()]
+    return cleaned_batches
+
+def upload_to_s3(bucket_name, folder_name, file_name, content):
+    s3 = boto3.client('s3')
+    key = folder_name + '/' + file_name
+    s3.put_object(Body=content, Bucket=bucket_name, Key=key)
+
+app = APIRouter()
+
+@app.get("/process_files")
+def process_files():
+    # Function to read and process a file
+    def process_file(file_name):
+        # Read file from S3
+        response = s3.get_object(Bucket='learnmateai', Key='notes_txt/' + file_name)
+        file_content = response['Body'].read().decode('utf-8')
+
+        # Split file content into batches (adjust batch size as needed)
+        batch_size = 3000
+        batches = [file_content[i:i+batch_size] for i in range(0, len(file_content), batch_size)]
+
+        # Process batches
+        for batch in batches:
+            # Send batch to OpenAI API
+
+            
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "user",
+                        "content": f"divide the text topic wise (it should look like TOPIC:notes) notes should very breif and be created in a way so that you will be able to recreate the full txt :\n\n{batch}\n\n"
+                    }
+                ]
+            )
+
+            important_topics = response.choices[0].message.content
+            #print(important_topics)
+            #return important_topics
+            # Add a delay of 20 seconds to handle rate limit
+            time.sleep(20)
+            
+            text_batches = batch_text(important_topics)
+
+            bucket_name = 'learnmateai'
+            file=file_name.split(".")[0]
+            folder_name = f'Analysed_Notes/{file}'
+
+            for i, batch in enumerate(text_batches):
+                lines = batch.split('\n')
+                file_name1 = lines[0].strip().replace(" ", "_") + '.txt'
+                content = '\n'.join(lines[1:]).strip()
+                upload_to_s3(bucket_name, folder_name, file_name1, content)
+
+                # Print uploaded file information
+                print(f"File '{file_name1}' uploaded to '{bucket_name}/{folder_name}'")
+
+    # Get the list of files in the "notes_txt" folder
+    response = s3.list_objects_v2(Bucket='learnmateai', Prefix='notes_txt/')
+
+    # Process each file
+    for file in response['Contents']:
+        file_name = file['Key'].split('/')[-1]
+        process_file(file_name)
+
+    return {"message": "File processing completed."}

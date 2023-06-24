@@ -7,7 +7,7 @@ from mangum import Mangum
 
 #from Backend.Notes_Analyser import router as api4_router
 #from Backend.Narrator import router as api5_router
-from Backend.NotesChunker import router as chunker 
+from Backend.NotesChunker import app as chunker 
 #from Backend.NotesToText import router as notestotxt
 
 # import other API routers as needed
