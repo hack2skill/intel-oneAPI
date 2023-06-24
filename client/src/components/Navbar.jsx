@@ -48,12 +48,12 @@ const Navbar = () => {
               >
                 Quiz
               </Link> */}
-              <Link
+              {/* <Link
                 to="/studyplanner"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
               >
                 Study Planner
-              </Link>
+              </Link> */}
               <Link
                 to="/dashboard"
                 className="hover:text-gray-900 px-3 py-2 rounded-md text-sm"
