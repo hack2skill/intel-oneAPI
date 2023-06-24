@@ -1,0 +1,17 @@
+{
+    "data": [
+        {
+            "userid": "raj713335",
+            "image_url": "Data/Saved_Images/20230608190900.jpg",
+            "w_cord": 0.5150375939849624,
+            "x_cord": 0.5583333333333333,
+            "y_cord": 0.6511278195488722,
+            "z_cord": 0.32,
+            "latitude": 22.529,
+            "longitude": 88.368,
+            "class_of_image": 2,
+            "auto": "No",
+            "uploaded": "No"
+        }
+    ]
+}

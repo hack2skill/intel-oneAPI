@@ -1,0 +1,17 @@
+
+
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: ./data/train
+val: ./data/val
+test: ./data/test  #
+
+# number of classes
+nc: 1
+
+# class names
+# names: [ 'GRAFFITI', 'FADED SIGNAGE', 'POTHOLES', 'GARBAGE', 'CONSTRUCTION ROAD', 'BROKEN SIGNAGE', 'BAD STREETLIGHT',
+#         'BAD BILLBOARD', 'SAND ON ROAD', 'CLUTTER SIDEWALK', 'UNKEPT FACADE' ]
+
+
+names: [ 'POTHOLES' ]
