@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
-#from Backend.pyqsorter import router as api1_router
+from Backend.LatestSorter import app as sorter
 #from Backend.summariser import router_summariser as summariser
 
 #from Backend.Notes_Analyser import router as api4_router
@@ -30,7 +30,7 @@ app.add_middleware(
 # Mount the API routerss
 #app.include_router(api1_router)
 
-#app.include_router(sorter)
+app.include_router(sorter)
 #app.include_router(api4_router)
 app.include_router(chunker)
 #app.include_router(notestotxt)
