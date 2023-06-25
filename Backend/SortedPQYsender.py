@@ -4,6 +4,7 @@ from fastapi import APIRouter
 import os
 import requests
 from fastapi.responses import FileResponse
+from fastapi.responses import Response
 
 app = APIRouter()
 
@@ -87,11 +88,11 @@ def generate_pdf():
 
     response.raise_for_status()
 
-    # Save PDF response to a temporary file
-    temp_pdf_path = "temp_pdf/temp_pdf.pdf"  # Replace with the desired path to save the temporary PDF file
-    with open(temp_pdf_path, "wb") as temp_pdf_file:
-        for chunk in response.iter_content(chunk_size=8192):
-            temp_pdf_file.write(chunk)
+    # Set the content type and headers for the PDF response
+    headers = {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': 'attachment; filename=combined_pdf.pdf'
+    }
 
-    # Return the temporary PDF file
-    return FileResponse(temp_pdf_path, filename='combined_pdf.pdf', media_type='application/pdf')
+    # Return the PDF response
+    return Response(content=response.content, headers=headers)

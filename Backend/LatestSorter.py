@@ -43,8 +43,23 @@ app = APIRouter()
 
 @app.get("/sorter")
 def process_files():
+    
+        # Make an API request with a reset message
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+                                {
+                        "role": "user",
+                        "content": "forget everything told before by me"
+                    }
+        ]
+    )
+    print("reseting")
     # Function to read and process a file
     def process_file(file_name):
+        
+
+        
         # Read file from S3
         
         response = s3.get_object(Bucket='learnmateai', Key='pyqs_txt/' + file_name)
@@ -59,14 +74,14 @@ def process_files():
         Sorted_PYQ_Mod=[[]for _ in range(5)]
         for batch in batches:
             # Send batch to OpenAI API
-
+            print(batch)
             
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {
                         "role": "user",
-                        "content": f"I will feed you a question paper as text,sort the question in the text below based on this syllabus having {number} modules :{topics} (it should look exactly like MODULE:questions ) all questions should cluster under its module , the output should exactly  have the {number} number of ""MODULE"" written under each the questions come ,it should have all MODULE even if any is empty, never give question with there modules i need it as grouped under module always :\n\n{batch}\n\n"
+                        "content": f"I will feed you a question paper as text,sort the question in the text below based on this syllabus having {number} modules :{topics} (it should look exactly like MODULE:questions ) all questions should cluster under its module , the output should exactly  have the {number} number of ""MODULE"" written under each the questions come ,it should have all MODULE even if any is empty, never give question with there modules i need it as grouped under module always,questions should only be from the txt given below you should not create any new question :\n\n{batch}\n\n"
                     }
                 ]
             )
