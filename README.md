@@ -12,6 +12,11 @@
 
 Intel® oneAPI Hackathon 2023 - Prototype Implementation for our LEAP Solution
 
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache-yellow.svg)](https://opensource.org/license/apache-2-0/)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/rohitc5/intel-oneAPI)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/rohitc5/intel-oneAPI)
+[![GitHub star chart](https://img.shields.io/github/stars/rohitc5/intel-oneAPI?style=social)](https://star-history.com/#rohitc5/intel-oneAPI)
+
 # A Brief of the Prototype:
 
 #### INSPIRATION ![image](https://user-images.githubusercontent.com/72274851/218500470-ec078b99-0a50-4b06-a2df-c09e47ecc187.png)
