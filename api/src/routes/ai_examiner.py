@@ -11,7 +11,7 @@ from schemas.ai_examiner import (
 
 from config import AI_EXAMINER_CONFIG
 from core.interactive_examiner import InteractiveAIExaminer
-from core.llm import get_llm
+from core.llm.base import get_llm
 
 from utils.logging_handler import Logger
 
@@ -22,7 +22,9 @@ router = APIRouter(
     }})
 
 ##################################################################
-llm = get_llm(**AI_EXAMINER_CONFIG)
+LLM_METHOD = AI_EXAMINER_CONFIG["llm_method"]
+LLM_CONFIG = AI_EXAMINER_CONFIG[LLM_METHOD]
+llm = get_llm(llm_method=LLM_METHOD, **LLM_CONFIG)
 interactive_ai_examiner = InteractiveAIExaminer.load(
     llm=llm,
     verbose=True

@@ -243,36 +243,36 @@ Here is the architecture of `Interactive Conversational AI Examiner` component:
 
 ![](./assets/AI-Examiner.png)
 
-We can use several open access models from hugging face Hub like MPT-7B-instruct (https://huggingface.co/mosaicml/mpt-7b-instruct), Falcon-7B-instruct (https://huggingface.co/TheBloke/falcon-7b-instruct-GPTQ), etc. (follow https://huggingface.co/models for more options.) 
+We can use several open access instruction tuned LLMs from hugging face Hub like MPT-7B-instruct (https://huggingface.co/mosaicml/mpt-7b-instruct), Falcon-7B-instruct (https://huggingface.co/TheBloke/falcon-7b-instruct-GPTQ), etc. (follow https://huggingface.co/models for more options.) 
+You need to set the `llm_method` as `hf_pipeline` for this. Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (follow https://huggingface.co/Intel)
 
-Here for performance gain, we can use INT8 quantized model optimized using Intel®  Neural Compressor (follow https://huggingface.co/Intel) 
+Moreover, for doing much faster inference we can use open access instruction tuned Adapters (LoRA) with backbone as LLaMA from hugging face Hub like QLoRA
+(https://huggingface.co/timdettmers). You need to set the `llm_method` as `hf_peft` for this. Please follow **QLoRA** research paper (https://arxiv.org/pdf/2305.14314.pdf) for more details.
 
-Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to use models like GPT3 with paid subscription API. You just need to provide `azure_deployment_name`, set `llm_name` as `azure_gpt3` in the below configuration and then add `<your_key>` 
+Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to use models like GPT3 over paid subscription API. You just need to provide `azure_deployment_name`, set `llm_method` as `azure_gpt3` in the below configuration and then add `<your_key>` 
 
 ```python
   
   ''''
   AI_EXAMINER_CONFIG = {
-      "llm_name": "azure_gpt3", #options: azure_gpt3, hf_pipeline
-      "azure_deployment_name": "text-davinci-003", # provide deployment name
+      "llm_method": "azure_gpt3", #options: azure_gpt3, hf_pipeline, hf_peft
 
-      "hf_model_name": "mosaicml/mpt-7b-instruct", #options: mosaicml/mpt-7b-instruct, tiiuae/falcon-7b-instruct, more...
-
-      "device": 0, # cuda:0
-      "llm_kwargs":{
-          "do_sample": True,
-          "temperature": 0.5, 
-          "max_new_tokens": 300,
-          "top_p": 1.0,
-          "top_k": 0,
-          "repetition_penalty": 1.1,
-          "num_return_sequences": 1,
-          "stop_sequence": "<|endoftext|>",
-          "trust_remote_code": True
-    }
-  ...
+      "azure-gpt3":{
+        "deployment_name": "text-davinci-003-prod",
+        ...
+      },
+      "hf_pipeline":{
+        "model_name": "tiiuae/falcon-7b-instruct"
+        ...
+      }
+      "hf_peft":{
+        "model_name": "huggyllama/llama-7b",
+        "adapter_name": "timdettmers/qlora-alpaca-7b",
+        ...
+      }
+  }
   
-  # provide api key
+  # provide your api key
   os.environ["OPENAI_API_KEY"] = "<your_key>"
 
   ''''

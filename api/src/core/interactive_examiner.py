@@ -33,7 +33,7 @@ from typing import List, Optional, Dict, Any
 
 from utils.logging_handler import Logger
 
-langchain.llm_cache = InMemoryCache()
+#langchain.llm_cache = InMemoryCache()
 
 class BaseAIExaminer(BaseModel, ABC):
     """Base AI Examiner interface"""

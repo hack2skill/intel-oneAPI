@@ -19,20 +19,77 @@ ASK_DOUBT_CONFIG = {
 
 
 AI_EXAMINER_CONFIG = {
-  "llm_name": "azure_gpt3", #options: azure_gpt3, hf_pipeline
-  "azure_deployment_name": "text-davinci-003-prod",
-  "hf_model_name": "mosaicml/mpt-7b-instruct", #options: mosaicml/mpt-7b-instruct, tiiuae/falcon-7b-instruct, more...
-  "device": 0, # cuda:0
-  "llm_kwargs":{
-      "do_sample": True,
-      "temperature": 0.5, 
-      "max_new_tokens": 300,
-      "top_p": 1.0,
-      "top_k": 0,
-      "repetition_penalty": 1.1,
-      "num_return_sequences": 1,
-      "stop_sequence": "<|endoftext|>",
-      "trust_remote_code": True
+  "llm_method": "azure_gpt3", #options: azure_gpt3, hf_pipeline, hf_peft
+
+  "azure-gpt3":{
+    "deployment_name": "text-davinci-003-prod",
+    "llm_kwargs": {
+        "temperature": 0.3,
+        "max_tokens": 300,
+        "n": 1,
+        "top_p": 1.0,
+        "frequency_penalty": 1.1
+    }      
+  },
+  "hf_pipeline":{
+      "model_name": "tiiuae/falcon-7b-instruct",
+      "task": "text-generation",
+      "device": -1,
+      "llm_kwargs":{
+         "torch_dtype": "float16",  #bfloat16, float16, float32
+         "device_map": "auto",
+         "load_in_4bit": True,
+         "max_memory": "24000MB",
+         "trust_remote_code": True
+      },
+      "pipeline_kwargs": {
+          "max_new_tokens": 300,
+          "top_p": 0.15,
+          "top_k": 0,
+          "temperature": 0.3,
+          "repetition_penalty": 1.1,
+          "num_return_sequences": 1,
+          "do_sample": True,
+          "stop_sequence": []
+      },
+      "quantization_kwargs": {
+        "load_in_4bit": True, # do 4 bit quantization
+        "load_in_8bit": False,
+        "bnb_4bit_compute_dtype": "float16", #bfloat16, float16, float32
+        "bnb_4bit_use_double_quant": True,
+        "bnb_4bit_quant_type": "nf4"
+      }
+  },
+  "hf_peft":{
+      "model_name": "huggyllama/llama-7b",
+      "adapter_name": "timdettmers/qlora-alpaca-7b",
+      "task": "text-generation",
+      "device": -1,
+      "llm_kwargs":{
+         "torch_dtype": "float16",  #bfloat16, float16, float32
+         "device_map": "auto",
+         "load_in_4bit": True,
+         "max_memory": "32000MB",
+         "trust_remote_code": True
+      },
+      "generation_kwargs": {
+          "max_new_tokens": 300,
+          "top_p": 0.15,
+          "top_k": 0,
+          "temperature": 0.3,
+          "repetition_penalty": 1.1,
+          "num_return_sequences": 1,
+          "do_sample": True,
+          "early_stopping": True,
+          "stop_sequence": []
+      },
+      "quantization_kwargs": {
+        "load_in_4bit": True, # do 4 bit quantization
+        "load_in_8bit": False,
+        "bnb_4bit_compute_dtype": "float16", #bfloat16, float16, float32
+        "bnb_4bit_use_double_quant": True,
+        "bnb_4bit_quant_type": "nf4"
+      }
   }
 }
 
