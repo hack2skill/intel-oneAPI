@@ -8,7 +8,8 @@ from Backend.LatestSorter import app as sorter
 #from Backend.Notes_Analyser import router as api4_router
 #from Backend.Narrator import router as api5_router
 from Backend.NotesChunker import app as chunker 
-#from Backend.NotesToText import router as notestotxt
+from Backend.NotesToText import router as notestotxt
+from Backend.SortedPQYsender import app as pyqsender
 
 # import other API routers as needed
 
@@ -31,9 +32,9 @@ app.add_middleware(
 #app.include_router(api1_router)
 
 app.include_router(sorter)
-#app.include_router(api4_router)
+app.include_router(notestotxt)
 app.include_router(chunker)
-#app.include_router(notestotxt)
+app.include_router(pyqsender)
 
 # include other API routers as needed
 

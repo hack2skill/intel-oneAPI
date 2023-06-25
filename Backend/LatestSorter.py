@@ -118,9 +118,9 @@ def process_files():
                         print(batch)
                         
                         result=' '.join(str(element) for element in batch)
-                        new_content = '\n'.join(result[1:]).strip()
+                        new_content = result
 
-
+                        #print(result)
                         updated_content =new_content
 
                         # Upload the updated content to S3

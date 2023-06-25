@@ -11,6 +11,7 @@ COPY Backend ./Backend
 COPY client ./client
 COPY Files ./Files
 COPY images ./images
+COPY images ./temp_pdf
 COPY Local_Storage ./Local_Storage
 
 COPY requirements.txt  .
