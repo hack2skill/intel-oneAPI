@@ -244,7 +244,7 @@ def main():
                                      width=100, command=self.settings)
                 self.b0b.place(x=1770, y=950, width=150, height=150)
 
-                self.b1 = ttk.Button(win, text='Pot Holes Detection', width=20, command=self.pot_holes)
+                self.b1 = ttk.Button(win, text='Live Dash Cam with Segmentation', width=20, command=self.pot_holes)
                 self.b1.place(x=90, y=470, width=300, height=100)
 
                 self.b2 = ttk.Button(win, text='Uploaded Data Viewer', width=20, command=self.data_viewer)
@@ -332,8 +332,8 @@ def main():
                 import torch
                 with torch.no_grad():
                     from ENGINES import AI_POTHOLES_DETECTION
-                    AI_POTHOLES_DETECTION.AI_POTHOLES_DETECTION(source="TEST_VIDEO/potholes.mp4",
-                                                                model_weights="Model/potholes_detector1.pt")
+                    AI_POTHOLES_DETECTION.AI_POTHOLES_DETECTION(source="TEST_VIDEO/testx.mp4",
+                                                                model_weights="Model/yolov7.pt")
                     # window_user_login1.destroy()
                 # second(user_key=user_key, job="HOSTEL ENVIRONMENT")
 
@@ -345,8 +345,8 @@ def main():
                 import torch
                 with torch.no_grad():
                     from ENGINES import AI_DASH_CAM
-                    AI_DASH_CAM.AI_DASH_CAM(source="TEST_VIDEO/test.mp4",
-                                            model_weights="Model/yolov7-e6e.pt")
+                    AI_DASH_CAM.AI_DASH_CAM(source="TEST_VIDEO/testx.mp4",
+                                            model_weights="Model/yolov7.pt")
                 # window_user_login1.destroy()
                 # second(user_key=user_key, job="BUS ENVIRONMENT")
 
@@ -362,7 +362,7 @@ def main():
                                                                  ))
                 import torch
                 from ENGINES import AI_DASH_CAM_IMAGE
-                AI_DASH_CAM_IMAGE.AI_DASH_CAM_IMAGE(filename, model_weights="Model/visual_pollution.pt")
+                AI_DASH_CAM_IMAGE.AI_DASH_CAM_IMAGE(filename, model_weights="Model/yolov7.pt")
                 # second(user_key=user_key, job="EXAM ENVIRONMENT")
 
             @staticmethod
