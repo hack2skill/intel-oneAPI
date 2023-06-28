@@ -48,13 +48,6 @@
 
 - Install Python 3.10 and its required Packages like PyTorch etc.
 
-
-## 1. Project Architecture
-
-<p align="center">
-  <img src="Data/oneAPI_ODAV.png" />
-</p>
-
 ## 2. Train the YoloV7 Object Detection Model
 
 #### Open Image Labelling Tool
