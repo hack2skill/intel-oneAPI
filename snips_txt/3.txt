@@ -1,0 +1,7 @@
+Sample Explanation 2:
+Same numbers as previous example but a different order this time. Here you advise James to shoot 10 and not 11 even
+though the latter is the higher value. Bob takes 11 or could choose 2 for some reason. Remember only end markers.
+Both ways that allows James to take 20. And finally, marker 2 for Bob. So, you help James get 30 points and Bob get 13.
+James is the winner..
+If you had chosen 11 say for James at the beginning, Bob would have shot 20 and that leaves 10 for James & 2 for Bob.
+Bob would win with 22 points leaving James with 21.

@@ -6,6 +6,7 @@ from mangum import Mangum
 from Backend.Student_analyser import app as progressanalyser
 from Backend.Notes_gen import app as notes_gen
 from Backend.Questionare_Creater import app as gen_question
+from Backend.Study_planner import app as studyplanner
 #from Backend.summariser import router_summariser as summariser
 
 #from Backend.Notes_Analyser import router as api4_router
@@ -38,6 +39,7 @@ app.add_middleware(
 app.include_router(progressanalyser)
 app.include_router(notes_gen)
 app.include_router(gen_question)
+app.include_router(studyplanner)
 #app.include_router(notestotxt)
 #app.include_router(chunker)
 #app.include_router(pyqsender)
@@ -50,5 +52,5 @@ app.include_router(gen_question)
 #app.include_router(api1_router)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="192.168.29.76", port=8000)
 

@@ -1,0 +1,22 @@
+Constraints
+• 1 ≤ series ≤ 500
+• It is guaranteed that series contains lowercase English letters only.
+Input Format For Custom Testing
+▾ Sample Case 0
+Sample Input For Custom Testing
+STDIN
+FUNCTION
+abaca
+Sample Output
+3
+series="abaca"
+Explanation
+It is optimal to delete the substrings "b" and "c" first in two operations to get the string "aaa" which
+can be deleted in the next operation.
+▾ Sample Case 1
+Sample Input For Custom Testing
+STDIN
+FUNCTION
+AD
+abcddcba → series = "abcddcba"
+**********

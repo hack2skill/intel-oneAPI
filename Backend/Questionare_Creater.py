@@ -2,6 +2,7 @@ import os
 import boto3
 from fastapi import APIRouter
 import openai
+import json
 
 app = APIRouter()
 s3_access_key = "AKIAZTHHIOR4JJ5HLTUB"
@@ -57,3 +58,23 @@ def save_summary(file_name: str, summary: str):
         s3.put_object(Body=summary, Bucket=s3_bucket_name, Key=save_key)
     except Exception as e:
         raise e
+
+
+S3_FOLDER="Questionare/"
+@app.get("/get_question")
+def read_file(filename: str):
+    # Generate the S3 file path
+    s3_file_path = os.path.join(S3_FOLDER, filename)
+
+    try:
+        # Read the file content from S3
+        response = s3.get_object(Bucket=s3_bucket_name, Key=s3_file_path)
+        file_content = response["Body"].read().decode("utf-8")
+
+        # Parse the file content as JSON
+        json_content = json.loads(file_content)
+
+        # Return the JSON content
+        return json_content
+    except Exception as e:
+        return {"error": str(e)}

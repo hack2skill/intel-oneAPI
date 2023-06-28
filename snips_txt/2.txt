@@ -1,0 +1,20 @@
+Sample Input 1:
+4
+20
+2
+10
+11
+Sample Output 1:
+30
+Sample Explanation 1:
+There are 4 markers 20, 2, 10 & 11 in order. James shoots 20 first. That leaves 2,10,11. Bob then shoots 11. James takes
+10 and finally Bob takes 2. You helped James get 30 points & left Bob with 13 points only. Winner is James !!
+⠀
+Sample Input 2:
+4
+11
+20
+2
+10
+Sample Output 2:
+30
