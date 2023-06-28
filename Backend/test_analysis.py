@@ -67,7 +67,7 @@ resd = json.loads(res)
 print("\n\nProcessed")
 print(resd)
 
-file_path = "data.json"
+file_path = "data2.json"
 
 # Save the data as JSON in the specified file
 with open(file_path, "w") as json_file:
@@ -76,46 +76,7 @@ with open(file_path, "w") as json_file:
 print(f"JSON file saved successfully at {file_path}")
 
 
-with open('data.json', 'r') as file:
+with open('data2.json', 'r') as file:
     data = json.load(file)
 
 print(data)
-# # Extract questions and topics
-# questions = data['questions']
-# topics = data['important_topics']
-
-# # Create the content for the document
-# content = '<h1>Questions</h1>'
-# for i, question in enumerate(questions):
-#     content += f'<h2>{i+1}. {question["question"]}</h2>'
-#     content += f'<p>Frequency: {question["frequency"]}</p>'
-
-# content += '<h1>Important Topics</h1>'
-# for topic in topics:
-#     content += f'<h2>{topic}</h2>'
-
-# # Convert content to HTML
-# html_content = f'''
-# <!DOCTYPE html>
-# <html>
-# <head>
-# <title>Document</title>
-# </head>
-# <body>
-# {content}
-# </body>
-# </html>
-# '''
-
-# # Make a POST request to PDFShift API
-# api_key = 'c3fc79849a954be4bf9c719cdd3fee52'
-# pdfshift_url = 'https://api.pdfshift.io/v3/convert/pdf'
-
-# headers = {'Authorization': f'Bearer {api_key}'}
-# payload = {'source': html_content}
-
-# response = requests.post(pdfshift_url, json=payload, headers=headers)
-
-# # Save the generated PDF file
-# with open('document.pdf', 'wb') as file:
-#     file.write(response.content)

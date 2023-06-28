@@ -6,7 +6,6 @@ from mangum import Mangum
 from Backend.Student_analyser import app as progressanalyser
 from Backend.Notes_gen import app as notes_gen
 from Backend.Questionare_Creater import app as gen_question
-from Backend.Study_planner import app as studyplanner
 #from Backend.summariser import router_summariser as summariser
 
 #from Backend.Notes_Analyser import router as api4_router
@@ -17,6 +16,8 @@ from Backend.Study_planner import app as studyplanner
 #from Backend.Perfect_video import app as videofinder
 
 # import other API routers as needed
+
+from Backend.chatbot import bot as botroute
 
 origins = ["*"]
 
@@ -39,13 +40,12 @@ app.add_middleware(
 app.include_router(progressanalyser)
 app.include_router(notes_gen)
 app.include_router(gen_question)
-app.include_router(studyplanner)
 #app.include_router(notestotxt)
 #app.include_router(chunker)
 #app.include_router(pyqsender)
 
 #app.include_router(videofinder)
-
+app.include_router(botroute)
 # include other API routers as needed
 
 #app.include_router(NotesToText_rounter)
