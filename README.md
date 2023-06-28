@@ -58,13 +58,13 @@
 
 ## 2. Train the YoloV7 Object Detection Model
 
-### Open Image Labelling Tool
+#### Open Image Labelling Tool
 
 ```commandline
 labelImg
 ```
 
-### Add more data from the already labelled images
+#### Add more data from the already labelled images
 
 ```
 git clone https://github.com/IntelegixLabs/smartathon-dataset
@@ -72,7 +72,7 @@ cd smartathon-dataset
 Add train,val, and test data to oneAPI_ODAV/yolov7-custom/data files 
 ```
 
-### Train the custom Yolov7 Model
+#### Train the custom Yolov7 Model
 
 ```commandline
 git clone https://github.com/IntelegixLabs/oneAPI_ODAV
@@ -114,7 +114,7 @@ $ python home.py
 ```
 
 
-### Packaging the Application for Creating a Execulatle exe File that can run in Windows,Linus,or Mac OS
+#### Packaging the Application for Creating a Execulatle exe File that can run in Windows,Linus,or Mac OS
 
 You can pass any valid `pyinstaller` flag in the following command to further customize the way your app is built.
 for reference read the pyinstaller documentation <a href="https://pyinstaller.readthedocs.io/en/stable/usage.html">here.</a>
@@ -128,14 +128,14 @@ $ pyinstaller -i "favicon.ico" --onefile -w --hiddenimport=EasyTkinter --hiddeni
 
 - For Video Demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=aCLAOy6iWAs">here.</a>
 
-### GUI INTERFACE SAMPLES
+#### GUI INTERFACE SAMPLES
 
 <p align="center">
     <img src="Data/Screenshots/01.png" width="400">
     <img src="Data/Screenshots/02.png" width="400">
 </p>
 
-### THEME 1 (Detection and evaluation of the following elements on street imagery taken from a moving vehicle) :camera_flash:
+#### THEME 1 (Detection and evaluation of the following elements on street imagery taken from a moving vehicle) :camera_flash:
 
 
 
@@ -160,11 +160,23 @@ Object types:
 </p>
 
 
-### Car Dashboard Custom Image Labelling Tool 
+#### Car Dashboard Custom Image Labelling Tool 
 
 
 <p align="center">
     <img src="Data/Screenshots/03.png" width="800">
+</p>
+
+## 5. Running yolov7-Segmentation Model
+
+```sh
+$ cd oneAPI_ODAV
+$ cd seg/segment
+$ python predict.py
+```
+
+<p align="center">
+    <img src="Data/demo_seg.gif" width="800">
 </p>
 
 
