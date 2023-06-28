@@ -1,4 +1,4 @@
-<h1 align="center">oneAPI_ODAV</h1>
+<h1 align="center">oneAPI ODAV</h1>
 
 #### Team Name - Hitaya
 #### Problem Statement - Object Detection For Autonomous Vehicles <a href="https://www.youtube.com/watch?v=aCLAOy6iWAs">(DEMO)<a/>
