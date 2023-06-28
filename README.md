@@ -11,11 +11,10 @@
 <p align="center">
   <img src="Data/oneAPI_ODAV.png" />
 </p>
-  
+
 <p align="center">
-    <img src="Data/demo.gif", width="640">
-    <br>
-    <sup>Loading ....</sup>
+    <img src="Data/demo.gif", width="400">
+    <img src="Data/demo_seg.gif" width="400">
 </p>
   
 ## Tech Stack: 
@@ -175,8 +174,5 @@ $ cd seg/segment
 $ python predict.py
 ```
 
-<p align="center">
-    <img src="Data/demo_seg.gif" width="800">
-</p>
 
 
