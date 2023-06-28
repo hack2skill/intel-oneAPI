@@ -1,4 +1,4 @@
-# intel-oneAPI
+<h1 align="center">oneAPI_ODAV</h1>
 
 #### Team Name - Hitaya
 #### Problem Statement - Object Detection For Autonomous Vehicles <a href="https://www.youtube.com/watch?v=aCLAOy6iWAs">(DEMO)<a/>
@@ -36,7 +36,6 @@
     <img src="Data/pytorchvsipex.png" />
   </p>
 
-<h1 align="center">oneAPI_ODAV</h1>
 
 ## Features
 -  Car Dashboard Application, to detect objects after detection from, the yolov7 model.
