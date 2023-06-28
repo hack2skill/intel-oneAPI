@@ -76,9 +76,10 @@ function Anythingmore() {
         Submit
       </button>
       {apiError && <p className="text-red-500"></p>}
-      <Link to="/dashboard">
+      <Link to="/wait">
         <button className="bg-violet-900 text-white py-2 px-6 rounded-lg">Finish</button>
       </Link>
+
     </div>
   );
 }

@@ -10,10 +10,18 @@ const Sortedpyq = () => {
 
   const fetchPdf = async () => {
     try {
-      const response = await fetch('API_URL'); // Replace 'API_URL' with your actual API endpoint
+      const response = await fetch('https://3f2ssd7loqowjtj7hnzhni7trq0blutk.lambda-url.us-east-1.on.aws/generate_pdf');
       if (response.ok) {
         const pdfData = await response.blob();
         const pdfUrl = URL.createObjectURL(pdfData);
+
+        // Download the PDF file
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = 'combined_pdf.pdf';
+        link.click();
+
+        // Show the PDF in the iframe
         setPdfUrl(pdfUrl);
       } else {
         throw new Error('Error fetching PDF');

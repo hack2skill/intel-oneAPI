@@ -2,20 +2,13 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import studyplan from "../assets/121104-woman-discovering-business-statistics.json";
+import repetition from "../assets/100679-wallp-repetitions-animation.json";
+import generalp from "../assets/132573-marking-exam-questions.json";
+import sorted from "../assets/96665-toggle-sort-menu-transition.json";
 
-const data = {
-  coursesCompleted: 5,
-  coursesInProgress: 3,
-  coursesEnrolled: 8,
-  performance: [
-    { subject: "LD", score: 80 },
-    { subject: "DSA", score: 75 },
-    { subject: "OOPS", score: 90 },
-    { subject: "CAO", score: 85 },
-    { subject: "ALU", score: 70 },
-  ],
-  attentionRate: 85,
-};
+
 
 const COLORS = ["#0088FE", "#FFBB28"];
 
@@ -62,7 +55,7 @@ const Dashboard = () => {
     <div className="w-screen">
       <Navbar />
       <div className="flex flex-col items-center h-screen w-screen text-center bg-gradient-to-tr from-violet-700 via-green-600 to-green-400 mt-3">
-         <div className="grid grid-cols-4 gap-6 py-12 h-4">
+         <div className="grid grid-cols-2 gap-6 py-12 h-4">
         <Link to="/sortedpyq">
         <motion.div
             className="bg-slate-100 rounded-lg shadow-lg py-6 w-72"
@@ -71,6 +64,7 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
+            <Lottie animationData={sorted} className="h-20" />
             <h2 className="mb-4">Sorted PYQ</h2>
            
           </motion.div>
@@ -83,6 +77,7 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
+            <Lottie animationData={generalp} className="h-20" />
             <h2 className="mb-4">General Question Paper</h2>
            
           </motion.div>
@@ -95,6 +90,7 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
+            <Lottie animationData={repetition} className="h-20" />
             <h2 className="mb-4">Repetitive questions</h2>
             
           </motion.div>
@@ -107,6 +103,7 @@ const Dashboard = () => {
             animate="visible"
             transition={{ delay: 0.2 }}
           >
+            <Lottie animationData={studyplan} className="h-20" />
             <h2 className="mb-4">Study plan</h2>
             
           </motion.div>
@@ -117,57 +114,14 @@ const Dashboard = () => {
         
           </div> 
 
-        <div className="grid grid-cols-2 gap-16 py-16">
-          <div className="grid grid-cols-2 gap-4">
-          <motion.div
-            className="bg-slate-100 rounded-lg shadow-lg py-6 h-88 w-60"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <h3 className="text-xl mb-4">Important Topics</h3>
-            <pre>{impTopicContent}</pre>
-            <p>NFA and DFA</p>
-            <p>NFA to DFA conversion</p>
-            <p>Minimisation</p>
-            <p>Ardens Theorem</p>
-          </motion.div>
+       
 
-          <motion.div
-            className="bg-slate-100 rounded-lg shadow-lg py-6 w-60"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.2 }}
-          >
-            <h3 className="text-xl mb-4">Topic List</h3>
-            <pre>{topicListContent}</pre>
-            <p>Finite state systems</p>
-            <p>Definitions</p>
-            <p>Minimisation</p>
-            <p>Moore and Mealy machinesm</p>
-          </motion.div>
-          </div>
-
-          <motion.div
-            className="bg-slate-50 rounded-lg shadow-lg py-6 w-120 h-96"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.4 }}
-          >
-            <h3 className="text-lg font-semibold mb-4">Cluster Questions</h3>
-            <iframe
-              src="http://www.gpcet.ac.in/wp-content/uploads/2017/04/flat-10.pdf"
-              className="w-full h-full"
-              title="PDF Viewer"
-            />
-          </motion.div>
+         
 
          
         </div>
       </div>
-    </div>
+    
   );
 };
 
