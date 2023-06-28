@@ -81,7 +81,7 @@ def process_files():
                 messages=[
                     {
                         "role": "user",
-                        "content": f"I will feed you a question paper as text,sort the question in the text below based on this syllabus having {number} modules :{topics} (it should look exactly like MODULE:questions ) all questions should cluster under its module , the output should exactly  have the {number} number of ""MODULE"" written under each the questions come ,it should have all MODULE even if any is empty, never give question with there modules i need it as grouped under module always,questions should only be from the txt given below you should not create any new question :\n\n{batch}\n\n"
+                        "content": f"I will feed you a question paper as text,sort the question in the text below based on this syllabus having {number} modules :{topics} (it should look exactly like MODULE:questions ) all questions should cluster under its module , the output should exactly  have the {number} number of ""MODULE"" written under each the questions come ,it should have all MODULE even if any is empty, never give question seperately with there modules tag, i need questions to be grouped under module always,Any output you give should only be from the txt given below you should not create any new question :\n\n{batch}\n\n"
                     }
                 ]
             )

@@ -1,0 +1,16 @@
+Notes for 1-to-4 Demultiplexer Circuit:
+
+- A 1-to-4 demultiplexer is a combinational digital logic circuit that takes one input line and distributes it to any one of the four output lines based on the control inputs.
+- The demultiplexer circuit consists of one input line, two control lines (A and B), and four output lines (Y0, Y1, Y2, and Y3).
+- The input line is connected to an AND gate, which is controlled by the complement of control line A and control line B. This gate serves to enable the circuit to function as a demultiplexer.
+- The input line is also connected to an inverter, which inverts the input signal. The inverted input signal is then fed into an AND gate that is controlled by control line A and control line B. This gate helps select the desired output line.
+- The four output lines Y0, Y1, Y2, and Y3 correspond to the different possible combinations of the control lines A and B. Each output line is connected to its respective AND gate.
+- When the control lines are set such that A=0 and B=0, the first output line (Y0) receives the input signal and the rest of the output lines remain at logic 0.
+- Similarly, when A=0 and B=1, the second output line (Y1) receives the input signal while the other outputs stay at logic 0.
+- When A=1 and B=0, the third output line (Y2) receives the input signal, and all other outputs are at logic 0.
+- Finally, when A=1 and B=1, the fourth output line (Y3) receives the input signal, and the remaining outputs are kept at logic 0.
+- The demultiplexer circuit is commonly used in various digital systems to distribute a single input signal to multiple output devices or subsystems based on control signals.
+- It is often used in applications like data routing, data transmission, address decoding, and memory chip selection.
+- The truth table of a 1-to-4 demultiplexer details the input-output relationship for all possible combinations of the control lines and the input line.
+- The circuit can be expanded to accommodate more output lines by adding additional control lines and connecting them to the select inputs of the additional AND gates.
+- The demultiplexer circuit can also be cascaded to create larger demultiplexers with higher numbers of output lines, allowing for more complex operations and data manipulation.

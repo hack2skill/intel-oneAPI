@@ -21,7 +21,7 @@ s3_client = boto3.client(
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
-PDFSHIFT_API_KEY = 'c3fc79849a954be4bf9c719cdd3fee52'
+PDFSHIFT_API_KEY = 'f894dbd8a6074a0db44439561e73c0e3'
 
 @app.get("/generate_pdf")
 def generate_pdf():
@@ -79,6 +79,7 @@ def generate_pdf():
     </html>
     """
 
+    print(content)
     # Convert HTML to PDF using PDFShift API
     response = requests.post(
         'https://api.pdfshift.io/v3/convert/pdf',

@@ -1,0 +1,3 @@
+- The 2-line to 4-line decoder has two input lines and four output lines.
+- It is also known as a binary-to-quaternary decoder because it takes a 2-bit binary input code and activates one of the four (quaternary) outputs corresponding to that code.
+- The outputs from a 2-line to 4-line decoder can be used for various purposes such as selecting one of four registers in a computer memory or controlling the operation of a device with four input options.
