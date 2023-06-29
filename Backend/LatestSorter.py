@@ -56,19 +56,20 @@ def process_files(user:str):
     )
     print("reseting")
     # Function to read and process a file
-    def process_file(file_name):
+    def process_file(file_name,user1):
         
 
         
         # Read file from S3
-        
-        response = s3.get_object(Bucket='learnmateai', Key=user+'pyqs_txt/' + file_name)
+        print(user1)
+        response = s3.get_object(Bucket='learnmateai', Key=user1+'pyqs_txt/' + file_name)
         file_content = response['Body'].read().decode('utf-16-le')
 
         # Split file content into batches (adjust batch size as needed)
         batch_size = 30000
         batches = [file_content[i:i+batch_size] for i in range(0, len(file_content), batch_size)]
-        response2 = s3.get_object(Bucket='learnmateai', Key= user+"syllabus_pdf/syllabus.txt")
+        print(user1+"syllabus_pdf/syllabus.txt")
+        response2 = s3.get_object(Bucket='learnmateai', Key= user1+"syllabus_pdf/syllabus.txt")
         topics = response2['Body'].read().decode('utf-8')
         # Process batches
         Sorted_PYQ_Mod=[[]for _ in range(5)]
@@ -96,7 +97,7 @@ def process_files(user:str):
             #print(text_batches)
             
             bucket_name = 'learnmateai'
-            folder_name = 'Sorted_PYQS/'
+            folder_name = user1+'Sorted_PYQS/'
             
             
             i=0
@@ -117,7 +118,7 @@ def process_files(user:str):
                     s3.put_object(Bucket=bucket_name, Key=folder_name+"Module"+str(i+1)+".txt", Body=updated_content.encode('utf-8'))
 
                     # Print uploaded file information
-                    print(f"File  uploaded to '{bucket_name}/{folder_name}'")
+                    print(f"File  uploaded to '{user1}{bucket_name}/{folder_name}'")
                     i=i+1
                     
                 
@@ -142,7 +143,7 @@ def process_files(user:str):
                         s3.put_object(Bucket=bucket_name, Key=folder_name+"Module"+str(i+1)+".txt", Body=updated_content.encode('utf-8'))
 
                         # Print uploaded file information
-                        print(f"File  uploaded to '{bucket_name}/{folder_name}'")
+                        print(f"File  uploaded to '{user1}{bucket_name}/{folder_name}'")
                         i=i+1
                 else:
                     print("An error occurred:", e)
@@ -151,11 +152,13 @@ def process_files(user:str):
 
 
     # Get the list of files in the "notes_txt" folder
-    response = s3.list_objects_v2(Bucket='learnmateai', Prefix='pyqs_txt/')
+    response = s3.list_objects_v2(Bucket='learnmateai', Prefix=user+'pyqs_txt/')
 
     # Process each file
     for file in response['Contents']:
+        print(file)
         file_name = file['Key'].split('/')[-1]
-        process_file(file_name)
+        print(file_name)
+        process_file(file_name,user)
 
     return {"message": "PYQS SORTED"}

@@ -30,10 +30,11 @@ def processor( data):
     return summary
 
 @app.get("/card-json")
-async def makejson():
+async def makejson(user:str):
+    user=user+"/"
     text=""
     bucket_name= "learnmateai"
-    folder_name= "Analysed_Notes"
+    folder_name= user+"Analysed_Notes"
     try:
         response = s3.list_objects_v2(Bucket=bucket_name, Prefix=folder_name)
         for file in response['Contents']:
@@ -46,7 +47,7 @@ async def makejson():
         print(text)
         
         json_text=processor(text)    
-        save_plan(json_text)
+        save_plan(json_text,user)
             # Parse the file content as JSON
         json_content = json.loads(json_text)
 
@@ -58,9 +59,9 @@ async def makejson():
 
 
 
-def save_plan( summary: str):
+def save_plan( summary: str,user):
     try:
-        save_key = f'Cardjson/cards.txt'
+        save_key = f'{user}Cardjson/cards.txt'
         s3.put_object(Body=summary, Bucket=s3_bucket_name, Key=save_key)
     except Exception as e:
         raise e
