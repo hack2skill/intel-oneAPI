@@ -25,11 +25,12 @@ def upload_to_s3(bucket_name, folder_name, file_name, content):
 app = APIRouter()
 
 @app.get("/process_files")
-def process_files():
+def process_files(user: str):
+    user=user+"/"
     # Function to read and process a file
     def process_file(file_name):
         # Read file from S3
-        response = s3.get_object(Bucket='learnmateai', Key='notes_txt/' + file_name)
+        response = s3.get_object(Bucket='learnmateai', Key=user+'notes_txt/' + file_name)
         file_content = response['Body'].read().decode('utf-8')
 
         # Split file content into batches (adjust batch size as needed)
@@ -61,7 +62,7 @@ def process_files():
 
             bucket_name = 'learnmateai'
             file=file_name.split(".")[0]
-            folder_name = f'Analysed_Notes/{file}'
+            folder_name = f'{user}Analysed_Notes/{file}'
 
             for i, batch in enumerate(text_batches):
                 lines = batch.split('\n')
@@ -73,11 +74,11 @@ def process_files():
                 print(f"File '{file_name1}' uploaded to '{bucket_name}/{folder_name}'")
 
     # Get the list of files in the "notes_txt" folder
-    response = s3.list_objects_v2(Bucket='learnmateai', Prefix='notes_txt/')
+    response = s3.list_objects_v2(Bucket='learnmateai', Prefix=user+'notes_txt/')
 
     # Process each file
     for file in response['Contents']:
         file_name = file['Key'].split('/')[-1]
         process_file(file_name)
 
-    return {"message": "File processing completed."}
+    return {"message": "NOTES"}

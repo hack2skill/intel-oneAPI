@@ -27,7 +27,7 @@ async def summarize_s3_files():
             summary = await summarize_file(bucket_name, file_key,file_name)
             print(summary)
             save_summary(file_name, summary)
-        return {'message': 'Created Notes and saved successfully.'}
+        return {'message': 'Created MCQs and saved successfully.'}
     except Exception as e:
         return {'error': str(e)}
 

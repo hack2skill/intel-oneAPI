@@ -11,8 +11,9 @@ MAILGUN_DOMAIN = "sandbox1b21493cde82477e8fe09dbc04c09eb4.mailgun.org"
 
 
 @router.post("/email")
-def send_email_route(sender_email: str = "mailgun@sandbox1b21493cde82477e8fe09dbc04c09eb4.mailgun.org", receiver_email: str = Form(...), subject: str = Form(...), message: str = Form(...)):
+def send_email_route(receiver_email: str = Form(...), subject: str = Form(...), message: str = Form(...)):
     url = f"https://api.mailgun.net/v3/{MAILGUN_DOMAIN}/messages"
+    sender_email="angeloantu@gmail.com"
     auth = ("api", MAILGUN_API_KEY)
     data = {
         "from": sender_email,

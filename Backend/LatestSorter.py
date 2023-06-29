@@ -42,8 +42,8 @@ def get_text_from_s3(bucket_name, file_name, encoding='utf-8'):
 app = APIRouter()
 
 @app.get("/sorter")
-def process_files():
-    
+def process_files(user:str):
+    user=user+"/"
         # Make an API request with a reset message
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
@@ -62,13 +62,13 @@ def process_files():
         
         # Read file from S3
         
-        response = s3.get_object(Bucket='learnmateai', Key='pyqs_txt/' + file_name)
+        response = s3.get_object(Bucket='learnmateai', Key=user+'pyqs_txt/' + file_name)
         file_content = response['Body'].read().decode('utf-16-le')
 
         # Split file content into batches (adjust batch size as needed)
         batch_size = 30000
         batches = [file_content[i:i+batch_size] for i in range(0, len(file_content), batch_size)]
-        response2 = s3.get_object(Bucket='learnmateai', Key= "syllabus_pdf/syllabus.txt")
+        response2 = s3.get_object(Bucket='learnmateai', Key= user+"syllabus_pdf/syllabus.txt")
         topics = response2['Body'].read().decode('utf-8')
         # Process batches
         Sorted_PYQ_Mod=[[]for _ in range(5)]
@@ -158,4 +158,4 @@ def process_files():
         file_name = file['Key'].split('/')[-1]
         process_file(file_name)
 
-    return {"message": "File processing completed."}
+    return {"message": "PYQS SORTED"}
