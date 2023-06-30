@@ -14,12 +14,12 @@ from mangum import Mangum
 #from Backend.NotesChunker import app as chunker 
 #from Backend.NotesToText import router as notestotxt
 from Backend.Processor import app as processor
-from Backend.NotesChunker import app as chunker
-from Backend.LatestSorter import app as sorter
-from Backend.Sections_topics_json import app as cardmaker
-from Backend.Notes_gen import app as notesgen
-from Backend.Questionare_Creater import app as mcq_gen
-from Backend.email_test import router as email_sender
+from Backend.Final_NotesChunker import app as chunker
+from Backend.Final_LatestSorter import app as sorter
+from Backend.Final_Sections_topics_json import app as cardmaker
+from Backend.Final_Notes_gen import app as notesgen
+from Backend.Final_Questionare_Creater import app as mcq_gen
+from Backend.Final_email_test import router as email_sender
 #from Backend.SortedPQYsender import app as pyqsender
 #from Backend.Perfect_video import app as videofinder
 
