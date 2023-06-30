@@ -1,5 +1,4 @@
-# changed from slim
-FROM python:3.9-slim
+FROM python:3.9
 
 RUN apt-get update && apt-get -y install \
     build-essential libpq-dev ffmpeg libsm6 libxext6 wget

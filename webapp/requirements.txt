@@ -1,5 +1,5 @@
-streamlit==1.23.1
-streamlit_chat==0.0.2.2
+streamlit==1.24.0
+streamlit-chat==0.1.1
 Pillow==9.5.0
 audio_recorder_streamlit==0.0.8
 openai-whisper==20230314

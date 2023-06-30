@@ -8,7 +8,7 @@ from core.llm.huggingface_pipeline import HuggingFacePipeline
 from core.llm.huggingface_peft import HuggingFacePEFT
 
 
-def get_llm(llm_method="azure-gpt3", 
+def get_llm(llm_method="azure_gpt3", 
             callback_manager=None, 
             **kwargs):
     
@@ -16,7 +16,7 @@ def get_llm(llm_method="azure-gpt3",
     if callback_manager is None:
         callback_manager = CallbackManager(
             [StreamingStdOutCallbackHandler()])
-    if llm_method == "azure-gpt3":
+    if llm_method == "azure_gpt3":
         """
           Wrapper around Azure OpenAI
           https://azure.microsoft.com/en-in/products/cognitive-services/openai-service

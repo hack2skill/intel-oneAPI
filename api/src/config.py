@@ -21,7 +21,7 @@ ASK_DOUBT_CONFIG = {
 AI_EXAMINER_CONFIG = {
   "llm_method": "azure_gpt3", #options: azure_gpt3, hf_pipeline, hf_peft
 
-  "azure-gpt3":{
+  "azure_gpt3":{
     "deployment_name": "text-davinci-003-prod",
     "llm_kwargs": {
         "temperature": 0.3,
