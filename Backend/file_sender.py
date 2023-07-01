@@ -67,7 +67,6 @@ def get_cardData(email: str):
 
     response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
    
-
     if "Contents" in response:
         for obj in response["Contents"]:
             file_key = obj["Key"]
@@ -75,3 +74,17 @@ def get_cardData(email: str):
             file_content = file_obj["Body"].read().decode("utf-8")
             json_data = json.loads(file_content)
     return json_data
+
+@getfiles.post("/studyPlan")
+def getStudyPlan(email: str):
+    prefix = f"{email}/StudyPlan"
+
+    response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+   
+    if "Contents" in response:
+        file_key = prefix + "/plan.json"
+        file_obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
+        file_content = file_obj["Body"].read().decode("utf-8")
+        json_data = json.loads(file_content)
+    return json_data
+

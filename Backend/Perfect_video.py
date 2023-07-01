@@ -6,6 +6,19 @@ import json
 from youtube_transcript_api import YouTubeTranscriptApi
 from sentence_transformers import SentenceTransformer
 import torch
+import boto3
+
+
+aws_access_key_id = 'AKIAZTHHIOR4JJ5HLTUB'
+aws_secret_access_key =  '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'
+bucket_name = 'learnmateai'
+
+    # Create an S3 client
+s3_client = boto3.client("s3",
+                            aws_access_key_id=aws_access_key_id,
+                            aws_secret_access_key=aws_secret_access_key)
+
+
 
 app = APIRouter()
 
@@ -38,8 +51,25 @@ def get_video_transcripts(video_ids):
     return transcripts
 
 @app.get("/best_video")
-def get_best_video(input_text: str):
+def get_best_video(email: str,topic: str):
+
+
+    prefix = f"{email}/Notes_Topicwise"
+
+    response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+    
+
+    
+   
+
+    if "Contents" in response:
+            file_key = prefix + f"/{topic}"
+            file_obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
+            file_content = file_obj["Body"].read().decode("utf-8")
+            print(file_content)
     # Encode the input text
+    input_text = file_content
+
     input_embedding = model.encode([input_text], convert_to_tensor=True)
 
     # Search for videos and retrieve video transcripts
@@ -59,6 +89,6 @@ def get_best_video(input_text: str):
     best_video_id = ranked_videos[0][0]
 
     # Construct the YouTube video URL
-    best_video_url = f"https://www.youtube.com/watch?v={best_video_id}"
+    best_video_url = f"https://www.youtube.com/embed/{best_video_id}"
 
     return {"best_video_url": best_video_url}

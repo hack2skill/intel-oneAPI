@@ -20,6 +20,7 @@ async def fetch_data(link:str,receiver_email: str ):
         response5 = await client.get(f"{link}/question_gen?user={receiver_email}")
 
         
+        
         payload = {
             "receiver_email": receiver_email,
             "subject": "LearnMateAI",
