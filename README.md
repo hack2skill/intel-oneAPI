@@ -19,6 +19,12 @@ This repository contains the code and resources for an advanced object detection
 ### Dataset Acquisition
 The dataset used in this project was obtained from Roboflow, a platform for computer vision data management. The dataset can be accessed using the following link: [Roboflow - Self-driving Car Object Detection](https://public.roboflow.com/object-detection/self-driving-car)
 
+
+### Heatmap of annotations
+<p align = "center" > 
+  <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/27cb8e80-2b6d-46d7-8490-7a7299c59e22">
+</p>
+
 ### Data Preprocessing
 To prepare the dataset for training, we utilized the preprocessing capabilities offered by Roboflow. The following preprocessing steps were applied to the images:
 
@@ -49,6 +55,7 @@ For the deployment of the trained prototype, we used Flask. We developed a web a
 
 ### Architecture Diagram
 ![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/4ae5024a-068c-42aa-abca-6adfab25bb46)
+
 
 
 
