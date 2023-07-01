@@ -35,8 +35,10 @@ After preprocessing the dataset, we employed the DETR (Detection Transformer) tr
 For the deployment of the trained prototype, we used Flask. We developed a web application that provides an intuitive interface for users to use the prototype. The Flask app allows users to upload images for object detection. The detected objects are then visualized and displayed to the user, providing valuable insights and enhancing the capabilities of autonomous driving systems.
 
 
+
+
 <p align = "center" > 
-  <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/114c452f-7a70-4b0c-9ba8-96bb1857bdbe">
+  <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/7c5c24ad-3f94-4c5b-82bc-17cc2f95afd1">
 </p>
 
 
