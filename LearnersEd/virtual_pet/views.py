@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from login_register.models import VirtualPet
+from login_register.models import Pet
 from django.http import JsonResponse    
 
 def virtual_pet(request):

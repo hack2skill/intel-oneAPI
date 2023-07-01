@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="{% static 'register-script.js' %}"></script>
 </head>
 <body>
     <div class="box">
@@ -83,7 +82,7 @@
                         <div class="p w-full justify-center items-center">
                             <input type="submit" class="w-36" value="Register">
                             {% if error_message %}
-                                <p class="error">{{ error_message }}</p>
+                                <p id="e" class="error text-white py-1 px-4 bg-red-500">{{ error_message }}</p>
                             {% endif %}
                             <p>Already a member? <a id="link" href="/login/">Login.</a></p>
                         </div>

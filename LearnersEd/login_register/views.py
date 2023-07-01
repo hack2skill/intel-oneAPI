@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Student, Category, Marks, Attendance, Assignment, VirtualPet
+from .models import Student, Marks, Attendance, Assignment, Pet
 from django.core.exceptions import ValidationError
 import random
+import json
 
 def logout(request):
     if 'student_id' in request.session:
@@ -17,29 +18,24 @@ def register(request):
         confirm_password = request.POST.get('confirm_password')
         class_name = request.POST.get('class')
         section = request.POST.get('section')
-        favourite_categories = request.POST.getlist('favourite_category')  # Retrieve a list of checked categories
+        favourite_categories = request.POST.getlist('favourite_categories')
 
         # Perform validation logic here
         if password != confirm_password:
-            error_message = "Passwords do not match"
+            error_message = "Passwords do not match!!"
             return render(request, 'register.html', {'error_message': error_message})
 
         try:
             # Check if the email already exists in the database
             existing_student = Student.objects.get(email=email)
-            error_message = "Email already exists"
+            error_message = "Email already exists!!"
             return render(request, 'register.html', {'error_message': error_message})
         except Student.DoesNotExist:
             pass
 
         # Save the registration details to the database
-        student = Student(student_name=student_name, email=email, password=password, class_name=class_name, section=section)
+        student = Student(student_name=student_name, email=email, password=password, class_name=class_name, section=section, favourite_categories = favourite_categories)
         student.save()
-
-        # Save favourite categories
-        for category_name in favourite_categories:
-            category, _ = Category.objects.get_or_create(name=category_name)
-            student.favourite_categories.add(category)
 
         # Generate random marks
         maths_marks = random.randint(0, 100)
@@ -79,13 +75,19 @@ def register(request):
         assignment = Assignment(student=student, completed_assignments=completed_assignments, total_assignments=6)
         assignment.save()
 
-        # Create a virtual pet for the student
-        pet = VirtualPet.objects.create(student=student)
-            
-        # Set random level and level progress for the pet
-        pet.level = random.randint(1, 10)
-        pet.level_progress = random.randint(1, 100)
-        pet.save()
+        # Generate random values for pet level and pet progress
+        pet_level = random.randint(1, 10)
+        pet_progress = random.randint(0, 100)
+
+        # Create the pet object associated with the student
+        pet = Pet.objects.create(
+            student=student,
+            pet_name='\'NA\'',
+            pet_type='',
+            pet_level=pet_level,
+            pet_progress=pet_progress,
+            pet_coins=200
+        )
 
         # Redirect to the dashboard page or any other page
         request.session['student_id'] = student.id  # Store the student ID in session

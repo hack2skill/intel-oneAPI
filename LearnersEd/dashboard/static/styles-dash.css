@@ -314,4 +314,11 @@ list-style: circle;
     100% { transform: rotate(360deg); }
   }
  
+  .video:hover .video-info{
+    display: none;
+  }
+
+  .video-info:hover {
+    display: none;
+  }
   
