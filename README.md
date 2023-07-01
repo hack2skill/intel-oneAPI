@@ -52,7 +52,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
 # Technology Stack:
 
-  - Intel® oneAPI AI Analytics Toolkit Tech Stack
+- [Intel® oneAPI AI Analytics Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit-download.html) Tech Stack
 
   ![](./assets/Intel-Tech-Stack.png)
 
@@ -61,7 +61,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 3. [Intel® Extension for Scikit-Learn](https://github.com/intel/scikit-learn-intelex): Used for Multilingual Embedding model Training/Inference optimization.
 4. [Intel® distribution for Modin](https://github.com/modin-project/modin): Used for basic initial data analysis/EDA.
 
-  - Prototype webapp Tech Stack
+- Prototype webapp Tech Stack
 
   ![](./assets/Prototype-Tech-Stack.png)
 
