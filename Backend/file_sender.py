@@ -10,14 +10,14 @@ aws_access_key_id = 'AKIAZTHHIOR4JJ5HLTUB'
 aws_secret_access_key =  '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'
 bucket_name = 'learnmateai'
 
-    # Create an S3 client
+# Create an S3 client
 s3_client = boto3.client("s3",
                             aws_access_key_id=aws_access_key_id,
                             aws_secret_access_key=aws_secret_access_key)
 getfiles = APIRouter()
 
 @getfiles.post("/get_notes_txt")
-async def retrieve_text_notes(email: str):
+async def retrieve_text_notes(email: str,topic: str):
     # Configure your AWS credentials and region
     
 
@@ -73,6 +73,7 @@ def get_cardData(email: str):
             file_obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
             file_content = file_obj["Body"].read().decode("utf-8")
             json_data = json.loads(file_content)
+            
     return json_data
 
 @getfiles.post("/studyPlan")
