@@ -3,7 +3,7 @@
 ### Team Leader Email - rohit.sroch@course5i.com
 ### PPT - https://github.com/rohitc5/intel-oneAPI/blob/main/ppt/Intel-oneAPI-Hackathon-Implementation.pdf
 ### Medium Article - https://medium.com/@rohitsroch/leap-learning-enhancement-and-assistance-platform-powered-by-intel-oneapi-ai-analytics-toolkit-656b5c9d2e0c
-### Benchmark Results - https://github.com/rohitc5/intel-oneAPI/tree/main/benchmark
+### Benchmark Results - https://github.com/rohitc5/intel-oneAPI/tree/main/benchmark on Intel® Dev Cloud machine (Intel(R) Xeon(R) Platinum 8480+ [Sapphire Rapids] - 224v CPUs 503GB RAM)
 ### Demo Video - https://www.youtube.com/watch?v=QoVWsOSlwvI
 
 <hr>
@@ -13,6 +13,7 @@
 Intel® oneAPI Hackathon 2023 - Prototype Implementation for our LEAP Solution
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache-yellow.svg)](https://opensource.org/license/apache-2-0/)
+[![version](https://img.shields.io/badge/release-0.1.1-green)](https://github.com/rohitc5/intel-oneAPI/releases)
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/rohitc5/intel-oneAPI)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/rohitc5/intel-oneAPI)
 [![GitHub star chart](https://img.shields.io/github/stars/rohitc5/intel-oneAPI?style=social)](https://star-history.com/#rohitc5/intel-oneAPI)
@@ -55,11 +56,10 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
   ![](./assets/Intel-Tech-Stack.png)
 
-    1. Intel® Extension for Pytorch: Used for our Multilingual Extractive QA model Training/Inference optimization.
-    2. Intel® Neural Compressor: Used for Multilingual Extractive QA model and Generative AI model Inference optimization.
-    3. Intel® Extension for Scikit-Learn: Used for Multilingual Embedding model Training/Inference optimization.
-    4. Intel® distribution for Modin: Used for basic initial data analysis/EDA.
-    5. Intel® optimized Python: Used for data pre-processing, reading etc.
+    1. [Intel® Extension for Pytorch](https://github.com/intel/intel-extension-for-pytorch): Used for our Multilingual Extractive QA model Training/Inference optimization.
+    2. [Intel® Neural Compressor](https://github.com/intel/neural-compressor): Used for Multilingual Extractive QA model Inference optimization.
+    3. [Intel® Extension for Scikit-Learn](https://github.com/intel/scikit-learn-intelex): Used for Multilingual Embedding model Training/Inference optimization.
+    4. [Intel® distribution for Modin](https://github.com/modin-project/modin): Used for basic initial data analysis/EDA.
 
   - Prototype webapp Tech Stack
 

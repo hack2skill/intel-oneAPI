@@ -34,8 +34,8 @@ def str_np(iterable):
     return str(np.median(iterable).round(5)), str(np.std(iterable).round(5))
 
 def get_subtitles_as_docs(course_dir):
-    # format of courses folder structure is courses/{topic_name}/{week_name}/{subtopic_name}/subtitle-en.vtt
-    path = os.path.join(course_dir, "*/*/*/*.vtt")
+    # format of courses folder structure is courses/{topic_name}/Study-Material/{week_name}/{subtopic_name}/subtitle-en.vtt
+    path = os.path.join(course_dir, "*/Study-Material/*/*/*.vtt")
     subtitle_fpaths = glob(path)
     
     docs = []
