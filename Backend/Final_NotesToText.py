@@ -9,8 +9,8 @@ from io import BytesIO
 import tempfile
 
 
-s3_access_key = "AKIAZTHHIOR4CN6UXO6N"
-s3_secret_access_key = "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"
+s3_access_key = ""
+s3_secret_access_key = ""
 s3_bucket_name = "learnmateai"
 
 s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)

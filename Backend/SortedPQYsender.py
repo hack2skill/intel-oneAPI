@@ -9,8 +9,8 @@ from fastapi.responses import Response
 app = APIRouter()
 
 # S3 credentials
-AWS_ACCESS_KEY_ID = 'AKIAZTHHIOR4JJ5HLTUB'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
 S3_BUCKET_NAME = 'learnmateai'
 S3_FOLDER_NAME = 'Sorted_PYQS/'
 
@@ -21,7 +21,7 @@ s3_client = boto3.client(
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
-PDFSHIFT_API_KEY = 'f894dbd8a6074a0db44439561e73c0e3'
+PDFSHIFT_API_KEY = ''
 
 @app.get("/generate_pdf")
 def generate_pdf():

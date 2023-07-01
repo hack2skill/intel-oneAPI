@@ -5,14 +5,16 @@ import openai
 import json
 
 app = APIRouter()
-s3_access_key = "AKIAZTHHIOR4JJ5HLTUB"
-s3_secret_access_key = "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"
-s3_bucket_name = "learnmateai"
+
+
+s3_access_key = ""
+s3_secret_access_key = ""
+s3_bucket_name = ""
 
 s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = ''
 
 def processor( data):
 

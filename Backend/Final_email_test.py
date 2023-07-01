@@ -5,8 +5,8 @@ import requests
 router = APIRouter()
 #templates = Jinja2Templates(directory="templates")
 
-MAILGUN_API_KEY = "8753031f4465366b9616fa02c798e8a1-e5475b88-eff7b5dc"
-MAILGUN_DOMAIN = "sandbox1b21493cde82477e8fe09dbc04c09eb4.mailgun.org"
+MAILGUN_API_KEY = ""
+MAILGUN_DOMAIN = ""
 
 
 

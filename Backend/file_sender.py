@@ -6,8 +6,8 @@ import base64
 import boto3
 import json
 
-aws_access_key_id = 'AKIAZTHHIOR4JJ5HLTUB'
-aws_secret_access_key =  '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'
+aws_access_key_id = ''
+aws_secret_access_key =  ''
 bucket_name = 'learnmateai'
 
 # Create an S3 client

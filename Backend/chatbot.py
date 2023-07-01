@@ -2,10 +2,10 @@ import openai
 import boto3
 from fastapi import APIRouter,Form
 
-openai.api_key = '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'
+openai.api_key = ''
 
-s3_access_key = "AKIAZTHHIOR4JJ5HLTUB"
-s3_secret_access_key = "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"
+s3_access_key = ""
+s3_secret_access_key = ""
 s3_bucket_name = "learnmateai"
 s3 = boto3.client(
     "s3",
