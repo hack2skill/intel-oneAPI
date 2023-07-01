@@ -329,7 +329,7 @@ Please Note that for fun 😄, we also provide usage of Azure OpenAI Service to 
 ![benchmark](./assets/Intel-Optimization.png)
 
 - We have already added several benchmark results to compare how beneficial Intel® oneAPI AI Analytics Toolkit is compared to baseline. Please go to `benchmark` folder to view the results. Please Note that the shared results are based
-on provided Intel® Dev Cloud machine *[Intel Xeon Processor (Skylake, IBRS) - 10v CPUs 16GB RAM]*
+on provided Intel® Dev Cloud machine *[Intel(R) Xeon(R) Platinum 8480+ (4th Gen: Sapphire Rapids) - 224v CPUs 503GB RAM]*
 
 # Comprehensive Implementation PPT & Article
 
