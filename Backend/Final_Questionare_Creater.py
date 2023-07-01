@@ -37,7 +37,7 @@ async def summarize_file(bucket_name: str, file_key: str, file_name:str):
         file_name=file_name.split(".txt")[0]
         response = s3.get_object(Bucket=bucket_name, Key=file_key)
         file_content = response['Body'].read().decode('utf-8')
-        prompt = f'create 10 mcq question with 4 option on topic: {file_name} , based on text:{file_content} \n \n output should strictly be a json with array of (question,options,correct option)'
+        prompt = f'create 10 mcq question with 4 option on topic: {file_name} , based on text:{file_content} \n \n output should strictly be a json with array of (question,options,correct option) correct option should be a integer telling which mcq is correct'
         response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
