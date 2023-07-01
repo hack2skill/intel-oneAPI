@@ -21,7 +21,7 @@ The dataset used in this project was obtained from Roboflow, a platform for comp
 
 
 ### Heatmap of annotations
-<p align = "center" > 
+<p> 
   <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/27cb8e80-2b6d-46d7-8490-7a7299c59e22">
 </p>
 
