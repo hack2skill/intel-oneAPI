@@ -58,6 +58,7 @@ For the deployment of the trained prototype, we used Flask. We developed a web a
 - `README.md`: The file you are currently reading, providing an overview of the project.
 
 
+<div id="bringHere"></div>
 ### Note: Please download the model file from [here](https://drive.google.com/file/d/1vxFshXVYC76bIlvoaqJlnHqjsrhv7iTA/view?usp=sharing) and save it in the `Deployment/` repository as `vehicle_det.pth` before use.
   
   
@@ -83,9 +84,10 @@ and more..
   #### To clone and run the prototype use the following instructions:
   1. Open up a bash terminal(Linux) or Command Prompt(Windows)
   2. Cone the repository with the code: `git clone https://github.com/SneakyTurtIe/intel-oneAPI.git`
-  3. Change the working directory to the deployment directory: `cd intel-oneAPI/Deployment`
-  4. Install the requirements of the project with `pip install -r requirements.txt`
-  5. Run the deployment on localhost using the command: `python app.py`
+  4. Change the working directory to the deployment directory: `cd intel-oneAPI/Deployment`
+  5. Install the model file as mentioned <a href="#bringHere">here</a>.
+  6. Install the requirements of the project with `pip install -r requirements.txt`
+  7. Run the deployment on localhost using the command: `python app.py`
 
 <p align="center">
   Your prototype should be running at localhost:5000 <br>
