@@ -63,7 +63,7 @@ def process_files(user:str):
         # Read file from S3
         print(user1)
         response = s3.get_object(Bucket='learnmateai', Key=user1+'pyqs_txt/' + file_name)
-        file_content = response['Body'].read().decode('utf-16-le')
+        file_content = response['Body'].read().decode('utf-8')
 
         # Split file content into batches (adjust batch size as needed)
         batch_size = 30000
