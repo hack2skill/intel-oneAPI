@@ -41,8 +41,8 @@ For the deployment of the trained prototype, we used Flask. We developed a web a
 
 
 ### Process Flow Diagram
+![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/60a6fbfc-a7a9-4436-aba8-25d6ffd8fb31)
 
-![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/f12c2a37-92a8-449f-a952-4fae9e0e6274)
 
 
 ### Architecture Diagram
