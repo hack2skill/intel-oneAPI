@@ -15,6 +15,8 @@ COPY Local_Storage ./Local_Storage
 COPY iteration1_requirements.txt  .
 RUN  pip3 install -r iteration1_requirements.txt --target "${LAMBDA_TASK_ROOT}"
 
+COPY iteration2_requirements.txt  .
+RUN  pip3 install -r iteration2_requirements.txt --target "${LAMBDA_TASK_ROOT}"
 RUN chmod a+rwx Local_Storage
 
 

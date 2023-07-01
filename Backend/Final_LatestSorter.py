@@ -68,7 +68,7 @@ def process_files(user:str):
         # Split file content into batches (adjust batch size as needed)
         batch_size = 30000
         batches = [file_content[i:i+batch_size] for i in range(0, len(file_content), batch_size)]
-        print(user1+"syllabus_pdf/syllabus.txt")
+        print(user1+"syllabus_txt/syllabus.txt")
         response2 = s3.get_object(Bucket='learnmateai', Key= user1+"syllabus_pdf/syllabus.txt")
         topics = response2['Body'].read().decode('utf-8')
         # Process batches
