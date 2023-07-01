@@ -56,10 +56,10 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
   ![](./assets/Intel-Tech-Stack.png)
 
-    1. [Intel® Extension for Pytorch](https://github.com/intel/intel-extension-for-pytorch): Used for our Multilingual Extractive QA model Training/Inference optimization.
-    2. [Intel® Neural Compressor](https://github.com/intel/neural-compressor): Used for Multilingual Extractive QA model Inference optimization.
-    3. [Intel® Extension for Scikit-Learn](https://github.com/intel/scikit-learn-intelex): Used for Multilingual Embedding model Training/Inference optimization.
-    4. [Intel® distribution for Modin](https://github.com/modin-project/modin): Used for basic initial data analysis/EDA.
+1. [Intel® Extension for Pytorch](https://github.com/intel/intel-extension-for-pytorch): Used for our Multilingual Extractive QA model Training/Inference optimization.
+2. [Intel® Neural Compressor](https://github.com/intel/neural-compressor): Used for Multilingual Extractive QA model Inference optimization.
+3. [Intel® Extension for Scikit-Learn](https://github.com/intel/scikit-learn-intelex): Used for Multilingual Embedding model Training/Inference optimization.
+4. [Intel® distribution for Modin](https://github.com/modin-project/modin): Used for basic initial data analysis/EDA.
 
   - Prototype webapp Tech Stack
 
