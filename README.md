@@ -37,9 +37,9 @@ To prepare the dataset for training, we utilized the preprocessing capabilities 
 
 Before Preprocessing             |  After Preprocessing 
 :-------------------------:|:-------------------------:
-![](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/65ea01af-1d05-4dce-a0a1-a578d9177946)  |  ![](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/ea11af47-5d7b-4ce8-8290-95e491653cad)
----------------------------------------|---------------------------------
- | ![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/a702af3b-eb31-4df4-acd7-f9de9e76232e)
+![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/a702af3b-eb31-4df4-acd7-f9de9e76232e)| ![](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/65ea01af-1d05-4dce-a0a1-a578d9177946)
+I->|  ![](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/ea11af47-5d7b-4ce8-8290-95e491653cad)
+
 
 
 
