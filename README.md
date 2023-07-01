@@ -67,4 +67,4 @@ Another significant learning came from the application of post-training quantiza
 ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/system.png)
 Power Usage in Watt - lower is better. Upto 18.5% efficient with Intel optimizations.
 
-N.B. All graphs and visualizations have muted and pastel hues and neutral tones to be neurodivergent inclusive. Strong contrasts, such as black and white or bright red, neon or fluorescent, have been intentionally avoided as it can be visually jarring for some autistic individuals.
+N.B. All graphs and visualizations have muted and pastel hues and neutral tones to be neurodivergent inclusive. Strong contrasts, such as bright red, neon or fluorescent, have been intentionally avoided as it can be visually jarring for some autistic individuals.
