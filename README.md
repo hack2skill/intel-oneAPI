@@ -57,6 +57,14 @@ By leveraging Intel's optimized tools, I learned how crucial it is to fine-tune 
 
 Another significant learning came from the application of post-training quantization techniques. Converting the model's 32-bit float parameters into 8-bit fixed representations through quantization was an enlightening process. It demonstrated how reducing the precision of the model's parameters can lead to significant improvements in resource utilization, especially when deploying on Edge TPU and Coral hardware.
 
+## India Driving Dataset:
+All models have been tested on the India Driving Dataset by IIIT Hyderabad and Intel. The dataset consists of images obtained from a front facing camera attached to a car. The car was driven around Hyderabad, Bangalore cities and their outskirts. Below are some sample predictions.
+| prediction1 | prediction2 |
+| :---: | :---: |
+| ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/runs/detect/predict/548645_image.jpg) | ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/runs/detect/predict/326186_image.jpg) |
+
 ### System Info for Carbon Emissions:
 ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/system.png)
 Power Usage in Watt - lower is better. Upto 18.5% efficient with Intel optimizations.
+
+N.B. All graphs and visualizations have muted and pastel hues and neutral tones to be neurodivergent inclusive. Strong contrasts, such as black and white or bright red, neon or fluorescent, have been intentionally avoided as it can be visually jarring for some autistic individuals.
