@@ -59,6 +59,7 @@ For the deployment of the trained prototype, we used Flask. We developed a web a
 
 
 <div id="bringHere"></div>
+
 ### Note: Please download the model file from [here](https://drive.google.com/file/d/1vxFshXVYC76bIlvoaqJlnHqjsrhv7iTA/view?usp=sharing) and save it in the `Deployment/` repository as `vehicle_det.pth` before use.
   
   
