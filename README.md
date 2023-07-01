@@ -46,6 +46,12 @@ from ultralytics import YOLO
 | `import cv2` | `from google.colab.patches import cv2_imshow` |
 | `cv2.imshow("result", model(img)[0].plot())` | `cv2_imshow(model(img)[0].plot())` |
 
+### India Driving Dataset:
+All models have been tested on the India Driving Dataset by IIIT Hyderabad and Intel. The dataset consists of images obtained from a front facing camera attached to a car. The car was driven around Hyderabad, Bangalore cities and their outskirts. Below are some sample predictions.
+| prediction1 | prediction2 |
+| :---: | :---: |
+| ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/runs/detect/predict/548645_image.jpg) | ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/runs/detect/predict/326186_image.jpg) |
+
 ### Training:
 Run [train.ipynb](./train.ipynb) followed by [export.ipynb](./export.ipynb) to save trained model in format of choice.
 | train_batch1 | train_batch2 |
@@ -56,12 +62,6 @@ Run [train.ipynb](./train.ipynb) followed by [export.ipynb](./export.ipynb) to s
 By leveraging Intel's optimized tools, I learned how crucial it is to fine-tune and optimize the deep learning pipeline for the specific hardware platform. These tools provided a substantial boost to the overall speed and efficiency of the object detection solution. They showcased the importance of understanding the underlying hardware architecture and utilizing specialized optimizations to leverage its full potential.
 
 Another significant learning came from the application of post-training quantization techniques. Converting the model's 32-bit float parameters into 8-bit fixed representations through quantization was an enlightening process. It demonstrated how reducing the precision of the model's parameters can lead to significant improvements in resource utilization, especially when deploying on Edge TPU and Coral hardware.
-
-## India Driving Dataset:
-All models have been tested on the India Driving Dataset by IIIT Hyderabad and Intel. The dataset consists of images obtained from a front facing camera attached to a car. The car was driven around Hyderabad, Bangalore cities and their outskirts. Below are some sample predictions.
-| prediction1 | prediction2 |
-| :---: | :---: |
-| ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/runs/detect/predict/548645_image.jpg) | ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/runs/detect/predict/326186_image.jpg) |
 
 ### System Info for Carbon Emissions:
 ![](https://raw.githubusercontent.com/rishiraj/intel-oneAPI/main/wandb/system.png)
