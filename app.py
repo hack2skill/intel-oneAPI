@@ -12,7 +12,7 @@ from mangum import Mangum
 #from Backend.Notes_Analyser import router as api4_router
 #from Backend.Narrator import router as api5_router
 #from Backend.NotesChunker import app as chunker 
-from Backend.Final_NotesToText import router as notestotxt
+#from Backend.Final_NotesToText import router as notestotxt
 from Backend.Final_Processor import app as processor
 from Backend.Final_NotesChunker import app as chunker
 from Backend.Final_LatestSorter import app as sorter
@@ -44,7 +44,7 @@ app.add_middleware(
 # Mount the API routerss
 
 
-app.include_router(notestotxt)
+#app.include_router(notestotxt)
 app.include_router(email_sender)
 app.include_router(processor)
 app.include_router(chunker)
@@ -63,5 +63,5 @@ app.include_router(mcq_gen)
 #app.include_router(api1_router)
 
 if __name__ == "__main__":
-    uvicorn.run(app,  host="127.0.0.1", port=8000)
+    uvicorn.run(app, host=" 192.168.5.15", port=8010)
 
