@@ -12,14 +12,14 @@ from mangum import Mangum
 #from Backend.Notes_Analyser import router as api4_router
 #from Backend.Narrator import router as api5_router
 #from Backend.NotesChunker import app as chunker 
-#from Backend.Final_NotesToText import router as notestotxt
-from Backend.Final_Processor import app as processor
-from Backend.Final_NotesChunker import app as chunker
-from Backend.Final_LatestSorter import app as sorter
-from Backend.Final_Sections_topics_json import app as cardmaker
-from Backend.Final_Notes_gen import app as notesgen
-from Backend.Final_Questionare_Creater import app as mcq_gen
-from Backend.Final_email_test import router as email_sender
+from Backend.Final_NotesToText import router as notestotxt
+#from Backend.Final_Processor import app as processor
+#from Backend.Final_NotesChunker import app as chunker
+#from Backend.Final_LatestSorter import app as sorter
+#from Backend.Final_Sections_topics_json import app as cardmaker
+#from Backend.Final_Notes_gen import app as notesgen
+#from Backend.Final_Questionare_Creater import app as mcq_gen
+#from Backend.Final_email_test import router as email_sender
 #from Backend.SortedPQYsender import app as pyqsender
 #from Backend.Perfect_video import app as videofinder
 
@@ -44,14 +44,14 @@ app.add_middleware(
 # Mount the API routerss
 
 
-#app.include_router(notestotxt)
-app.include_router(email_sender)
-app.include_router(processor)
-app.include_router(chunker)
-app.include_router(sorter)
-app.include_router(cardmaker)
-app.include_router(notesgen)
-app.include_router(mcq_gen)
+app.include_router(notestotxt)
+#app.include_router(email_sender)
+#app.include_router(processor)
+#app.include_router(chunker)
+#app.include_router(sorter)
+#app.include_router(cardmaker)
+#app.include_router(notesgen)
+#app.include_router(mcq_gen)
 #app.include_router(chunker)
 #app.include_router(pyqsender)
 
