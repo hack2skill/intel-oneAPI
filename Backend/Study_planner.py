@@ -5,14 +5,14 @@ import openai
 import json
 
 app = APIRouter()
-s3_access_key = "AKIAZTHHIOR4JJ5HLTUB"
-s3_secret_access_key = "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"
+s3_access_key = ""
+s3_secret_access_key = ""
 s3_bucket_name = "learnmateai"
 
 s3 = boto3.client("s3", aws_access_key_id=s3_access_key, aws_secret_access_key=s3_secret_access_key)
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = ''
 
 def processor( data,current_data, final_date):
 
@@ -48,11 +48,9 @@ async def generateStudyPlan(email: str,current_date: str,final_date: str):
         
         json_text=processor(text,current_date,final_date)    
         save_plan(email,json_text)
-            # Parse the file content as JSON
-        json_content = json.loads(json_text)
 
         # Return the JSON content
-        return json_content
+        return {"status" : "plan created successfully"}
     except Exception as e:
         return {'error': str(e)}
 

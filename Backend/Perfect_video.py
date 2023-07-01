@@ -9,8 +9,8 @@ import torch
 import boto3
 
 
-aws_access_key_id = 'AKIAZTHHIOR4JJ5HLTUB'
-aws_secret_access_key =  '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'
+aws_access_key_id = ''
+aws_secret_access_key =  ''
 bucket_name = 'learnmateai'
 
     # Create an S3 client
@@ -26,7 +26,7 @@ app = APIRouter()
 model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 # YouTube API parameters
-API_KEY = "AIzaSyAMD4FgbCjmp-_8g8nams4tsno4DV1mDnE"
+API_KEY = ""
 MAX_RESULTS = 5  # Maximum number of search results to retrieve
 
 # Search for videos using the YouTube API
@@ -58,15 +58,10 @@ def get_best_video(email: str,topic: str):
 
     response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
     
-
-    
-   
-
     if "Contents" in response:
             file_key = prefix + f"/{topic}"
             file_obj = s3_client.get_object(Bucket=bucket_name, Key=file_key)
             file_content = file_obj["Body"].read().decode("utf-8")
-            print(file_content)
     # Encode the input text
     input_text = file_content
 
