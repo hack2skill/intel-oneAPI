@@ -45,13 +45,14 @@ This module is used to convert the notes and other handwritten notes provided by
 ### #PYQSorter
 This module is used to group previous year questions into modules based on the syllabus provided by the user. Each question paper is cleaned of noises and other unwanted characters. Questions are extracted from the preprocessed data and passed into the [universal sentence encoder module](https://tfhub.dev/google/universal-sentence-encoder-large/5) which returns the embeddings of the questions. With the Kmeans model is used to cluster the questions based on the similarity and finally gets a module wise sorted questions. The process of clustering and sorting the question paper is made efficient and more optimised with [Intel Extension for Scikit Learn.](https://www.intel.com/content/www/us/en/developer/tools/oneapi/scikit-learn.html#gs.2mw28j) This imporved performace of our sorter by 25 percentage.
 
-### #Video Suggestor
+### #Video Recommender
 This module helps to imporve the learning experience by giving the user the most apt youtube video about the topic the user is currently learning. The video suggestion is done by a series of steps,
 first a series of videos is fetched in related to the topic the user is learning, the transcript of the video is also extracted. The embeddings of the transcripts are generated with "bert-base-nli-mean-tokens" which is a sentence encoder model. Then these are compared with the embedding of the summary of the topic which the user is learning with the help of COSINE SIMILARITY which is optimised with [Intel Extension for Scikit-Learn.](https://www.intel.com/content/www/us/en/developer/tools/oneapi/scikit-learn.html). The module is further optmised with the help of [PyTorch Optimizations from Intel.](https://www.intel.com/content/www/us/en/developer/tools/oneapi/optimization-for-pytorch.html#gs.2mu8s1)
 
 
 ### #Retention Curve Analyzer
 This module is used to access the ability of the user to retain information. This is accessed by giving the user a series of test under non-revised conditions so that it is much easier to acess the retention ability of the user. Panda dataframes are used for storing the coordinate of the learning curve, mathplot and scipy are used to smoothen and plot the curve. The pandas is further optimised with [Intel® Distribution of Modin](https://www.intel.com/content/www/us/en/developer/tools/oneapi/distribution-of-modin.html#gs.2mxbo0) 
+![alt text](https://ibb.co/41HCFS3)
 
 ### #Study Planner 
 This module creates a systematic learning path tailor made for that specific user based on the time period in which the user wants to learn the topics. This is integrated with google calender for reminding the user to study accordingly and follow the learning path.
