@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles/style.css') }}">
+    <title>Object Detection</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:fixed; z-index: 10; width: 100%; background-color: rgba(0, 0, 0, 0.1);">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <img
+                src="https://github-production-user-asset-6210df.s3.amazonaws.com/59119736/244445468-f7ee32ba-d85e-4ab3-8731-b6701d94b313.png"
+                height="15"
+                alt="MDB Logo"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/predict">Predict</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/SneakyTurtIe/intel-oneAPI">Github</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/team">Team</a>
+              </li>
+              
+              
+            
+            <!-- Left links -->
+          </div>
+        </div>
+      </nav>
+
+    {% if page == "Home" %}
+    <style>
+        .hero-text{
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+
+        }
+    </style>
+    <img src="{{ url_for('static', filename = 'banner.jpg')}}" style="width:100%; height:20%; padding-left: 0.02%; background-size: cover; background-attachment: fixed; background-position: centre; background-repeat: no-repeat; padding-right: 0.02%; position: relative; background-size: cover;">
+        <div class="main" style="margin:auto; width: 75%; padding-top:5%;">
+            <div class="hero-text">
+                <h1>Object Detection for Autonomous Vehicles</h1>
+                <h3>Team SneakyTurtle</h3>
+            </div>
+            
+            <p>Our advanced object detection model is designed to excel in extreme weather conditions like fog and snow, enhancing
+            the safety and reliability of autonomous driving systems.</p>
+
+            <div class="container mt-5">
+                <h2>Dataset Acquisition</h2>
+                <p>The dataset used in this project was obtained from Roboflow, a platform for computer vision data management. The dataset can be accessed using the following link: <a href="https://public.roboflow.com/object-detection/self-driving-car">Roboflow - Self-driving Car Object Detection</a></p>
+
+                
+
+                <h2>Data Preprocessing</h2>
+                <p>To prepare the dataset for training, we utilized the preprocessing capabilities offered by Roboflow. The following preprocessing steps were applied to the images:</p>
+                <ul>
+                  <li>Auto-orientation of pixel data, including EXIF-orientation stripping.</li>
+                  <li>Resizing the images to a resolution of 640x640 pixels using a stretch method.</li>
+                  <li>Random brightness adjustment of the images within a range of -26% to +26%.</li>
+                  <li>Random Gaussian blur with a variance between 0 and 2 pixels.</li>
+                  <li>The application of salt and pepper noise to 2% of the pixels in the images.</li>
+                </ul>
+            
+                <h2>Model Training</h2>
+                <p>After preprocessing the dataset, we employed the DETR (Detection Transformer) transfer learning technique to train our advanced object detection model. By leveraging this state-of-the-art approach, we aimed to enhance the model's ability to accurately detect and classify objects in real-time, even in challenging weather conditions.</p>
+                <h4>Architecture Diagram</h4>
+                <img src="https://user-images.githubusercontent.com/59119736/244769417-4ae5024a-068c-42aa-abca-6adfab25bb46.png">
+            
+                <h2>Deployment</h2>
+                <p>For the deployment of the trained prototype, we used Flask. We developed a web application that provides an intuitive interface for users to use the prototype. The Flask app allows users to upload images for object detection. The detected objects are then visualized and displayed to the user, providing valuable insights and enhancing the capabilities of autonomous driving systems.</p>
+              </div>
+        </div>
+    {% elif page == "Predict" %}
+        <style>
+            body{
+                background-image: url('static/banner.jpg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                color: white;
+            }
+        </style>
+        <div class="predict">
+                <form method = "POST" enctype="multipart/form-data">
+
+                <div class="app" style="margin: auto;width: 50%; padding-top: 12.5%;">
+
+                    <h1>Object Detection for for Autonomous Vehicles</h1>
+                    <h3>Team: Sneakyturtle</h3>
+
+                    <div class="input-group mb-3">
+                        <input type="file" name = "file" class="form-control" id="inputGroupFile02">
+                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+
+
+                    {% if output == "show" %}
+
+                    <div class="img" style = "padding-bottom:5%;">
+                        <h6>Output</h6>
+                        <img src="{{url_for('static', filename = 'output.jpg')}}" height  = "400px" />
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            
+            </form>
+        </div>
+        
+
+    {% elif page == "Team" %}
+
+        <div class="container" style="padding-top: 5%;">
+            <div class="row">
+              <div class="col-md-12 pt-5 pb-2 ourTeam-hedding text-center">
+                <h1>Our Team</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="row section-success ourTeam-box text-center">
+                  <div class="col-md-12 section1">
+                    <img src="static/Member3.jpg">
+                  </div>
+                  <div class="col-md-12 section2 pb-3">
+                    <p>Aditya R</p>
+
+                  </div>
+                  <div class="col-md-12 section3">
+                    <a href="https://www.instagram.com/adityarags/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.github.com/adityarags/"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/adityarags/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="row section-info ourTeam-box text-center">
+                  <div class="col-md-12 section1">
+                    <img src="static/Member1.jpg">
+                  </div>
+                  <div class="col-md-12 section2 pb-3">
+                    <p>Shreyash Mohadikar</p>
+                    
+                  </div>
+                  <div class="col-md-12 section3">
+                    <a href="https://www.instagram.com/_shreyash_m/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://github.com/Shreyashmohadikar"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/shreyashmohadikar/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="row section-danger ourTeam-box text-center">
+                  <div class="col-md-12 section1">
+                    <img src="static/Member2.jpg">
+                  </div>
+                  <div class="col-md-12 section2 pb-3">
+                    <p>Hari Sumant</p>
+                    
+                  </div>
+                  <div class="col-md-12 section3">
+                    <a href="https://www.instagram.com/harisumant_since2002/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://github.com/HariSumant"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/hari-sumant-7390911b8/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    {%endif%}
+</body>
+</html>
