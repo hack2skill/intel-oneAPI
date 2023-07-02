@@ -1,64 +1,75 @@
-## How to Run the Application
-To run the Tutor AI application, follow these steps:
+## TEAM NAME : BYTE404
+## CHALLENGE NAME: OPEN INNOVATION IN EDUCATION 
+## TEAM LEADER EMAIL: angeloantu@gmail.com
 
 
-1. Set up a virtual environment (recommended) and activate it.
-```bash
-   virtualenv <your_name>_venv 
-   .\<your_name>_venv\Scripts\activate
-```
-5. Install the required dependencies by running the following command:
-```bash
-   pip install -r <person>_requirements.txt  #example angelo_requirements.txt
-```
-6. Once the dependencies are installed, you can start the application by running the following command:
-```bash
-   uvicorn main:app --reload
-```
-7. The application will start running locally on your machine.
-8. Access the application by opening a web browser and navigating to 
-    `http://localhost:8000`.
+# LearnMateAI : Personalized Learning with Intel oneAPI Optimization 🤖💪
 
-## API Calls ready
+`LearnMateAI is an optimized personalized AI tutor that enhances the learning experience by leveraging the power of Intel oneAPI`. It utilizes cutting-edge techniques such as natural language processing, machine learning, and the Ebbinghaus forgetting curve, ``all optimized using Intel oneAPI``, to create a tailored and high-performance learning journey. 🎓💡
 
-Pyqsorter (takes pyqs text files and syllabus text files from Local Storage and saves output to Generated_files as cluster_question.txt) : `http://localhost:8000/api1`
+## Working Demo :
 
-Notes_Analyser (takes txt from gpt_propt_sum and saves output to Notes_Analyser_Ouput) : `http://localhost:8000/api4`
+[Live Website](https://intel-hack.pages.dev/)
 
-## Pending tasks
+[Working Video](https://youtu.be/nKy4xSi7bTI)
 
-| Task | Type     | Discription                |Assigned to     |Assigned Date-Time|  Expected to complete in        |Input                | Output Expected              |
-| :-------- | :------- |  :------------------------- | :-------------------------| :-------------------------| :------------------------- |:------------------------- |:------------------------- |
-| `QuestionPaperGenerator` | `API` |  generate atleast 5 question paper , following format of PYQS  |    Heyron         |   23/5/2023 12:00PM         |  6 hour         |you can decide               |       atleast 5 paper inside`Local_Storage/Generated_Files/GenQP`         |                         
-| `NotesToText` | `API` |  it should convert all pdfs in notes_pdf and pyqs_text folder to text   |  Sameer         | 23/5/2023  9:00AM          |  12hour         |  `Local_Storage\notes_txt`,`Local_Storage\pyqs_text`            |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
-| `Uploading` | `WEB` |  we should be able to upload notes(module wise),pyqs,and syllabus into respective folder    |  Harshed         | 23/5/2023 3:00PM          |  6 hour         |  files from user            |       `Local_Storage\notes_pdf`,`Local_Storage\syllabus_pdf`,`Local_Storage\pyqs_pdf`         | 
-| `Entering Details` | `WEB` |  after uploading ask how many modules,anything else he want to tell AI while preparing everything    |  Harshed         | 23/5/2023 3:00PM          |  6 hour         |  response from user as text            |       `Local_Storage\User_info` as text file         | 
+[Medium.com](https://medium.com/@abdullasameer118/learnmateai-personalized-learning-with-intel-oneapi-optimization-1eb2195403da)
+
+## Installation :
+#### Installation of Backend:
+// preferably use a virtual environment.[use this to create virtual environment in python](https://docs.python.org/3/library/venv.html)
+RUN python3 -m pip install --upgrade pip
+
+RUN yum install -y poppler-utils
+
+RUN  pip3 install -r iteration1_requirements.txt
+
+RUN  pip3 install -r iteration2_requirements.txt
+
+RUN  pip3 install -r iteration3_requirements.txt
 
 
-## Completed tasks
+## Introduction :
 
-#### Harshed Abdulla
+In today’s fast-paced world, effective and efficient learning is crucial for students to excel academically. With advancements in technology, artificial intelligence (AI) has revolutionized the education sector. LearnMateAI takes personalized learning to the next level by providing students with an efficient and effective learning experience. By harnessing the power of AI and Intel oneAPI, LearnMateAI delivers a personalized learning plan tailored to each student's needs. 📚🔬
 
-| Task | Type     | File Location                |Input                | Output              |
-| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+## Core Modules used in the project :
+### #Summariser  
+This module is used to convert the notes and other handwritten notes provided by the user to meaningful summaries. The summaries are created based on the topics extracted from the notes and provided lectures and the syllabus provided by the user. This module uses [Intel Optimised Tensorflow](https://www.intel.com/content/www/us/en/developer/tools/oneapi/optimization-for-tensorflow.html#gs.2mtgor) & hugging face api's transformer models(Models for NLP) for the summarisation. The summarisation part is optimised with the help of [Intel's Optimization for Transformer Models.](https://www.intel.com/content/www/us/en/developer/videos/optimize-end-to-end-transformer-model-performance.html#gs.2muun9) 
 
-#### Heyron J Milton
+### #PYQSorter
+This module is used to group previous year questions into modules based on the syllabus provided by the user. Each question paper is cleaned of noises and other unwanted characters. Questions are extracted from the preprocessed data and passed into the [universal sentence encoder module](https://tfhub.dev/google/universal-sentence-encoder-large/5) which returns the embeddings of the questions. With the Kmeans model is used to cluster the questions based on the similarity and finally gets a module wise sorted questions. The process of clustering and sorting the question paper is made efficient and more optimised with [Intel Extension for Scikit Learn.](https://www.intel.com/content/www/us/en/developer/tools/oneapi/scikit-learn.html#gs.2mw28j) This imporved performace of our sorter by 25 percentage.
 
-| Task | Type     | File Location                |Input                | Output              |
-| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
-| `NotesSummariser` | `API` |  `Backend\summariser.py`  |  `Local_Storage\notes_txt`               |       `Local_Storage\Generated_Files\Summarised_Notes`         | 
+### #Video Suggestor
+This module helps to imporve the learning experience by giving the user the most apt youtube video about the topic the user is currently learning. The video suggestion is done by a series of steps,
+first a series of videos is fetched in related to the topic the user is learning, the transcript of the video is also extracted. The embeddings of the transcripts are generated with "bert-base-nli-mean-tokens" which is a sentence encoder model. Then these are compared with the embedding of the summary of the topic which the user is learning with the help of COSINE SIMILARITY which is optimised with [Intel Extension for Scikit-Learn.](https://www.intel.com/content/www/us/en/developer/tools/oneapi/scikit-learn.html). The module is further optmised with the help of [PyTorch Optimizations from Intel.](https://www.intel.com/content/www/us/en/developer/tools/oneapi/optimization-for-pytorch.html#gs.2mu8s1)
 
-#### Abdulla Sameer
 
-| Task | Type     | File Location                |Input                | Output              |
-| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
+### #Retention Curve Analyzer
+This module is used to access the ability of the user to retain information. This is accessed by giving the user a series of test under non-revised conditions so that it is much easier to acess the retention ability of the user. Panda dataframes are used for storing the coordinate of the learning curve, mathplot and scipy are used to smoothen and plot the curve. The pandas is further optimised with [Intel® Distribution of Modin](https://www.intel.com/content/www/us/en/developer/tools/oneapi/distribution-of-modin.html#gs.2mxbo0) 
 
-#### Angelo Antu
+### #Study Planner 
+This module creates a systematic learning path tailor made for that specific user based on the time period in which the user wants to learn the topics. This is integrated with google calender for reminding the user to study accordingly and follow the learning path.
 
-| Task | Type     | File Location                |Input                | Output              |
-| :-------- | :------- |  :------------------------- |:------------------------- |:------------------------- |
-| `Pyqsorter` | `API` |  `Backend\pyqsorter.py`  |  `Local_Storage/pyqs_text`,`Local_Storage/syllabus.txt`               |       `Local_Storage/Generated_Files/cluster_questions.txt`         | 
-| `Notes_Analyser` | `API` |  `Backend\Notes_Analyser.py`  |  `Local_Storage/Generated_Files/gpt_promt_sum/module2.txt`           |       `Local_Storage/Generated_Files/Notes_Analyser_Ouput_files/topic_list.txt`,`Local_Storage/Generated_Files/Notes_Analyser_Ouput_files/imp_topic_list.txt`,`Local_Storage/Generated_Files/Notes_Analyser_Ouput_files/notes_questions_list.txt`         | 
+### #Mock Question Paper Generator
+This module is used to analyse the previous year question papers which in turn analyse the trends followed in the question paper, the marking scheme and which all topics have greater weightage. Based on the information a model question paper is generated to make the user more familiar with the expected model of the question paper yet to be attended. This also provides an idea about how questions are repeated and how similar questions are appearing in the question paper which helps the user to focus more on those areas.
 
+## Key Features :
+
+#### Understanding the Student’s Needs:
+
+LearnMateAI analyzes the subject area using teacher’s notes and previous year question papers, identifying important topics and concepts specific to each student. 🗓️📝
+
+#### Personalized Learning Schedule: 
+
+The system generates a customized learning schedule based on the student's proficiency level, learning preferences, and time constraints. 🎓💡
+
+#### Engaging and Responsive Learning Experience: 
+
+LearnMateAI enables students to ask questions, seek clarification, and receive immediate feedback, creating an interactive learning environment. 🗣️💬
+
+#### Continuous Performance Monitoring and Improvement: 
+
+The system continuously tracks and analyzes the student's performance and progress, ensuring optimal learning outcomes. 📊🔍
 
 
