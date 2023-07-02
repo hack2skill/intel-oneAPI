@@ -25,14 +25,18 @@ The dataset used in this project was obtained from Roboflow, a platform for comp
   <img src = "https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/27cb8e80-2b6d-46d7-8490-7a7299c59e22">
 </p>
 
+The FOV of the car is located around the centre of the image in most of the times. The above image represents the same, where the obstacles such as cars and pedestrians are located at the centre of the image, hence we have a denser heatmap over there.
+
+
 ### Data Preprocessing
 To prepare the dataset for training, we utilized the preprocessing capabilities offered by Roboflow. The following preprocessing steps were applied to the images:
 
 - Auto-orientation of pixel data, including EXIF-orientation stripping.
-- Resizing the images to a resolution of 640x640 pixels using a stretch method.
-- Random brightness adjustment of the images within a range of -26% to +26%.
+- Resizing the images to a resolution of 480x480 pixels using a stretch method.
+- Random brightness adjustment of the images within a range of -50% to +50%.
+- Random brightness adjustment of the images within a range of -25% to +25%.
 - Random Gaussian blur with a variance between 0 and 2 pixels.
-- The application of salt and pepper noise to 2% of the pixels in the images.
+- The image noise to 10% of the pixels in the images.
 
 
 Before Preprocessing             |  After Preprocessing 
@@ -45,11 +49,16 @@ I->|  ![](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/ea11af47-
 
 
 
-
-
-
 ### Model Training
-After preprocessing the dataset, we employed the DETR (Detection Transformer) transfer learning technique to train our advanced object detection model. By leveraging this state-of-the-art approach, we aimed to enhance the model's ability to accurately detect and classify objects in real-time, even in challenging weather conditions.
+After preprocessing the dataset, we employed the DETR (Detection Transformer) transfer learning technique to train our advanced object detection model. By leveraging this state-of-the-art approach, we aimed to enhance the model's ability to accurately detect and classify objects in real-time, even in challenging weather conditions.  
+Using Intel's OneAPI Pytorch Optimization Framework(IPEX) and neural compressor on Intel DevCloud, the model training has been optimized. The training and inference time have decreased drastically facilitating faster model usage and deployment. 
+
+![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/98dec7de-6785-4d11-aa45-1ad35c2cd64f)          |  ![image](https://github.com/SneakyTurtIe/intel-oneAPI/assets/59119736/a7757420-181b-4277-b7c0-2e0b19b095fc)
+:-------------------------:|:-------------------------:
+
+
+
+
 
 ### Deployment
 For the deployment of the trained prototype, we used Flask. We developed a web application that provides an intuitive interface for users to use the prototype. The Flask app allows users to upload images for object detection. The detected objects are then visualized and displayed to the user, providing valuable insights and enhancing the capabilities of autonomous driving systems.
@@ -125,9 +134,9 @@ Specialized models for extreme weather: Recognizing the limitations, we have emp
 
 Data augmentation for weather conditions: To tackle the limitations caused by extreme weather, we performed data augmentation techniques. By augmenting the dataset to resemble various weather conditions, such as fog and mist, we aimed to train the object detection models to be more resilient and adaptable in adverse weather scenarios.
 
-Pre-processing steps: As part of the data preparation, we applied pre-processing steps to each image. These steps included auto-orientation of pixel data with EXIF-orientation stripping and resizing the images to a standardized size of 640x640 pixels, allowing consistent input for the object detection models.
+Pre-processing steps: As part of the data preparation, we applied pre-processing steps to each image. These steps included auto-orientation of pixel data with EXIF-orientation stripping and resizing the images to a standardized size of 480x480 pixels, allowing consistent input for the object detection models.
 
-Augmentation techniques: To create diverse variations of each source image, we employed augmentation techniques. This involved randomly adjusting the brightness of the images within a range of -26% to +26%, applying random Gaussian blur with a range of 0 to 2 pixels, and introducing salt and pepper noise to 2% of the pixels. These augmentations aimed to increase the variability of the dataset and improve the model's generalization capabilities.
+Augmentation techniques: To create diverse variations of each source image, we employed augmentation techniques. This involved randomly adjusting the brightness of the images within a range of -25% to +25%, applying random Gaussian blur with a range of 0 to 2 pixels, and introducing salt and pepper noise to 10% of the pixels. These augmentations aimed to increase the variability of the dataset and improve the model's generalization capabilities.
 
 Leveraging Intel's oneAPI OneDNN: Throughout our project, we explored the capabilities of Intel's oneAPI OneDNN tool. By utilizing this deep neural network tool, we were able to optimize and accelerate the performance of our object detection code. Leveraging hardware accelerators and parallel computing, we achieved improved efficiency and speed in our models.
 
