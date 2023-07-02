@@ -52,7 +52,7 @@ first a series of videos is fetched in related to the topic the user is learning
 
 ### #Retention Curve Analyzer
 This module is used to access the ability of the user to retain information. This is accessed by giving the user a series of test under non-revised conditions so that it is much easier to acess the retention ability of the user. Panda dataframes are used for storing the coordinate of the learning curve, mathplot and scipy are used to smoothen and plot the curve. The pandas is further optimised with [Intel® Distribution of Modin](https://www.intel.com/content/www/us/en/developer/tools/oneapi/distribution-of-modin.html#gs.2mxbo0) 
-![alt text](https://ibb.co/41HCFS3)
+<img src="https://i.ibb.co/41HCFS3/Screenshot-7.png" alt="Screenshot-7" border="0" />
 
 ### #Study Planner 
 This module creates a systematic learning path tailor made for that specific user based on the time period in which the user wants to learn the topics. This is integrated with google calender for reminding the user to study accordingly and follow the learning path.
