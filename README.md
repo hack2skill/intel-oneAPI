@@ -28,6 +28,11 @@ RUN  pip3 install -r iteration2_requirements.txt
 
 RUN  pip3 install -r iteration3_requirements.txt
 
+#### Installation of Frontend:
+
+RUN npm install
+
+RUN npm start
 
 ## Introduction :
 
