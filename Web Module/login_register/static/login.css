@@ -1,0 +1,79 @@
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: white;
+    margin:0px;
+    padding:0px;
+}
+
+.box {
+    display:flex;
+    height: 100vh;
+}
+.background{
+    width:50%;
+    flex-grow: 1;
+    flex-basis: 0;    
+}
+.background>img {
+    height:100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+.log{
+    background-image: url(./images/illustration.jpg);
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    background-size:contain;
+    background-position: bottom;
+    background-repeat:no-repeat;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+#link {
+    color: blue;
+    text-decoration: underline;
+}
+.log>h3{
+    color:#45a049;
+    font-size:60px;
+}
+#log-image{
+    width: 80px;
+    height:80px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border:2px solid black;
+    border-radius:2px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* .background {
+    background-image: url(./images/bg.png);
+} */

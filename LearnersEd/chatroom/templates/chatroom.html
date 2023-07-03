@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatroom</title>
+    <style>
+        /* Centering the container */
+        body {
+            display: flex;
+            justify-content: center;
+            overflow-y: hidden;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url(../static/images/bg-new.png);
+            font-family: 'Darker Grotesque', sans-serif;
+        }
+
+        .cont {
+            width: 70%;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 80px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chat box styles */
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            flex-direction: column;
+            display: flex;
+            gap: 10px 0;
+            border-radius: 5px;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .sender {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .message-text {
+            margin-right: 5px;
+        }
+
+        .timestamp {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Chat input styles */
+        .chat-input {
+            display: flex;
+            gap: 0 10px;
+            margin-top: 10px;
+        }
+
+        #message-input {
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #til {
+            font-weight: bold;
+            font-size: 40px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .mess {
+            width: 80%;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="cont">
+        <h1 id="til">Chatroom</h1>
+
+        <div class="chat-box" id="chat-messages">
+            <!-- Display chat messages here -->
+            {% for message in messages %}
+                <div class="chat-message">
+                    <div class="mess">
+                        <span class="sender">{{ message.student }}:</span>
+                        <span class="message-text">{{ message.message }}</span>
+                    </div>
+                    <span class="timestamp">{{ message.timestamp }}</span>
+                </div>
+            {% endfor %}
+        </div>
+
+        <form id="chat-form">
+            {% csrf_token %}
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Enter your message">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value.trim();
+
+            if (message !== '') {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/chatroom/', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+                var csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+                xhr.setRequestHeader('X-CSRFToken', csrfToken);
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        appendChatMessage(response.student, response.message, response.timestamp);
+                        messageInput.value = '';
+                    }
+                };
+
+                xhr.send('message=' + encodeURIComponent(message));
+            }
+        });
+
+        function appendChatMessage(sender, message, timestamp) {
+            var chatMessages = document.getElementById('chat-messages');
+
+            var chatMessage = document.createElement('div');
+            chatMessage.className = 'chat-message';
+            chatMessage.innerHTML = '<div class="mess"><span class="sender">' + sender + ':</span>' +
+                                    '<span class="message-text">' + message + '</span></div>' +
+                                    '<span class="timestamp">' + timestamp + '</span>';
+
+            chatMessages.appendChild(chatMessage);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners'Ed - Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles-dash.css' %}" />
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% if 'student_id' in request.session %}
+        <script>
+            var studentId = "{{ request.session.student_id }}";
+        </script>
+    {% endif %}
+    <div id="title" class="flex text-6xl mt-32 font-bold text-white text-center shadow-2xl justify-between items-center">
+        <h1 id="studname" class="hover:translate-x-24 hover:scale-125 hover:duration-200 duration-200">Hello, {{ student_name }}!</h1>
+        <div class="flex justify-center items-center gap-x-5">
+            <div id="weather-container" class="text-2xl flex flex-col gap-y-px text-right">
+                <p class="temperature"></p>
+                <h2 class="location capitalize"></h2>
+                <p class="description capitalize"></p>
+            </div>
+            <div class="h-32 w-0 border border-white"></div>
+            <div id="weather-icon"></div>
+        </div>
+    </div>
+    <div class="w-11/12 ml-auto mt-14 flex gap-y-10 flex-col mr-auto">
+        <p class="text-3xl font-bold px-12 py-5 rounded-full outline-xl outline black bg-white">Dashboard</p>
+        <div id="row1" class="w-full flex justify-between gap-x-10">
+            <div id="rank" class="il-1 il flex flex-col justify-center items-center gap-y-4">
+                <p class="mt-2 font-bold border-4 bg-black border-white text-xl text-white w-1/2 text-center py-2 rounded-full">RANK</p>
+                <div id="circle" class="h-1/2 w-9/12 border-4 border-white rounded-full bg-blue-200 h-full flex justify-center items-center">
+                    <p id="rval" class="text-5xl font-bold flex"><span class="countr">{{ current_rank }}</span>
+                        {% if current_rank == 1 %}
+                        <span>st</span>
+                        {% endif %}
+                        {% if current_rank == 2 %}
+                        <span>nd</span>
+                        {% endif %}
+                        {% if current_rank == 3 %}
+                        <span>rd</span>
+                        {% endif %}
+                        {% if current_rank > 3 %}
+                        <span>th</span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div id="class-wise" class="il-1 il">
+                <canvas id="bar_class"></canvas>
+                <p class="info">Class-Wise</p>
+            </div>
+            <div id="section-wise" class="il-1 il">
+                <canvas id="bar_section"></canvas>
+                <p class="info">Section-Wise</p>
+            </div>
+            <div id="school-wise" class="il-1 il">
+                <canvas id="bar_school"></canvas>
+                <p class="info">School-Wise</p>
+            </div>
+        </div>
+        <div id="row2" class="w-full flex justify-between gap-x-10">
+            <div id="alerts" class="il-2 il flex flex-col gap-y-3 items-center">
+                <p class="text-2xl font-bold self-">Alerts</p>
+                <hr class="bg-black border-gray-300 border w-11/12"/>
+                <div id="alert-box" class="flex flex-col gap-y-px px-4">
+                    <ul id="list" class="flex flex-col overflow-y-auto h-60 gap-y-2">
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="attendance" class="il-2 il flex flex-col gap-y-4 items-center">
+                <p class="text-2xl font-bold">Attendance</p>
+                <div class="flex flex-col gap-y-2 items-center justify-center">
+                    <div id="progress-bar">
+                        <span class="w-9/12 progress"></span>
+                    </div>
+                    <p class="font-bold text-4xl"><span class="countr">{{ attendance.average_attendance|floatformat:0 }}</span>%</p>
+                </div>
+                <hr class="bg-black border-gray-300 border w-9/12"/>
+                <div id="subject-wise" class="flex flex-col overflow-y-auto w-9/12 h-36 mb-4 gap-y-2">
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Maths</p>
+                        <p><span class="countr">{{ attendance.maths_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Hindi</p>
+                        <p><span class="countr">{{ attendance.hindi_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">English</p>
+                        <p><span class="countr">{{ attendance.english_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Science</p>
+                        <p><span class="countr">{{ attendance.science_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Social Science</p>
+                        <p><span class="countr">{{ attendance.social_science_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>    
+                </div>
+            </div>
+            <div id="assignment" class="il-2 il flex flex-col items-center">
+                <div class="relative flex flex-col justify-center items-center h-5/6">
+                    <div class="absolute w-20 flex flex-col items-center">
+                        <p class="text-6xl pb-2 font-bold countr">{{ assignments.completed_assignments }}</p>
+                        <hr class="bg-black border-black border w-11/12"/>   
+                        <p class="text-6xl font-bold">{{ assignments.total_assignments }}</p>
+                    </div>
+                    <canvas id="assignment-pie"></canvas>
+                </div>
+                <p class="text-2xl font-bold">Assignments Left: <span id="assignment-no" class="countr">{{ assignments_remaining }}</span></p>
+            </div>
+        </div>
+        <div id="row3" class="w-full flex justify-between gap-x-10">
+            <div id="learners-coin" class="il-3 il outline-4 p-8 justify-between items-center flex outline-white"> 
+                <p class="text-4xl font-bold text-white">Learners'Ed<br/>Coins<br/><span class="text-sm font-normal">*For new students, bonus 200 coins will be granted!</span></p>
+                <div class="flex w-1/2 gap-x-5">
+                    <div id="coin" class="w-7/12 p-2"></div>
+                    <div class="h-32 w-0 border border-white"></div>
+                    <div id="coin-info" class="flex flex-col text-center text-white font-bold">
+                        <p class="text-3xl countr">{{ current_pet.pet_coins }}</p>
+                        <p class="text-xl">Learners'Ed Coins<br/>Left</p>
+                    </div>
+                </div>
+            </div>
+            <div id="pet" class="il-3 outline-4 flex outline-white">
+                <div class="w-1/2 border-r-4 flex flex-col justify-center items-center border-white grow">
+                    <div class="flex flex-col justify-center items-center gap-y-5">
+                        <div class="flex flex-col">
+                            <p class="text-lg font-bold text-white text-center">Your Virtual Pet</p>
+                            <p class="text-4xl text-white font-bold">{{ current_pet.pet_name }}</p>
+                        </div>
+                        <div class="flex flex-col w-full gap-y-px">
+                            <div class="flex justify-between w-full">
+                                <p class="text-xl text-white font-bold">Level</p>
+                                <p class="text-xl text-white font-bold countr">{{ current_pet.pet_level }}</p>
+                            </div>
+                            <div class="flex justify-between w-full">
+                                <p class="text-xl text-white font-bold">Rank</p>
+                                <p class="text-xl text-white font-bold"><span class="countr">{{ current_student.pet_rank }}</span>th</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pet-graph" class="w-1/2 p-4 flex flex-col justify-center grow bg-white">
+                    <canvas id="pet_canvas"></canvas>
+                    <p class="info">Rank Chart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-3xl mt-20 w-11/12 font-bold px-12 py-5 rounded-full outline-xl ml-auto mr-auto outline black bg-white">Recommendation Section</p>
+    <div id="row4" class="pt-10 pb-20 w-full flex justify-center items-center">
+        <div class="video-container il-4">
+            <div class="video-wrapper" id="video-wrapper">
+                <div id="loading-animation" class="loading-animation"></div>
+              <!-- Videos will be dynamically added here -->
+            </div>
+        </div>              
+    </div>
+    <script src="{% static 'script-dash.js' %}"></script>   
+    <script src="{% static 'jquery.counterup.min.js' %}"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script>
+
+        // chart options
+        var chartOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            var label = context.dataset.label || '';
+                            var value = context.parsed.y;
+                            
+                            // Reverse the data array
+                            var reversedData = context.dataset.data.slice().reverse();
+                            
+                            // Get the index of the current data point
+                            var index = context.dataIndex;
+                            
+                            // Get the corresponding reversed value for the tooltip label
+                            var reversedValue = reversedData[index];
+                            
+                            // Customize the tooltip label as per your requirement
+                            return label + ' Rank: ' + reversedValue;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    grid: {
+                        display: true
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        font: {
+                            size: 10
+                        }
+                    }
+                },
+                y: {
+                    display: true,
+                    ticks: { 
+                        callback: function(value, index, values) {
+                            // Reverse the tick values
+                            var reversedTicks = values.slice().reverse();
+                            
+                            // Find the minimum value
+                            var minValue = reversedTicks.length > 4 ? reversedTicks[4].value : reversedTicks[reversedTicks.length - 1].value;
+
+                            // Find the maximum value
+                            var maxValue = reversedTicks[0].value;
+                            
+                            // Calculate the adjusted value based on the minimum value and step size
+                            var adjustedValue = minValue + (reversedTicks.length - 1 - index);
+
+                            if (adjustedValue > maxValue + 1) {
+                              return '';
+                            }
+
+                            return adjustedValue;   
+                        },
+                        
+                        stepSize: 1,
+                    }
+                }
+            }
+        };
+
+        // Parse the rank chart data
+        var rankChartData = JSON.parse('{{ rank_chart_data|safe }}');
+
+        // Parse the class rank chart data
+        var classRankChartData = JSON.parse('{{ class_rank_chart_data|safe }}');
+
+        // Parse the class rank chart data
+        var sectionRankChartData = JSON.parse('{{ section_rank_chart_data|safe }}');
+
+        // Parse the pet rank chart data
+        var petRankChartData = JSON.parse('{{ pet_rank_chart_data|safe }}');
+
+        // Get the rank canvas element
+        var rankChartCanvas = document.getElementById('bar_school');
+
+        // Get the class rank canvas element
+        var classRankChartCanvas = document.getElementById('bar_class');
+
+        // Get the class rank canvas element
+        var sectionRankChartCanvas = document.getElementById('bar_section');
+
+        // Get the pet rank canvas element
+        var petRankChartCanvas = document.getElementById('pet_canvas');
+
+        // Create the rank chart
+        new Chart(rankChartCanvas, {
+        type: 'bar',
+        data: rankChartData,
+        options: chartOptions
+        });
+
+        new Chart(classRankChartCanvas, {
+        type: 'bar',
+        data: classRankChartData,
+        options: chartOptions
+        });
+
+        new Chart(sectionRankChartCanvas, {
+        type: 'bar',
+        data: sectionRankChartData,
+        options: chartOptions
+        });
+
+        new Chart(petRankChartCanvas, {
+        type: 'bar',
+        data: petRankChartData,
+        options: chartOptions
+        });
+
+        // Get the progress element
+        const progress = document.querySelector('#progress-bar > span');
+
+        // Set the target width (e.g., 75%)
+        const targetWidth = '{{ attendance.average_attendance }}';
+
+        // Animate the progress bar
+        progress.style.width = `${targetWidth}%`;
+
+        // Assignment Pie
+        const chartPie = document.getElementById('assignment-pie');
+        percentage = ('{{ assignments.completed_assignments }}' / '{{ assignments.total_assignments }}') * 100;
+        // Calculate the remaining percentage
+        const remainingPercentage = 100 - percentage;
+        // Create the chart
+        const chart = new Chart(chartPie, {
+        type: 'doughnut',
+        data: {
+            datasets: [
+            {
+                data: [percentage, remainingPercentage],
+                backgroundColor: ['#C4B0FF', '#eaeaea'],
+                hoverBackgroundColor: ['#9376E0', '#eaeaea'],
+                borderWidth: 0,
+                weight: 1
+            }
+            ]
+        },
+        options: {
+            cutout: '60%', // Adjust the size of the hole in the center of the chart
+            responsive: true,
+            maintainAspectRatio: true,
+            animation: {
+            animateRotate: true, // Enable rotation animation
+            animateScale: true // Enable scale animation
+            },
+            legend: {
+            display: false
+            }
+        }
+        });
+
+        var favoriteCategories = JSON.parse('{{ favorite_categories|safe }}');
+        console.log(favoriteCategories);
+
+        async function fetchVideosByTopic(topic, maxResults) {
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(topic)}&maxResults=${maxResults}&key=AIzaSyB8qJGXTu_kruSssOpyu0OsRS4gr1jgCIU`);
+        const data = await response.json();
+        return data.items;
+        }
+
+        // Function to fetch shuffled videos from all topics
+        async function fetchShuffledVideos() {
+
+        let topics = [];
+        if (favoriteCategories.includes('Tech')) {
+            topics = topics.concat(['Power of Artificial Intelligence', 'New Invention in Technology', 'Technology', 'Tech Products', 'New Tech Launches']);
+        }
+        if (favoriteCategories.includes('Science')) {
+            topics = topics.concat(['Maths for Undergrades', 'New Invention in Science', 'Science', 'Discovery Science']);
+        }
+        if (favoriteCategories.includes('Computer')) {
+            topics = topics.concat(['Coding Lecture Videos', 'Web Development Tutorials', 'Computer Vision Project', 'Computer Science']);
+        }
+        if (favoriteCategories.length === 0) {
+            topics = ['Technology', 'Science', 'Computer', 'Gaming', 'Study', 'News'];
+        }
+        console.log(topics);
+
+        const maxResults = 2; // Adjust the number of results as desired
+
+        const videos = [];
+
+        for (const topic of topics) {
+            const topicVideos = await fetchVideosByTopic(topic, maxResults);
+            if (Array.isArray(topicVideos)) {
+            videos.push(...topicVideos);
+            }
+        }
+
+        // Shuffle the videos array
+        const shuffledVideos = shuffleArray(videos);
+
+        return shuffledVideos;
+        }
+
+        // Function to shuffle an array
+        function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+        }
+
+        // Function to create a video element with title and description
+        function createVideoElement(videoId, title, description) {
+        const videoElement = document.createElement('div');
+        videoElement.classList.add('video');
+
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        videoElement.appendChild(iframe);
+
+        const infoContainer = document.createElement('div');
+        infoContainer.classList.add('video-info');
+
+        const titleElement = document.createElement('h3');
+        titleElement.classList.add('video-title');
+        titleElement.textContent = title;
+        infoContainer.appendChild(titleElement);
+
+        const descriptionElement = document.createElement('p');
+        descriptionElement.classList.add('video-description');
+        descriptionElement.textContent = description;
+        infoContainer.appendChild(descriptionElement);
+
+        videoElement.appendChild(infoContainer);
+
+        return videoElement;
+        }
+
+        // Add videos to the container
+        const videoContainer = document.querySelector('.video-wrapper');
+        const loadingAnimation = document.getElementById('loading-animation');
+
+        // Show loading animation
+        loadingAnimation.style.display = 'block';
+
+        // Fetch shuffled videos and create video elements
+        fetchShuffledVideos()
+        .then(videos => {
+            // Hide loading animation
+            loadingAnimation.style.display = 'none';
+            if (videos && videos.length > 0) {
+            videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const title = video.snippet.title;
+                const description = video.snippet.description;
+
+                const videoElement = createVideoElement(videoId, title, description);
+                if (videoContainer) {
+                videoContainer.appendChild(videoElement);
+                }
+            });
+
+            // Save videos to local storage
+            localStorage.setItem('shuffledVideos', JSON.stringify(videos));
+
+            } else {
+            // Check if videos are stored in local storage
+            const storedVideos = localStorage.getItem('shuffledVideos');
+            if (storedVideos) {
+                // Use stored videos
+                const videos = JSON.parse(storedVideos);
+
+                videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const title = video.snippet.title;
+                const description = video.snippet.description;
+
+                const videoElement = createVideoElement(videoId, title, description);
+                videoContainer.appendChild(videoElement);
+                });
+            }
+            else {
+                // Display error message if no videos found
+                const errorMessage = document.createElement('p');
+                errorMessage.style.textAlign = 'center';
+                errorMessage.style.width = '80%';
+                errorMessage.style.marginLeft = 'auto';
+                errorMessage.style.marginRight = 'auto';
+                errorMessage.style.borderRadius = '50px';
+                errorMessage.style.marginTop = '10px';
+                errorMessage.style.border = '10px solid black';
+                errorMessage.style.fontWeight = 'bold';
+                errorMessage.style.fontSize = '32px';
+                errorMessage.style.backgroundColor = 'white';
+                errorMessage.style.padding = '50px 0';
+                errorMessage.textContent = 'No videos found.';
+                errorMessage.style.boxShadow = '0 0 10px 2px gray';
+                videoContainer.innerHTML = ''; // Clear the container
+                videoContainer.appendChild(errorMessage);
+            }
+            }
+            })
+            
+            .catch(error => {
+            // Hide loading animation
+            loadingAnimation.style.display = 'none';
+        
+            // Check if videos are stored in local storage
+            const storedVideos = localStorage.getItem('shuffledVideos');
+            if (storedVideos) {
+                // Use stored videos
+                const videos = JSON.parse(storedVideos);
+        
+                videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const title = video.snippet.title;
+                const description = video.snippet.description;
+        
+                const videoElement = createVideoElement(videoId, title, description);
+                videoContainer.appendChild(videoElement);
+                });
+            } else {
+
+            // Display error message
+            const errorMessage = document.createElement('p');
+            errorMessage.style.textAlign = 'center';
+            errorMessage.style.width = '80%';
+            errorMessage.style.marginLeft = 'auto';
+            errorMessage.style.marginRight = 'auto';
+            errorMessage.style.borderRadius = '50px';
+            errorMessage.style.marginTop = '10px';
+            errorMessage.style.border = '10px solid black';
+            errorMessage.style.fontWeight = 'bold';
+            errorMessage.style.fontSize = '32px';
+            errorMessage.style.backgroundColor = 'white';
+            errorMessage.style.padding = '50px 0';
+            errorMessage.textContent = 'An error occurred while fetching the videos.';
+            errorMessage.style.boxShadow = '0 0 10px 2px gray';
+            videoContainer.innerHTML = ''; // Clear the container
+            videoContainer.appendChild(errorMessage);
+            }
+        });
+    </script>
+</body>
+</html>
