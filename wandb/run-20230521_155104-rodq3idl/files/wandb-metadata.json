@@ -1,0 +1,78 @@
+{
+    "os": "Linux-5.19.0-1025-aws-x86_64-with-glibc2.35",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-05-21T15:51:05.675251",
+    "startedAt": "2023-05-21T15:51:04.802210",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "host": "ip-172-31-2-14",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/src/miniconda3/envs/aikit/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3123.0503750000003,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3251.856,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3292.115,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3197.48,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3042.047,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3293.534,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3100.59,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3006.863,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2799.918,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 96.73210144042969,
+        "used": 79.06643295288086
+    },
+    "gpu": "NVIDIA A10G",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A10G",
+            "memory_total": 24146608128
+        }
+    ],
+    "memory": {
+        "total": 31.005962371826172
+    }
+}

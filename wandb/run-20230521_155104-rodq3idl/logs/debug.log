@@ -1,0 +1,35 @@
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Current SDK version is 0.15.3
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Configure stats pid to 84332
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Loading settings from /home/ubuntu/.config/wandb/settings
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Loading settings from /home/ubuntu/oneAPI/wandb/settings
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:_log_setup():507] Logging user logs to /home/ubuntu/oneAPI/wandb/run-20230521_155104-rodq3idl/logs/debug.log
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:_log_setup():508] Logging internal logs to /home/ubuntu/oneAPI/wandb/run-20230521_155104-rodq3idl/logs/debug-internal.log
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:_jupyter_setup():453] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fc585b49370>
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:init():547] calling init triggers
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'task': 'detect', 'mode': 'train', 'model': 'yolov8m.pt', 'data': 'data.yaml', 'epochs': 50, 'patience': 50, 'batch': 16, 'imgsz': 640, 'save': True, 'save_period': -1, 'cache': False, 'device': None, 'workers': 8, 'project': None, 'name': None, 'exist_ok': False, 'pretrained': False, 'optimizer': 'SGD', 'verbose': True, 'seed': 0, 'deterministic': True, 'single_cls': False, 'rect': False, 'cos_lr': False, 'close_mosaic': 0, 'resume': False, 'amp': True, 'overlap_mask': True, 'mask_ratio': 4, 'dropout': 0.0, 'val': True, 'split': 'val', 'save_json': False, 'save_hybrid': False, 'conf': None, 'iou': 0.7, 'max_det': 300, 'half': False, 'dnn': False, 'plots': True, 'source': None, 'show': False, 'save_txt': False, 'save_conf': False, 'save_crop': False, 'show_labels': True, 'show_conf': True, 'vid_stride': 1, 'line_width': None, 'visualize': False, 'augment': False, 'agnostic_nms': False, 'classes': None, 'retina_masks': False, 'boxes': True, 'format': 'torchscript', 'keras': False, 'optimize': False, 'int8': False, 'dynamic': False, 'simplify': False, 'opset': None, 'workspace': 4, 'nms': False, 'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 7.5, 'cls': 0.5, 'dfl': 1.5, 'pose': 12.0, 'kobj': 1.0, 'label_smoothing': 0.0, 'nbs': 64, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0, 'cfg': None, 'v5loader': False, 'tracker': 'botsort.yaml', 'save_dir': 'runs/detect/train'}
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:init():596] starting backend
+2023-05-21 15:51:04,803 INFO    MainThread:84332 [wandb_init.py:init():600] setting up manager
+2023-05-21 15:51:04,804 INFO    MainThread:84332 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-05-21 15:51:04,806 INFO    MainThread:84332 [wandb_init.py:init():606] backend started and connected
+2023-05-21 15:51:04,808 INFO    MainThread:84332 [wandb_run.py:_label_probe_notebook():1238] probe notebook
+2023-05-21 15:51:04,808 INFO    MainThread:84332 [wandb_run.py:_label_probe_notebook():1248] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-05-21 15:51:04,808 INFO    MainThread:84332 [wandb_init.py:init():700] updated telemetry
+2023-05-21 15:51:04,837 INFO    MainThread:84332 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2023-05-21 15:51:05,590 INFO    MainThread:84332 [wandb_run.py:_on_init():2177] communicating current version
+2023-05-21 15:51:05,611 INFO    MainThread:84332 [wandb_run.py:_on_init():2186] got version response 
+2023-05-21 15:51:05,612 INFO    MainThread:84332 [wandb_init.py:init():787] starting run threads in backend
+2023-05-21 15:51:08,200 INFO    MainThread:84332 [wandb_run.py:_console_start():2158] atexit reg
+2023-05-21 15:51:08,200 INFO    MainThread:84332 [wandb_run.py:_redirect():2013] redirect: SettingsConsole.WRAP_RAW
+2023-05-21 15:51:08,200 INFO    MainThread:84332 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2023-05-21 15:51:08,200 INFO    MainThread:84332 [wandb_run.py:_redirect():2103] Redirects installed.
+2023-05-21 15:51:08,201 INFO    MainThread:84332 [wandb_init.py:init():829] run started, returning control to user process
+2023-05-21 22:37:38,795 INFO    MainThread:84332 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-05-21 22:37:38,795 INFO    MainThread:84332 [wandb_init.py:_pause_backend():418] pausing backend
+2023-05-21 22:37:38,922 INFO    MainThread:84332 [wandb_init.py:_resume_backend():423] resuming backend
+2023-05-21 22:37:44,057 INFO    MainThread:84332 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-05-21 22:37:44,057 INFO    MainThread:84332 [wandb_init.py:_pause_backend():418] pausing backend
