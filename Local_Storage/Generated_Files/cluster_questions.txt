@@ -1,0 +1,14 @@
+Module 1:
+ - VII. (a) Explain the internal organization of a memory chip which has 16 words
+ - VIII. (a)
+
+Module 2:
+ - I. (a) With necessary diagrams, explain the mechanism of address ffanslation
+
+Module 3:
+ - II. (a) With a neat diagram,,t explain the functional units of a computer.
+ - V. (a) Explain the purpose of carry save addition of summands in
+
+Module 4:
+ - I. (a) Explain the single bus structure with a neat diagrarn.
+

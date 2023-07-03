@@ -1,0 +1,112 @@
+BTS-IV-O4 i9-06s5
+
+Reg. I.do.
+
+B.Tech. Degree IV Semester Exfrmi
+
+019
+
+CS 15-1.403 COMPUTER ARCHITECTURE AI\iD
+(2A15 Scherne)
+
+fiximum Marks : 60
+
+Time : 3 Hours
+
+PARTA
+(Answ er ALL questions)
+
+I.
+
+(10 x 2 :20)
+
+(a) Explain the operating steps involved in the execution of a complete
+instruction.
+
+(b) What is meant by stack? Explain the basic stack operations.
+(c) Differentiate between RISC and CISC architectures'
+(d) What do you mean by carry look ahead addition?
+(e) List out the control sequence for execution of the instruction
+ADD (R3), R1.
+
+(0 What is meant by prefetching of micro instructions?
+(g) Differentiate between write through and write back protocols'
+(h) What is memory interleaving? What are the advantages?
+(i) what is an intemrpt? List out the sequence of events involved in
+handling an interrupt request from a single device.
+
+0) Write about any two widely used bus standards.
+PART B
+
+(4 x 10 :40)
+
+II. (a) With a neat diagram,,t explain the functional units of a computer.
+(b) Evaluate (A + B) (c + D) using (i) only three address instructions,
+
+(4)
+
+(ii) only two address (iii) only one address instructions (iv) only zero
+address instructions.
+
+OR
+
+m. (a) What is meant by addressing mode? Explain any three addressing modes
+with an example for each.
+(b) what is meant by uo mapped vo ? How does it differ from memory
+
+(7)
+(3)
+
+mapped VO?
+
+ry. (a) Explain in detail about the hardwired control unit with necessary
+diagrams.
+(b) Explain the Booth's algorithm for fast multiplication with an example.
+
+(s)
+(s)
+
+OR
+
+V. (a) Explain the purpose of carry save addition of summands in
+multiplioation.
+(b) Explain the principle of restoring division with an exampleyI. (a) With necessary diagrams, explain the mechanism of address ffanslation
+(b)
+
+in virtual memory based on Paging.
+What is translation lookaside buffer?
+
+(6)
+(4)
+(6)
+
+(4)
+
+OR
+
+VII. (a) Explain the internal organization of a memory chip which has 16 words
+of 8 bits each.
+(b) Explain any two cache memory mapping functions.
+
+Vru. (a) Explain about intemrpt nesting with necessary diagrams.
+(b) Explain briefly about the Universal Serial bus.
+1a. (a)
+(b)
+
+1ur
+
+(4)
+
+(s)
+(s)
+
+OR
+What is meant by exceptions? What are the different types of exceptions?
+Differentiate between centralised and distributed bus arbitration in DMA.
+
+*t+
+
+(4)
+(6)
+
+

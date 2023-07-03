@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.8"
+
+# Customize this script to match your requirements
+script:
+  - echo "Running tests..."
+  - pip install -r angelo_requirements.txt
+
+# This section is important for badge generation
+before_deploy:
+  - git fetch --unshallow
+

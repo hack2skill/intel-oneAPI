@@ -1,0 +1,19 @@
+Hello! Today we will be discussing digital electronics and specifically focusing on combinational and sequential circuits, as well as adder circuits. Do you have any questions before we begin?
+
+No? Okay, let's start. The output of a combinational circuit depends only on its present inputs, while the output of a sequential circuit depends on both its present and past inputs. Digital circuits are of two types: combinational circuits and sequential circuits.
+
+Now let's move on to adder circuits. The most basic arithmetic operation is the addition of two binary digits. The logic gates accept signals from the inputs and generate signals to the outputs. They are called adder circuits, which are of two types: half-adder and full-adder.
+
+The truth table and block diagram of a half-adder are shown below. Realization using AOI logic is possible using one X-OR gate and one AND gate as shown in Figure 7.3a. The full-adder circuit can be realized by using one gate and the other using a single AND gate. The full-adder circuit is a combinational circuit that performs the addition of three bits (two significant bits).
+
+The Full-Adder adds the bits A and B and the carry-in C in and outputs the sum bit S. The Full-Adder adds the bit A and A and C in the previous column called the carry in C in, the carry out the other bit called the carrying-in-Cin.
+
+And you can also use a half-subtractor as a combinational circuit that subtracts one bit from the other and produces the difference. It also has an output to specify if a 1 has been borrowed.
+
+An n-bit parallel adder is a digital circuit that adds two binary numbers in parallel form. It consists of full adders connected in a chain, with the output carry of each full-adder connected to the input carry of the next full-adder in the chain.
+
+The subtraction A - B can be done by taking the 2's complement of B and adding it to A. The subtracted bit is not valid until after the cumulative propagation of two full adders (FA, and FA), and so on. The total sum (the parallel output) of a 4-bit binary adder-subtractor is not. 
+
+The look-ahead-carry adder speeds up the process by eliminating this ripple carry delay. It examines all the input bits simultaneously and also generates the carry-in bits for all the stages simultaneously. The method of speeding up the addition process is based on the two additional functions of the full-adder, called the carry generate and carry-propagate functions.
+
+Do you understand everything so far? Any questions or things you want me to explain more?

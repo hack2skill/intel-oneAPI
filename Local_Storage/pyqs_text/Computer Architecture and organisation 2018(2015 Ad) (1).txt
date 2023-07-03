@@ -1,0 +1,142 @@
+BTS-rV-04.18-072t
+
+Reg. No.
+
+B.Tech. Degree IV Semester Examination April 2018
+CS 15-1 403 COMPUTER ARCHITECTURE AND ORGAI\IZATION
+(2015 Scheme)
+
+Time:3 Hours
+
+Maximum Marks: 60
+P.ART A
+(Answer ALL questions)
+
+(10x2=20)
+
+I. (a) Explain the single bus structure with a neat diagrarn.
+(b) List out the various steps needed to execute the instruction ADD LOC A,
+R0.
+
+(c) Differentiate between big-endian and littile-endian assignments with an
+example.
+
+(d) What do you mean by prefetching of micro instructions?
+(e) Define emulation.
+(D Explain the various steps in executing a complete instruction.
+(g) With a diagram explain the operation of a typical ROM cell.
+(h) Differentiate between SRAM and DRAM.
+(D What is an intemrpt? List out the sequence of events involved in handling
+an intemrpt request from a single device.
+
+0)
+
+Differentiate between the operations of synchronous and asynchronous
+bus.
+
+PART B
+(4 x l0:40)
+
+(a) With a neat diagram, explain the functional units of a computer.
+(6)
+(b) Differentiate between register hansfer notation and assembly language (4)
+notation with examples.
+
+OR
+
+IU.
+
+n/.
+
+(a) Explain any three addressing modes with an example for each.
+(b) What is meant by stack? Explain the basic stack operations.
+
+(4)
+
+(a) Explain, in detail, about the microprogrammed control unit with necessary
+
+(s)
+
+(6)
+
+diagrams.
+
+(b) Explain the Booth's algorithm for fast multiplication.
+
+(s)
+
+OR
+
+V.
+
+(a) What is meant by carry look ahead addition? Design a 4 bit carry look
+
+(6)
+
+ahead adder.
+
+(b) Explain the principle of non restoring division with an example.
+
+u. (a)
+
+What is the principle of cache memory? Explain the different cache
+
+(41
+
+(6)
+
+memory mapping functions.
+(b)
+
+Explain any two replacement algorithms.
+
+(4)
+
+OR
+
+(P.r.o.)
+
+2
+
+VII.
+
+(a)
+
+What is memory interleaving? Explain with diagrams. What are the
+
+(4)
+
+advantages?
+
+(b)
+
+With a neat diagram explain about virtual memory address translation
+
+(6)
+
+based on paging.
+
+VIIL (a)
+(b)
+
+Ix. (a)
+(b)
+
+What are vectored intemrpts? How are they handled?
+Explain briefly about the peripheral component interconnect bus.
+
+(s)
+(s)
+
+OR
+Explain how nested intemrpts are handled.
+
+(s)
+
+Explain about the functions of a DMA controller.
+
+(5)
+
+***
+
+

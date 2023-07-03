@@ -1,0 +1,1611 @@
+ Digital Electronics
+(19-204-0302)Text Books
+• 1. M. Morris Mano, Digital Logic & Computer
+Design, 4/e, Pearson Education, 2013.
+●
+2. FUNDAMENTALS OF DIGITAL CIRCUITS
+THIRD EDITION A. Anand Kumar
+Third Edition
+Fundamentals of
+Digital Circuits
+th
+A. Anand Kumar
+Digital Logic
+and
+Computer Design
+M. Morris Mano
+PEARSONModule - 2Syllabus - Module 2
+• Combinational Logic Circuits:
+Design of Adders, Subtractors,
+Binary Parallel Adder, Carry look
+ahead Adder, BCD Adder,
+Multiplexer, Demutiplexer,
+Magnitude Comparator, Decoder,
+EncoderCombinational Logic
+Logic Circuits (Digital Circuits) are of two types.
+•1. Combinational Circuits.
+• 2. Sequential Circuits.
+Combinational Circuits
+• The output of a combinational circuit depends on its present
+inputs only.
+Sequential Circuits.
+• The output of a sequential circuit depends on not only its
+present inputs but also the past inputs.
+5Block diagram of a Combinational Circuit
+n input
+variables
+Combinational
+Logic Circuit
+m output
+variables
+• A combinational circuit consists of input variables, logic
+gates, and output variables.
+• The logic gates accept signals from the inputs and generate
+signals to the outputs.
+• The n input binary variables come from an external source
+and the m output variables go to an external destination.
+• For n input variables, there are 2" possible combinations of
+binary input values.
+6Design Procedure of Combinational Logic
+The procedure involves the following steps:
+1. The problem is stated.
+• 2. The number of available input variables and required
+output variables is determined.
+3. The input and output variables are assigned letter
+symbols.
+4. The truth table that defines the required
+relationship between inputs and outputs is
+derived.
+• 5. The simplified Boolean function for each output is
+obtained.
+6. The logic diagram is drawn.
+7ADDER Circuits
+• Arithmetic Circuits which perform addition operations are
+called Adder Circuits.
+• The most basic arithmetic operation is the addition of
+two binary digits.
+• This simple addition consists of 4 possible operations,
+namely,
+•0 + 0 = 0
+• 0+1=1
+1+0=1
+1 + 1 = 10.
+●
+8●
+Types of Adder Circuits
+Adder Circuits are of two types.
+• 1. Half Adder
+• 2. Full Adder
+• A combinational circuit that performs the addition of two
+bits is called a half-adder.
+• A combinational circuit that performs the addition of
+three bits (two significant bits and a previous carry) is
+called a full-adder.
+9The Half-Adder
+• A half-adder is a combinational circuit with two binary
+inputs (augend and addend bits) and two binary
+outputs (sum and carry bits).
+• It adds the two inputs (A and B) and produces the sum
+(S) and the carry (C) bits.
+• The truth table and block diagram of a half-adder are
+shown below.
+Inputs Outputs
+AB SC
+00 00
+01 1 0
+10 1 0
+0 1
+(a) Truth table
+AB
+Half-adder
+(b) Block diagram
+S
+10•The sum (S) is the X-OR of A and B.
+S = AB + AB=A+B
+• The carry (C) is the AND of A and B.
+Therefore, C = AB
+A half-adder can, therefore, be realized by using one X-OR gate and
+one AND gate as shown in Figure 7.3a. Realization using AOI logic is
+shown in Figure 7.3b.
+A
+B
+-S
+-C
+A
+B
+B
+A
+D
+(a)
+(b)
+Figure 7.3 Logic diagrams of half-adder.
+-S
+11Realization of Half Adder using
+NAND Gates only
+NAND logic
+S = A + B = A + A + B + BB
+= A(₁+B) + B(₁ + B)
+= A AB + BAB
+= A·AB B. AB
+C=AB= AB
+A-
+B-
+AB
+A. AB
+B.AB
+Das
+-S
+-C
+12Realization of Half Adder using NOR
+Gates only
+NOR logic
+S = A + B = A + A₁+ B + BB
+= A(₁ + B) + B(₁ + ₁)
+= (A + B) (+)
+= A+B+A+B
+A
+B
+C=AB=AB= A + B
+IB
+A+B
+A+B
+-C
+S
+Figure 7.5 Logic diagram of a half-adder using only 2-input NOR gates.
+13The Full-Adder
+• A full-adder is a combinational circuit that adds
+two bits and a carry and outputs a sum bit and a
+carry bit.
+• The full-adder adds the bits A and B and the carry
+from the previous column called the carry-in C in
+and outputs the sum bit S and the carry bit called
+the
+Inputs
+A B Cm
+0
+0
+00110
+0
+1
+1
+1
+1
+01
+010
+0
+1
+1
+0
+1
+0
+0
+1 0
+0
+1
+1
+1
+(a) Truth table
+Sum Carry
+S Cout
+0
+0
+0
+1
+1 1
+0
+1
+0
+1
+1
+1
+A
+B
+Full-adder
+(b) Block diagram
+S
+Cout
+14S = Cin+Bin + Ain + ABCin
+= (A + B)in +(AB+ i)Cin = (AOB) in +(AB) Cin - AOBOCin
+Cout= BCin + A Cin + ABin + ABCin = AB + (AOB)Cin = AB + ACin+
+BCin
+A-
+B
+Half-adder
+Half-adder
+S-AⓇB
+D
+D
+!C=AB
+S=AⓇB÷Cn
+(AB)Cin
+Do
+Cout= (AB)C + AB
+15Full Adder Using 2 Half
+Adders
+8-
+AB
+HA A B
+HA
+Co= (A O BIC₁ + AB
+S-A0B0C,
+16Realization of Full Adder Using AOI Gates
+IB
+B
+Cin
+A
+IB
+AOB = A.AB-B-AB
+S = AOBOCin = (AB) (AB)C C₁ (AB)C
+in
+in
+Cout= Cin (AB) + AB = C₁ (A @ B). AB
+S
+A-
+D
+B-
+A-
+Cin
+B
+-Cout
+Figure 7.9 Sum and carry bits of a full-adder using AOI logic.
+17Realization of Full Adder Using NAND
+Gates
+B-
+Cin
+D
+D-
+C(AB)
+AB
+Figure 7.10 Logic diagram of a full-adder using only 2-input NAND gates.
+Cout
+18Realization of Full Adder Using
+NOR Gates
+NOR logic
+We know that
+Then
+A-
+B-
+C
+AOB = (A + B)+A+B
+(A@B)+C+(AB) - Cin
+S = AO BỌCin = (AⓇB) + Cin
+Cout=AB+ Cin(AOB) = A +B+C₁n +A@B
+AⓇB
+Figure 7.11 Logic diagram of a full-adder using only 2-input NOR gates.
+S
+out
+19SUBTRACTORS
+•Arithmetic Circuits which perform subtraction operations
+are called Subtractor Circuits.
+The Half-Subtractor
+• A half-subtractor is a combinational circuit that subtracts
+one bit from the other and produces the difference.
+• It also has an output to specify if a 1 has been borrowed.
+• It is used to subtract the LSB of the subtrahend from the
+LSB of the minuend when one binary number is
+subtracted from the other.
+20• A half-subtractor is a combinational circuit with two
+inputs A and B and two outputs d and b.
+Inputs
+Outputs
+d b
+0
+0
+1
+0
+1
+0
+0
+1
+1
+1
+(a) Truth table
+A
+0
+1
+1
+0
+B
+0
+0
+B-
+Half-subtractor
+(b) Block diagram
+d = A + B = AB and b = B
+·b
+21Logic Diagram of Half Subtractor
+A-
+B1
+D
+B.
+D
+-b
+D
+Figure 7.13 Logic diagrams of a half-subtractor.
+- d
+B.
+b
+d
+22Realization of Half Subtractor
+using NAND Gates
+NAND logic
+d=AB=A-AB-B-AB
+b = B = B(₁+) = B(AB) = B-AB
+B
+A. AB
+Jar
+Figure 7.14 Logic diagram of a half-subtractor using only 2-input NAND gates.
+B.AB
+23Realization of Half Subtractor
+using NOR Gates
+NOR logic
+A
+B
+d = AOB = A + B = A + B₁ + B + Ax
+= (A + B) + (A + B) = BABAAB
+d = B = (A + B) = A(A + B) = A + (A + B)
+A+ A+B
+B+A+B
+ED
+Figure 7.15 Logic diagram of a half-subtractor using only 2-input NOR gates.
+24The Full-Subtractor
+• It subtracts one bit (B) from another bit (A), when already
+there is a borrow b, from this column for the subtraction in
+the preceding column, and outputs the difference bit (d)
+and the borrow bit (b) required from the next column.
+i
+So a full-subtractor is a combinational circuit with three
+inputs (A, B, b.) and two outputs d and b.
+• The two outputs present the difference and output
+borrow.
+• The 1s and Os for the output variables are determined
+from the subtraction of A - B - b..
+25Inputs
+A Bb₁
+0 00
+0
+0
+0
+0
+1
+1 0
+1
+1
+100
+101
+1
+0
+1 1
+1
+1
+and
+Difference
+d
+0
+1
+1
+0
+1
+0
+0
+1
+(a) Truth table
+Borrow
+b
+=
+0
+1
+1
+1
+0
+0
+0
+1
+ABä
+b₁-
+Full-subtractor
+(b) Block diagram
+Figure 7.16 Full-subtractor.
+d = bi + Bēj + Aj + Abbi
+bi(AB+B) +(AB + B)
+= bi(AⓇB) + Fi(A+B) = A
+d
+b
+Bobi
+b = Abi + B₁ + Bb₁ + ABbj = B(b₁ + i) + (AB + B)bi
+AB
+= B + (AB)bi
+26A full-subtractor can, therefore, be realized using X-OR gates and AOI
+gates as shown in Figure 7.17.
+bi
+*
+d=A0B0b
+27Realization of FULL Subtractor using
+NAND Gates
+NAND logic
+A-
+B-
+b₁
+d = A B÷b₁ = (A + B) b₁ = (AB)(AB)b; · b; (AⒸB)b;
+b = B + b₁(AB) = AB+b(A @B)
+AB b (AB)=B(A + B) b (b, +(AB)]
+=
+B.AB-b₁[b, (AⓇB)]
+=
+||
+D
+-b
+Figure 7.18 Logic diagram of a full-subtractor using only 2-input NAND gates.
+28Realization of FULL Subtractor using NOR Gates
+NOR logic
+B
+b₁
+d = AOBOb;= (AB) © b₁
+= (AB)b, +(AB)
+=
+[(AB)+(AB)b ][b; + (A + B)b; ]
+(A + B)+(AB)+b; +b; +(AB) + b₁
+(AB)+(AB) + b + b +(AB) + b
+b= B+ bi(AB)
+= ₁(A + B) + (A + B)[(A+B) + b₂]
+= A + (A+B) + (AB)+(AB) + b₂
+Ja
+DAD
+Figure 7.19 Logic diagram of a full subtractor using only 2-input NOR gates.
+-b
+29PARALLEL
+ADDER
+A binary parallel adder is a digital circuit that adds two binary
+numbers in parallel form and produces the arithmetic sum of those
+numbers in parallel form.
+• It consists of full adders connected in a chain, with the output carry
+from each full-adder connected to the input carry of the next
+full-adder in the chain.
+• An n-bit parallel adder requires n-full adders.
+A₁
+FA4
+B₂ A₂
+FA3
+FA₂
+FA₁
+000
+C₁
+SA
+S3
+S₂
+S₁
+Figure 7.20 Logic diagram of a 4-bit binary parallel adder.
+B. A₁
+Cin
+30The Ripple Carry Adder
+• The parallel adder in which the carry-out of each
+full-adder is the carry-in to the next most significant
+adder is called a ripple carry adder.
+C₁
+FA4
+C₂
+B3 A3
+FA3
+C₂
+FA₂
+S₂
+A₂
+C₁
+FA₁
+-Cin
+31• The carry-out of each stage of ripple carry adder is
+connected to the carry-in of the next stage.
+•The sum and carry-out bits of any stage cannot be
+produced, until some time after the carry-in of that
+stage occurs.
+• This is due to the propagation delays in the logic
+circuitry, which lead to a time delay in the addition
+process.
+• The carry propagation delay for each full-adder is the
+time between the application of the carry-in and the
+occurrence of the carry-out.
+32• That the sum (S₁) and carry-out (C₁) bits given by FA 1
+are not valid, until after the propagation delay of FA₁.
+●
+• Similarly, the sum S, and carry-out (C₂) bits given by FA,
+are not valid until after the cumulative propagation
+delay of two full adders (FA, and FA₂), and so on.
+• At each stage, the sum bit is not valid until after the
+carry bits in all the preceding stages are valid. In effect,
+carry bits must propagate or ripple through all stages
+before the most significant sum bit is valid.
+• Thus, the total sum (the parallel output) is not valid
+until after the cumulative delay of all the adders.
+334-BIT PARALLEL SUBTRACTOR
+• The subtraction A - B can be done by taking the 2's complement
+of B and adding it to A.
+• The 2's complement can be obtained by taking the 1's
+complement and adding 1 to the least significant pair of bits.
+• The 1's complement can be implemented with inverters
+Cout 4
+B4 A4
+FA4
+Cin4 Cout 3
+B₂ A3
+FA₂
+Cin 3 Cout 2
+B₂ A₂
+FA₂
+Cin 2 Cout1
+B₁ A₁
+FA₁
+S₁
+S3
+S₂
+Figure 7.21 Logic diagram of a 4-bit parallel subtractor.
+S₁
+C1=1
+34BINARY ADDER-SUBTRACTOR CIRCUIT
+B₂
+CA
+FA₁
+A4 B3 A3
+C3
+FA3
+B₂ A₂
+C₂
+FA₂
+B₁A₁
+FA₁
+Cin
+M
+S₁
+Figure 7.22 Logic diagram of a 4-bit binary adder-subtractor.
+35●
+●
+●
+Here the addition and subtraction operations are combined into one
+circuit with one common binary adder.
+This is done by including an X-OR gate with each full-adder.
+The mode input M controls the operation. When M = 0, the circuit is
+an adder, and when M = 1, the circuit becomes a subtractor.
+Each X-OR gate receives input M and one of the inputs of B.
+= B. The full-adder receives the value of
+• When M = 0, we have B
+B, the input carry is O and the circuit performs A + B.
++
+1=
+and C1 = 1. The B inputs are
+• When M = 1, we have B
+complemented and a 1 is auued rough the input carry. The circuit
+performs the operation A plus the 2's complement of B.
+36THE LOOK-AHEAD-CARRY ADDER
+BA
+A4
+B₂-
+A₂
+B₂
+A₂
+B₁
+A₁
+C₁
+B
+D
+P₁
+GA
+G3
+P₂
+G₂
+P₁
+G₁
+C₁₁
+Look-ahead-carry
+generator
+C₁
+C4
+C3
+C₂
+P
+P3
+P₂
+P₁
+D
+D
+D
+C5
+SA
+S₂
+S₂
+છે
+S₁
+37In the case of the parallel adder, the speed with which
+an addition can be performed is governed by the time
+required for the carries to propagate or ripple through
+all of the stages of the adder.
+• The look-ahead-carry adder speeds up the process by
+eliminating this ripple carry delay.
+●
+• It examines all the input bits simultaneously and also
+generates the carry-in bits for all the stages
+simultaneously.
+The method of speeding up the addition process is
+based on the two additional functions of the
+full-adder, called the carry generate and carry
+propagate functions.
+38Consider one full adder stage; say the nth stage of a
+parallel adder.
+A₁-
+B₁
+C₁
+A,B₁=G₁
+HA A, B₁= P₁
+HA
+C₁ = P₁. C₁
+Figure 7.23 A full adder (nth stage of a parallel adder).
+• It is made of two half-adders and that the half-adder contains an
+X-OR gate to produce the sum and an AND gate to produce the
+carry.
+C1=Con= (A,B)C+ A,B₁
+S₁ = A, B, C,
+●
+n
+n
+If both the bits A and B are 1s, a carry has to be generated in
+this stage regardless of whether the input carry C. is a 0 or a 1.
+This is called generated carry, expressed as
+in
+G = A.B
+n
+n n
+39There is another possibility of producing a carry out.
+• X-OR gate inside the half-adder at the input produces an
+intermediary sum bit, P which is expressed as
+n
+P = A
+n
+S₂ = P₁
+n n
+C. O
+n
+n
+Next P and C are added using the X-OR gate inside the
+second half adder to produce the final sum bit
+and
+n
+☺
+output carry C = P_ . C
+0
+C =
+n'
+Ⓒ
+n
+(AⒸB).C which becomes
+n
+n
+input carry for the (n + 1) th stage.
+n
+40Consider the case of both Pn and Cn being 1. The input carry Cn has
+to be propagated to the output only if Pn is 1. If Pn is 0, even if Cn is 1,
+the AND gate in the second half-adder will inhibit Cn. We may thus call
+Pn as the propagated carry as this is associated with enabling
+propagation of Cn to the carry output of the nth stage which is denoted
+as Cn+1 or Con. So, we can say that the carryout of the nth stage is 1
+when either G₂ = 1 or Pn. Cn = 1 or both Gn and Pn. Cn are equal to 1.
+For the final sum and carry outputs of the nth stage, we get the
+following Boolean expressions.
+Sn = Pn
+Cn where Pn - An
+Bn
+Con = Cn+1 = Gn+ PnCn where GnAn. Bn
+The carry-in to each stage is the carry-out of the previous stage.
+41Based on these, the expressions for the carry-outs of various full
+adders are
+C₁ = Go + Po. Co
+C2 G1 + P1. C1= G₁ + P1. Go + P1. Po .Co
+C3 = G2 + P2.C2 = G2 + P2. G1 + P2. P1. Go + P2. P1. Po . Co
+C4 = G3 + P3.C3 = G3 + P3 . G2 + P3. P2 . G₁+ P3 . P2 . P₁. Go +
+P3. P2. P1. Po. Co
+The general expression for n stages designated as 0 through (n-1)
+would be
+Cn Gn-1 + Pn-1. Cn-1= Gn-1 + Pn-1. Gn-2 + Pn-1. Pn-2. Gn-3
++ ... + Pn-1.... Po. Co
+42BCD ADDER
+1. Add the 4-bit BCD code groups for each decimal digit position
+using ordinary binary addition.
+2. For those positions where the sum is 9 or less, the sum is in
+proper BCD form and no correction is needed.
+3. When the sum of two digits is greater than 9, a correction of
+0110 should be added to that sum, to produce the proper BCD
+result. This will produce a carry to be added to the next decimal
+position.
+• A BCD Adder circuit must be able to do the following.
+• 1.Add two 4-bit BCD code groups, using straight binary addition.
+• 2.Determine, if the sum of this addition is greater than 1001
+(decimal 9); if it is, add 0110 (decimal 6) to this sum and generate a
+carry to the next decimal position.
+43• The first requirement is easily met by using a 4-bit binary
+parallel adder
+• If the two BCD code groups A₂A₂A₁A and B₂B₂B₁B are
+3 2 1
+3 2 1 0
+applied to a 4-bit parallel adder, the adder will output
+SSSSS, where S is actually C, the carry-out of the
+MSB bits.
+4 3 2 1 0'
+The sum output S4S3 S2S1So can range anywhere from 00000 to
+10010 (when both the BCD code groups are 1001 = 9). The circuitry for
+a BCD adder must include the logic needed to detect whenever the sum
+is greater than 01001, so that the correction can be added in.
+44Cases where sum greater than 9
+S₁
+0
+0
+0
+0
+0
+0
+1
+1
+1
+S₂
+S3
+1
+1
+1
+0
+0
+0
+S₂
+0
+0
+Table 7.1
+S₁ S₁
+1
+0
+1
+1
+0
+0
+0
+1
+0
+1
+0
+1
+0
+0
+0
+0 0
+0
+1
+Decimal number
+10
+11
+12
+13
+14
+15
+16
+17
+18
+1. Whenever S4 = 1 (sum greater than 15)
+2. Whenever S3 = 1 and either S2 or S₁ or both are 1 (sums 10 to
+15)
+This condition can be expressed as X = S4 + S3( S2 + S1)
+45Carry to the
+next BCD adder
+X
+SA
+C₁
+Correction logic
+C₁
+not
+used
+4-bit parallel adder (74LS83)
+B3 B2 B1 Bo
+S3 S₂ S₁ So A₂ A₂ A₁ Ap
+Аз
+4-bit parallel adder (74LS83)
+Σ3 2₂ 2₁
+BCD sum
+BCD
+code group
+Carry from
+the lower position
+adder
+BCD
+code group
+C₁ = 0
+Correction
+adder
+46CODE CONVERTERS
+• A code converter is a logic circuit whose inputs are bit
+patterns representing numbers (or characters) in one
+code and whose outputs are the corresponding
+representations in a different code.
+47Design of a 4-bit Binary-to-Gray
+Code Converter
+• The input to the 4-bit binary-to-Gray code converter
+circuit is a 4-bit binary and the output is a 4-bit Gray
+code.
+G₁ =B4
+G₁ =B₁ B₂
+G₂=B₂B₂
+G₁ = B₂B₁
+4-bit binary
+B₂ B3 B₂ B₁
+4
+oooooooo
+0
+0 0 0 0
+0
+OOO OTTO
+0
+0 0 1
+0
+0 0 1 0
+1
+0
+1
+0 1 1 0
+1
+1 0 0 0
+1
+0 0
+1
+1
+0 1
+0
+1
+0
+1
+1
+1
+1
+0 0
+1
+1
+0
+1
+11
+1
+1 1
+1
+0 0 1
+COT-OOTTO
+1
+1
+1
+0
+0
+1
+0 0
+1
+1
+0
+0
+1
+1
+0
+0
+1
+1
+1
+1
+1
+0
+0 1
+0
+0
+1
+1
+1
+0
+0
+1
+1 0
+00
+(a) Conversion table
+4-bit Gray
+G4 G3 G₂ G₁
+0
+0
+1
+0
+0
+0
+001
+0 1
+1
+1
+1
+0 1 0
+010
+1 1 0
+1
+0
+1
+ooooooo
+0
+0
+0
+1
+1
+1
+0
+1
+48G4 =
+G3 =
+G₂ =
+G₁ =
+m(8, 9, 10, 11, 12, 13, 14, 15)
+m(4, 5, 6, 7, 8, 9, 10, 11)
+m(2, 3, 4, 5, 10, 11, 12, 13)
+m(1, 2, 5, 6, 9, 10, 13, 14)
+G4=B4
+G3 =B4+B3 =B4B3+ B4B3
+G2 =B3+B2=B3B2+ B3B2
+G1 = B2+B1 B2B1 + B2B1
+49B₂B₁
+B4B₂
+00
+01
+11
+10
+B₂B₁
+B₂B3
+00
+01
+11
+10
+00
+1
+1
+00
+1
+0
+12
+B
+0
+4
+01
+01
+8
+1
+1
+1
+1
+12
+1 1
+5
+13
+9
+5
+11
+11
+13
+1
+01 11
+1
+9
+1
+G₁ =B₁
+K-map for G₁
+1
+3
+1
+7
+15
+11
+3
+7
+15
+10
+G₂ = B₂B₂
+K-map for G₂
+1
+1
+1
+2
+10
+6
+14
+10
+2
+6
+14
+11 10
+1
+B₂B₁
+BB 00
+00
+01
+11
+10 1
+B₂B₁
+B₂B 00
+00
+01
+11
+1
+10
+(b) K-maps
+0
+4
+12
+8
+01
+0
+1
+00 01
+5
+13
+1
+1
+11
+9
+1 1 1
+1
+3
+G₂ =B₁ B₂
+K-map for G₂
+ST
+7
+1 1
+10
+15 14
+11 10
+11 10
+3
+7
+9 11
+G₁ = B₂B₁
+K-map for G₁
+2
+1
+6
+12 13 15 14
+T
+C
+6 B3
+B₁
+10
+B₂
+B₁
+D
+(c) Logic diagram
+GA
+G3
+G₂
+G₁
+50Design of a 4-bit
+Gray-to-Binary Code Converter
+• The input to the 4-bit Gray-to-binary code converter
+circuit is a 4-bit Gray code and the output is a 4-bit
+binary.
+4-bit Gray
+G₁ G₂ G₂ G₁
+0000
+00 0 1
+001
+0000
+0 0 0 1
+0010
+0010 001 1
+0110 01 00
+0111 0101
+0101 0110
+0100 01 1 1
+1100 1000
+1101 1001
+1010
+101 1
+1 100
+1 1 1 1
+1 1 1 0
+1010
+101 1
+1001
+4-bit binary
+B₁ B₂ B₂ B₁
+4
+00
+1 1 1 0
+(a) Conversion table
+B4 G4
+B3=G4 G3
+B2=B34G2
+B1-B2+G1
+G₁
+G₂-
+G₂
+G₁
+D.
+(c) Logic diagram
+B₁
+B₂
+B₂₁
+B₁
+51G₂G₁
+G.G 00
+00
+01
+11
+10
+G₂G₁
+G,G
+00
+1
+11
+1
+00
+01 1
+10 1
+O
+4
+12
+40
+0
+12
+11
+01
+1
+1
+13
+1
+9
+1
+1
+1
+B₁=G₁
+K-map for B₂
+13
+7
+1
+15
+01 11 10
+1
+3
+1
+10
+16
+1
+1
+B₂ = G₂ G₂ G₂
+K-map for B₂
+1
+1
+2
+14
+10
+14
+10
+G₂G,
+G₂G₂ 00
+8
+00
+01 1
+11
+10 1
+G₂G₁
+G,G, 00
+00
+01 1
+11
+12
+10 1
+(b) K-maps
+D
+01 11 10
+00 01
+12
+1
+1
+1
+5
+1
+13
+9
+1
+1
+1
+B₂=G₁ G₂
+K-map for B₂
+99
+1
+7
+1
+15
+1
+11 10
+3
+1
+1
+1
+14
+10
+10
+B, G, G, G, G₁
+K-map for B,
+52DECODERS
+• A decoder is a logic circuit that converts an N-bit
+binary input code into M output lines such that only
+one output line is activated for each one of the
+possible combinations of inputs.
+N
+inputs
+A₂
+AN-2
+AN-11
+2 input codes
+Decoder
+Do
+D₁
+D₂
+-DM-2
+DM-1
+M
+outputs
+Only one output
+is high for each
+input code
+Figure 7.68 General block diagram of a decoder.
+53●
+Since each of the N inputs can be a 0 or a 1, there are
+2N possible input combinations or codes.
+For each of these input combinations, only one of the
+M outputs will be active (HIGH), all the other outputs
+will remain inactive (LOW).
+543-Line-to-8-Line Decoder
+Binary inputs
+MSB
+LSB
+Octal outputs
+-D₁ = ABC
+-D6 = ABC
+-D6 = ABC
+-
+D4 = ABC
+Outputs
+Do D1 D2 Dj D4 Ds D6 Dy
+10000000
+01000000
+00100000
+0 0 0 1 0000
+0000 1000
+0 0 0 0 0 1 0 0
+000 000 1 0
+00000001
+(a) Logic diagram
+(b) Truth table
+Figure 7.69 3-line to 8-line decoder.
+-Dg = ABC
+Inputs
+A B C
+000
+001
+010
+0 1 1
+100
+101
+110
+1 1 1
+-D2 = ABC
+-D, = ABC
+Do = ABC
+55• It can be called a 3-line to 8-line decoder because it has
+three input lines and eight output lines.
+• It is also called a binary-to-octal decoder because it takes a
+3-bit binary input code and activates one of the eight
+(octal) outputs corresponding to that code.
+• It is also referred to as a 1-of-8 decoder because only one
+of the eight outputs is activated at one time.
+56Enable Inputs
+Some decoders have one or more ENABLE inputs that are
+used to control the operation of the decoder.
+For example, in the 3-line to 8-line decoder, if a common
+ENABLE line is connected to the fourth input of each gate,
+a particular output as determined by the A, B, C input
+code will go HIGH only when the ENABLE line is held
+HIGH.
+• When the ENABLE is held LOW, however, all the outputs
+will be forced to the LOW state regardless of the levels at
+the A, B, and C inputs.
+572-Line-to-4-Line Decoder
+Do
+D
+-D₁
+Jo
+(a) Logic diagram
+-D₂
+p-D₂
+E AB
+1 x x
+000
+001
+0 1 0
+011
+Do D₁ D₂ D₂
+1 1 1 1
+0 1
+10 1 1
+1101
+1 1 1 0
+(b) Truth table
+Figure 7.70 2 line-to-4 line decoder with NAND gates.
+584-to-16 Decoder from Two 3-to-8
+Decoders
+Binary inputs
+&
+A₂
+A₁
+3x8
+A decoder
+DE
+A
+3x8
+A decoder
+E
+(a) Logic diagram
+•Do
+•D₁
+dddd
+·D₁0
+-D₁1
+-D12
+D₁3
+-D₁4
+-Dis
+Decimal outputs
+Upper decoder
+Lower decoder
+Binary inputs
+A3 A₂ A₁ A
+0000
+0001
+001 0
+0011
+0100
+0101
+0110
+0 1 1 1
+1000
+1001
+1010
+1011
+1 100
+101
+1 1 1
+Decimal
+output
+(active low)
+(b) Function table
+Do
+D₁
+D₂
+D₁
+D₁
+De
+D₁
+Da
+D₂
+D₁0
+D₁1
+D12
+D₁3
+D₁4
+D15
+Figure 7.72 Connecting two 74138 3-to-8 decoders to
+obtain a 4-to-16 decoder.
+59• The most significant input bit A3 is connected through
+an inverter to on the upper decoder (for DO through D7)
+and directly to E on the lower decoder (for D8 through
+D15).
+• Thus, when A3 is LOW, the upper decoder is enabled
+and the lower decoder is disabled.
+The bottom decoder outputs all Os, and top 8 outputs
+generate minterms.
+• When A3 is HIGH, the lower decoder is enabled and the
+upper decoder is disabled.
+•The bottom decoder outputs generate minterms 1000
+to 1111 while the outputs of the top decoder are all Os.
+60ENCODERS
+• An encoder is a device whose inputs are decimal digits and/or
+alphabetic characters and whose outputs are the coded
+representation of those inputs.
+i.e. an encoder is a device which converts familiar numbers or
+symbols into coded format.
+●
+An encoder may be said to be a combinational logic circuit that
+performs the 'reverse' operation of the decoder.
+The opposite of the decoding process is called encoding.
+• An encoder has a number of input lines, only one of which is
+activated at a given time, and produces an N-bit output code
+depending on which input is activated.
+61Block diagram of encoder.
+Minputs
+only one
+HIGH at
+a time
+AM-₂
+AM-1
+ENCODER
+-000
+-00₁
+-00₂
+-O ONE
+ON-1
+Ю
+N-bit
+output
+code
+62Octal-to-Binary
+Encoder
+• An octal-to-binary encoder (8-line to
+3-line encoder) accepts 8 input lines
+and produces a 3-bit output code
+corresponding to the activated input.
+Octal digits
+Binary
+A₂ A₁ A₂
+Do 0
+000
+D₁ 1 001
+D₂ 2010
+D₂
+D, 3011
+D₂ 4100
+D₁ 5 10 1
+D₁
+6
+1 10
+D,
+7 1 1 1
+(a) Truth table
+Octal inputs
+D₁ D₂ D₂ D, D D D₁
+(b) Logic diagram
+Figure 7.62 Octal-to-binary encoder.
+Binary
+outputs
+63• From the truth table, we see that A2 is a 1 if any of
+the digits D4 or D5 or D6 or D7 is a 1.
+• Therefore, A2 = D4 + D5 + D6 + D7
+●
+Similarly, A1 = D2 + D3 + D6 + D7 and
+●
+• A0 = D1 + D3 + D5 + D7
+• D is not present in any of the expressions. So, D i is
+0
+a don't care.
+64Decimal-to-BCD Encoder
+Decimal
+inputs
+0
+1
+2
+3
+4 DEC/BCD
+5
+10
+29
+6
+7
+8
+9
+(a) Logic symbol
+BCD
+outputs
+Decimal inputs
+Po
+D₁
+D₂
+D₁
+D₁
+D₁
+De
+D₂
+Da
+Dg
+Decimal inputs
+D₁ D₂ D₂ D₂ D₂ D D7 Dg Dg
+(c) Logic diagram
+912
+Binary
+Ag A₂ A₁ A₂
+0 000
+0 0 0 1
+0 0 1 0
+0011
+0100
+0101
+0110
+1
+0 1 1
+1000
+1001
+3
+4
+5
+6
+7
+8
+9
+(b) Truth table
+Ag
+A₂
+BCD
+outputs
+Figure 7.63 Decimal-to-BCD encoder.
+65• This type of encoder has 10 inputs- one for each
+decimal digit, and 4 outputs corresponding to the BCD
+code.
+• This is a basic 10-line to 4-line encoder.
+• A3 = D8 + D9
+A2 = D4 + D5 + D6 + D7
+A1 = D2 + D3 + D6 + D7
+• AO = D1 + D3 + D5 + D7 + D9
+66Multiplexer (Mux)
+Multiplexing means sharing. It is the process of switching
+information from several lines on to a single line in a
+specified sequence.
+• A multiplexer or data selector is a logic circuit that accepts
+several data inputs and allows only one of them to get
+through to the output.
+●
+It is an N-to-1 device.
+674-to-1 Multiplexer
+Inputs
+HIGH A
+LOW B
+HIGH C
+LOW D
+½
+tz
+Multiplexer
+Multiplexed
+serial data output
+(a) The multiplexer
+if the switch is connected to input A for time t1, to input B for time
+t2, to input C for time t3 and to input D for time t4, the output of the
+multiplexer will be as shown in the figure.
+68DeMultiplexer (DeMux)
+• Demultiplexing operation is the inverse
+of multiplexing.
+• Demultiplexing is the process of
+switching information from one input
+line on to several output lines.
+• A demultiplexer is a digital circuit that
+takes a single input and distributes it
+over several outputs.
+• It is a 1-to-N device.
+691-to-4 Demultiplexer
+vr
+²7²7²7
+Input
+Demultiplexer
+(b) The demultiplexer
+A
+LOW during t
+B HIGH during &
+C LOW during t
+D HIGH during
+if the switch is connected to innut A for time
+70Magnitude comparator
+• Magnitude Comparator is a logic circuit
+used to compare two quantities and
+give an output signal indicating whether
+the two input quantities are equal or
+not. and if not. which of them is greater.
+Comparator
+Binary
+inputs
+A>BHIGH
+A=BLOW Outputs
+A<BLOW
+HIGH level indicates that
+(a) The comparator A is greater than B (8> 4)
+71•The binary representations of the
+quantities A and B to be compared are
+applied as inputs to the comparator.
+One of the outputs, A< B, A = B or A > B
+goes HIGH, depending on the
+magnitudes of the input quantities.
+• The figure illustrates comparison of 8
+and 4, and the result is HIGH (8 > 4).
+72

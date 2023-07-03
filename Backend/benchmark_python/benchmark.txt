@@ -1,0 +1,7 @@
+                             
+{'best_video_url': 'https://www.youtube.com/watch?v=GwIo3gDZCVQ', 'elapsed_time': 58.66309332847595}
+
+Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-learn-intelex)
+{'best_video_url': 'https://www.youtube.com/watch?v=GwIo3gDZCVQ', 'elapsed_time': 54.04244136810303}
+
+

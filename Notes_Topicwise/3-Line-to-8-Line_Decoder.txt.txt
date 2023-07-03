@@ -1,0 +1,4 @@
+- The 3-line to 8-line decoder is an electronic circuit that has three input lines and eight output lines.
+- It is commonly known as a binary-to-octal decoder because it takes a 3-bit binary input code and activates one of the eight outputs corresponding to that code.
+- The decoder is also called a 1-of-8 decoder as only one of the eight outputs is activated at any given time.
+- Certain decoders feature ENABLE inputs that are utilized to control the functioning of the decoder.

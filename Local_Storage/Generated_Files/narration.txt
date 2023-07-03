@@ -1,0 +1,14 @@
+Sure! A truth table is a way of representing the outcomes of logical expressions. It lists all possible combinations of input values and their corresponding output values. The input variables in a truth table are usually denoted as "P," "Q," and so on, while the output values are usually represented as "T" or "F" for true or false.
+
+For example, let's consider the logical expression "P OR Q." The truth table for this expression would have two input columns, one for "P" and one for "Q," and one output column for the result of the expression. The truth table would list all possible combinations of "P" and "Q," and then determine whether the expression is true or false for each combination.
+
+So, for the "P OR Q" expression, the truth table would look like this:
+
+P   Q   P OR Q
+-------------
+T   T     T
+T   F     T
+F   T     T
+F   F     F
+
+Does that make sense? Do you have any questions or need further clarification?

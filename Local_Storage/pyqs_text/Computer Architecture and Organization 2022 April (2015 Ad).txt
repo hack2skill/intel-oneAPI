@@ -1,0 +1,169 @@
+BTS-IV(S)-04.22-0230
+
+Reg. No.
+
+e
+
+I I I I I I I I
+
+B. Tech. Degree IV Semester Supplementary Examination
+April 2022
+CS 15-1403 COMPUTER ARCHITECTURE AND ORGANIZATION
+(2015 Scheme)
+Time: 3 Hours
+
+Maximum Marks: 60
+
+PART A
+(Answer ALL questions)
+(10 X 2 = 20)
+I.
+
+(a)
+
+Differentiate between Big-Endian and Little-Endian Assignments with an
+example.
+
+(b)
+
+List out the various steps needed to execute the machine instruction
+LOAD R2, LOC.
+
+(c)
+
+Write notes on Program-Controlled 1/0.
+
+(d)
+
+What do you mean by prefetching of microinstructions?
+
+(e)
+
+Define emulation.
+
+(f)
+
+Explain the concept of fast addition.
+
+(g)
+
+What is translation lookahead buffer? What are the advantages?
+
+(h)
+
+Differentiate between SRAM and DRAM.
+
+(i)
+
+What are exceptions? List out any two types of exceptions.
+
+6)
+
+What is the difference between a subroutine and an interrupt-service
+routine?
+
+PART B
+(4 X IQ= 40)
+II.
+
+(a)
+(b)
+
+Define stack. Explain with an example the sequence of operations in a
+stack when a subroutine is encounterd.
+Differentiate between Register Transfer Notation and Assembly-Language
+Notation.
+
+(6)
+(4)
+
+OR
+III.
+
+(a)
+
+IV.
+
+(b)
+(a)
+(b)
+
+What are addressing modes? Explain any two addressing modes with an
+examples.
+Differentiate between CISC and RISC architectures with their advantages.
+Explain the functioning of a microprogrammed control unit with necessary
+diagrams.
+Explain the steps in fetching and executing the instruction ADD R3, R4,
+RS.
+
+(6)
+(4)
+(6)
+(4)
+
+OR
+
+V.
+
+(a)
+(b)
+
+Design a 4 bit fast adder with look ahead carry.
+Explain the principle of non-restoring division with an example.
+
+VI.
+
+(a)
+
+What is the concept of cache memory? Explain any two cache memory
+mapping functions.
+Explain how address translation is done in paging.
+
+(b)
+
+(5)
+(5)
+(5)
+(5)
+
+OR
+
+VII.
+
+(a)
+(b)
+
+Explain the internal organization of a 16 x 8 memory chip.
+What is the need for page replacement? Explain any two page replacement
+algorithms.
+
+(5)
+
+VIII. (a)
+
+Explain any two methods of handling simultaneous interruot requests by
+devices.
+Explain briefly about the PCI bus standard.
+
+(5)
+
+(b)
+
+(5)
+
+(5)
+
+OR
+IX.
+
+(a)
+(b)
+
+What are vectored interrupts? How are they handled by the processor?
+What is DMA ? Explain the fuctioning of DMA controller.
+kkk
+
+(5)
+(5)
+
+
