@@ -1,0 +1,19 @@
+[theme]
+
+# Used to style primary interface elements. It's the color displayed most frequently across your app's
+# screens and components. Examples of widgets using this color are st.slider and st.checkbox.
+primaryColor = "#ff531a" 
+
+# Background color for the main container.
+backgroundColor = "#ecf2f9" 
+
+# Used as the background for most widgets. Examples of widgets with this background are st.sidebar,
+# st.text_input, st.date_input.
+secondaryBackgroundColor =  "#f2e6d9"
+
+# Font color for the page.
+textColor = "#323234"
+
+# Font family (serif | sans serif | mono) for the page. Will not impact code areas.
+# Default: "sans serif"
+font = "sans serif"

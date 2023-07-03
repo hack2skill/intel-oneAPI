@@ -1,0 +1,54 @@
+* What is Algebra
+
+Algebra is a branch of mathematics that deals with symbols and letters representing numbers and quantities. It is a powerful tool for representing and solving mathematical problems and equations using variables and mathematical operations. Algebra enables us to study patterns, relationships, and structures in a more generalized and abstract way.
+
+In algebra, equations and expressions are written using variables (such as x, y, or z) to represent unknown quantities or values that can vary. These variables can be manipulated and solved for, allowing us to find solutions and understand the relationships between different quantities.
+
+
+* Some Algebra Rules
+
+Here are some important algebraic rules and concepts explained concisely:
+
+1. Order of Operations:
+   - The order of operations dictates the sequence in which operations should be performed in an expression.
+   - Use the acronym PEMDAS: Parentheses, Exponents, Multiplication and Division (from left to right), and Addition and Subtraction (from left to right).
+
+2. Commutative Property:
+   - The commutative property states that the order of addition or multiplication does not affect the result.
+   - Addition: a + b = b + a
+   - Multiplication: a × b = b × a
+
+3. Associative Property:
+   - The associative property states that the grouping of numbers being added or multiplied does not affect the result.
+   - Addition: (a + b) + c = a + (b + c)
+   - Multiplication: (a × b) × c = a × (b × c)
+
+4. Distributive Property:
+   - The distributive property allows us to multiply a number by a sum or difference.
+   - a × (b + c) = a × b + a × c
+
+5. Identity Property:
+   - The identity property states that there are special numbers (called identities) that, when combined with other numbers in a particular operation, leave the other number unchanged.
+   - Addition: a + 0 = a
+   - Multiplication: a × 1 = a
+
+6. Inverse Property:
+   - The inverse property states that there are special numbers (called inverses) that, when combined with other numbers in a particular operation, yield the identity element for that operation.
+   - Addition: a + (-a) = 0
+   - Multiplication: a × (1/a) = 1
+
+7. Zero Property:
+   - The zero property states that any number multiplied by zero is zero.
+   - a × 0 = 0
+
+8. Substitution Property:
+   - The substitution property allows us to replace a variable with an equivalent expression in an equation or expression.
+
+
+* Addition & Multiplication Properties
+
+In algebra, the Addition and Multiplication Properties are fundamental concepts that govern the manipulation and simplification of equations. These properties provide rules for performing operations on numbers and variables, allowing mathematicians to solve equations and express mathematical relationships. In this context, addition refers to the combining of quantities, while multiplication involves the repeated addition of quantities. Understanding these properties is crucial for solving equations, simplifying expressions, and exploring the relationships between numbers and variables. 
+
+The Addition Property of Equality states that if two quantities are equal, then adding the same number to both sides of the equation will not change the equality. In other words, if a = b, then a + c = b + c, where c is any real number. This property allows us to manipulate equations by adding or subtracting terms to isolate variables or simplify expressions. For example, consider the equation 2x - 5 = 7. By applying the Addition Property of Equality, we can add 5 to both sides to obtain 2x = 12. This step allows us to isolate the variable x and solve for its value. 
+
+Similarly, the Multiplication Property of Equality states that if two quantities are equal, then multiplying both sides of the equation by the same non-zero number will preserve the equality. In algebraic terms, if a = b, then ac = bc, where c ≠ 0. This property is essential for solving equations involving multiplication or division. For instance, let's consider the equation 3x = 15. By applying the Multiplication Property of Equality, we can multiply both sides by 1/3 to find x = 5. This operation helps us determine the value of the variable x.

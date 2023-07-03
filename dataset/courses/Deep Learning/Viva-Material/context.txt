@@ -1,0 +1,21 @@
+* What is Deep Learning
+
+Deep learning is a subfield of machine learning and artificial intelligence that focuses on the development of algorithms and models inspired by the structure and function of the human brain's neural networks. It aims to enable computers to learn and make intelligent decisions by simulating the way the human brain processes information.
+
+The fundamental building block of deep learning is the artificial neural network (ANN), which is a computational model composed of interconnected nodes, or artificial neurons. These neurons are organized into layers, with each layer receiving input from the previous layer and producing output for the next layer. The layers are typically divided into an input layer, one or more hidden layers, and an output layer.
+
+What sets deep learning apart from traditional machine learning approaches is the use of deep neural networks, which are neural networks with multiple hidden layers. Deep neural networks can learn complex representations and hierarchies of data, enabling them to automatically extract high-level features from raw input, such as images, text, or audio. This ability to learn hierarchical representations is one of the reasons why deep learning has achieved remarkable success in various fields.
+
+To train a deep neural network, a large dataset is typically required. The network learns by adjusting its weights and biases through a process called backpropagation, where the error between the predicted output and the actual output is propagated backward through the network, updating the parameters in a way that minimizes the error. The optimization is usually performed using gradient descent or its variants.
+
+* Logistic Regression
+
+Used for classification tasks, In logistic regression, the input variables, also known as features or predictors, are linearly combined using weights. The linear combination is then passed through the logistic function, which maps the resulting value to a probability between 0 and 1. This probability represents the likelihood of the binary outcome being one of the classes. By choosing a threshold (typically 0.5), the predicted probability can be converted into a discrete class prediction.
+
+The logistic function, also called the sigmoid function, has an S-shaped curve that allows logistic regression to model non-linear relationships between the input variables and the binary outcome. This flexibility makes logistic regression suitable for a wide range of classification problems.
+
+* Gradient Descent
+
+Gradient descent is an optimization algorithm commonly used in machine learning and mathematical optimization. Its purpose is to minimize or maximize a given function by iteratively adjusting the parameters or weights of a model in the direction of steepest descent or ascent, respectively.
+
+The name "gradient descent" stems from the fact that it relies on the gradient of the function being optimized. The gradient is a vector that points in the direction of the greatest increase of the function. By taking steps in the opposite direction of the gradient, the algorithm moves towards the minimum (or maximum) of the function.
