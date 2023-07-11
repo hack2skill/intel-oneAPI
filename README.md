@@ -91,10 +91,10 @@ Also Start the webapp demo build using streamlit.
   $ cp -r ./dataset webapp/ 
 
   # build using docker compose
-  $ docker-compose build
+  $ docker compose build
   
   # start the services
-  $ docker-compose up 
+  $ docker compose up 
 ```
 
 - Go to http://localhost:8502
