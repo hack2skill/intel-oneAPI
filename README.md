@@ -4,7 +4,7 @@
 ### PPT - https://github.com/rohitc5/intel-oneAPI/blob/main/ppt/Intel-oneAPI-Hackathon-Implementation.pdf
 ### Medium Article - https://medium.com/@rohitsroch/leap-learning-enhancement-and-assistance-platform-powered-by-intel-oneapi-ai-analytics-toolkit-656b5c9d2e0c
 ### Benchmark Results - https://github.com/rohitc5/intel-oneAPI/tree/main/benchmark on Intel® Dev Cloud machine [Intel® Xeon® Platinum 8480+ (4th Gen: Sapphire Rapids) - 224v CPUs 503GB RAM]
-### Demo Video - https://www.youtube.com/watch?v=QoVWsOSlwvI
+### Demo Video - https://www.youtube.com/watch?v=CXkR5tklZm0
 
 <hr>
 
@@ -67,7 +67,7 @@ hints to the student to arrive at correct answer, enhancing student engagement a
 
 # Demo Video
 
-[![LEAP](https://img.youtube.com/vi/QoVWsOSlwvI/0.jpg)](https://www.youtube.com/watch?v=QoVWsOSlwvI)
+[![LEAP](https://img.youtube.com/vi/CXkR5tklZm0/0.jpg)](https://www.youtube.com/watch?v=CXkR5tklZm0)
 
 # Step-by-Step Code Execution Instructions:
 
