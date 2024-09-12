@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learners'Ed - Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles-dash.css' %}" />
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% if 'student_id' in request.session %}
+        <script>
+            var studentId = "{{ request.session.student_id }}";
+        </script>
+    {% endif %}
+    <div id="title" class="flex text-6xl mt-32 font-bold text-white text-center shadow-2xl justify-between items-center">
+        <h1 id="studname" class="hover:translate-x-24 hover:scale-125 hover:duration-200 duration-200">Hello, {{ student_name }}!</h1>
+        <div class="flex justify-center items-center gap-x-5">
+            <div id="weather-container" class="text-2xl flex flex-col gap-y-px text-right">
+                <p class="temperature"></p>
+                <h2 class="location capitalize"></h2>
+                <p class="description capitalize"></p>
+            </div>
+            <div class="h-32 w-0 border border-white"></div>
+            <div id="weather-icon"></div>
+        </div>
+    </div>
+    <div class="w-11/12 ml-auto mt-14 flex gap-y-10 flex-col mr-auto">
+        <p class="text-3xl font-bold px-12 py-5 rounded-full outline-xl outline black bg-white">Dashboard</p>
+        <div id="row1" class="w-full flex justify-between gap-x-10">
+            <div id="rank" class="il-1 il flex flex-col justify-center items-center gap-y-4">
+                <p class="mt-2 font-bold border-4 bg-black border-white text-xl text-white w-1/2 text-center py-2 rounded-full">RANK</p>
+                <div id="circle" class="h-1/2 w-9/12 border-4 border-white rounded-full bg-blue-200 h-full flex justify-center items-center"><p id="rval" class="text-5xl font-bold"><span class="countr">127</span>th</p></div>
+            </div>
+            <div id="class-wise" class="il-1 il">
+                <canvas id="bar_class"></canvas>
+                <p class="info">Class-Wise</p>
+            </div>
+            <div id="section-wise" class="il-1 il">
+                <canvas id="bar_section"></canvas>
+                <p class="info">Section-Wise</p>
+            </div>
+            <div id="school-wise" class="il-1 il">
+                <canvas id="bar_school"></canvas>
+                <p class="info">School-Wise</p>
+            </div>
+        </div>
+        <div id="row2" class="w-full flex justify-between gap-x-10">
+            <div id="alerts" class="il-2 il flex flex-col gap-y-3 items-center">
+                <p class="text-2xl font-bold self-">Alerts</p>
+                <hr class="bg-black border-gray-300 border w-11/12"/>
+                <div id="alert-box" class="flex flex-col gap-y-px px-4">
+                    <ul id="list" class="flex flex-col overflow-y-auto h-60 gap-y-2">
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                        <li class="break-all text-lg p-5 rounded-xl mr-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, ad!</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="attendance" class="il-2 il flex flex-col gap-y-4 items-center">
+                <p class="text-2xl font-bold">Attendance</p>
+                <div class="flex flex-col gap-y-2 items-center justify-center">
+                    <div id="progress-bar">
+                        <span class="w-9/12 progress"></span>
+                    </div>
+                    <p class="font-bold text-4xl"><span class="countr">{{ attendance.average_attendance }}</span>%</p>
+                </div>
+                <hr class="bg-black border-gray-300 border w-9/12"/>
+                <div id="subject-wise" class="flex flex-col overflow-y-auto w-9/12 h-36 mb-4 gap-y-2">
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Maths</p>
+                        <p><span class="countr">{{ attendance.maths_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Hindi</p>
+                        <p><span class="countr">{{ attendance.hindi_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">English</p>
+                        <p><span class="countr">{{ attendance.english_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Science</p>
+                        <p><span class="countr">{{ attendance.science_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>
+                    <div id="sub" class="flex w-11/12 justify-between">
+                        <p class="">Social Science</p>
+                        <p><span class="countr">{{ attendance.social_science_attendance }}</span>%</p>
+                    </div>
+                    <hr class="bg-black border-gray-300 border w-11/12"/>    
+                </div>
+            </div>
+            <div id="assignment" class="il-2 il flex flex-col items-center">
+                <div class="relative flex flex-col justify-center items-center h-5/6">
+                    <div class="absolute w-20 flex flex-col items-center">
+                        <p class="text-6xl pb-2 font-bold countr">4</p>
+                        <hr class="bg-black border-black border w-11/12"/>   
+                        <p class="text-6xl font-bold">6</p>
+                    </div>
+                    <canvas id="assignment-pie"></canvas>
+                </div>
+                <p class="text-2xl font-bold">Assignments Left: <span id="assignment-no" class="countr">2</span></p>
+            </div>
+        </div>
+        <div id="row3" class="w-full flex justify-between gap-x-10">
+            <div id="learners-coin" class="il-3 il outline-4 p-8 justify-between items-center flex outline-white"> 
+                <p class="text-4xl font-bold text-white">Learners'Ed<br/>Coins<br/><span class="text-sm font-normal">*For new students, bonus 200 coins will be granted!</span></p>
+                <div class="flex w-1/2 gap-x-5">
+                    <div id="coin" class="w-7/12 p-2"></div>
+                    <div class="h-32 w-0 border border-white"></div>
+                    <div id="coin-info" class="flex flex-col text-center text-white font-bold">
+                        <p class="text-3xl countr">{{ current_pet.pet_coin }}</p>
+                        <p class="text-xl">Learners'Ed Coins<br/>Left</p>
+                    </div>
+                </div>
+            </div>
+            <div id="pet" class="il-3 outline-4 flex outline-white">
+                <div class="w-1/2 border-r-4 flex flex-col justify-center items-center border-white grow">
+                    <div class="flex flex-col justify-center items-center gap-y-5">
+                        <div class="flex flex-col">
+                            <p class="text-lg font-bold text-white text-center">Your Virtual Pet</p>
+                            <p class="text-4xl text-white font-bold">Alex</p>
+                        </div>
+                        <div class="flex flex-col w-full gap-y-px">
+                            <div class="flex justify-between w-full">
+                                <p class="text-xl text-white font-bold">Level</p>
+                                <p class="text-xl text-white font-bold countr">3</p>
+                            </div>
+                            <div class="flex justify-between w-full">
+                                <p class="text-xl text-white font-bold">Rank</p>
+                                <p class="text-xl text-white font-bold"><span class="countr">94</span>th</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pet-graph" class="w-1/2 p-4 flex justify-center grow bg-white">
+                    <canvas id="pet_canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-3xl mt-20 w-11/12 font-bold px-12 py-5 rounded-full outline-xl ml-auto mr-auto outline black bg-white">Recommendation Section</p>
+    <div id="row4" class="pt-10 pb-20 w-full flex justify-center items-center">
+        <div class="video-container il-4">
+            <div class="video-wrapper" id="video-wrapper">
+                <div id="loading-animation" class="loading-animation"></div>
+              <!-- Videos will be dynamically added here -->
+            </div>
+        </div>              
+    </div>
+    <script src="{% static 'script-dash.js' %}"></script>   
+    <script src="{% static 'jquery.counterup.min.js' %}"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script>
+        // Get the progress element
+        const progress = document.querySelector('#progress-bar > span');
+
+        // Set the target width (e.g., 75%)
+        const targetWidth = '{{ attendance.average_attendance }}';
+
+        // Animate the progress bar
+        progress.style.width = `${targetWidth}%`;
+    </script>
+</body>
+</html>

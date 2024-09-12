@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Student Insights</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'student_insights.css' %}" />
+        <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+        <script src="https://cdn.tailwindcss.com"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div id="whole">
+            <div class="heading border-t-2 pt-3 h-28 border-black border-b-2">
+                <h1 id="title"><b class="mr-12">STUDENTS'</b><b>INSIGHTS</b></h1>
+            </div>
+              <div class="box w-11/12 mr-auto ml-auto">
+                <div class="left-section">
+                 <div class="twin_flexboxes mr-auto ml-auto">
+                  <div class="flexbox" id="flexbox1" onclick="location.href='/chatroom/'">
+                    <h1 class="quiz1-heading"><b>chatrooms</b></h1>
+        
+                  </div>
+
+                  <div class="flexbox" id="flexbox2" onclick="location.href='/chatbot/'">
+                    
+                    <h1 class="quiz-heading"><b>MENTAL HEALTH CHATBOT</b></h1>
+                
+                  </div>
+                </div>
+                  <div class="horizontal-flexbox ml-auto mr-auto" onclick="location.href='/explore-fields/'">
+                    <div class="quiz2-heading mt-8 text-4xl font-bold">EXPLORE FIELDS</div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

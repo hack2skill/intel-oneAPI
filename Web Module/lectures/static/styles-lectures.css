@@ -1,0 +1,67 @@
+body {
+    background-image: url(./images/bg-new.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+#play>button {
+    box-shadow: 0 0 5px 2px gray;
+    background-image: linear-gradient(to right bottom, #9376E0, #F3BCC8);
+    animation: gradientAnimation 3s infinite ease-in-out;
+    background-size: 200% 200%;
+    transition-duration: 200ms;
+}
+
+.lecture {
+    box-shadow: 0 0 10px 2px gray;
+    border-radius: 30px;
+    transition-duration: 200ms;
+}
+
+.lecture:hover {
+    transform: scale(1.05);
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+    visibility: hidden;
+}
+
+#box {
+    border-radius: 50px;
+    height: 450px;
+    scroll-behavior: smooth;
+}
+
+p {
+    white-space: normal;
+}
+
+#play>button:hover {
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+#play>button:active {
+    transform: scale(0.9);
+    background-image: none;
+    background-color: black;
+    transition-duration: 200ms;
+}
+
+@keyframes gradientAnimation {
+    0%, 100% {
+      background-position: left top;
+    }
+    50% {
+      background-position: right bottom;
+    }
+}
+

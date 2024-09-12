@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamify-Quiz - (Learners'Ed)</title>
+    <link rel="stylesheet" href="{% static 'styles-gamify-quiz.css' %}" />
+    <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head> 
+<body>
+    {% include 'navbar.html' %}
+    <p id="title" class="text-3xl mt-36 text-center font-bold px-12 ml-auto mr-auto w-9/12 py-5 rounded-full outline-xl outline black bg-white">Gamify Quiz</p>
+    <div id="main" class="flex flex-col justify-center items-center">
+        <div class="px-7 my-8 font-bold border-4 bg-white border-black rounded-3xl py-4" id="questionText">Q. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eveniet?</div>
+        <p id="predictionResult"></p>
+        <div class="flex justify-between gap-x-20 items-center">
+            <div class="flex flex-col gap-y-12 justify-center items-center">
+                <div id="option1" class="w-96 h-44 font-bold rounded-3xl text-2xl flex justify-center items-center opt" data-option-index="0"></div>
+                <div id="option3" class="w-96 h-44 font-bold rounded-3xl text-2xl flex justify-center items-center opt" data-option-index="3"></div>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <video class="border-8 w-96 rounded-3xl border-black bg-white" id="videoElement" autoplay></video>
+            </div>
+            <div class="flex flex-col gap-y-12 justify-center items-center">
+                <div id="option2" class="w-96 h-44 font-bold rounded-3xl text-2xl flex justify-center items-center opt" data-option-index="2"></div>
+                <div id="option4" class="w-96 h-44 font-bold rounded-3xl text-2xl flex justify-center items-center opt" data-option-index="4"></div>
+            </div>
+        </div>
+    </div>
+    <div id="res-div"><p id="result" class="text-center flex flex-col gap-y-4 text-3xl p-10 text-white font-bold"></p></div>
+    <div id="start-div"><button id="startButton" class="btn-start text-3xl font-bold text-white">Start Quiz</button></div>
+    <div id="progressBar" class="h-10 fixed left-0 bottom-0 bg-black"></div>
+    <script>
+        const questions = JSON.parse('{{ questions_json|escapejs }}');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'script-gamify-quiz.js' %}"></script>
+</body>
+</html>

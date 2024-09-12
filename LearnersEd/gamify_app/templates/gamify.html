@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Gamification</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'gamify.css' %}" />
+        <script src="https://cdn.tailwindcss.com"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="{% static 'nav-styles.css' %}" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+      {% include 'navbar.html' %}
+        <div id="whole">
+            <div class="heading">
+                <h1 id="title"><b>Gamify</b></h1>
+              </div>
+              <div class="box">
+                <div class="left-section">
+                 <div class="twin_flexboxes mr-auto ml-auto">
+                  <div class="flexbox" id="flexbox1" onclick="location.href='/gamify-quiz/'">
+                    <h1 class="quiz-heading py-3"><b>QUIZ</b></h1>
+                  </div>
+
+                  <div class="flexbox" id="flexbox2" onclick="location.href='/virtual-pet/'">
+                    <h1 class="quiz-heading p-2"><b>VIRTUAL PET</b></h1>
+                  </div>
+                </div>
+                  <div class="horizontal-flexbox">
+                    <div class="il bottom-flexbox outline-4 p-8 pr-12 justify-between items-center flex outline-white">
+                      <p class="text-5xl font-bold text-left text-white">Learners'Ed Coins<br/><span class="text-xl font-normal">*For new students, bonus 200 coins will be granted!</span></p>
+                      <div class="flex w-1/2 gap-x-14 justify-end">
+                          <div id="coin" class="w-1/4"></div>
+                          <div class="h-32 w-0 border border-white"></div>
+                          <div id="coin-info" class="flex flex-col items-center w-20 justify-right text-center text-white font-bold">
+                              <p class="text-3xl countr">200</p>
+                              <p class="text-xl">Learners'Ed Coins<br/>Left</p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+                <div class="right-section mr-6">
+                  <div class="large-flexbox flex flex-col border-8 border-white">
+                    <div class="h-1/2 border-b-4 flex flex-col justify-center items-center border-white grow">
+                      <div class="flex w-9/12 flex-col justify-center items-center gap-y-5">
+                        <div class="flex flex-col">
+                            <p class="text-lg font-bold text-white text-center">Your Virtual Pet</p>
+                            <p class="text-4xl text-white font-bold">Alex Pandit</p>
+                        </div>
+                        <div class="flex flex-col w-full gap-y-px">
+                            <div class="flex justify-between w-full">
+                                <p class="text-xl text-white font-bold">Level</p>
+                                <p class="text-xl text-white font-bold countr">3</p>
+                            </div>
+                            <div class="flex justify-between w-full">
+                                <p class="text-xl text-white font-bold">Rank</p>
+                                <p class="text-xl text-white font-bold"><span class="countr">94</span>th</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="pet-graph" class="h-1/2 mt-6 p-4 flex justify-center grow bg-white">
+                      <canvas id="pet_canvas"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <script src="{% static 'jquery.counterup.min.js' %}"></script>  
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('.countr').counterUp({
+                delay: 10,
+                time: 1000
+            });
+          });
+
+          var chartData4 = {
+            labels: ['Dino', 'Trio', 'Alex', 'Dobi', 'Smurfs'],
+            datasets: [{
+              data: [92, 93, 94, 95, 96],
+              backgroundColor: '#C4B0FF'
+            }]
+          };
+
+          var chartOptions = {
+            scales: {
+              y: {
+                beginAtZero: false
+              }
+            },
+            plugins: {
+              legend: {
+                  display: false,
+              }
+          }
+          };
+
+          var ctx4 = document.getElementById('pet_canvas').getContext('2d');
+          new Chart(ctx4, {
+            type: 'bar',
+            data: chartData4,
+            options: chartOptions
+          });
+        </script>
+    </body>
+</html>

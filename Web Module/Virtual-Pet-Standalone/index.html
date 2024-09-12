@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="selector">
+        <h1>Create your very own pet!</h1>
+        <div id="select_type">
+            <input type="radio" id="Dog" name="sel" value="Dog" required /><label for="Dog"><div class="pet-sel"><div id="Dog"></div></div></label>
+            <input type="radio" id="Cat" name="sel" value="Cat"/><label for="Cat"><div class="pet-sel"><div id="Cat"></div></div></label>  
+        </div>
+        <div id="name">
+            <p>Enter your new pet's name:</p>
+            <input id="name_data" type="text" placeholder="Type Here" required/>
+            <input type="button" id="selector_submit" onclick="validate()" value="SUBMIT">
+        </div>
+    </div>
+    <div id="container">
+        <div id="shop-container">
+            <div id="shop">
+                <p>Pet Shop</p>
+                <div id="item-container"></div>
+                <p id="pet-title">Pet Name: <span id="pet-name"></span></p>
+                <div id="coins">
+                    <p>Coins Left: <span id="coin-amt">0</span></p>
+                    <img src="./content/coins.png" />
+                </div>
+            </div>
+        </div>
+        <div id="pet-container">
+            <embed src="./content/Komiku_-_57_-_Quiet_Saturday.mp3" loop="true" autostart="true" height="0">
+            <div id="pet-background">
+                <div id="prog">
+                    <div id="level">
+                        <div id="bar"></div>
+                        <div id="info">+ Level</div>
+                        <div id="desc">Level <span id="levamt">0</span></div>
+                    </div>
+                    <div id="per">0%</div>
+                </div>
+                <div id="pet"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

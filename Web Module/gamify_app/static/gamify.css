@@ -1,0 +1,234 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+}
+
+body {
+    background-image: url(./images/bg-new.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Darker Grotesque', sans-serif;
+    height: 100vh;   
+    overflow-y: hidden;
+}
+
+#coin {
+  background-image: url(./images/coins.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 1rem gold);
+  animation: pulsate 6s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: rotateY(360deg) scale(1);
+    filter: drop-shadow(0 0 0.5rem gold);
+  } 
+  30% {
+    transform: rotateY(0deg) scale(1.1);
+    filter: drop-shadow(0 0 1rem gold);
+  }
+  100% {
+    transform: rotateY(360deg) scale(1);
+    filter: drop-shadow(0 0 0.5rem gold);
+  }
+}
+
+
+.il {
+  padding: 0 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-radius: 40px;
+  transition-duration: 200ms;
+  outline: 2px solid black;
+  background-color: white;
+}
+
+
+#whole {
+    
+    /* padding: 20px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    
+  }
+  .heading{
+    background-color: white;
+    margin-top: 100px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    /* padding: 30px; */
+    height:90px;
+  }
+  
+  #title {
+    color: #9376E0;
+    font-size: 60px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  }
+  .box {
+    display: flex;
+    padding: 15px;
+    gap:15px;
+  }
+  
+  .left-section {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+  }
+
+  .twin_flexboxes{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    width: 85%;
+    padding-left: 30px;
+  }
+  
+  .right-section {
+    flex: 3;
+  }
+  
+  .flexbox {
+    flex: 1;
+    
+    outline: 3px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+  }
+  .flexbox:hover{
+    box-shadow:2px 5px black;
+    transition-duration: 200ms;
+  }
+  #flexbox1 {
+    display: flex;
+    background-image: url('images/quiz.png');
+    /* animation: gradientAnimation 5s infinite ease-in-out; */
+    /* background-size: 200% 200%; */
+    /* transition-duration: 100ms; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    font-size: 30px;
+  }
+  
+  .quiz-heading{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: 4px solid #9376E0;
+    border:2px white;
+    padding:5px;
+    width: 40%;
+    font-size: 20px;
+    border-radius:5px;
+    background-color: black;
+    color:white;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    
+
+  }
+  .start-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #9376E0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .start-button:hover {
+    background-color: blueviolet;
+  }
+  #flexbox2{
+    display: flex;
+    background-image: url('images/virtualpet.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    margin: 30px;
+    gap:10px;
+    font-size: 30px;
+  }
+  
+  .large-flexbox {
+    flex: 1;
+    box-shadow: 0 0 20px 2px gray;
+    padding: 20px;
+    height:450px;
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 5s infinite ease-in-out;
+    background-size: 200% 200%;
+    border-radius: 40px;
+  }
+  .horizontal-flexbox {
+  display: flex;
+  height: 200px;
+}
+
+#pet-graph {
+  border-radius: 30px;
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.bottom-flexbox {
+  background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+  animation: gradientAnimation 5s infinite ease-in-out;
+  background-size: 200% 200%;
+  border-radius: 40px;
+  transition-duration: 200ms;
+  outline: 4px solid white;
+  width:90%;
+  height: 85%;
+  box-shadow: 0 0 20px 2px gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes gradientAnimation {
+  0%, 100% {
+    background-position: left top;
+  }
+  50% {
+    background-position: right bottom;
+  }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

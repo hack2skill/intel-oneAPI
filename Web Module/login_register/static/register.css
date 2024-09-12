@@ -1,0 +1,98 @@
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: white;
+    margin:0px;
+    padding:0px;
+}
+
+.box {
+    display:flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.background{
+    width:50%;   
+}
+.background>img {
+    height:100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+.log{
+    background-image: url(./images/illustration.jpg);
+    display: flex;
+    flex-direction: column;
+    background-size:contain;
+    background-position: bottom;
+    background-repeat:no-repeat;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width:50%;
+}
+
+#link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.p {
+    display: flex;
+    flex-direction: column;
+}
+#temp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#temp>h3{
+    color:#45a049;
+    font-size:60px;
+}
+#log-image{
+    width: 80px;
+    height:80px;
+}
+
+.r{
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type] {
+    padding: 5px;
+    margin-bottom: 10px;
+    border:2px solid black;
+    border-radius:2px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* .background {
+    background-image: url(./images/bg.png);
+} */

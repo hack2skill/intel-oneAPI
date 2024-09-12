@@ -1,0 +1,197 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./images/bg-new.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Darker Grotesque', sans-serif;
+    overflow-y: hidden;
+}
+#whole {
+    
+    /* padding: 20px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    margin-top: 100px;
+  }
+  .heading{
+    background-color: white;
+    /* margin: 30px; */
+    /* padding: 30px; */
+    height:90px;
+  }
+  
+  #title {
+    color: #9376E0;
+    font-size: 60px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  .box {
+    display: flex;
+    padding: 15px;
+    gap:15px;
+  }
+  
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    height: 100vh;
+  }
+  .twin_flexboxes{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    width: 85%;
+  }
+  
+  
+  .flexbox {
+    flex: 1;
+    
+    outline: 3px solid black;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px;
+    height: 250px;
+    width: 200px;
+  }
+  .flexbox:hover{
+    box-shadow:2px 5px black;
+    transition-duration: 200ms;
+  }
+  #flexbox1 {
+    display: flex;
+    background-image: url('images/chatroom2.png');
+    /* animation: gradientAnimation 5s infinite ease-in-out; */
+    /* background-size: 200% 200%; */
+    /* transition-duration: 100ms; */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    font-size: 30px;
+  }
+  .quiz1-heading{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: 4px solid #9376E0;
+    border:2px white;
+    padding:10px;
+    width:200px;
+    background-color: black;
+    font-size: 20px;
+    border-radius:5px;
+    color:white;
+  }
+  .quiz-heading{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: 4px solid #9376E0;
+    border:2px white;
+    padding:10px;
+    width:250px;
+    font-size: 20px;
+    border-radius:5px;
+    background-color: black;
+    color:white;
+    position: absolute;
+    right: 10px;
+    bottom:10px;
+  }
+  #flexbox2{
+    position: relative;
+    display: flex;
+    background-image: url('images/mental_health.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-self: flex-start;
+   justify-self: flex-start;
+    margin: 30px;
+    gap:10px;
+    font-size: 30px;
+  }
+  
+.horizontal-flexbox {
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2px;
+    outline: 8px solid white;
+    padding:5px;
+    background-image: linear-gradient(to right bottom, #C4B0FF, #9376E0, #F3BCC8);
+    animation: gradientAnimation 5s infinite ease-in-out;
+    background-size: 200% 200%;
+    transition-duration: 200ms;
+    flex: 1;
+    padding: 10px;
+    width: 85%;
+    box-shadow: 0 0 20px 2px gray;
+    font-size: 20px;
+    border-radius:30px;
+    color:white;
+}
+
+.horizontal-flexbox:hover {
+  transform: scale(1.05);
+  transition-duration: 200ms;
+}
+
+.horizontal-flexbox:active {
+  transform: scale(0.9);
+  background-image: none;
+  background-color: black;
+  transition-duration: 200ms;
+}
+
+@keyframes gradientAnimation {
+  0%, 100% {
+    background-position: left top;
+  }
+  50% {
+    background-position: right bottom;
+  }
+}
+
+.quiz2-heading{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding:5px;
+    flex: 1;
+    padding: 10px;
+    font-size: 20px;
+    border-radius:5px;
+    color:white;
+  }
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
